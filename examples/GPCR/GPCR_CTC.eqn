@@ -1,0 +1,104 @@
+# Facile model created by Allosteric Network Compiler (ANC)
+# ANC version 1.01 released 2011/08/26
+# Thu Aug 25 23:40:44 EDT 2011
+
+
+
+# PARAMETERS
+# ----------
+parameter Kact = 0.012
+parameter k_ia = 1
+parameter k_ai = k_ia/Kact
+parameter Phi = 0.5
+parameter Ka1 = 0.1
+parameter kf1_i = 1
+parameter kb1_i = kf1_i/Ka1
+parameter alpha1 = 95
+parameter kf1_a = 1
+parameter kb1_a = kf1_a/alpha1/Ka1
+parameter Ka2 = 10.0
+parameter kf2_i = 1
+parameter kb2_i = kf2_i/Ka2
+parameter alpha2 = 100
+parameter kf2_a = 1
+parameter kb2_a = kf2_a/alpha2/Ka2
+parameter Kg = 0.15
+parameter kfg_i = 1
+parameter kbg_i = kfg_i/Kg
+parameter beta = 103
+parameter kfg_a = 1
+parameter kbg_a = kfg_a/beta/Kg
+parameter gamma1 = 4.5
+parameter delta1 = 0.075
+parameter gamma2 = 4.5
+parameter delta2 = 0.075
+
+
+# REACTION CLASS: BindingReaction
+# -------------------------------
+G                    + Ra                   <-> G_Rai00                         ; fb00=kfg_a; bb00=kbg_a         # (R!06) Kd = kbg_a/kfg_a
+G                    + Ri                   <-> G_Rii00                         ; fb01=kfg_i; bb01=kbg_i         # (R!05) Kd = kbg_i/kfg_i
+L1                   + Ra                   <-> L1_Rai00                        ; fb02=kf1_a; bb02=kb1_a         # (R!02) Kd = kb1_a/kf1_a
+L1                   + Ri                   <-> L1_Rii00                        ; fb03=kf1_i; bb03=kb1_i         # (R!01) Kd = kb1_i/kf1_i
+L2                   + Ra                   <-> L2_Rai00                        ; fb04=kf2_a; bb04=kb2_a         # (R!04) Kd = kb2_a/kf2_a
+L2                   + Ri                   <-> L2_Rii00                        ; fb05=kf2_i; bb05=kb2_i         # (R!03) Kd = kb2_i/kf2_i
+G                    + L1_Rai00             <-> G_L1_Rai00                      ; fb00=kfg_a; bb00=kbg_a         # (R!15) Kd = kbg_a/kfg_a
+G                    + L1_Rii00             <-> G_L1_Rii00                      ; fb01=kfg_i; bb01=kbg_i         # (R!14) Kd = kbg_i/kfg_i
+G                    + L2_Rai00             <-> G_L2_Rai00                      ; fb00=kfg_a; bb00=kbg_a         # (R!17) Kd = kbg_a/kfg_a
+G                    + L2_Rii00             <-> G_L2_Rii00                      ; fb01=kfg_i; bb01=kbg_i         # (R!16) Kd = kbg_i/kfg_i
+L1                   + G_Rai00              <-> G_L1_Rai00                      ; fb02=kf1_a; bb02=kb1_a         # (R!11) Kd = kb1_a/kf1_a
+L1                   + G_Rii00              <-> G_L1_Rii00                      ; fb03=kf1_i; bb03=kb1_i         # (R!10) Kd = kb1_i/kf1_i
+L2                   + G_Rai00              <-> G_L2_Rai00                      ; fb04=kf2_a; bb04=kb2_a         # (R!13) Kd = kb2_a/kf2_a
+L2                   + G_Rii00              <-> G_L2_Rii00                      ; fb05=kf2_i; bb05=kb2_i         # (R!12) Kd = kb2_i/kf2_i
+
+# REACTION CLASS: AllostericReaction
+# ----------------------------------
+Ri                                          <-> Ra                              ; fu00=k_ia; bu00=k_ai           # (R!00) Keq = k_ia / k_ai
+G_Rii00                                     <-> G_Rai00                         ; fu01=k_ia * (((kfg_a / kbg_a) / (kfg_i / kbg_i)) ^ Phi); bu01=k_ai * (((kfg_a / kbg_a) / (kfg_i / kbg_i)) ^ (Phi - 1)) # (R!09) Keq = (k_ia * (((kfg_a / kbg_a) / (kfg_i / kbg_i)) ^ Phi)) / (k_ai * (((kfg_a / kbg_a) / (kfg_i / kbg_i)) ^ (Phi - 1)))
+L1_Rii00                                    <-> L1_Rai00                        ; fu02=k_ia * (((kf1_a / kb1_a) / (kf1_i / kb1_i)) ^ Phi); bu02=k_ai * (((kf1_a / kb1_a) / (kf1_i / kb1_i)) ^ (Phi - 1)) # (R!07) Keq = (k_ia * (((kf1_a / kb1_a) / (kf1_i / kb1_i)) ^ Phi)) / (k_ai * (((kf1_a / kb1_a) / (kf1_i / kb1_i)) ^ (Phi - 1)))
+L2_Rii00                                    <-> L2_Rai00                        ; fu03=k_ia * (((kf2_a / kb2_a) / (kf2_i / kb2_i)) ^ Phi); bu03=k_ai * (((kf2_a / kb2_a) / (kf2_i / kb2_i)) ^ (Phi - 1)) # (R!08) Keq = (k_ia * (((kf2_a / kb2_a) / (kf2_i / kb2_i)) ^ Phi)) / (k_ai * (((kf2_a / kb2_a) / (kf2_i / kb2_i)) ^ (Phi - 1)))
+G_L1_Rii00                                  <-> G_L1_Rai00                      ; fu04=k_ia * ((((kf1_a / kb1_a) / (kf1_i / kb1_i)) ^ Phi) * (((kfg_a / kbg_a) / (kfg_i / kbg_i)) ^ Phi)); bu04=k_ai * ((((kf1_a / kb1_a) / (kf1_i / kb1_i)) ^ (Phi - 1)) * (((kfg_a / kbg_a) / (kfg_i / kbg_i)) ^ (Phi - 1))) # (R!18) Keq = (k_ia * ((((kf1_a / kb1_a) / (kf1_i / kb1_i)) ^ Phi) * (((kfg_a / kbg_a) / (kfg_i / kbg_i)) ^ Phi))) / (k_ai * ((((kf1_a / kb1_a) / (kf1_i / kb1_i)) ^ (Phi - 1)) * (((kfg_a / kbg_a) / (kfg_i / kbg_i)) ^ (Phi - 1))))
+G_L2_Rii00                                  <-> G_L2_Rai00                      ; fu05=k_ia * ((((kf2_a / kb2_a) / (kf2_i / kb2_i)) ^ Phi) * (((kfg_a / kbg_a) / (kfg_i / kbg_i)) ^ Phi)); bu05=k_ai * ((((kf2_a / kb2_a) / (kf2_i / kb2_i)) ^ (Phi - 1)) * (((kfg_a / kbg_a) / (kfg_i / kbg_i)) ^ (Phi - 1))) # (R!19) Keq = (k_ia * ((((kf2_a / kb2_a) / (kf2_i / kb2_i)) ^ Phi) * (((kfg_a / kbg_a) / (kfg_i / kbg_i)) ^ Phi))) / (k_ai * ((((kf2_a / kb2_a) / (kf2_i / kb2_i)) ^ (Phi - 1)) * (((kfg_a / kbg_a) / (kfg_i / kbg_i)) ^ (Phi - 1))))
+
+
+# INITIAL CONCENTRATIONS (compiled from MODEL section)
+# ----------------------------------------------------
+INIT:
+Ri = 10
+L1 = 0
+L2 = 0
+G = 5.5
+
+
+# STIMULI (from Stimulus objects)
+# ------------------------------------
+EQN:
+null -> L1; k_source_Stm00_L1=(t>=500 && t<(500+1000))*100*(t-500)/1000*1000
+L1 -> null; k_sink_Stm00_L1=(t>=500 && t<(500+1000))*1000
+
+CONFIG:
+ode_event_times = 500 1500 
+t_final = 2000
+
+
+# COMPILED PROBES (from Probe objects)
+# ------------------------------------
+PROBE:
+probe p_Ri = "Ri + L1_Rii00 + L2_Rii00 + G_Rii00 + G_L1_Rii00 + G_L2_Rii00"
+probe p_Ra = "Ra + L1_Rai00 + L2_Rai00 + G_Rai00 + G_L1_Rai00 + G_L2_Rai00"
+probe L1
+probe L2
+probe p_TOTAL_R = "Ri + Ra + L1_Rii00 + L1_Rai00 + L2_Rii00 + L2_Rai00 + G_Rii00 + G_Rai00 + G_L1_Rii00 + G_L1_Rai00 + G_L2_Rii00 + G_L2_Rai00"
+probe p_FREE_R = "Ri + Ra"
+probe p_Lx_R = "L1_Rii00 + L1_Rai00 + L2_Rii00 + L2_Rai00"
+probe p_R_G = "G_Rii00 + G_Rai00"
+probe p_Lx_R_G = "G_L1_Rii00 + G_L1_Rai00 + G_L2_Rii00 + G_L2_Rai00"
+probe p_Ra_G = "G_Rai00 + G_L1_Rai00 + G_L2_Rai00"
+probe p_Ri_G = "G_Rii00 + G_L1_Rii00 + G_L2_Rii00"
+
+
+# CONFIG (from CONFIG section)
+# ----------------------------
+CONFIG:
+t_final = 2000
+t_vector = [0:0.1:tf]

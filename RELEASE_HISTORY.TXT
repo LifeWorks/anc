@@ -1,0 +1,132 @@
+######################################################################################
+# File:     RELEASE_HISTORY.TXT
+# Author:   Julien F. Ollivier
+#
+# Copyright (C) 2005-2010 Julien Ollivier.
+#
+# This program comes with ABSOLUTELY NO WARRANTY.
+# This is free software, and you are welcome to redistribute it
+# under certain conditions. See file LICENSE.TXT for details.
+#
+# Synopsys: This file documents changes made to each release of Allosteric Network
+#           Compiler (ANC).
+######################################################################################
+
+Date	Tag		Preparer	Notes
+----	---		--------	-------
+YYMMDD
+
+100919 RELEASE_1V01	ollivier	* Updated examples having steady-state sims for
+					  compatibility with Facile 0.40.
+
+100919 RELEASE_1V00	ollivier	* Adoption of GNU GPL v3.
+					* Improved MAPK_ste5_adhoc.mod example.
+					* Updated comments for GPCR examples.
+
+100728 RELEASE_0V24	ollivier	* Removed support for Protein, Domain etc. classes.
+					* Update and simplification of examples.
+					* Improved dose_response stimulus function.
+
+100217 RELEASE_0V23	ollivier	* Added support for having distinct phi-values for each modifier of
+					  an allosteric site, and asymmetric phi-values between coupled
+					  allosteric sites.
+					* Changed Structure initializer 'add_edges' to 'add_allosteric_couplings',
+					  simplifying the creation of internal allosteric couplings. Example
+					  models have been updated to reflect this.
+					* Updated GPCR_QTC model to reflect structure in article (yields same eqns).
+					* New simplified multimer_TTS model which does not implement geminate rebinding.
+					* New adapter_generic_rev2 model with distinct phi-values. 
+					* Created new examples for the user manual.
+					* Made allosteric_flag default to 1 instead of 0.
+					* Misc cosmetic changes to most example model files.
+					* All examples now use compact_names=1 (the default)
+
+091209	RELEASE_0V22	ollivier	* Binding sites can be coupled to any and multiple allosteric nodes,
+					  enabling support of true 4-state allosteric models.
+					* Improved Stimulus module -- better handling of event and end times.
+					* New 4-state QTC GPCR model and multistate testcases.
+					* Change to AllostericStructure attributes (Keq_ratio & RT_phi obsolete/renamed)
+					* Testing of species initialization to non-default states.
+					* Miscellaneous updating of example models.
+
+090402	RELEASE_0V21	ollivier	* Added support for KNF-type models, and more generally for
+					  arbitrary allosteric couplings between sub-units
+					  at any level of hierarchy.
+					* Variable $compact_names now true by default.
+					* Re-organized/renamed examples, moving test-oriented ones elsewhere.
+					* Several new full examples
+					* Bug fix -- alternate CanBindRules can now be used in different contexts.
+					* Bug fix -- only 3 binding energies need be specified for
+					  a self-binding, allosteric reaction site.
+					* Bug fix in computation of allosteric transition rates.
+
+090224	RELEASE_0V20	ollivier	* Much faster thanks to shading algorithm for graph alignment.
+					* New Structure/Node modelling paradigm and constructs.
+					* Modelling of hierarchical allosteric proteins.
+					* Support for allosteric labels other than R<->T.
+					* Introduced AD-HOC rule constraints, discontinued CRUDE model of allostery.
+					* High-level specification of stimulus patterns via Stimulus object.
+					* More versatile specification of ICs via Init objects.
+					* Probe attribute 'class' renamed to 'classes'
+					* Re-organized and updated manuals.
+
+080517	RELEASE_0V07	ollivier	* Much faster
+					* More progress messages
+					* More graceful handling of absent/broken GraphViz installation
+					* In species report, report totals in first line.
+					* New $compact_names and $protein_separator options.
+					* Handling of non-numeric rate expressions and INF rates.
+					* Improved handling of rate parametrizations.
+					* Support for Facile's MOIETY section as pass-through.
+					* Misc verbosity changes.
+
+080205	RELEASE_0V06	ollivier	* New functionality to plot reaction network graph.
+					* Added routines in Utils & Matrix base packages piggybacked by SIGTEV.
+					* Minor bug fix in reaction cmp() routine.
+
+080107	RELEASE_0V05	ollivier	* Fix steric_factor initialization bug.
+					* Add --report switch, and new species list report.
+					* New Parameter class and ability to parametrize rates
+					  given in CanBindRules (kf, kb and kp).
+
+071205	RELEASE_0V04	ollivier	* Fix bug where kp variables were not uniquified in exported equations.
+					* Fix bug whereby max_species limit was not properly applied during
+					  internal reaction compilation.
+					* Echo species count every 20 species during compilation.
+
+071204	RELEASE_0V03	ollivier	* Fix bug where for large equation files the EQN filehandle
+					  was not being closed/flushed properly, resulting in an
+					  equation file with some of the probes spliced out.
+					* Append reaction # to all exported reactions.
+					* Major internal changes to CatalyticReaction class; changed def'n
+					  and attributes such that it does not depend in principle on
+					  the existence of a BindingReaction.  By definition, the 
+					  CatalyticReaction class now consists of the product reaction
+					  only, starting from an activated complex.  When exporting
+					  any associated BindingReactions are collected dynamically and
+					  exported along with the CatalyticReaction.  Made associated
+					  changes to ReactionNetwork compilation.
+					* Changes such that species/reactions are not generated when
+					  the corresponding rate is zero (binding and catalytic reactions).
+					* Implement rate_cutoff parameters so that reactions/species
+					  are not generated if the rate is at or below cutoff.
+					* Make steric_factor undefined by default and exit with ERROR
+					  when steric_factor is needed but not defined.
+
+071121	PRE_RELEASE_071121
+			ollivier        * Implement max_csite_bound_to_msite_number.
+					* Add --clean option.
+					* Change --graphviz option to specify graph type(s)
+					  to be exported.
+					* Fix bug in graphviz export for ungrouped graphs.
+					* New get_exported_name() function is used to generate
+					  file names for the graphviz exports that are consistent
+					  with the node names in the Facile file.
+					* Ability to export canonical or primary graphs.
+					* Exit more gracefully when max # of complexes reached. The
+					  number of complexes generated when limit is reached
+					  may be slightly less than before (limit is stricter).
+
+071030	PRE_RELEASE_071030
+			ollivier	* First tagged pre-release.
+

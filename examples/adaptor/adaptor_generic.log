@@ -1,0 +1,102 @@
+##############################################################################
+# Allosteric Network Compiler (ANC)
+# Copyright (C) 2005-2010 Julien Ollivier
+# Author:       Julien F. Ollivier
+# Version:      1.01
+# Release Date: 2011/08/26
+# This program comes with ABSOLUTELY NO WARRANTY.
+# This is free software, and you are welcome to redistribute it
+# under certain conditions. See file LICENSE.TXT for details.
+##############################################################################
+
+MODEL 	= examples/adaptor/adaptor_generic.mod
+OUT 	= examples/adaptor/adaptor_generic.eqn
+OUTDIR 	= examples/adaptor/adaptor_generic
+
+Start time: Sat Aug 27 17:48:55 EDT 2011
+CLEANING UP
+CREATING OUTPUT DIRECTORY
+READING MODEL examples/adaptor/adaptor_generic.mod
+REPORTING COMPILE PARAMETERS
+max_external_iterations = -1
+max_internal_iterations = -1
+max_species = -1
+max_complex_size = -1
+max_csite_bound_to_msite_number = -1
+kf_1st_order_rate_cutoff = 0
+kf_2nd_order_rate_cutoff = 0
+kb_rate_cutoff = 0
+kp_rate_cutoff = 0
+default_steric_factor = UNDEF
+report = all
+export_graphviz = primary,canonical,network,collapse_states,collapse_complexes
+compact_names = 1
+protein_separator = _
+IMPORTING COMPLEXES
+COMPILING RULES
+Compiling rule BR!00 of class CanBindRule
+AX CanBind X
+Compiling rule BR!01 of class CanBindRule
+AX CanBind X
+Compiling rule BR!02 of class CanBindRule
+AY CanBind Y
+Compiling rule BR!03 of class CanBindRule
+AY CanBind Y
+INSTANTIATING COMPLEXES
+INITIALIZING INSTANCES
+COMPILING REACTION NETWORK
+ReactionNetwork::compile_network: starting...
+ReactionNetwork::compile_network: STARTING INTERNAL iteration=1 total_species=3
+ReactionNetwork::compile_network: STARTING EXTERNAL iteration=1 total_species=4
+ReactionNetwork::compile_network: DONE EXTERNAL iteration=1 total_species=8
+ReactionNetwork::compile_network: STARTING INTERNAL iteration=2 total_species=8
+ReactionNetwork::compile_network: STARTING EXTERNAL iteration=2 total_species=8
+ReactionNetwork::compile_external_reactions: processing species 5 of 8
+ReactionNetwork::compile_network: DONE EXTERNAL iteration=2 total_species=10
+ReactionNetwork::compile_network: STARTING INTERNAL iteration=3 total_species=10
+ReactionNetwork::compile_network: STARTING EXTERNAL iteration=3 total_species=10
+ReactionNetwork::compile_external_reactions: processing species 5 of 10
+ReactionNetwork::compile_network: DONE EXTERNAL iteration=3 total_species=10
+ReactionNetwork::compile_network: STARTING FINAL-INTERNAL total_species=10
+ReactionNetwork::compile_network: DONE FINAL-INTERNAL total_species=10
+ReactionNetwork::compile_network: Done computing species in 3 iterations
+COMPILING ICs and STIMULI
+Init Ic!00 comprises 1 objects:
+	AT
+Init Ic!01 comprises 1 objects:
+	X
+Init Ic!02 comprises 1 objects:
+	Y
+Stimulus Stm!00 comprises 1 objects:
+	X
+COMPILING PROBES
+Probe TRIMER comprises 2 objects:
+	AR_X_Yi00
+	AT_X_Yi00
+Probe AX_DIMER comprises 2 objects:
+	AR_Xi00
+	AT_Xi00
+Probe AY_DIMER comprises 2 objects:
+	AR_Yi00
+	AT_Yi00
+Probe A comprises 2 objects:
+	AR
+	AT
+Probe RESPONSE comprises 4 objects:
+	AR_Yi00
+	AT_Yi00
+	AR_X_Yi00
+	AT_X_Yi00
+Probe Prb!00 comprises 1 objects:
+	X
+Probe Prb!01 comprises 1 objects:
+	Y
+EXPORTING NETWORK
+Facile->export(): generating Facile equation file
+REPORTING SPECIES STRUCTURE IN: examples/adaptor/adaptor_generic/adaptor_generic.structures.rpt
+REPORTING SPECIES IN: examples/adaptor/adaptor_generic/adaptor_generic.species.rpt
+EXPORTING NETWORK TO GRAPHVIZ
+EXPORTING SPECIES TO GRAPHVIZ (primary form)
+EXPORTING SPECIES TO GRAPHVIZ (canonical form)
+Start time: Sat Aug 27 17:48:55 EDT 2011
+End time:   Sat Aug 27 17:49:02 EDT 2011

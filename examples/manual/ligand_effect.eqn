@@ -1,0 +1,57 @@
+# Facile model created by Allosteric Network Compiler (ANC)
+# ANC version 1.00 released 2010/9/19
+# Sun Sep 19 14:11:49 EDT 2010
+
+
+
+# PARAMETERS
+# ----------
+parameter kf_RS = 0.1
+parameter kb_RS = 100
+parameter Phi_AX = 0.5
+parameter kf_RX = 1
+parameter kb_RX = 10
+parameter kf_SX = 10
+parameter kb_SX = 1
+
+
+# REACTION CLASS: BindingReaction
+# -------------------------------
+AR                   + X                    <-> AR_Xi00                         ; fb00=kf_RX; bb00=kb_RX         # (R!01) Kd = kb_RX/kf_RX
+AS                   + X                    <-> AS_Xi00                         ; fb01=kf_SX; bb01=kb_SX         # (R!02) Kd = kb_SX/kf_SX
+
+# REACTION CLASS: AllostericReaction
+# ----------------------------------
+AR                                          <-> AS                              ; fu00=kf_RS; bu00=kb_RS         # (R!00) Keq = kf_RS / kb_RS
+AR_Xi00                                     <-> AS_Xi00                         ; fu01=kf_RS * (((kf_SX / kb_SX) / (kf_RX / kb_RX)) ^ Phi_AX); bu01=kb_RS * (((kf_SX / kb_SX) / (kf_RX / kb_RX)) ^ (Phi_AX - 1)) # (R!03) Keq = (kf_RS * (((kf_SX / kb_SX) / (kf_RX / kb_RX)) ^ Phi_AX)) / (kb_RS * (((kf_SX / kb_SX) / (kf_RX / kb_RX)) ^ (Phi_AX - 1)))
+
+
+# INITIAL CONCENTRATIONS (compiled from MODEL section)
+# ----------------------------------------------------
+INIT:
+AR = 1
+X = 0
+
+
+# STIMULI (from Stimulus objects)
+# ------------------------------------
+EQN:
+null -> X; k_source_Stm00_X=1*100
+X -> null; k_sink_Stm00_X=100
+
+CONFIG:
+t_final = 20000.0
+
+
+# COMPILED PROBES (from Probe objects)
+# ------------------------------------
+PROBE:
+probe AX_DIMER = "AR_Xi00 + AS_Xi00"
+probe A = "AR + AS"
+probe X
+
+
+# CONFIG (from CONFIG section)
+# ----------------------------
+CONFIG:
+t_final = 20000.0

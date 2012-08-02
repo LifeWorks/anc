@@ -1,0 +1,504 @@
+# Facile model created by Allosteric Network Compiler (ANC)
+# ANC version 1.01 released 2011/08/26
+# Thu Aug 25 23:03:34 EDT 2011
+
+
+
+# PARAMETERS
+# ----------
+parameter k_tr = 0.1
+parameter k_rt = 20
+parameter k_TR = 0.15
+parameter k_RT = 40
+parameter Gamma = 100
+parameter Phi_T = 0.5
+parameter Phi_Q = 0.5
+parameter Phi_LB = 0.5
+parameter kf_t = 100
+parameter kb_t = 100
+parameter kf_r = 100
+parameter kb_r = 0.1
+
+
+# REACTION CLASS: BindingReaction
+# -------------------------------
+HRrrrr               + L                    <-> HRrrrr_Li00                     ; fb00=kf_r; bb00=kb_r           # (R!73) Kd = kb_r/kf_r
+HRrrrr               + L                     -> HRrrrr_Li00                     ; fb00=kf_r                      # (R!75) Kd = UNDEFINED
+HRrrrr               + L                     -> HRrrrr_Li00                     ; fb00=kf_r                      # (R!74) Kd = UNDEFINED
+HRrrrr               + L                     -> HRrrrr_Li00                     ; fb00=kf_r                      # (R!76) Kd = UNDEFINED
+HRrrrt               + L                    <-> HRrrrt_Li00                     ; fb00=kf_r; bb00=kb_r           # (R!65) Kd = kb_r/kf_r
+HRrrrt               + L                     -> HRrrrt_Li00                     ; fb00=kf_r                      # (R!67) Kd = UNDEFINED
+HRrrrt               + L                     -> HRrrrt_Li00                     ; fb00=kf_r                      # (R!66) Kd = UNDEFINED
+HRrrrt               + L                    <-> HRtrrr_Li00                     ; fb01=kf_t; bb01=kb_t           # (R!68) Kd = kb_t/kf_t
+HRrrtt               + L                    <-> HRrrtt_Li00                     ; fb00=kf_r; bb00=kb_r           # (R!57) Kd = kb_r/kf_r
+HRrrtt               + L                     -> HRrrtt_Li00                     ; fb00=kf_r                      # (R!58) Kd = UNDEFINED
+HRrrtt               + L                    <-> HRtrrt_Li00                     ; fb01=kf_t; bb01=kb_t           # (R!59) Kd = kb_t/kf_t
+HRrrtt               + L                     -> HRtrrt_Li00                     ; fb01=kf_t                      # (R!60) Kd = UNDEFINED
+HRrttt               + L                    <-> HRrttt_Li00                     ; fb00=kf_r; bb00=kb_r           # (R!49) Kd = kb_r/kf_r
+HRrttt               + L                    <-> HRtrtt_Li00                     ; fb01=kf_t; bb01=kb_t           # (R!50) Kd = kb_t/kf_t
+HRrttt               + L                     -> HRtrtt_Li00                     ; fb01=kf_t                      # (R!51) Kd = UNDEFINED
+HRrttt               + L                     -> HRtrtt_Li00                     ; fb01=kf_t                      # (R!52) Kd = UNDEFINED
+HRtttt               + L                    <-> HRtttt_Li00                     ; fb01=kf_t; bb01=kb_t           # (R!41) Kd = kb_t/kf_t
+HRtttt               + L                     -> HRtttt_Li00                     ; fb01=kf_t                      # (R!43) Kd = UNDEFINED
+HRtttt               + L                     -> HRtttt_Li00                     ; fb01=kf_t                      # (R!42) Kd = UNDEFINED
+HRtttt               + L                     -> HRtttt_Li00                     ; fb01=kf_t                      # (R!44) Kd = UNDEFINED
+HTrrrr               + L                    <-> HTrrrr_Li00                     ; fb00=kf_r; bb00=kb_r           # (R!69) Kd = kb_r/kf_r
+HTrrrr               + L                     -> HTrrrr_Li00                     ; fb00=kf_r                      # (R!71) Kd = UNDEFINED
+HTrrrr               + L                     -> HTrrrr_Li00                     ; fb00=kf_r                      # (R!70) Kd = UNDEFINED
+HTrrrr               + L                     -> HTrrrr_Li00                     ; fb00=kf_r                      # (R!72) Kd = UNDEFINED
+HTrrrt               + L                    <-> HTrrrt_Li00                     ; fb00=kf_r; bb00=kb_r           # (R!61) Kd = kb_r/kf_r
+HTrrrt               + L                     -> HTrrrt_Li00                     ; fb00=kf_r                      # (R!62) Kd = UNDEFINED
+HTrrrt               + L                     -> HTrrrt_Li00                     ; fb00=kf_r                      # (R!63) Kd = UNDEFINED
+HTrrrt               + L                    <-> HTtrrr_Li00                     ; fb01=kf_t; bb01=kb_t           # (R!64) Kd = kb_t/kf_t
+HTrrtt               + L                    <-> HTrrtt_Li00                     ; fb00=kf_r; bb00=kb_r           # (R!53) Kd = kb_r/kf_r
+HTrrtt               + L                     -> HTrrtt_Li00                     ; fb00=kf_r                      # (R!54) Kd = UNDEFINED
+HTrrtt               + L                    <-> HTtrrt_Li00                     ; fb01=kf_t; bb01=kb_t           # (R!55) Kd = kb_t/kf_t
+HTrrtt               + L                     -> HTtrrt_Li00                     ; fb01=kf_t                      # (R!56) Kd = UNDEFINED
+HTrttt               + L                    <-> HTrttt_Li00                     ; fb00=kf_r; bb00=kb_r           # (R!45) Kd = kb_r/kf_r
+HTrttt               + L                    <-> HTtrtt_Li00                     ; fb01=kf_t; bb01=kb_t           # (R!46) Kd = kb_t/kf_t
+HTrttt               + L                     -> HTtrtt_Li00                     ; fb01=kf_t                      # (R!47) Kd = UNDEFINED
+HTrttt               + L                     -> HTtrtt_Li00                     ; fb01=kf_t                      # (R!48) Kd = UNDEFINED
+HTtttt               + L                    <-> HTtttt_Li00                     ; fb01=kf_t; bb01=kb_t           # (R!37) Kd = kb_t/kf_t
+HTtttt               + L                     -> HTtttt_Li00                     ; fb01=kf_t                      # (R!39) Kd = UNDEFINED
+HTtttt               + L                     -> HTtttt_Li00                     ; fb01=kf_t                      # (R!38) Kd = UNDEFINED
+HTtttt               + L                     -> HTtttt_Li00                     ; fb01=kf_t                      # (R!40) Kd = UNDEFINED
+L                    + HRrrrr_Li00          <-> HRrrrr_L_Li00                   ; fb00=kf_r; bb00=kb_r           # (R!174) Kd = kb_r/kf_r
+L                    + HRrrrr_Li00           -> HRrrrr_L_Li00                   ; fb00=kf_r                      # (R!175) Kd = UNDEFINED
+L                    + HRrrrr_Li00           -> HRrrrr_L_Li00                   ; fb00=kf_r                      # (R!176) Kd = UNDEFINED
+L                    + HRrrrr_Li00          <-  HRrrrr_L_Li00                   ; bb00=kb_r                      # (R!243) Kd = UNDEFINED
+L                    + HRrrrt_Li00          <-> HRrrrt_L_Li00                   ; fb00=kf_r; bb00=kb_r           # (R!165) Kd = kb_r/kf_r
+L                    + HRrrrt_Li00           -> HRrrrt_L_Li00                   ; fb00=kf_r                      # (R!166) Kd = UNDEFINED
+L                    + HRrrrt_Li00          <-  HRrrrt_L_Li00                   ; bb00=kb_r                      # (R!234) Kd = UNDEFINED
+L                    + HRrrrt_Li00          <-> HRrtrr_L_Li00                   ; fb01=kf_t; bb01=kb_t           # (R!167) Kd = kb_t/kf_t
+L                    + HRrrtt_Li00          <-> HRrrtt_L_Li00                   ; fb00=kf_r; bb00=kb_r           # (R!153) Kd = kb_r/kf_r
+L                    + HRrrtt_Li00          <-  HRrrtt_L_Li00                   ; bb00=kb_r                      # (R!217) Kd = UNDEFINED
+L                    + HRrrtt_Li00          <-> HRrtrt_L_Li00                   ; fb01=kf_t; bb01=kb_t           # (R!154) Kd = kb_t/kf_t
+L                    + HRrrtt_Li00           -> HRrtrt_L_Li00                   ; fb01=kf_t                      # (R!155) Kd = UNDEFINED
+L                    + HRrttt_Li00          <-> HRrttt_L_Li00                   ; fb01=kf_t; bb01=kb_t           # (R!141) Kd = kb_t/kf_t
+L                    + HRrttt_Li00           -> HRrttt_L_Li00                   ; fb01=kf_t                      # (R!142) Kd = UNDEFINED
+L                    + HRrttt_Li00           -> HRrttt_L_Li00                   ; fb01=kf_t                      # (R!143) Kd = UNDEFINED
+L                    + HRtrrr_Li00          <-> HRrtrr_L_Li00                   ; fb00=kf_r; bb00=kb_r           # (R!168) Kd = kb_r/kf_r
+L                    + HRtrrr_Li00           -> HRrtrr_L_Li00                   ; fb00=kf_r                      # (R!169) Kd = UNDEFINED
+L                    + HRtrrr_Li00           -> HRrtrr_L_Li00                   ; fb00=kf_r                      # (R!170) Kd = UNDEFINED
+L                    + HRtrrt_Li00          <-> HRrtrt_L_Li00                   ; fb00=kf_r; bb00=kb_r           # (R!156) Kd = kb_r/kf_r
+L                    + HRtrrt_Li00           -> HRrtrt_L_Li00                   ; fb00=kf_r                      # (R!157) Kd = UNDEFINED
+L                    + HRtrrt_Li00          <-> HRttrr_L_Li00                   ; fb01=kf_t; bb01=kb_t           # (R!158) Kd = kb_t/kf_t
+L                    + HRtrrt_Li00          <-  HRttrr_L_Li00                   ; bb01=kb_t                      # (R!223) Kd = UNDEFINED
+L                    + HRtrtt_Li00          <-> HRrttt_L_Li00                   ; fb00=kf_r; bb00=kb_r           # (R!144) Kd = kb_r/kf_r
+L                    + HRtrtt_Li00          <-> HRttrt_L_Li00                   ; fb01=kf_t; bb01=kb_t           # (R!145) Kd = kb_t/kf_t
+L                    + HRtrtt_Li00           -> HRttrt_L_Li00                   ; fb01=kf_t                      # (R!146) Kd = UNDEFINED
+L                    + HRtrtt_Li00          <-  HRttrt_L_Li00                   ; bb01=kb_t                      # (R!200) Kd = UNDEFINED
+L                    + HRtttt_Li00          <-> HRtttt_L_Li00                   ; fb01=kf_t; bb01=kb_t           # (R!132) Kd = kb_t/kf_t
+L                    + HRtttt_Li00           -> HRtttt_L_Li00                   ; fb01=kf_t                      # (R!133) Kd = UNDEFINED
+L                    + HRtttt_Li00           -> HRtttt_L_Li00                   ; fb01=kf_t                      # (R!134) Kd = UNDEFINED
+L                    + HRtttt_Li00          <-  HRtttt_L_Li00                   ; bb01=kb_t                      # (R!183) Kd = UNDEFINED
+L                    + HTrrrr_Li00          <-> HTrrrr_L_Li00                   ; fb00=kf_r; bb00=kb_r           # (R!171) Kd = kb_r/kf_r
+L                    + HTrrrr_Li00           -> HTrrrr_L_Li00                   ; fb00=kf_r                      # (R!172) Kd = UNDEFINED
+L                    + HTrrrr_Li00           -> HTrrrr_L_Li00                   ; fb00=kf_r                      # (R!173) Kd = UNDEFINED
+L                    + HTrrrr_Li00          <-  HTrrrr_L_Li00                   ; bb00=kb_r                      # (R!239) Kd = UNDEFINED
+L                    + HTrrrt_Li00          <-> HTrrrt_L_Li00                   ; fb00=kf_r; bb00=kb_r           # (R!159) Kd = kb_r/kf_r
+L                    + HTrrrt_Li00           -> HTrrrt_L_Li00                   ; fb00=kf_r                      # (R!160) Kd = UNDEFINED
+L                    + HTrrrt_Li00          <-  HTrrrt_L_Li00                   ; bb00=kb_r                      # (R!227) Kd = UNDEFINED
+L                    + HTrrrt_Li00          <-> HTrtrr_L_Li00                   ; fb01=kf_t; bb01=kb_t           # (R!161) Kd = kb_t/kf_t
+L                    + HTrrtt_Li00          <-> HTrrtt_L_Li00                   ; fb00=kf_r; bb00=kb_r           # (R!147) Kd = kb_r/kf_r
+L                    + HTrrtt_Li00          <-  HTrrtt_L_Li00                   ; bb00=kb_r                      # (R!204) Kd = UNDEFINED
+L                    + HTrrtt_Li00          <-> HTrtrt_L_Li00                   ; fb01=kf_t; bb01=kb_t           # (R!148) Kd = kb_t/kf_t
+L                    + HTrrtt_Li00           -> HTrtrt_L_Li00                   ; fb01=kf_t                      # (R!149) Kd = UNDEFINED
+L                    + HTrttt_Li00          <-> HTrttt_L_Li00                   ; fb01=kf_t; bb01=kb_t           # (R!135) Kd = kb_t/kf_t
+L                    + HTrttt_Li00           -> HTrttt_L_Li00                   ; fb01=kf_t                      # (R!137) Kd = UNDEFINED
+L                    + HTrttt_Li00           -> HTrttt_L_Li00                   ; fb01=kf_t                      # (R!136) Kd = UNDEFINED
+L                    + HTtrrr_Li00          <-> HTrtrr_L_Li00                   ; fb00=kf_r; bb00=kb_r           # (R!162) Kd = kb_r/kf_r
+L                    + HTtrrr_Li00           -> HTrtrr_L_Li00                   ; fb00=kf_r                      # (R!163) Kd = UNDEFINED
+L                    + HTtrrr_Li00           -> HTrtrr_L_Li00                   ; fb00=kf_r                      # (R!164) Kd = UNDEFINED
+L                    + HTtrrt_Li00          <-> HTrtrt_L_Li00                   ; fb00=kf_r; bb00=kb_r           # (R!150) Kd = kb_r/kf_r
+L                    + HTtrrt_Li00           -> HTrtrt_L_Li00                   ; fb00=kf_r                      # (R!151) Kd = UNDEFINED
+L                    + HTtrrt_Li00          <-> HTttrr_L_Li00                   ; fb01=kf_t; bb01=kb_t           # (R!152) Kd = kb_t/kf_t
+L                    + HTtrrt_Li00          <-  HTttrr_L_Li00                   ; bb01=kb_t                      # (R!212) Kd = UNDEFINED
+L                    + HTtrtt_Li00          <-> HTrttt_L_Li00                   ; fb00=kf_r; bb00=kb_r           # (R!138) Kd = kb_r/kf_r
+L                    + HTtrtt_Li00          <-> HTttrt_L_Li00                   ; fb01=kf_t; bb01=kb_t           # (R!139) Kd = kb_t/kf_t
+L                    + HTtrtt_Li00           -> HTttrt_L_Li00                   ; fb01=kf_t                      # (R!140) Kd = UNDEFINED
+L                    + HTtrtt_Li00          <-  HTttrt_L_Li00                   ; bb01=kb_t                      # (R!192) Kd = UNDEFINED
+L                    + HTtttt_Li00          <-> HTtttt_L_Li00                   ; fb01=kf_t; bb01=kb_t           # (R!129) Kd = kb_t/kf_t
+L                    + HTtttt_Li00           -> HTtttt_L_Li00                   ; fb01=kf_t                      # (R!130) Kd = UNDEFINED
+L                    + HTtttt_Li00           -> HTtttt_L_Li00                   ; fb01=kf_t                      # (R!131) Kd = UNDEFINED
+L                    + HTtttt_Li00          <-  HTtttt_L_Li00                   ; bb01=kb_t                      # (R!177) Kd = UNDEFINED
+L                    + HRrrrr_L_Li00        <-> HRrrrr_L_L_Li00                 ; fb00=kf_r; bb00=kb_r           # (R!280) Kd = kb_r/kf_r
+L                    + HRrrrr_L_Li00         -> HRrrrr_L_L_Li00                 ; fb00=kf_r                      # (R!281) Kd = UNDEFINED
+L                    + HRrrrr_L_Li00        <-  HRrrrr_L_L_Li00                 ; bb00=kb_r                      # (R!354) Kd = UNDEFINED
+L                    + HRrrrr_L_Li00        <-  HRrrrr_L_L_Li00                 ; bb00=kb_r                      # (R!355) Kd = UNDEFINED
+L                    + HRrrrt_L_Li00        <-> HRrrrt_L_L_Li00                 ; fb00=kf_r; bb00=kb_r           # (R!274) Kd = kb_r/kf_r
+L                    + HRrrrt_L_Li00        <-  HRrrrt_L_L_Li00                 ; bb00=kb_r                      # (R!341) Kd = UNDEFINED
+L                    + HRrrrt_L_Li00        <-  HRrrrt_L_L_Li00                 ; bb00=kb_r                      # (R!342) Kd = UNDEFINED
+L                    + HRrrrt_L_Li00        <-> HRrrtr_L_L_Li00                 ; fb01=kf_t; bb01=kb_t           # (R!275) Kd = kb_t/kf_t
+L                    + HRrrtt_L_Li00        <-> HRrrtt_L_L_Li00                 ; fb01=kf_t; bb01=kb_t           # (R!264) Kd = kb_t/kf_t
+L                    + HRrrtt_L_Li00         -> HRrrtt_L_L_Li00                 ; fb01=kf_t                      # (R!265) Kd = UNDEFINED
+L                    + HRrtrr_L_Li00        <-> HRrrtr_L_L_Li00                 ; fb00=kf_r; bb00=kb_r           # (R!276) Kd = kb_r/kf_r
+L                    + HRrtrr_L_Li00         -> HRrrtr_L_L_Li00                 ; fb00=kf_r                      # (R!277) Kd = UNDEFINED
+L                    + HRrtrr_L_Li00        <-  HRrrtr_L_L_Li00                 ; bb00=kb_r                      # (R!346) Kd = UNDEFINED
+L                    + HRrtrt_L_Li00        <-> HRrrtt_L_L_Li00                 ; fb00=kf_r; bb00=kb_r           # (R!266) Kd = kb_r/kf_r
+L                    + HRrtrt_L_Li00        <-  HRrrtt_L_L_Li00                 ; bb00=kb_r                      # (R!324) Kd = UNDEFINED
+L                    + HRrtrt_L_Li00        <-> HRrttr_L_L_Li00                 ; fb01=kf_t; bb01=kb_t           # (R!267) Kd = kb_t/kf_t
+L                    + HRrtrt_L_Li00        <-  HRrttr_L_L_Li00                 ; bb01=kb_t                      # (R!328) Kd = UNDEFINED
+L                    + HRrttt_L_Li00        <-> HRrttt_L_L_Li00                 ; fb01=kf_t; bb01=kb_t           # (R!254) Kd = kb_t/kf_t
+L                    + HRrttt_L_Li00         -> HRrttt_L_L_Li00                 ; fb01=kf_t                      # (R!255) Kd = UNDEFINED
+L                    + HRrttt_L_Li00        <-  HRrttt_L_L_Li00                 ; bb01=kb_t                      # (R!306) Kd = UNDEFINED
+L                    + HRttrr_L_Li00        <-> HRrttr_L_L_Li00                 ; fb00=kf_r; bb00=kb_r           # (R!268) Kd = kb_r/kf_r
+L                    + HRttrr_L_Li00         -> HRrttr_L_L_Li00                 ; fb00=kf_r                      # (R!269) Kd = UNDEFINED
+L                    + HRttrt_L_Li00        <-> HRrttt_L_L_Li00                 ; fb00=kf_r; bb00=kb_r           # (R!256) Kd = kb_r/kf_r
+L                    + HRttrt_L_Li00        <-> HRtttr_L_L_Li00                 ; fb01=kf_t; bb01=kb_t           # (R!257) Kd = kb_t/kf_t
+L                    + HRttrt_L_Li00        <-  HRtttr_L_L_Li00                 ; bb01=kb_t                      # (R!310) Kd = UNDEFINED
+L                    + HRttrt_L_Li00        <-  HRtttr_L_L_Li00                 ; bb01=kb_t                      # (R!311) Kd = UNDEFINED
+L                    + HRtttt_L_Li00        <-> HRtttt_L_L_Li00                 ; fb01=kf_t; bb01=kb_t           # (R!248) Kd = kb_t/kf_t
+L                    + HRtttt_L_Li00         -> HRtttt_L_L_Li00                 ; fb01=kf_t                      # (R!249) Kd = UNDEFINED
+L                    + HRtttt_L_Li00        <-  HRtttt_L_L_Li00                 ; bb01=kb_t                      # (R!289) Kd = UNDEFINED
+L                    + HRtttt_L_Li00        <-  HRtttt_L_L_Li00                 ; bb01=kb_t                      # (R!290) Kd = UNDEFINED
+L                    + HTrrrr_L_Li00        <-> HTrrrr_L_L_Li00                 ; fb00=kf_r; bb00=kb_r           # (R!278) Kd = kb_r/kf_r
+L                    + HTrrrr_L_Li00         -> HTrrrr_L_L_Li00                 ; fb00=kf_r                      # (R!279) Kd = UNDEFINED
+L                    + HTrrrr_L_Li00        <-  HTrrrr_L_L_Li00                 ; bb00=kb_r                      # (R!349) Kd = UNDEFINED
+L                    + HTrrrr_L_Li00        <-  HTrrrr_L_L_Li00                 ; bb00=kb_r                      # (R!350) Kd = UNDEFINED
+L                    + HTrrrt_L_Li00        <-> HTrrrt_L_L_Li00                 ; fb00=kf_r; bb00=kb_r           # (R!270) Kd = kb_r/kf_r
+L                    + HTrrrt_L_Li00        <-  HTrrrt_L_L_Li00                 ; bb00=kb_r                      # (R!331) Kd = UNDEFINED
+L                    + HTrrrt_L_Li00        <-  HTrrrt_L_L_Li00                 ; bb00=kb_r                      # (R!332) Kd = UNDEFINED
+L                    + HTrrrt_L_Li00        <-> HTrrtr_L_L_Li00                 ; fb01=kf_t; bb01=kb_t           # (R!271) Kd = kb_t/kf_t
+L                    + HTrrtt_L_Li00        <-> HTrrtt_L_L_Li00                 ; fb01=kf_t; bb01=kb_t           # (R!258) Kd = kb_t/kf_t
+L                    + HTrrtt_L_Li00         -> HTrrtt_L_L_Li00                 ; fb01=kf_t                      # (R!259) Kd = UNDEFINED
+L                    + HTrtrr_L_Li00        <-> HTrrtr_L_L_Li00                 ; fb00=kf_r; bb00=kb_r           # (R!272) Kd = kb_r/kf_r
+L                    + HTrtrr_L_Li00         -> HTrrtr_L_L_Li00                 ; fb00=kf_r                      # (R!273) Kd = UNDEFINED
+L                    + HTrtrr_L_Li00        <-  HTrrtr_L_L_Li00                 ; bb00=kb_r                      # (R!337) Kd = UNDEFINED
+L                    + HTrtrt_L_Li00        <-> HTrrtt_L_L_Li00                 ; fb00=kf_r; bb00=kb_r           # (R!260) Kd = kb_r/kf_r
+L                    + HTrtrt_L_Li00        <-  HTrrtt_L_L_Li00                 ; bb00=kb_r                      # (R!315) Kd = UNDEFINED
+L                    + HTrtrt_L_Li00        <-> HTrttr_L_L_Li00                 ; fb01=kf_t; bb01=kb_t           # (R!261) Kd = kb_t/kf_t
+L                    + HTrtrt_L_Li00        <-  HTrttr_L_L_Li00                 ; bb01=kb_t                      # (R!320) Kd = UNDEFINED
+L                    + HTrttt_L_Li00        <-> HTrttt_L_L_Li00                 ; fb01=kf_t; bb01=kb_t           # (R!250) Kd = kb_t/kf_t
+L                    + HTrttt_L_Li00         -> HTrttt_L_L_Li00                 ; fb01=kf_t                      # (R!251) Kd = UNDEFINED
+L                    + HTrttt_L_Li00        <-  HTrttt_L_L_Li00                 ; bb01=kb_t                      # (R!295) Kd = UNDEFINED
+L                    + HTttrr_L_Li00        <-> HTrttr_L_L_Li00                 ; fb00=kf_r; bb00=kb_r           # (R!262) Kd = kb_r/kf_r
+L                    + HTttrr_L_Li00         -> HTrttr_L_L_Li00                 ; fb00=kf_r                      # (R!263) Kd = UNDEFINED
+L                    + HTttrt_L_Li00        <-> HTrttt_L_L_Li00                 ; fb00=kf_r; bb00=kb_r           # (R!252) Kd = kb_r/kf_r
+L                    + HTttrt_L_Li00        <-> HTtttr_L_L_Li00                 ; fb01=kf_t; bb01=kb_t           # (R!253) Kd = kb_t/kf_t
+L                    + HTttrt_L_Li00        <-  HTtttr_L_L_Li00                 ; bb01=kb_t                      # (R!300) Kd = UNDEFINED
+L                    + HTttrt_L_Li00        <-  HTtttr_L_L_Li00                 ; bb01=kb_t                      # (R!301) Kd = UNDEFINED
+L                    + HTtttt_L_Li00        <-> HTtttt_L_L_Li00                 ; fb01=kf_t; bb01=kb_t           # (R!246) Kd = kb_t/kf_t
+L                    + HTtttt_L_Li00         -> HTtttt_L_L_Li00                 ; fb01=kf_t                      # (R!247) Kd = UNDEFINED
+L                    + HTtttt_L_Li00        <-  HTtttt_L_L_Li00                 ; bb01=kb_t                      # (R!282) Kd = UNDEFINED
+L                    + HTtttt_L_Li00        <-  HTtttt_L_L_Li00                 ; bb01=kb_t                      # (R!283) Kd = UNDEFINED
+L                    + HRrrrr_L_L_Li00      <-> HRrrrr_L_L_L_Li00               ; fb00=kf_r; bb00=kb_r           # (R!373) Kd = kb_r/kf_r
+L                    + HRrrrr_L_L_Li00      <-  HRrrrr_L_L_L_Li00               ; bb00=kb_r                      # (R!429) Kd = UNDEFINED
+L                    + HRrrrr_L_L_Li00      <-  HRrrrr_L_L_L_Li00               ; bb00=kb_r                      # (R!430) Kd = UNDEFINED
+L                    + HRrrrr_L_L_Li00      <-  HRrrrr_L_L_L_Li00               ; bb00=kb_r                      # (R!431) Kd = UNDEFINED
+L                    + HRrrrt_L_L_Li00      <-> HRrrrt_L_L_L_Li00               ; fb01=kf_t; bb01=kb_t           # (R!370) Kd = kb_t/kf_t
+L                    + HRrrtr_L_L_Li00      <-> HRrrrt_L_L_L_Li00               ; fb00=kf_r; bb00=kb_r           # (R!371) Kd = kb_r/kf_r
+L                    + HRrrtr_L_L_Li00      <-  HRrrrt_L_L_L_Li00               ; bb00=kb_r                      # (R!417) Kd = UNDEFINED
+L                    + HRrrtr_L_L_Li00      <-  HRrrrt_L_L_L_Li00               ; bb00=kb_r                      # (R!418) Kd = UNDEFINED
+L                    + HRrrtt_L_L_Li00      <-> HRrrtt_L_L_L_Li00               ; fb01=kf_t; bb01=kb_t           # (R!366) Kd = kb_t/kf_t
+L                    + HRrrtt_L_L_Li00      <-  HRrrtt_L_L_L_Li00               ; bb01=kb_t                      # (R!406) Kd = UNDEFINED
+L                    + HRrttr_L_L_Li00      <-> HRrrtt_L_L_L_Li00               ; fb00=kf_r; bb00=kb_r           # (R!367) Kd = kb_r/kf_r
+L                    + HRrttr_L_L_Li00      <-  HRrrtt_L_L_L_Li00               ; bb00=kb_r                      # (R!407) Kd = UNDEFINED
+L                    + HRrttt_L_L_Li00      <-> HRrttt_L_L_L_Li00               ; fb01=kf_t; bb01=kb_t           # (R!362) Kd = kb_t/kf_t
+L                    + HRrttt_L_L_Li00      <-  HRrttt_L_L_L_Li00               ; bb01=kb_t                      # (R!395) Kd = UNDEFINED
+L                    + HRrttt_L_L_Li00      <-  HRrttt_L_L_L_Li00               ; bb01=kb_t                      # (R!396) Kd = UNDEFINED
+L                    + HRtttr_L_L_Li00      <-> HRrttt_L_L_L_Li00               ; fb00=kf_r; bb00=kb_r           # (R!363) Kd = kb_r/kf_r
+L                    + HRtttt_L_L_Li00      <-> HRtttt_L_L_L_Li00               ; fb01=kf_t; bb01=kb_t           # (R!359) Kd = kb_t/kf_t
+L                    + HRtttt_L_L_Li00      <-  HRtttt_L_L_L_Li00               ; bb01=kb_t                      # (R!382) Kd = UNDEFINED
+L                    + HRtttt_L_L_Li00      <-  HRtttt_L_L_L_Li00               ; bb01=kb_t                      # (R!383) Kd = UNDEFINED
+L                    + HRtttt_L_L_Li00      <-  HRtttt_L_L_L_Li00               ; bb01=kb_t                      # (R!384) Kd = UNDEFINED
+L                    + HTrrrr_L_L_Li00      <-> HTrrrr_L_L_L_Li00               ; fb00=kf_r; bb00=kb_r           # (R!372) Kd = kb_r/kf_r
+L                    + HTrrrr_L_L_Li00      <-  HTrrrr_L_L_L_Li00               ; bb00=kb_r                      # (R!422) Kd = UNDEFINED
+L                    + HTrrrr_L_L_Li00      <-  HTrrrr_L_L_L_Li00               ; bb00=kb_r                      # (R!423) Kd = UNDEFINED
+L                    + HTrrrr_L_L_Li00      <-  HTrrrr_L_L_L_Li00               ; bb00=kb_r                      # (R!424) Kd = UNDEFINED
+L                    + HTrrrt_L_L_Li00      <-> HTrrrt_L_L_L_Li00               ; fb01=kf_t; bb01=kb_t           # (R!368) Kd = kb_t/kf_t
+L                    + HTrrtr_L_L_Li00      <-> HTrrrt_L_L_L_Li00               ; fb00=kf_r; bb00=kb_r           # (R!369) Kd = kb_r/kf_r
+L                    + HTrrtr_L_L_Li00      <-  HTrrrt_L_L_L_Li00               ; bb00=kb_r                      # (R!411) Kd = UNDEFINED
+L                    + HTrrtr_L_L_Li00      <-  HTrrrt_L_L_L_Li00               ; bb00=kb_r                      # (R!412) Kd = UNDEFINED
+L                    + HTrrtt_L_L_Li00      <-> HTrrtt_L_L_L_Li00               ; fb01=kf_t; bb01=kb_t           # (R!364) Kd = kb_t/kf_t
+L                    + HTrrtt_L_L_Li00      <-  HTrrtt_L_L_L_Li00               ; bb01=kb_t                      # (R!400) Kd = UNDEFINED
+L                    + HTrttr_L_L_Li00      <-> HTrrtt_L_L_L_Li00               ; fb00=kf_r; bb00=kb_r           # (R!365) Kd = kb_r/kf_r
+L                    + HTrttr_L_L_Li00      <-  HTrrtt_L_L_L_Li00               ; bb00=kb_r                      # (R!401) Kd = UNDEFINED
+L                    + HTrttt_L_L_Li00      <-> HTrttt_L_L_L_Li00               ; fb01=kf_t; bb01=kb_t           # (R!360) Kd = kb_t/kf_t
+L                    + HTrttt_L_L_Li00      <-  HTrttt_L_L_L_Li00               ; bb01=kb_t                      # (R!389) Kd = UNDEFINED
+L                    + HTrttt_L_L_Li00      <-  HTrttt_L_L_L_Li00               ; bb01=kb_t                      # (R!390) Kd = UNDEFINED
+L                    + HTtttr_L_L_Li00      <-> HTrttt_L_L_L_Li00               ; fb00=kf_r; bb00=kb_r           # (R!361) Kd = kb_r/kf_r
+L                    + HTtttt_L_L_Li00      <-> HTtttt_L_L_L_Li00               ; fb01=kf_t; bb01=kb_t           # (R!358) Kd = kb_t/kf_t
+L                    + HTtttt_L_L_Li00      <-  HTtttt_L_L_L_Li00               ; bb01=kb_t                      # (R!374) Kd = UNDEFINED
+L                    + HTtttt_L_L_Li00      <-  HTtttt_L_L_L_Li00               ; bb01=kb_t                      # (R!375) Kd = UNDEFINED
+L                    + HTtttt_L_L_Li00      <-  HTtttt_L_L_L_Li00               ; bb01=kb_t                      # (R!376) Kd = UNDEFINED
+
+# REACTION CLASS: AllostericReaction
+# ----------------------------------
+HRrrrr                                       -> HRrrrt                          ; fu00=k_rt * (Gamma ^ (Phi_Q - 1)) # (R!34) Keq = (k_rt * (Gamma ^ (Phi_Q - 1))) / (k_tr * Gamma ^ Phi_Q)
+HRrrrr                                       -> HRrrrt                          ; fu00=k_rt * (Gamma ^ (Phi_Q - 1)) # (R!36) Keq = (k_rt * (Gamma ^ (Phi_Q - 1))) / (k_tr * Gamma ^ Phi_Q)
+HRrrrr                                       -> HRrrrt                          ; fu00=k_rt * (Gamma ^ (Phi_Q - 1)) # (R!35) Keq = (k_rt * (Gamma ^ (Phi_Q - 1))) / (k_tr * Gamma ^ Phi_Q)
+HRrrrt                                      <-> HRrrrr                          ; fu01=k_tr * Gamma ^ Phi_Q; bu01=k_rt * (Gamma ^ (Phi_Q - 1)) # (R!29) Keq = (k_tr * Gamma ^ Phi_Q) / (k_rt * (Gamma ^ (Phi_Q - 1)))
+HRrrrt                                       -> HRrrtt                          ; fu00=k_rt * (Gamma ^ (Phi_Q - 1)) # (R!27) Keq = (k_rt * (Gamma ^ (Phi_Q - 1))) / (k_tr * Gamma ^ Phi_Q)
+HRrrrt                                       -> HRrrtt                          ; fu00=k_rt * (Gamma ^ (Phi_Q - 1)) # (R!28) Keq = (k_rt * (Gamma ^ (Phi_Q - 1))) / (k_tr * Gamma ^ Phi_Q)
+HRrrtt                                      <-> HRrrrt                          ; fu01=k_tr * Gamma ^ Phi_Q; bu01=k_rt * (Gamma ^ (Phi_Q - 1)) # (R!21) Keq = (k_tr * Gamma ^ Phi_Q) / (k_rt * (Gamma ^ (Phi_Q - 1)))
+HRrrtt                                       -> HRrrrt                          ; fu01=k_tr * Gamma ^ Phi_Q      # (R!22) Keq = (k_tr * Gamma ^ Phi_Q) / (k_rt * (Gamma ^ (Phi_Q - 1)))
+HRrrtt                                       -> HRrttt                          ; fu00=k_rt * (Gamma ^ (Phi_Q - 1)) # (R!20) Keq = (k_rt * (Gamma ^ (Phi_Q - 1))) / (k_tr * Gamma ^ Phi_Q)
+HRrttt                                      <-> HRrrtt                          ; fu01=k_tr * Gamma ^ Phi_Q; bu01=k_rt * (Gamma ^ (Phi_Q - 1)) # (R!13) Keq = (k_tr * Gamma ^ Phi_Q) / (k_rt * (Gamma ^ (Phi_Q - 1)))
+HRrttt                                       -> HRrrtt                          ; fu01=k_tr * Gamma ^ Phi_Q      # (R!14) Keq = (k_tr * Gamma ^ Phi_Q) / (k_rt * (Gamma ^ (Phi_Q - 1)))
+HRrttt                                       -> HRrrtt                          ; fu01=k_tr * Gamma ^ Phi_Q      # (R!15) Keq = (k_tr * Gamma ^ Phi_Q) / (k_rt * (Gamma ^ (Phi_Q - 1)))
+HRtttt                                      <-> HRrttt                          ; fu01=k_tr * Gamma ^ Phi_Q; bu01=k_rt * (Gamma ^ (Phi_Q - 1)) # (R!05) Keq = (k_tr * Gamma ^ Phi_Q) / (k_rt * (Gamma ^ (Phi_Q - 1)))
+HRtttt                                       -> HRrttt                          ; fu01=k_tr * Gamma ^ Phi_Q      # (R!06) Keq = (k_tr * Gamma ^ Phi_Q) / (k_rt * (Gamma ^ (Phi_Q - 1)))
+HRtttt                                       -> HRrttt                          ; fu01=k_tr * Gamma ^ Phi_Q      # (R!08) Keq = (k_tr * Gamma ^ Phi_Q) / (k_rt * (Gamma ^ (Phi_Q - 1)))
+HRtttt                                       -> HRrttt                          ; fu01=k_tr * Gamma ^ Phi_Q      # (R!07) Keq = (k_tr * Gamma ^ Phi_Q) / (k_rt * (Gamma ^ (Phi_Q - 1)))
+HTrrrr                                      <-> HRrrrr                          ; fu02=k_TR * (((Gamma ^ Phi_T * Gamma ^ Phi_T) * Gamma ^ Phi_T) * Gamma ^ Phi_T); bu02=k_RT * ((((Gamma ^ (Phi_T - 1)) * (Gamma ^ (Phi_T - 1))) * (Gamma ^ (Phi_T - 1))) * (Gamma ^ (Phi_T - 1))) # (R!30) Keq = (k_TR * (((Gamma ^ Phi_T * Gamma ^ Phi_T) * Gamma ^ Phi_T) * Gamma ^ Phi_T)) / (k_RT * ((((Gamma ^ (Phi_T - 1)) * (Gamma ^ (Phi_T - 1))) * (Gamma ^ (Phi_T - 1))) * (Gamma ^ (Phi_T - 1))))
+HTrrrr                                       -> HTrrrt                          ; fu03=k_rt                      # (R!32) Keq = k_rt / k_tr
+HTrrrr                                       -> HTrrrt                          ; fu03=k_rt                      # (R!31) Keq = k_rt / k_tr
+HTrrrr                                       -> HTrrrt                          ; fu03=k_rt                      # (R!33) Keq = k_rt / k_tr
+HTrrrt                                      <-> HRrrrt                          ; fu04=k_TR * ((Gamma ^ Phi_T * Gamma ^ Phi_T) * Gamma ^ Phi_T); bu04=k_RT * (((Gamma ^ (Phi_T - 1)) * (Gamma ^ (Phi_T - 1))) * (Gamma ^ (Phi_T - 1))) # (R!23) Keq = (k_TR * ((Gamma ^ Phi_T * Gamma ^ Phi_T) * Gamma ^ Phi_T)) / (k_RT * (((Gamma ^ (Phi_T - 1)) * (Gamma ^ (Phi_T - 1))) * (Gamma ^ (Phi_T - 1))))
+HTrrrt                                      <-> HTrrrr                          ; fu05=k_tr; bu05=k_rt           # (R!26) Keq = k_tr / k_rt
+HTrrrt                                       -> HTrrtt                          ; fu03=k_rt                      # (R!24) Keq = k_rt / k_tr
+HTrrrt                                       -> HTrrtt                          ; fu03=k_rt                      # (R!25) Keq = k_rt / k_tr
+HTrrtt                                      <-> HRrrtt                          ; fu06=k_TR * (Gamma ^ Phi_T * Gamma ^ Phi_T); bu06=k_RT * ((Gamma ^ (Phi_T - 1)) * (Gamma ^ (Phi_T - 1))) # (R!16) Keq = (k_TR * (Gamma ^ Phi_T * Gamma ^ Phi_T)) / (k_RT * ((Gamma ^ (Phi_T - 1)) * (Gamma ^ (Phi_T - 1))))
+HTrrtt                                      <-> HTrrrt                          ; fu05=k_tr; bu05=k_rt           # (R!18) Keq = k_tr / k_rt
+HTrrtt                                       -> HTrrrt                          ; fu05=k_tr                      # (R!19) Keq = k_tr / k_rt
+HTrrtt                                       -> HTrttt                          ; fu03=k_rt                      # (R!17) Keq = k_rt / k_tr
+HTrttt                                      <-> HRrttt                          ; fu07=k_TR * Gamma ^ Phi_T; bu07=k_RT * (Gamma ^ (Phi_T - 1)) # (R!09) Keq = (k_TR * Gamma ^ Phi_T) / (k_RT * (Gamma ^ (Phi_T - 1)))
+HTrttt                                      <-> HTrrtt                          ; fu05=k_tr; bu05=k_rt           # (R!10) Keq = k_tr / k_rt
+HTrttt                                       -> HTrrtt                          ; fu05=k_tr                      # (R!12) Keq = k_tr / k_rt
+HTrttt                                       -> HTrrtt                          ; fu05=k_tr                      # (R!11) Keq = k_tr / k_rt
+HTtttt                                      <-> HRtttt                          ; fu08=k_TR; bu08=k_RT           # (R!00) Keq = k_TR / k_RT
+HTtttt                                      <-> HTrttt                          ; fu05=k_tr; bu05=k_rt           # (R!01) Keq = k_tr / k_rt
+HTtttt                                       -> HTrttt                          ; fu05=k_tr                      # (R!04) Keq = k_tr / k_rt
+HTtttt                                       -> HTrttt                          ; fu05=k_tr                      # (R!02) Keq = k_tr / k_rt
+HTtttt                                       -> HTrttt                          ; fu05=k_tr                      # (R!03) Keq = k_tr / k_rt
+HRrrrr_Li00                                  -> HRrrrt_Li00                     ; fu00=k_rt * (Gamma ^ (Phi_Q - 1)) # (R!127) Keq = (k_rt * (Gamma ^ (Phi_Q - 1))) / (k_tr * Gamma ^ Phi_Q)
+HRrrrr_Li00                                  -> HRrrrt_Li00                     ; fu00=k_rt * (Gamma ^ (Phi_Q - 1)) # (R!128) Keq = (k_rt * (Gamma ^ (Phi_Q - 1))) / (k_tr * Gamma ^ Phi_Q)
+HRrrrt_Li00                                 <-> HRrrrr_Li00                     ; fu01=k_tr * Gamma ^ Phi_Q; bu01=k_rt * (Gamma ^ (Phi_Q - 1)) # (R!120) Keq = (k_tr * Gamma ^ Phi_Q) / (k_rt * (Gamma ^ (Phi_Q - 1)))
+HRrrrt_Li00                                  -> HRrrtt_Li00                     ; fu00=k_rt * (Gamma ^ (Phi_Q - 1)) # (R!119) Keq = (k_rt * (Gamma ^ (Phi_Q - 1))) / (k_tr * Gamma ^ Phi_Q)
+HRrrtt_Li00                                 <-> HRrrrt_Li00                     ; fu01=k_tr * Gamma ^ Phi_Q; bu01=k_rt * (Gamma ^ (Phi_Q - 1)) # (R!107) Keq = (k_tr * Gamma ^ Phi_Q) / (k_rt * (Gamma ^ (Phi_Q - 1)))
+HRrrtt_Li00                                  -> HRrrrt_Li00                     ; fu01=k_tr * Gamma ^ Phi_Q      # (R!108) Keq = (k_tr * Gamma ^ Phi_Q) / (k_rt * (Gamma ^ (Phi_Q - 1)))
+HRrttt_Li00                                 <-> HRrrtt_Li00                     ; fu01=k_tr * Gamma ^ Phi_Q; bu01=k_rt * (Gamma ^ (Phi_Q - 1)) # (R!94) Keq = (k_tr * Gamma ^ Phi_Q) / (k_rt * (Gamma ^ (Phi_Q - 1)))
+HRrttt_Li00                                  -> HRrrtt_Li00                     ; fu01=k_tr * Gamma ^ Phi_Q      # (R!95) Keq = (k_tr * Gamma ^ Phi_Q) / (k_rt * (Gamma ^ (Phi_Q - 1)))
+HRrttt_Li00                                  -> HRrrtt_Li00                     ; fu01=k_tr * Gamma ^ Phi_Q      # (R!96) Keq = (k_tr * Gamma ^ Phi_Q) / (k_rt * (Gamma ^ (Phi_Q - 1)))
+HRtrrr_Li00                                 <-> HRrrrr_Li00                     ; fu09=k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)); bu09=k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))) # (R!121) Keq = (k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB))) / (k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))))
+HRtrrr_Li00                                  -> HRtrrt_Li00                     ; fu00=k_rt * (Gamma ^ (Phi_Q - 1)) # (R!122) Keq = (k_rt * (Gamma ^ (Phi_Q - 1))) / (k_tr * Gamma ^ Phi_Q)
+HRtrrr_Li00                                  -> HRtrrt_Li00                     ; fu00=k_rt * (Gamma ^ (Phi_Q - 1)) # (R!123) Keq = (k_rt * (Gamma ^ (Phi_Q - 1))) / (k_tr * Gamma ^ Phi_Q)
+HRtrrt_Li00                                 <-> HRrrrt_Li00                     ; fu09=k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)); bu09=k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))) # (R!109) Keq = (k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB))) / (k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))))
+HRtrrt_Li00                                 <-> HRtrrr_Li00                     ; fu01=k_tr * Gamma ^ Phi_Q; bu01=k_rt * (Gamma ^ (Phi_Q - 1)) # (R!111) Keq = (k_tr * Gamma ^ Phi_Q) / (k_rt * (Gamma ^ (Phi_Q - 1)))
+HRtrrt_Li00                                  -> HRtrtt_Li00                     ; fu00=k_rt * (Gamma ^ (Phi_Q - 1)) # (R!110) Keq = (k_rt * (Gamma ^ (Phi_Q - 1))) / (k_tr * Gamma ^ Phi_Q)
+HRtrtt_Li00                                 <-> HRrrtt_Li00                     ; fu09=k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)); bu09=k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))) # (R!97) Keq = (k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB))) / (k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))))
+HRtrtt_Li00                                 <-> HRtrrt_Li00                     ; fu01=k_tr * Gamma ^ Phi_Q; bu01=k_rt * (Gamma ^ (Phi_Q - 1)) # (R!98) Keq = (k_tr * Gamma ^ Phi_Q) / (k_rt * (Gamma ^ (Phi_Q - 1)))
+HRtrtt_Li00                                  -> HRtrrt_Li00                     ; fu01=k_tr * Gamma ^ Phi_Q      # (R!99) Keq = (k_tr * Gamma ^ Phi_Q) / (k_rt * (Gamma ^ (Phi_Q - 1)))
+HRtttt_Li00                                 <-> HRrttt_Li00                     ; fu09=k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)); bu09=k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))) # (R!82) Keq = (k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB))) / (k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))))
+HRtttt_Li00                                 <-> HRtrtt_Li00                     ; fu01=k_tr * Gamma ^ Phi_Q; bu01=k_rt * (Gamma ^ (Phi_Q - 1)) # (R!83) Keq = (k_tr * Gamma ^ Phi_Q) / (k_rt * (Gamma ^ (Phi_Q - 1)))
+HRtttt_Li00                                  -> HRtrtt_Li00                     ; fu01=k_tr * Gamma ^ Phi_Q      # (R!84) Keq = (k_tr * Gamma ^ Phi_Q) / (k_rt * (Gamma ^ (Phi_Q - 1)))
+HRtttt_Li00                                  -> HRtrtt_Li00                     ; fu01=k_tr * Gamma ^ Phi_Q      # (R!85) Keq = (k_tr * Gamma ^ Phi_Q) / (k_rt * (Gamma ^ (Phi_Q - 1)))
+HTrrrr_Li00                                 <-> HRrrrr_Li00                     ; fu02=k_TR * (((Gamma ^ Phi_T * Gamma ^ Phi_T) * Gamma ^ Phi_T) * Gamma ^ Phi_T); bu02=k_RT * ((((Gamma ^ (Phi_T - 1)) * (Gamma ^ (Phi_T - 1))) * (Gamma ^ (Phi_T - 1))) * (Gamma ^ (Phi_T - 1))) # (R!124) Keq = (k_TR * (((Gamma ^ Phi_T * Gamma ^ Phi_T) * Gamma ^ Phi_T) * Gamma ^ Phi_T)) / (k_RT * ((((Gamma ^ (Phi_T - 1)) * (Gamma ^ (Phi_T - 1))) * (Gamma ^ (Phi_T - 1))) * (Gamma ^ (Phi_T - 1))))
+HTrrrr_Li00                                  -> HTrrrt_Li00                     ; fu03=k_rt                      # (R!125) Keq = k_rt / k_tr
+HTrrrr_Li00                                  -> HTrrrt_Li00                     ; fu03=k_rt                      # (R!126) Keq = k_rt / k_tr
+HTrrrt_Li00                                 <-> HRrrrt_Li00                     ; fu04=k_TR * ((Gamma ^ Phi_T * Gamma ^ Phi_T) * Gamma ^ Phi_T); bu04=k_RT * (((Gamma ^ (Phi_T - 1)) * (Gamma ^ (Phi_T - 1))) * (Gamma ^ (Phi_T - 1))) # (R!112) Keq = (k_TR * ((Gamma ^ Phi_T * Gamma ^ Phi_T) * Gamma ^ Phi_T)) / (k_RT * (((Gamma ^ (Phi_T - 1)) * (Gamma ^ (Phi_T - 1))) * (Gamma ^ (Phi_T - 1))))
+HTrrrt_Li00                                 <-> HTrrrr_Li00                     ; fu05=k_tr; bu05=k_rt           # (R!114) Keq = k_tr / k_rt
+HTrrrt_Li00                                  -> HTrrtt_Li00                     ; fu03=k_rt                      # (R!113) Keq = k_rt / k_tr
+HTrrtt_Li00                                 <-> HRrrtt_Li00                     ; fu06=k_TR * (Gamma ^ Phi_T * Gamma ^ Phi_T); bu06=k_RT * ((Gamma ^ (Phi_T - 1)) * (Gamma ^ (Phi_T - 1))) # (R!100) Keq = (k_TR * (Gamma ^ Phi_T * Gamma ^ Phi_T)) / (k_RT * ((Gamma ^ (Phi_T - 1)) * (Gamma ^ (Phi_T - 1))))
+HTrrtt_Li00                                 <-> HTrrrt_Li00                     ; fu05=k_tr; bu05=k_rt           # (R!101) Keq = k_tr / k_rt
+HTrrtt_Li00                                  -> HTrrrt_Li00                     ; fu05=k_tr                      # (R!102) Keq = k_tr / k_rt
+HTrttt_Li00                                 <-> HRrttt_Li00                     ; fu07=k_TR * Gamma ^ Phi_T; bu07=k_RT * (Gamma ^ (Phi_T - 1)) # (R!86) Keq = (k_TR * Gamma ^ Phi_T) / (k_RT * (Gamma ^ (Phi_T - 1)))
+HTrttt_Li00                                 <-> HTrrtt_Li00                     ; fu05=k_tr; bu05=k_rt           # (R!87) Keq = k_tr / k_rt
+HTrttt_Li00                                  -> HTrrtt_Li00                     ; fu05=k_tr                      # (R!88) Keq = k_tr / k_rt
+HTrttt_Li00                                  -> HTrrtt_Li00                     ; fu05=k_tr                      # (R!89) Keq = k_tr / k_rt
+HTtrrr_Li00                                 <-> HRtrrr_Li00                     ; fu04=k_TR * ((Gamma ^ Phi_T * Gamma ^ Phi_T) * Gamma ^ Phi_T); bu04=k_RT * (((Gamma ^ (Phi_T - 1)) * (Gamma ^ (Phi_T - 1))) * (Gamma ^ (Phi_T - 1))) # (R!115) Keq = (k_TR * ((Gamma ^ Phi_T * Gamma ^ Phi_T) * Gamma ^ Phi_T)) / (k_RT * (((Gamma ^ (Phi_T - 1)) * (Gamma ^ (Phi_T - 1))) * (Gamma ^ (Phi_T - 1))))
+HTtrrr_Li00                                 <-> HTrrrr_Li00                     ; fu10=k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB); bu10=k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)) # (R!116) Keq = (k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)) / (k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)))
+HTtrrr_Li00                                  -> HTtrrt_Li00                     ; fu03=k_rt                      # (R!117) Keq = k_rt / k_tr
+HTtrrr_Li00                                  -> HTtrrt_Li00                     ; fu03=k_rt                      # (R!118) Keq = k_rt / k_tr
+HTtrrt_Li00                                 <-> HRtrrt_Li00                     ; fu06=k_TR * (Gamma ^ Phi_T * Gamma ^ Phi_T); bu06=k_RT * ((Gamma ^ (Phi_T - 1)) * (Gamma ^ (Phi_T - 1))) # (R!103) Keq = (k_TR * (Gamma ^ Phi_T * Gamma ^ Phi_T)) / (k_RT * ((Gamma ^ (Phi_T - 1)) * (Gamma ^ (Phi_T - 1))))
+HTtrrt_Li00                                 <-> HTrrrt_Li00                     ; fu10=k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB); bu10=k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)) # (R!104) Keq = (k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)) / (k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)))
+HTtrrt_Li00                                 <-> HTtrrr_Li00                     ; fu05=k_tr; bu05=k_rt           # (R!106) Keq = k_tr / k_rt
+HTtrrt_Li00                                  -> HTtrtt_Li00                     ; fu03=k_rt                      # (R!105) Keq = k_rt / k_tr
+HTtrtt_Li00                                 <-> HRtrtt_Li00                     ; fu07=k_TR * Gamma ^ Phi_T; bu07=k_RT * (Gamma ^ (Phi_T - 1)) # (R!90) Keq = (k_TR * Gamma ^ Phi_T) / (k_RT * (Gamma ^ (Phi_T - 1)))
+HTtrtt_Li00                                 <-> HTrrtt_Li00                     ; fu10=k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB); bu10=k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)) # (R!91) Keq = (k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)) / (k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)))
+HTtrtt_Li00                                 <-> HTtrrt_Li00                     ; fu05=k_tr; bu05=k_rt           # (R!92) Keq = k_tr / k_rt
+HTtrtt_Li00                                  -> HTtrrt_Li00                     ; fu05=k_tr                      # (R!93) Keq = k_tr / k_rt
+HTtttt_Li00                                 <-> HRtttt_Li00                     ; fu08=k_TR; bu08=k_RT           # (R!77) Keq = k_TR / k_RT
+HTtttt_Li00                                 <-> HTrttt_Li00                     ; fu10=k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB); bu10=k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)) # (R!78) Keq = (k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)) / (k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)))
+HTtttt_Li00                                 <-> HTtrtt_Li00                     ; fu05=k_tr; bu05=k_rt           # (R!79) Keq = k_tr / k_rt
+HTtttt_Li00                                  -> HTtrtt_Li00                     ; fu05=k_tr                      # (R!80) Keq = k_tr / k_rt
+HTtttt_Li00                                  -> HTtrtt_Li00                     ; fu05=k_tr                      # (R!81) Keq = k_tr / k_rt
+HRrrrr_L_Li00                                -> HRrrrt_L_Li00                   ; fu00=k_rt * (Gamma ^ (Phi_Q - 1)) # (R!245) Keq = (k_rt * (Gamma ^ (Phi_Q - 1))) / (k_tr * Gamma ^ Phi_Q)
+HRrrrr_L_Li00                                -> HRrtrr_L_Li00                   ; fu11=k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))) # (R!244) Keq = (k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)))) / (k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)))
+HRrrrt_L_Li00                               <-> HRrrrr_L_Li00                   ; fu01=k_tr * Gamma ^ Phi_Q; bu01=k_rt * (Gamma ^ (Phi_Q - 1)) # (R!236) Keq = (k_tr * Gamma ^ Phi_Q) / (k_rt * (Gamma ^ (Phi_Q - 1)))
+HRrrrt_L_Li00                                -> HRrtrt_L_Li00                   ; fu11=k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))) # (R!235) Keq = (k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)))) / (k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)))
+HRrrtt_L_Li00                               <-> HRrrrt_L_Li00                   ; fu01=k_tr * Gamma ^ Phi_Q; bu01=k_rt * (Gamma ^ (Phi_Q - 1)) # (R!219) Keq = (k_tr * Gamma ^ Phi_Q) / (k_rt * (Gamma ^ (Phi_Q - 1)))
+HRrrtt_L_Li00                                -> HRrrrt_L_Li00                   ; fu01=k_tr * Gamma ^ Phi_Q      # (R!220) Keq = (k_tr * Gamma ^ Phi_Q) / (k_rt * (Gamma ^ (Phi_Q - 1)))
+HRrrtt_L_Li00                                -> HRrttt_L_Li00                   ; fu11=k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))) # (R!218) Keq = (k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)))) / (k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)))
+HRrtrr_L_Li00                               <-> HRrrrr_L_Li00                   ; fu09=k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)); bu09=k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))) # (R!237) Keq = (k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB))) / (k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))))
+HRrtrr_L_Li00                                -> HRrtrt_L_Li00                   ; fu00=k_rt * (Gamma ^ (Phi_Q - 1)) # (R!238) Keq = (k_rt * (Gamma ^ (Phi_Q - 1))) / (k_tr * Gamma ^ Phi_Q)
+HRrtrt_L_Li00                               <-> HRrrrt_L_Li00                   ; fu09=k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)); bu09=k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))) # (R!221) Keq = (k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB))) / (k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))))
+HRrtrt_L_Li00                               <-> HRrtrr_L_Li00                   ; fu01=k_tr * Gamma ^ Phi_Q; bu01=k_rt * (Gamma ^ (Phi_Q - 1)) # (R!222) Keq = (k_tr * Gamma ^ Phi_Q) / (k_rt * (Gamma ^ (Phi_Q - 1)))
+HRrttt_L_Li00                               <-> HRrrtt_L_Li00                   ; fu09=k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)); bu09=k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))) # (R!197) Keq = (k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB))) / (k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))))
+HRrttt_L_Li00                               <-> HRrtrt_L_Li00                   ; fu01=k_tr * Gamma ^ Phi_Q; bu01=k_rt * (Gamma ^ (Phi_Q - 1)) # (R!198) Keq = (k_tr * Gamma ^ Phi_Q) / (k_rt * (Gamma ^ (Phi_Q - 1)))
+HRrttt_L_Li00                                -> HRrtrt_L_Li00                   ; fu01=k_tr * Gamma ^ Phi_Q      # (R!199) Keq = (k_tr * Gamma ^ Phi_Q) / (k_rt * (Gamma ^ (Phi_Q - 1)))
+HRttrr_L_Li00                               <-> HRrtrr_L_Li00                   ; fu09=k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)); bu09=k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))) # (R!224) Keq = (k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB))) / (k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))))
+HRttrr_L_Li00                                -> HRrtrr_L_Li00                   ; fu09=k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)) # (R!225) Keq = (k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB))) / (k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))))
+HRttrr_L_Li00                                -> HRttrt_L_Li00                   ; fu00=k_rt * (Gamma ^ (Phi_Q - 1)) # (R!226) Keq = (k_rt * (Gamma ^ (Phi_Q - 1))) / (k_tr * Gamma ^ Phi_Q)
+HRttrt_L_Li00                               <-> HRrtrt_L_Li00                   ; fu09=k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)); bu09=k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))) # (R!201) Keq = (k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB))) / (k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))))
+HRttrt_L_Li00                                -> HRrtrt_L_Li00                   ; fu09=k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)) # (R!202) Keq = (k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB))) / (k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))))
+HRttrt_L_Li00                               <-> HRttrr_L_Li00                   ; fu01=k_tr * Gamma ^ Phi_Q; bu01=k_rt * (Gamma ^ (Phi_Q - 1)) # (R!203) Keq = (k_tr * Gamma ^ Phi_Q) / (k_rt * (Gamma ^ (Phi_Q - 1)))
+HRtttt_L_Li00                               <-> HRrttt_L_Li00                   ; fu09=k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)); bu09=k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))) # (R!184) Keq = (k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB))) / (k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))))
+HRtttt_L_Li00                                -> HRrttt_L_Li00                   ; fu09=k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)) # (R!185) Keq = (k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB))) / (k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))))
+HRtttt_L_Li00                               <-> HRttrt_L_Li00                   ; fu01=k_tr * Gamma ^ Phi_Q; bu01=k_rt * (Gamma ^ (Phi_Q - 1)) # (R!186) Keq = (k_tr * Gamma ^ Phi_Q) / (k_rt * (Gamma ^ (Phi_Q - 1)))
+HRtttt_L_Li00                                -> HRttrt_L_Li00                   ; fu01=k_tr * Gamma ^ Phi_Q      # (R!187) Keq = (k_tr * Gamma ^ Phi_Q) / (k_rt * (Gamma ^ (Phi_Q - 1)))
+HTrrrr_L_Li00                               <-> HRrrrr_L_Li00                   ; fu02=k_TR * (((Gamma ^ Phi_T * Gamma ^ Phi_T) * Gamma ^ Phi_T) * Gamma ^ Phi_T); bu02=k_RT * ((((Gamma ^ (Phi_T - 1)) * (Gamma ^ (Phi_T - 1))) * (Gamma ^ (Phi_T - 1))) * (Gamma ^ (Phi_T - 1))) # (R!240) Keq = (k_TR * (((Gamma ^ Phi_T * Gamma ^ Phi_T) * Gamma ^ Phi_T) * Gamma ^ Phi_T)) / (k_RT * ((((Gamma ^ (Phi_T - 1)) * (Gamma ^ (Phi_T - 1))) * (Gamma ^ (Phi_T - 1))) * (Gamma ^ (Phi_T - 1))))
+HTrrrr_L_Li00                                -> HTrrrt_L_Li00                   ; fu03=k_rt                      # (R!242) Keq = k_rt / k_tr
+HTrrrr_L_Li00                                -> HTrtrr_L_Li00                   ; fu12=k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)) # (R!241) Keq = (k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))) / (k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB))
+HTrrrt_L_Li00                               <-> HRrrrt_L_Li00                   ; fu04=k_TR * ((Gamma ^ Phi_T * Gamma ^ Phi_T) * Gamma ^ Phi_T); bu04=k_RT * (((Gamma ^ (Phi_T - 1)) * (Gamma ^ (Phi_T - 1))) * (Gamma ^ (Phi_T - 1))) # (R!228) Keq = (k_TR * ((Gamma ^ Phi_T * Gamma ^ Phi_T) * Gamma ^ Phi_T)) / (k_RT * (((Gamma ^ (Phi_T - 1)) * (Gamma ^ (Phi_T - 1))) * (Gamma ^ (Phi_T - 1))))
+HTrrrt_L_Li00                               <-> HTrrrr_L_Li00                   ; fu05=k_tr; bu05=k_rt           # (R!230) Keq = k_tr / k_rt
+HTrrrt_L_Li00                                -> HTrtrt_L_Li00                   ; fu12=k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)) # (R!229) Keq = (k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))) / (k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB))
+HTrrtt_L_Li00                               <-> HRrrtt_L_Li00                   ; fu06=k_TR * (Gamma ^ Phi_T * Gamma ^ Phi_T); bu06=k_RT * ((Gamma ^ (Phi_T - 1)) * (Gamma ^ (Phi_T - 1))) # (R!205) Keq = (k_TR * (Gamma ^ Phi_T * Gamma ^ Phi_T)) / (k_RT * ((Gamma ^ (Phi_T - 1)) * (Gamma ^ (Phi_T - 1))))
+HTrrtt_L_Li00                               <-> HTrrrt_L_Li00                   ; fu05=k_tr; bu05=k_rt           # (R!207) Keq = k_tr / k_rt
+HTrrtt_L_Li00                                -> HTrrrt_L_Li00                   ; fu05=k_tr                      # (R!208) Keq = k_tr / k_rt
+HTrrtt_L_Li00                                -> HTrttt_L_Li00                   ; fu12=k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)) # (R!206) Keq = (k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))) / (k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB))
+HTrtrr_L_Li00                               <-> HRrtrr_L_Li00                   ; fu04=k_TR * ((Gamma ^ Phi_T * Gamma ^ Phi_T) * Gamma ^ Phi_T); bu04=k_RT * (((Gamma ^ (Phi_T - 1)) * (Gamma ^ (Phi_T - 1))) * (Gamma ^ (Phi_T - 1))) # (R!231) Keq = (k_TR * ((Gamma ^ Phi_T * Gamma ^ Phi_T) * Gamma ^ Phi_T)) / (k_RT * (((Gamma ^ (Phi_T - 1)) * (Gamma ^ (Phi_T - 1))) * (Gamma ^ (Phi_T - 1))))
+HTrtrr_L_Li00                               <-> HTrrrr_L_Li00                   ; fu10=k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB); bu10=k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)) # (R!232) Keq = (k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)) / (k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)))
+HTrtrr_L_Li00                                -> HTrtrt_L_Li00                   ; fu03=k_rt                      # (R!233) Keq = k_rt / k_tr
+HTrtrt_L_Li00                               <-> HRrtrt_L_Li00                   ; fu06=k_TR * (Gamma ^ Phi_T * Gamma ^ Phi_T); bu06=k_RT * ((Gamma ^ (Phi_T - 1)) * (Gamma ^ (Phi_T - 1))) # (R!209) Keq = (k_TR * (Gamma ^ Phi_T * Gamma ^ Phi_T)) / (k_RT * ((Gamma ^ (Phi_T - 1)) * (Gamma ^ (Phi_T - 1))))
+HTrtrt_L_Li00                               <-> HTrrrt_L_Li00                   ; fu10=k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB); bu10=k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)) # (R!210) Keq = (k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)) / (k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)))
+HTrtrt_L_Li00                               <-> HTrtrr_L_Li00                   ; fu05=k_tr; bu05=k_rt           # (R!211) Keq = k_tr / k_rt
+HTrttt_L_Li00                               <-> HRrttt_L_Li00                   ; fu07=k_TR * Gamma ^ Phi_T; bu07=k_RT * (Gamma ^ (Phi_T - 1)) # (R!188) Keq = (k_TR * Gamma ^ Phi_T) / (k_RT * (Gamma ^ (Phi_T - 1)))
+HTrttt_L_Li00                               <-> HTrrtt_L_Li00                   ; fu10=k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB); bu10=k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)) # (R!189) Keq = (k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)) / (k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)))
+HTrttt_L_Li00                               <-> HTrtrt_L_Li00                   ; fu05=k_tr; bu05=k_rt           # (R!190) Keq = k_tr / k_rt
+HTrttt_L_Li00                                -> HTrtrt_L_Li00                   ; fu05=k_tr                      # (R!191) Keq = k_tr / k_rt
+HTttrr_L_Li00                               <-> HRttrr_L_Li00                   ; fu06=k_TR * (Gamma ^ Phi_T * Gamma ^ Phi_T); bu06=k_RT * ((Gamma ^ (Phi_T - 1)) * (Gamma ^ (Phi_T - 1))) # (R!213) Keq = (k_TR * (Gamma ^ Phi_T * Gamma ^ Phi_T)) / (k_RT * ((Gamma ^ (Phi_T - 1)) * (Gamma ^ (Phi_T - 1))))
+HTttrr_L_Li00                               <-> HTrtrr_L_Li00                   ; fu10=k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB); bu10=k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)) # (R!214) Keq = (k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)) / (k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)))
+HTttrr_L_Li00                                -> HTrtrr_L_Li00                   ; fu10=k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB) # (R!215) Keq = (k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)) / (k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)))
+HTttrr_L_Li00                                -> HTttrt_L_Li00                   ; fu03=k_rt                      # (R!216) Keq = k_rt / k_tr
+HTttrt_L_Li00                               <-> HRttrt_L_Li00                   ; fu07=k_TR * Gamma ^ Phi_T; bu07=k_RT * (Gamma ^ (Phi_T - 1)) # (R!193) Keq = (k_TR * Gamma ^ Phi_T) / (k_RT * (Gamma ^ (Phi_T - 1)))
+HTttrt_L_Li00                               <-> HTrtrt_L_Li00                   ; fu10=k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB); bu10=k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)) # (R!194) Keq = (k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)) / (k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)))
+HTttrt_L_Li00                                -> HTrtrt_L_Li00                   ; fu10=k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB) # (R!195) Keq = (k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)) / (k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)))
+HTttrt_L_Li00                               <-> HTttrr_L_Li00                   ; fu05=k_tr; bu05=k_rt           # (R!196) Keq = k_tr / k_rt
+HTtttt_L_Li00                               <-> HRtttt_L_Li00                   ; fu08=k_TR; bu08=k_RT           # (R!178) Keq = k_TR / k_RT
+HTtttt_L_Li00                               <-> HTrttt_L_Li00                   ; fu10=k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB); bu10=k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)) # (R!179) Keq = (k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)) / (k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)))
+HTtttt_L_Li00                                -> HTrttt_L_Li00                   ; fu10=k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB) # (R!180) Keq = (k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)) / (k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)))
+HTtttt_L_Li00                               <-> HTttrt_L_Li00                   ; fu05=k_tr; bu05=k_rt           # (R!181) Keq = k_tr / k_rt
+HTtttt_L_Li00                                -> HTttrt_L_Li00                   ; fu05=k_tr                      # (R!182) Keq = k_tr / k_rt
+HRrrrr_L_L_Li00                              -> HRrrtr_L_L_Li00                 ; fu11=k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))) # (R!356) Keq = (k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)))) / (k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)))
+HRrrrr_L_L_Li00                              -> HRrrtr_L_L_Li00                 ; fu11=k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))) # (R!357) Keq = (k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)))) / (k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)))
+HRrrrt_L_L_Li00                             <-> HRrrrr_L_L_Li00                 ; fu01=k_tr * Gamma ^ Phi_Q; bu01=k_rt * (Gamma ^ (Phi_Q - 1)) # (R!345) Keq = (k_tr * Gamma ^ Phi_Q) / (k_rt * (Gamma ^ (Phi_Q - 1)))
+HRrrrt_L_L_Li00                              -> HRrrtt_L_L_Li00                 ; fu11=k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))) # (R!343) Keq = (k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)))) / (k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)))
+HRrrrt_L_L_Li00                              -> HRrrtt_L_L_Li00                 ; fu11=k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))) # (R!344) Keq = (k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)))) / (k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)))
+HRrrtr_L_L_Li00                             <-> HRrrrr_L_L_Li00                 ; fu09=k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)); bu09=k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))) # (R!348) Keq = (k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB))) / (k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))))
+HRrrtr_L_L_Li00                              -> HRrttr_L_L_Li00                 ; fu11=k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))) # (R!347) Keq = (k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)))) / (k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)))
+HRrrtt_L_L_Li00                             <-> HRrrrt_L_L_Li00                 ; fu09=k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)); bu09=k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))) # (R!326) Keq = (k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB))) / (k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))))
+HRrrtt_L_L_Li00                             <-> HRrrtr_L_L_Li00                 ; fu01=k_tr * Gamma ^ Phi_Q; bu01=k_rt * (Gamma ^ (Phi_Q - 1)) # (R!327) Keq = (k_tr * Gamma ^ Phi_Q) / (k_rt * (Gamma ^ (Phi_Q - 1)))
+HRrrtt_L_L_Li00                              -> HRrttt_L_L_Li00                 ; fu11=k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))) # (R!325) Keq = (k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)))) / (k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)))
+HRrttr_L_L_Li00                             <-> HRrrtr_L_L_Li00                 ; fu09=k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)); bu09=k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))) # (R!329) Keq = (k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB))) / (k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))))
+HRrttr_L_L_Li00                              -> HRrrtr_L_L_Li00                 ; fu09=k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)) # (R!330) Keq = (k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB))) / (k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))))
+HRrttt_L_L_Li00                             <-> HRrrtt_L_L_Li00                 ; fu09=k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)); bu09=k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))) # (R!307) Keq = (k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB))) / (k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))))
+HRrttt_L_L_Li00                              -> HRrrtt_L_L_Li00                 ; fu09=k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)) # (R!308) Keq = (k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB))) / (k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))))
+HRrttt_L_L_Li00                             <-> HRrttr_L_L_Li00                 ; fu01=k_tr * Gamma ^ Phi_Q; bu01=k_rt * (Gamma ^ (Phi_Q - 1)) # (R!309) Keq = (k_tr * Gamma ^ Phi_Q) / (k_rt * (Gamma ^ (Phi_Q - 1)))
+HRtttr_L_L_Li00                             <-> HRrttr_L_L_Li00                 ; fu09=k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)); bu09=k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))) # (R!312) Keq = (k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB))) / (k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))))
+HRtttr_L_L_Li00                              -> HRrttr_L_L_Li00                 ; fu09=k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)) # (R!314) Keq = (k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB))) / (k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))))
+HRtttr_L_L_Li00                              -> HRrttr_L_L_Li00                 ; fu09=k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)) # (R!313) Keq = (k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB))) / (k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))))
+HRtttt_L_L_Li00                             <-> HRrttt_L_L_Li00                 ; fu09=k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)); bu09=k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))) # (R!291) Keq = (k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB))) / (k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))))
+HRtttt_L_L_Li00                              -> HRrttt_L_L_Li00                 ; fu09=k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)) # (R!292) Keq = (k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB))) / (k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))))
+HRtttt_L_L_Li00                              -> HRrttt_L_L_Li00                 ; fu09=k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)) # (R!293) Keq = (k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB))) / (k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))))
+HRtttt_L_L_Li00                             <-> HRtttr_L_L_Li00                 ; fu01=k_tr * Gamma ^ Phi_Q; bu01=k_rt * (Gamma ^ (Phi_Q - 1)) # (R!294) Keq = (k_tr * Gamma ^ Phi_Q) / (k_rt * (Gamma ^ (Phi_Q - 1)))
+HTrrrr_L_L_Li00                             <-> HRrrrr_L_L_Li00                 ; fu02=k_TR * (((Gamma ^ Phi_T * Gamma ^ Phi_T) * Gamma ^ Phi_T) * Gamma ^ Phi_T); bu02=k_RT * ((((Gamma ^ (Phi_T - 1)) * (Gamma ^ (Phi_T - 1))) * (Gamma ^ (Phi_T - 1))) * (Gamma ^ (Phi_T - 1))) # (R!351) Keq = (k_TR * (((Gamma ^ Phi_T * Gamma ^ Phi_T) * Gamma ^ Phi_T) * Gamma ^ Phi_T)) / (k_RT * ((((Gamma ^ (Phi_T - 1)) * (Gamma ^ (Phi_T - 1))) * (Gamma ^ (Phi_T - 1))) * (Gamma ^ (Phi_T - 1))))
+HTrrrr_L_L_Li00                              -> HTrrtr_L_L_Li00                 ; fu12=k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)) # (R!352) Keq = (k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))) / (k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB))
+HTrrrr_L_L_Li00                              -> HTrrtr_L_L_Li00                 ; fu12=k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)) # (R!353) Keq = (k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))) / (k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB))
+HTrrrt_L_L_Li00                             <-> HRrrrt_L_L_Li00                 ; fu04=k_TR * ((Gamma ^ Phi_T * Gamma ^ Phi_T) * Gamma ^ Phi_T); bu04=k_RT * (((Gamma ^ (Phi_T - 1)) * (Gamma ^ (Phi_T - 1))) * (Gamma ^ (Phi_T - 1))) # (R!333) Keq = (k_TR * ((Gamma ^ Phi_T * Gamma ^ Phi_T) * Gamma ^ Phi_T)) / (k_RT * (((Gamma ^ (Phi_T - 1)) * (Gamma ^ (Phi_T - 1))) * (Gamma ^ (Phi_T - 1))))
+HTrrrt_L_L_Li00                             <-> HTrrrr_L_L_Li00                 ; fu05=k_tr; bu05=k_rt           # (R!336) Keq = k_tr / k_rt
+HTrrrt_L_L_Li00                              -> HTrrtt_L_L_Li00                 ; fu12=k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)) # (R!334) Keq = (k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))) / (k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB))
+HTrrrt_L_L_Li00                              -> HTrrtt_L_L_Li00                 ; fu12=k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)) # (R!335) Keq = (k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))) / (k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB))
+HTrrtr_L_L_Li00                             <-> HRrrtr_L_L_Li00                 ; fu04=k_TR * ((Gamma ^ Phi_T * Gamma ^ Phi_T) * Gamma ^ Phi_T); bu04=k_RT * (((Gamma ^ (Phi_T - 1)) * (Gamma ^ (Phi_T - 1))) * (Gamma ^ (Phi_T - 1))) # (R!338) Keq = (k_TR * ((Gamma ^ Phi_T * Gamma ^ Phi_T) * Gamma ^ Phi_T)) / (k_RT * (((Gamma ^ (Phi_T - 1)) * (Gamma ^ (Phi_T - 1))) * (Gamma ^ (Phi_T - 1))))
+HTrrtr_L_L_Li00                             <-> HTrrrr_L_L_Li00                 ; fu10=k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB); bu10=k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)) # (R!340) Keq = (k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)) / (k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)))
+HTrrtr_L_L_Li00                              -> HTrttr_L_L_Li00                 ; fu12=k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)) # (R!339) Keq = (k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))) / (k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB))
+HTrrtt_L_L_Li00                             <-> HRrrtt_L_L_Li00                 ; fu06=k_TR * (Gamma ^ Phi_T * Gamma ^ Phi_T); bu06=k_RT * ((Gamma ^ (Phi_T - 1)) * (Gamma ^ (Phi_T - 1))) # (R!316) Keq = (k_TR * (Gamma ^ Phi_T * Gamma ^ Phi_T)) / (k_RT * ((Gamma ^ (Phi_T - 1)) * (Gamma ^ (Phi_T - 1))))
+HTrrtt_L_L_Li00                             <-> HTrrrt_L_L_Li00                 ; fu10=k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB); bu10=k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)) # (R!318) Keq = (k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)) / (k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)))
+HTrrtt_L_L_Li00                             <-> HTrrtr_L_L_Li00                 ; fu05=k_tr; bu05=k_rt           # (R!319) Keq = k_tr / k_rt
+HTrrtt_L_L_Li00                              -> HTrttt_L_L_Li00                 ; fu12=k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)) # (R!317) Keq = (k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))) / (k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB))
+HTrttr_L_L_Li00                             <-> HRrttr_L_L_Li00                 ; fu06=k_TR * (Gamma ^ Phi_T * Gamma ^ Phi_T); bu06=k_RT * ((Gamma ^ (Phi_T - 1)) * (Gamma ^ (Phi_T - 1))) # (R!321) Keq = (k_TR * (Gamma ^ Phi_T * Gamma ^ Phi_T)) / (k_RT * ((Gamma ^ (Phi_T - 1)) * (Gamma ^ (Phi_T - 1))))
+HTrttr_L_L_Li00                             <-> HTrrtr_L_L_Li00                 ; fu10=k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB); bu10=k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)) # (R!322) Keq = (k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)) / (k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)))
+HTrttr_L_L_Li00                              -> HTrrtr_L_L_Li00                 ; fu10=k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB) # (R!323) Keq = (k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)) / (k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)))
+HTrttt_L_L_Li00                             <-> HRrttt_L_L_Li00                 ; fu07=k_TR * Gamma ^ Phi_T; bu07=k_RT * (Gamma ^ (Phi_T - 1)) # (R!296) Keq = (k_TR * Gamma ^ Phi_T) / (k_RT * (Gamma ^ (Phi_T - 1)))
+HTrttt_L_L_Li00                             <-> HTrrtt_L_L_Li00                 ; fu10=k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB); bu10=k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)) # (R!297) Keq = (k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)) / (k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)))
+HTrttt_L_L_Li00                              -> HTrrtt_L_L_Li00                 ; fu10=k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB) # (R!298) Keq = (k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)) / (k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)))
+HTrttt_L_L_Li00                             <-> HTrttr_L_L_Li00                 ; fu05=k_tr; bu05=k_rt           # (R!299) Keq = k_tr / k_rt
+HTtttr_L_L_Li00                             <-> HRtttr_L_L_Li00                 ; fu07=k_TR * Gamma ^ Phi_T; bu07=k_RT * (Gamma ^ (Phi_T - 1)) # (R!302) Keq = (k_TR * Gamma ^ Phi_T) / (k_RT * (Gamma ^ (Phi_T - 1)))
+HTtttr_L_L_Li00                             <-> HTrttr_L_L_Li00                 ; fu10=k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB); bu10=k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)) # (R!303) Keq = (k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)) / (k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)))
+HTtttr_L_L_Li00                              -> HTrttr_L_L_Li00                 ; fu10=k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB) # (R!305) Keq = (k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)) / (k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)))
+HTtttr_L_L_Li00                              -> HTrttr_L_L_Li00                 ; fu10=k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB) # (R!304) Keq = (k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)) / (k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)))
+HTtttt_L_L_Li00                             <-> HRtttt_L_L_Li00                 ; fu08=k_TR; bu08=k_RT           # (R!284) Keq = k_TR / k_RT
+HTtttt_L_L_Li00                             <-> HTrttt_L_L_Li00                 ; fu10=k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB); bu10=k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)) # (R!285) Keq = (k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)) / (k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)))
+HTtttt_L_L_Li00                              -> HTrttt_L_L_Li00                 ; fu10=k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB) # (R!286) Keq = (k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)) / (k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)))
+HTtttt_L_L_Li00                              -> HTrttt_L_L_Li00                 ; fu10=k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB) # (R!287) Keq = (k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)) / (k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)))
+HTtttt_L_L_Li00                             <-> HTtttr_L_L_Li00                 ; fu05=k_tr; bu05=k_rt           # (R!288) Keq = k_tr / k_rt
+HRrrrr_L_L_L_Li00                            -> HRrrrt_L_L_L_Li00               ; fu11=k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))) # (R!432) Keq = (k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)))) / (k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)))
+HRrrrr_L_L_L_Li00                            -> HRrrrt_L_L_L_Li00               ; fu11=k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))) # (R!434) Keq = (k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)))) / (k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)))
+HRrrrr_L_L_L_Li00                            -> HRrrrt_L_L_L_Li00               ; fu11=k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))) # (R!433) Keq = (k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)))) / (k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)))
+HRrrrt_L_L_L_Li00                           <-> HRrrrr_L_L_L_Li00               ; fu09=k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)); bu09=k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))) # (R!421) Keq = (k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB))) / (k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))))
+HRrrrt_L_L_L_Li00                            -> HRrrtt_L_L_L_Li00               ; fu11=k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))) # (R!419) Keq = (k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)))) / (k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)))
+HRrrrt_L_L_L_Li00                            -> HRrrtt_L_L_L_Li00               ; fu11=k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))) # (R!420) Keq = (k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)))) / (k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)))
+HRrrtt_L_L_L_Li00                           <-> HRrrrt_L_L_L_Li00               ; fu09=k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)); bu09=k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))) # (R!409) Keq = (k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB))) / (k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))))
+HRrrtt_L_L_L_Li00                            -> HRrrrt_L_L_L_Li00               ; fu09=k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)) # (R!410) Keq = (k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB))) / (k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))))
+HRrrtt_L_L_L_Li00                            -> HRrttt_L_L_L_Li00               ; fu11=k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))) # (R!408) Keq = (k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)))) / (k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)))
+HRrttt_L_L_L_Li00                           <-> HRrrtt_L_L_L_Li00               ; fu09=k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)); bu09=k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))) # (R!397) Keq = (k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB))) / (k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))))
+HRrttt_L_L_L_Li00                            -> HRrrtt_L_L_L_Li00               ; fu09=k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)) # (R!398) Keq = (k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB))) / (k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))))
+HRrttt_L_L_L_Li00                            -> HRrrtt_L_L_L_Li00               ; fu09=k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)) # (R!399) Keq = (k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB))) / (k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))))
+HRtttt_L_L_L_Li00                           <-> HRrttt_L_L_L_Li00               ; fu09=k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)); bu09=k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))) # (R!385) Keq = (k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB))) / (k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))))
+HRtttt_L_L_L_Li00                            -> HRrttt_L_L_L_Li00               ; fu09=k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)) # (R!386) Keq = (k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB))) / (k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))))
+HRtttt_L_L_L_Li00                            -> HRrttt_L_L_L_Li00               ; fu09=k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)) # (R!388) Keq = (k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB))) / (k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))))
+HRtttt_L_L_L_Li00                            -> HRrttt_L_L_L_Li00               ; fu09=k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)) # (R!387) Keq = (k_tr * (Gamma ^ Phi_Q * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB))) / (k_rt * ((Gamma ^ (Phi_Q - 1)) * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))))
+HTrrrr_L_L_L_Li00                           <-> HRrrrr_L_L_L_Li00               ; fu02=k_TR * (((Gamma ^ Phi_T * Gamma ^ Phi_T) * Gamma ^ Phi_T) * Gamma ^ Phi_T); bu02=k_RT * ((((Gamma ^ (Phi_T - 1)) * (Gamma ^ (Phi_T - 1))) * (Gamma ^ (Phi_T - 1))) * (Gamma ^ (Phi_T - 1))) # (R!425) Keq = (k_TR * (((Gamma ^ Phi_T * Gamma ^ Phi_T) * Gamma ^ Phi_T) * Gamma ^ Phi_T)) / (k_RT * ((((Gamma ^ (Phi_T - 1)) * (Gamma ^ (Phi_T - 1))) * (Gamma ^ (Phi_T - 1))) * (Gamma ^ (Phi_T - 1))))
+HTrrrr_L_L_L_Li00                            -> HTrrrt_L_L_L_Li00               ; fu12=k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)) # (R!427) Keq = (k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))) / (k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB))
+HTrrrr_L_L_L_Li00                            -> HTrrrt_L_L_L_Li00               ; fu12=k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)) # (R!426) Keq = (k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))) / (k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB))
+HTrrrr_L_L_L_Li00                            -> HTrrrt_L_L_L_Li00               ; fu12=k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)) # (R!428) Keq = (k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))) / (k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB))
+HTrrrt_L_L_L_Li00                           <-> HRrrrt_L_L_L_Li00               ; fu04=k_TR * ((Gamma ^ Phi_T * Gamma ^ Phi_T) * Gamma ^ Phi_T); bu04=k_RT * (((Gamma ^ (Phi_T - 1)) * (Gamma ^ (Phi_T - 1))) * (Gamma ^ (Phi_T - 1))) # (R!413) Keq = (k_TR * ((Gamma ^ Phi_T * Gamma ^ Phi_T) * Gamma ^ Phi_T)) / (k_RT * (((Gamma ^ (Phi_T - 1)) * (Gamma ^ (Phi_T - 1))) * (Gamma ^ (Phi_T - 1))))
+HTrrrt_L_L_L_Li00                           <-> HTrrrr_L_L_L_Li00               ; fu10=k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB); bu10=k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)) # (R!416) Keq = (k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)) / (k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)))
+HTrrrt_L_L_L_Li00                            -> HTrrtt_L_L_L_Li00               ; fu12=k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)) # (R!414) Keq = (k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))) / (k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB))
+HTrrrt_L_L_L_Li00                            -> HTrrtt_L_L_L_Li00               ; fu12=k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)) # (R!415) Keq = (k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))) / (k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB))
+HTrrtt_L_L_L_Li00                           <-> HRrrtt_L_L_L_Li00               ; fu06=k_TR * (Gamma ^ Phi_T * Gamma ^ Phi_T); bu06=k_RT * ((Gamma ^ (Phi_T - 1)) * (Gamma ^ (Phi_T - 1))) # (R!402) Keq = (k_TR * (Gamma ^ Phi_T * Gamma ^ Phi_T)) / (k_RT * ((Gamma ^ (Phi_T - 1)) * (Gamma ^ (Phi_T - 1))))
+HTrrtt_L_L_L_Li00                           <-> HTrrrt_L_L_L_Li00               ; fu10=k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB); bu10=k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)) # (R!404) Keq = (k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)) / (k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)))
+HTrrtt_L_L_L_Li00                            -> HTrrrt_L_L_L_Li00               ; fu10=k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB) # (R!405) Keq = (k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)) / (k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)))
+HTrrtt_L_L_L_Li00                            -> HTrttt_L_L_L_Li00               ; fu12=k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)) # (R!403) Keq = (k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1))) / (k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB))
+HTrttt_L_L_L_Li00                           <-> HRrttt_L_L_L_Li00               ; fu07=k_TR * Gamma ^ Phi_T; bu07=k_RT * (Gamma ^ (Phi_T - 1)) # (R!391) Keq = (k_TR * Gamma ^ Phi_T) / (k_RT * (Gamma ^ (Phi_T - 1)))
+HTrttt_L_L_L_Li00                           <-> HTrrtt_L_L_L_Li00               ; fu10=k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB); bu10=k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)) # (R!392) Keq = (k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)) / (k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)))
+HTrttt_L_L_L_Li00                            -> HTrrtt_L_L_L_Li00               ; fu10=k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB) # (R!394) Keq = (k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)) / (k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)))
+HTrttt_L_L_L_Li00                            -> HTrrtt_L_L_L_Li00               ; fu10=k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB) # (R!393) Keq = (k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)) / (k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)))
+HTtttt_L_L_L_Li00                           <-> HRtttt_L_L_L_Li00               ; fu08=k_TR; bu08=k_RT           # (R!377) Keq = k_TR / k_RT
+HTtttt_L_L_L_Li00                           <-> HTrttt_L_L_L_Li00               ; fu10=k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB); bu10=k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)) # (R!378) Keq = (k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)) / (k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)))
+HTtttt_L_L_L_Li00                            -> HTrttt_L_L_L_Li00               ; fu10=k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB) # (R!381) Keq = (k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)) / (k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)))
+HTtttt_L_L_L_Li00                            -> HTrttt_L_L_L_Li00               ; fu10=k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB) # (R!379) Keq = (k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)) / (k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)))
+HTtttt_L_L_L_Li00                            -> HTrttt_L_L_L_Li00               ; fu10=k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB) # (R!380) Keq = (k_tr * (((kf_r / kb_r) / (kf_t / kb_t)) ^ Phi_LB)) / (k_rt * (((kf_r / kb_r) / (kf_t / kb_t)) ^ (Phi_LB - 1)))
+
+
+# INITIAL CONCENTRATIONS (compiled from MODEL section)
+# ----------------------------------------------------
+INIT:
+HTtttt = 1
+
+
+# STIMULI (from Stimulus objects)
+# ------------------------------------
+EQN:
+null -> L; k_source_Stm00_L="(0.0001*1000 +(event_flags(1) && ~event_flags(80))*3.33521432163324e-05*1000+(event_flags(2) && ~event_flags(79))*4.44757977875599e-05*1000+(event_flags(3) && ~event_flags(78))*5.93094295622732e-05*1000+(event_flags(4) && ~event_flags(77))*7.90903954506724e-05*1000+(event_flags(5) && ~event_flags(76))*0.000105468737411744*1000+(event_flags(6) && ~event_flags(75))*0.000140644821761767*1000+(event_flags(7) && ~event_flags(74))*0.000187552884142107*1000+(event_flags(8) && ~event_flags(73))*0.000250105790667544*1000+(event_flags(9) && ~event_flags(72))*0.000333521432163324*1000+(event_flags(10) && ~event_flags(71))*0.000444757977875599*1000+(event_flags(11) && ~event_flags(70))*0.000593094295622732*1000+(event_flags(12) && ~event_flags(69))*0.000790903954506724*1000+(event_flags(13) && ~event_flags(68))*0.00105468737411744*1000+(event_flags(14) && ~event_flags(67))*0.00140644821761767*1000+(event_flags(15) && ~event_flags(66))*0.00187552884142107*1000+(event_flags(16) && ~event_flags(65))*0.00250105790667544*1000+(event_flags(17) && ~event_flags(64))*0.00333521432163324*1000+(event_flags(18) && ~event_flags(63))*0.00444757977875599*1000+(event_flags(19) && ~event_flags(62))*0.00593094295622732*1000+(event_flags(20) && ~event_flags(61))*0.00790903954506723*1000+(event_flags(21) && ~event_flags(60))*0.0105468737411744*1000+(event_flags(22) && ~event_flags(59))*0.0140644821761767*1000+(event_flags(23) && ~event_flags(58))*0.0187552884142107*1000+(event_flags(24) && ~event_flags(57))*0.0250105790667544*1000+(event_flags(25) && ~event_flags(56))*0.0333521432163324*1000+(event_flags(26) && ~event_flags(55))*0.0444757977875598*1000+(event_flags(27) && ~event_flags(54))*0.0593094295622732*1000+(event_flags(28) && ~event_flags(53))*0.0790903954506723*1000+(event_flags(29) && ~event_flags(52))*0.105468737411744*1000+(event_flags(30) && ~event_flags(51))*0.140644821761767*1000+(event_flags(31) && ~event_flags(50))*0.187552884142107*1000+(event_flags(32) && ~event_flags(49))*0.250105790667544*1000+(event_flags(33) && ~event_flags(48))*0.333521432163323*1000+(event_flags(34) && ~event_flags(47))*0.444757977875598*1000+(event_flags(35) && ~event_flags(46))*0.593094295622731*1000+(event_flags(36) && ~event_flags(45))*0.790903954506723*1000+(event_flags(37) && ~event_flags(44))*1.05468737411744*1000+(event_flags(38) && ~event_flags(43))*1.40644821761767*1000+(event_flags(39) && ~event_flags(42))*1.87552884142106*1000+(event_flags(40) && ~event_flags(41))*2.50105790667544*1000)"
+L -> null; k_sink_Stm00_L=1000
+
+CONFIG:
+ode_event_times = ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ 
+t_final = 10000
+
+
+# COMPILED PROBES (from Probe objects)
+# ------------------------------------
+PROBE:
+probe p_R = "HRtttt + HRrttt + HRrrtt + HRrrrt + HRrrrr + HRtttt_Li00 + HRrttt_Li00 + HRtrtt_Li00 + HRrrtt_Li00 + HRtrrt_Li00 + HRrrrt_Li00 + HRtrrr_Li00 + HRrrrr_Li00 + HRtttt_L_Li00 + HRrttt_L_Li00 + HRttrt_L_Li00 + HRrrtt_L_Li00 + HRrtrt_L_Li00 + HRttrr_L_Li00 + HRrrrt_L_Li00 + HRrtrr_L_Li00 + HRrrrr_L_Li00 + HRtttt_L_L_Li00 + HRrttt_L_L_Li00 + HRtttr_L_L_Li00 + HRrrtt_L_L_Li00 + HRrttr_L_L_Li00 + HRrrrt_L_L_Li00 + HRrrtr_L_L_Li00 + HRrrrr_L_L_Li00 + HRtttt_L_L_L_Li00 + HRrttt_L_L_L_Li00 + HRrrtt_L_L_L_Li00 + HRrrrt_L_L_L_Li00 + HRrrrr_L_L_L_Li00"
+probe p_T = "HTtttt + HTrttt + HTrrtt + HTrrrt + HTrrrr + HTtttt_Li00 + HTrttt_Li00 + HTtrtt_Li00 + HTrrtt_Li00 + HTtrrt_Li00 + HTrrrt_Li00 + HTtrrr_Li00 + HTrrrr_Li00 + HTtttt_L_Li00 + HTrttt_L_Li00 + HTttrt_L_Li00 + HTrrtt_L_Li00 + HTrtrt_L_Li00 + HTttrr_L_Li00 + HTrrrt_L_Li00 + HTrtrr_L_Li00 + HTrrrr_L_Li00 + HTtttt_L_L_Li00 + HTrttt_L_L_Li00 + HTtttr_L_L_Li00 + HTrrtt_L_L_Li00 + HTrttr_L_L_Li00 + HTrrrt_L_L_Li00 + HTrrtr_L_L_Li00 + HTrrrr_L_L_Li00 + HTtttt_L_L_L_Li00 + HTrttt_L_L_L_Li00 + HTrrtt_L_L_L_Li00 + HTrrrt_L_L_L_Li00 + HTrrrr_L_L_L_Li00"
+probe L
+probe p_L0 = "HTtttt + HRtttt + HTrttt + HRrttt + HTrrtt + HRrrtt + HTrrrt + HRrrrt + HTrrrr + HRrrrr"
+probe p_L1 = "HTtttt_Li00 + HRtttt_Li00 + HTrttt_Li00 + HTtrtt_Li00 + HRrttt_Li00 + HRtrtt_Li00 + HTrrtt_Li00 + HTtrrt_Li00 + HRrrtt_Li00 + HRtrrt_Li00 + HTrrrt_Li00 + HTtrrr_Li00 + HRrrrt_Li00 + HRtrrr_Li00 + HTrrrr_Li00 + HRrrrr_Li00"
+probe p_L2 = "HTtttt_L_Li00 + HRtttt_L_Li00 + HTrttt_L_Li00 + HTttrt_L_Li00 + HRrttt_L_Li00 + HRttrt_L_Li00 + HTrrtt_L_Li00 + HTrtrt_L_Li00 + HTttrr_L_Li00 + HRrrtt_L_Li00 + HRrtrt_L_Li00 + HRttrr_L_Li00 + HTrrrt_L_Li00 + HTrtrr_L_Li00 + HRrrrt_L_Li00 + HRrtrr_L_Li00 + HTrrrr_L_Li00 + HRrrrr_L_Li00"
+probe p_L3 = "HTtttt_L_L_Li00 + HRtttt_L_L_Li00 + HTrttt_L_L_Li00 + HTtttr_L_L_Li00 + HRrttt_L_L_Li00 + HRtttr_L_L_Li00 + HTrrtt_L_L_Li00 + HTrttr_L_L_Li00 + HRrrtt_L_L_Li00 + HRrttr_L_L_Li00 + HTrrrt_L_L_Li00 + HTrrtr_L_L_Li00 + HRrrrt_L_L_Li00 + HRrrtr_L_L_Li00 + HTrrrr_L_L_Li00 + HRrrrr_L_L_Li00"
+probe p_L4 = "HTtttt_L_L_L_Li00 + HRtttt_L_L_L_Li00 + HTrttt_L_L_L_Li00 + HRrttt_L_L_L_Li00 + HTrrtt_L_L_L_Li00 + HRrrtt_L_L_L_Li00 + HTrrrt_L_L_L_Li00 + HRrrrt_L_L_L_Li00 + HTrrrr_L_L_L_Li00 + HRrrrr_L_L_L_Li00"
+
+
+# CONFIG (from CONFIG section)
+# ----------------------------
+CONFIG:
+t_final = 10000
+t_vector = [0:1:tf]
+matlab_ode_solver = ode15s
+matlab_odeset_options = odeset('InitialStep', 1e-15, 'AbsTol', 1e-48, 'RelTol', 1e-5)
+SS_timescale = 100
+SS_RelTol = 1e-3
+SS_AbsTol = 1e-6

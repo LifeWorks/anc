@@ -1,0 +1,43 @@
+# Facile model created by Allosteric Network Compiler (ANC)
+# ANC version 1.00 released 2010/9/19
+# Sun Sep 19 14:12:18 EDT 2010
+
+
+
+# PARAMETERS
+# ----------
+parameter k_RS_alpha = 1
+parameter k_SR_alpha = 10000
+parameter k_RS_beta = 1
+parameter k_SR_beta = 10000
+parameter Gamma_ab = 200
+parameter Phi_ab = 0.2
+parameter Phi_ba = 0.3
+
+
+# REACTION CLASS: AllostericReaction
+# ----------------------------------
+HRR                                         <-> HRS                             ; fu00=k_RS_beta; bu00=k_SR_beta # (R!01) Keq = k_RS_beta / k_SR_beta
+HRR                                         <-> HSR                             ; fu01=k_RS_alpha; bu01=k_SR_alpha # (R!00) Keq = k_RS_alpha / k_SR_alpha
+HRS                                         <-> HSS                             ; fu02=k_RS_alpha * Gamma_ab ^ Phi_ab; bu02=k_SR_alpha * (Gamma_ab ^ (Phi_ab - 1)) # (R!03) Keq = (k_RS_alpha * Gamma_ab ^ Phi_ab) / (k_SR_alpha * (Gamma_ab ^ (Phi_ab - 1)))
+HSR                                         <-> HSS                             ; fu03=k_RS_beta * Gamma_ab ^ Phi_ba; bu03=k_SR_beta * (Gamma_ab ^ (Phi_ba - 1)) # (R!02) Keq = (k_RS_beta * Gamma_ab ^ Phi_ba) / (k_SR_beta * (Gamma_ab ^ (Phi_ba - 1)))
+
+
+# INITIAL CONCENTRATIONS (compiled from MODEL section)
+# ----------------------------------------------------
+INIT:
+HRR = 10
+
+
+# COMPILED PROBES (from Probe objects)
+# ------------------------------------
+PROBE:
+probe R0 = "HSS"
+probe R1 = "HSR + HRS"
+probe R2 = "HRR"
+
+
+# CONFIG (from CONFIG section)
+# ----------------------------
+CONFIG:
+t_vector = [0:0.1:tf]

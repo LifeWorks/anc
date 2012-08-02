@@ -1,0 +1,107 @@
+# Facile model created by Allosteric Network Compiler (ANC)
+# ANC version 1.00 released 2010/9/19
+# Sun Sep 19 14:12:43 EDT 2010
+
+
+
+# PARAMETERS
+# ----------
+parameter k_RS_alpha = 1
+parameter k_SR_alpha = 10000
+parameter k_RS_beta = 1
+parameter k_SR_beta = 10000
+parameter Gamma_ab = 200
+parameter Phi_ab = 0.2
+parameter Phi_ba = 0.3
+parameter Gamma_AX = 5000
+parameter Phi_AX = 0.5
+parameter Gamma_T = 5000
+parameter Phi_T = 0.5
+parameter kf_RX = 1
+parameter kb_RX = 10
+parameter kf_SX = 10
+parameter kb_SX = 1
+
+
+# REACTION CLASS: CatalyticReaction
+# ---------------------------------
+K                    + HR0R                 <-> HR0R_Ki00                       ; fb00=kf_RK; bb00=kb_RK         # (R!05) Kd = kb_RK/kf_RK
+HR0R_Ki00                                    -> K + HR1R                        ; kp00=kp_RK                     # (R!06)
+K                    + HR0S                 <-> HR0S_Ki00                       ; fb00=kf_RK; bb00=kb_RK         # (R!12) Kd = kb_RK/kf_RK
+HR0S_Ki00                                    -> K + HR1S                        ; kp00=kp_RK                     # (R!13)
+K                    + HS0R                 <-> HS0R_Ki00                       ; fb01=kf_SK; bb01=kb_SK         # (R!10) Kd = kb_SK/kf_SK
+HS0R_Ki00                                    -> K + HS1R                        ; kp01=kp_SK                     # (R!11)
+K                    + HS0S                 <-> HS0S_Ki00                       ; fb01=kf_SK; bb01=kb_SK         # (R!14) Kd = kb_SK/kf_SK
+HS0S_Ki00                                    -> K + HS1S                        ; kp01=kp_SK                     # (R!15)
+K                    + HR0R_Xi00            <-> HR0R_K_Xi00                     ; fb00=kf_RK; bb00=kb_RK         # (R!36) Kd = kb_RK/kf_RK
+HR0R_K_Xi00                                  -> K + HR1R_Xi00                   ; kp00=kp_RK                     # (R!37)
+K                    + HR0S_Xi00            <-> HR0S_K_Xi00                     ; fb00=kf_RK; bb00=kb_RK         # (R!40) Kd = kb_RK/kf_RK
+HR0S_K_Xi00                                  -> K + HR1S_Xi00                   ; kp00=kp_RK                     # (R!41)
+K                    + HS0R_Xi00            <-> HS0R_K_Xi00                     ; fb01=kf_SK; bb01=kb_SK         # (R!38) Kd = kb_SK/kf_SK
+HS0R_K_Xi00                                  -> K + HS1R_Xi00                   ; kp01=kp_SK                     # (R!39)
+K                    + HS0S_Xi00            <-> HS0S_K_Xi00                     ; fb01=kf_SK; bb01=kb_SK         # (R!42) Kd = kb_SK/kf_SK
+HS0S_K_Xi00                                  -> K + HS1S_Xi00                   ; kp01=kp_SK                     # (R!43)
+
+# REACTION CLASS: BindingReaction
+# -------------------------------
+HR0R                 + X                    <-> HR0R_Xi00                       ; fb02=kf_RX; bb02=kb_RX         # (R!04) Kd = kb_RX/kf_RX
+HR0S                 + X                    <-> HR0S_Xi00                       ; fb02=kf_RX; bb02=kb_RX         # (R!08) Kd = kb_RX/kf_RX
+HR1R                 + X                    <-> HR1R_Xi00                       ; fb02=kf_RX; bb02=kb_RX         # (R!29) Kd = kb_RX/kf_RX
+HR1S                 + X                    <-> HR1S_Xi00                       ; fb02=kf_RX; bb02=kb_RX         # (R!33) Kd = kb_RX/kf_RX
+HS0R                 + X                    <-> HS0R_Xi00                       ; fb03=kf_SX; bb03=kb_SX         # (R!07) Kd = kb_SX/kf_SX
+HS0S                 + X                    <-> HS0S_Xi00                       ; fb03=kf_SX; bb03=kb_SX         # (R!09) Kd = kb_SX/kf_SX
+HS1R                 + X                    <-> HS1R_Xi00                       ; fb03=kf_SX; bb03=kb_SX         # (R!31) Kd = kb_SX/kf_SX
+HS1S                 + X                    <-> HS1S_Xi00                       ; fb03=kf_SX; bb03=kb_SX         # (R!35) Kd = kb_SX/kf_SX
+X                    + HR0R_Ki00            <-> HR0R_K_Xi00                     ; fb02=kf_RX; bb02=kb_RX         # (R!28) Kd = kb_RX/kf_RX
+X                    + HR0S_Ki00            <-> HR0S_K_Xi00                     ; fb02=kf_RX; bb02=kb_RX         # (R!32) Kd = kb_RX/kf_RX
+X                    + HS0R_Ki00            <-> HS0R_K_Xi00                     ; fb03=kf_SX; bb03=kb_SX         # (R!30) Kd = kb_SX/kf_SX
+X                    + HS0S_Ki00            <-> HS0S_K_Xi00                     ; fb03=kf_SX; bb03=kb_SX         # (R!34) Kd = kb_SX/kf_SX
+
+# REACTION CLASS: AllostericReaction
+# ----------------------------------
+HR0R                                        <-> HR0S                            ; fu00=k_RS_beta; bu00=k_SR_beta # (R!01) Keq = k_RS_beta / k_SR_beta
+HR0R                                        <-> HS0R                            ; fu01=k_RS_alpha; bu01=k_SR_alpha # (R!00) Keq = k_RS_alpha / k_SR_alpha
+HR0S                                        <-> HS0S                            ; fu02=k_RS_alpha * Gamma_ab ^ Phi_ab; bu02=k_SR_alpha * (Gamma_ab ^ (Phi_ab - 1)) # (R!03) Keq = (k_RS_alpha * Gamma_ab ^ Phi_ab) / (k_SR_alpha * (Gamma_ab ^ (Phi_ab - 1)))
+HR1R                                        <-> HR1S                            ; fu00=k_RS_beta; bu00=k_SR_beta # (R!21) Keq = k_RS_beta / k_SR_beta
+HR1R                                        <-> HS1R                            ; fu03=k_RS_alpha * Gamma_T ^ Phi_T; bu03=k_SR_alpha * (Gamma_T ^ (Phi_T - 1)) # (R!20) Keq = (k_RS_alpha * Gamma_T ^ Phi_T) / (k_SR_alpha * (Gamma_T ^ (Phi_T - 1)))
+HR1S                                        <-> HS1S                            ; fu04=k_RS_alpha * (Gamma_T ^ Phi_T * Gamma_ab ^ Phi_ab); bu04=k_SR_alpha * ((Gamma_T ^ (Phi_T - 1)) * (Gamma_ab ^ (Phi_ab - 1))) # (R!27) Keq = (k_RS_alpha * (Gamma_T ^ Phi_T * Gamma_ab ^ Phi_ab)) / (k_SR_alpha * ((Gamma_T ^ (Phi_T - 1)) * (Gamma_ab ^ (Phi_ab - 1))))
+HS0R                                        <-> HS0S                            ; fu05=k_RS_beta * Gamma_ab ^ Phi_ba; bu05=k_SR_beta * (Gamma_ab ^ (Phi_ba - 1)) # (R!02) Keq = (k_RS_beta * Gamma_ab ^ Phi_ba) / (k_SR_beta * (Gamma_ab ^ (Phi_ba - 1)))
+HS1R                                        <-> HS1S                            ; fu05=k_RS_beta * Gamma_ab ^ Phi_ba; bu05=k_SR_beta * (Gamma_ab ^ (Phi_ba - 1)) # (R!25) Keq = (k_RS_beta * Gamma_ab ^ Phi_ba) / (k_SR_beta * (Gamma_ab ^ (Phi_ba - 1)))
+HR0R_Ki00                                   <-> HR0S_Ki00                       ; fu00=k_RS_beta; bu00=k_SR_beta # (R!19) Keq = k_RS_beta / k_SR_beta
+HR0R_Ki00                                   <-> HS0R_Ki00                       ; fu06=k_RS_alpha * (((kf_SK / kb_SK) / (kf_RK / kb_RK)) ^ Phi_T); bu06=k_SR_alpha * (((kf_SK / kb_SK) / (kf_RK / kb_RK)) ^ (Phi_T - 1)) # (R!18) Keq = (k_RS_alpha * (((kf_SK / kb_SK) / (kf_RK / kb_RK)) ^ Phi_T)) / (k_SR_alpha * (((kf_SK / kb_SK) / (kf_RK / kb_RK)) ^ (Phi_T - 1)))
+HR0R_Xi00                                   <-> HR0S_Xi00                       ; fu00=k_RS_beta; bu00=k_SR_beta # (R!17) Keq = k_RS_beta / k_SR_beta
+HR0R_Xi00                                   <-> HS0R_Xi00                       ; fu07=k_RS_alpha * (((kf_SX / kb_SX) / (kf_RX / kb_RX)) ^ Phi_AX); bu07=k_SR_alpha * (((kf_SX / kb_SX) / (kf_RX / kb_RX)) ^ (Phi_AX - 1)) # (R!16) Keq = (k_RS_alpha * (((kf_SX / kb_SX) / (kf_RX / kb_RX)) ^ Phi_AX)) / (k_SR_alpha * (((kf_SX / kb_SX) / (kf_RX / kb_RX)) ^ (Phi_AX - 1)))
+HR0S_Ki00                                   <-> HS0S_Ki00                       ; fu08=k_RS_alpha * ((((kf_SK / kb_SK) / (kf_RK / kb_RK)) ^ Phi_T) * Gamma_ab ^ Phi_ab); bu08=k_SR_alpha * ((((kf_SK / kb_SK) / (kf_RK / kb_RK)) ^ (Phi_T - 1)) * (Gamma_ab ^ (Phi_ab - 1))) # (R!26) Keq = (k_RS_alpha * ((((kf_SK / kb_SK) / (kf_RK / kb_RK)) ^ Phi_T) * Gamma_ab ^ Phi_ab)) / (k_SR_alpha * ((((kf_SK / kb_SK) / (kf_RK / kb_RK)) ^ (Phi_T - 1)) * (Gamma_ab ^ (Phi_ab - 1))))
+HR0S_Xi00                                   <-> HS0S_Xi00                       ; fu09=k_RS_alpha * ((((kf_SX / kb_SX) / (kf_RX / kb_RX)) ^ Phi_AX) * Gamma_ab ^ Phi_ab); bu09=k_SR_alpha * ((((kf_SX / kb_SX) / (kf_RX / kb_RX)) ^ (Phi_AX - 1)) * (Gamma_ab ^ (Phi_ab - 1))) # (R!23) Keq = (k_RS_alpha * ((((kf_SX / kb_SX) / (kf_RX / kb_RX)) ^ Phi_AX) * Gamma_ab ^ Phi_ab)) / (k_SR_alpha * ((((kf_SX / kb_SX) / (kf_RX / kb_RX)) ^ (Phi_AX - 1)) * (Gamma_ab ^ (Phi_ab - 1))))
+HR1R_Xi00                                   <-> HR1S_Xi00                       ; fu00=k_RS_beta; bu00=k_SR_beta # (R!47) Keq = k_RS_beta / k_SR_beta
+HR1R_Xi00                                   <-> HS1R_Xi00                       ; fu10=k_RS_alpha * ((((kf_SX / kb_SX) / (kf_RX / kb_RX)) ^ Phi_AX) * Gamma_T ^ Phi_T); bu10=k_SR_alpha * ((((kf_SX / kb_SX) / (kf_RX / kb_RX)) ^ (Phi_AX - 1)) * (Gamma_T ^ (Phi_T - 1))) # (R!46) Keq = (k_RS_alpha * ((((kf_SX / kb_SX) / (kf_RX / kb_RX)) ^ Phi_AX) * Gamma_T ^ Phi_T)) / (k_SR_alpha * ((((kf_SX / kb_SX) / (kf_RX / kb_RX)) ^ (Phi_AX - 1)) * (Gamma_T ^ (Phi_T - 1))))
+HR1S_Xi00                                   <-> HS1S_Xi00                       ; fu11=k_RS_alpha * (((((kf_SX / kb_SX) / (kf_RX / kb_RX)) ^ Phi_AX) * Gamma_T ^ Phi_T) * Gamma_ab ^ Phi_ab); bu11=k_SR_alpha * (((((kf_SX / kb_SX) / (kf_RX / kb_RX)) ^ (Phi_AX - 1)) * (Gamma_T ^ (Phi_T - 1))) * (Gamma_ab ^ (Phi_ab - 1))) # (R!51) Keq = (k_RS_alpha * (((((kf_SX / kb_SX) / (kf_RX / kb_RX)) ^ Phi_AX) * Gamma_T ^ Phi_T) * Gamma_ab ^ Phi_ab)) / (k_SR_alpha * (((((kf_SX / kb_SX) / (kf_RX / kb_RX)) ^ (Phi_AX - 1)) * (Gamma_T ^ (Phi_T - 1))) * (Gamma_ab ^ (Phi_ab - 1))))
+HS0R_Ki00                                   <-> HS0S_Ki00                       ; fu05=k_RS_beta * Gamma_ab ^ Phi_ba; bu05=k_SR_beta * (Gamma_ab ^ (Phi_ba - 1)) # (R!24) Keq = (k_RS_beta * Gamma_ab ^ Phi_ba) / (k_SR_beta * (Gamma_ab ^ (Phi_ba - 1)))
+HS0R_Xi00                                   <-> HS0S_Xi00                       ; fu05=k_RS_beta * Gamma_ab ^ Phi_ba; bu05=k_SR_beta * (Gamma_ab ^ (Phi_ba - 1)) # (R!22) Keq = (k_RS_beta * Gamma_ab ^ Phi_ba) / (k_SR_beta * (Gamma_ab ^ (Phi_ba - 1)))
+HS1R_Xi00                                   <-> HS1S_Xi00                       ; fu05=k_RS_beta * Gamma_ab ^ Phi_ba; bu05=k_SR_beta * (Gamma_ab ^ (Phi_ba - 1)) # (R!49) Keq = (k_RS_beta * Gamma_ab ^ Phi_ba) / (k_SR_beta * (Gamma_ab ^ (Phi_ba - 1)))
+HR0R_K_Xi00                                 <-> HR0S_K_Xi00                     ; fu00=k_RS_beta; bu00=k_SR_beta # (R!45) Keq = k_RS_beta / k_SR_beta
+HR0R_K_Xi00                                 <-> HS0R_K_Xi00                     ; fu12=k_RS_alpha * ((((kf_SX / kb_SX) / (kf_RX / kb_RX)) ^ Phi_AX) * (((kf_SK / kb_SK) / (kf_RK / kb_RK)) ^ Phi_T)); bu12=k_SR_alpha * ((((kf_SX / kb_SX) / (kf_RX / kb_RX)) ^ (Phi_AX - 1)) * (((kf_SK / kb_SK) / (kf_RK / kb_RK)) ^ (Phi_T - 1))) # (R!44) Keq = (k_RS_alpha * ((((kf_SX / kb_SX) / (kf_RX / kb_RX)) ^ Phi_AX) * (((kf_SK / kb_SK) / (kf_RK / kb_RK)) ^ Phi_T))) / (k_SR_alpha * ((((kf_SX / kb_SX) / (kf_RX / kb_RX)) ^ (Phi_AX - 1)) * (((kf_SK / kb_SK) / (kf_RK / kb_RK)) ^ (Phi_T - 1))))
+HR0S_K_Xi00                                 <-> HS0S_K_Xi00                     ; fu13=k_RS_alpha * (((((kf_SX / kb_SX) / (kf_RX / kb_RX)) ^ Phi_AX) * (((kf_SK / kb_SK) / (kf_RK / kb_RK)) ^ Phi_T)) * Gamma_ab ^ Phi_ab); bu13=k_SR_alpha * (((((kf_SX / kb_SX) / (kf_RX / kb_RX)) ^ (Phi_AX - 1)) * (((kf_SK / kb_SK) / (kf_RK / kb_RK)) ^ (Phi_T - 1))) * (Gamma_ab ^ (Phi_ab - 1))) # (R!50) Keq = (k_RS_alpha * (((((kf_SX / kb_SX) / (kf_RX / kb_RX)) ^ Phi_AX) * (((kf_SK / kb_SK) / (kf_RK / kb_RK)) ^ Phi_T)) * Gamma_ab ^ Phi_ab)) / (k_SR_alpha * (((((kf_SX / kb_SX) / (kf_RX / kb_RX)) ^ (Phi_AX - 1)) * (((kf_SK / kb_SK) / (kf_RK / kb_RK)) ^ (Phi_T - 1))) * (Gamma_ab ^ (Phi_ab - 1))))
+HS0R_K_Xi00                                 <-> HS0S_K_Xi00                     ; fu05=k_RS_beta * Gamma_ab ^ Phi_ba; bu05=k_SR_beta * (Gamma_ab ^ (Phi_ba - 1)) # (R!48) Keq = (k_RS_beta * Gamma_ab ^ Phi_ba) / (k_SR_beta * (Gamma_ab ^ (Phi_ba - 1)))
+
+
+# INITIAL CONCENTRATIONS (compiled from MODEL section)
+# ----------------------------------------------------
+INIT:
+HR0R = 10
+X = 0
+K = 0
+
+
+# COMPILED PROBES (from Probe objects)
+# ------------------------------------
+PROBE:
+probe R0 = "X + K + HS0S + HR0R_Xi00 + HR0R_Ki00 + HS0R_Xi00 + HR0S_Xi00 + HS0S_Xi00 + HS0S_Xi00 + HS0R_Ki00 + HR0S_Ki00 + HS0S_Ki00 + HS0S_Ki00 + HS1S + HR0R_K_Xi00 + HR0R_K_Xi00 + HR1R_Xi00 + HS0R_K_Xi00 + HS0R_K_Xi00 + HS1R_Xi00 + HR0S_K_Xi00 + HR0S_K_Xi00 + HR1S_Xi00 + HS0S_K_Xi00 + HS0S_K_Xi00 + HS0S_K_Xi00 + HS1S_Xi00 + HS1S_Xi00"
+probe R1 = "HS0R + HR0S + HS0R_Xi00 + HR0S_Xi00 + HS0R_Ki00 + HS1R + HR0S_Ki00 + HR1S + HS0R_K_Xi00 + HS1R_Xi00 + HR0S_K_Xi00 + HR1S_Xi00"
+probe R2 = "HR0R + HR0R_Xi00 + HR0R_Ki00 + HR1R + HR0R_K_Xi00 + HR1R_Xi00"
+
+
+# CONFIG (from CONFIG section)
+# ----------------------------
+CONFIG:
+t_vector = [0:0.1:tf]

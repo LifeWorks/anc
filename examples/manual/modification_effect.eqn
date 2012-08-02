@@ -1,0 +1,57 @@
+# Facile model created by Allosteric Network Compiler (ANC)
+# ANC version 1.00 released 2010/9/19
+# Sun Sep 19 14:12:03 EDT 2010
+
+
+
+# PARAMETERS
+# ----------
+parameter kf_RS = 0.1
+parameter kb_RS = 100
+parameter Gamma_T = 5000
+parameter Phi_T = 0.5
+parameter kf_RK = 1
+parameter kb_RK = 10
+parameter kp_RK = 20
+parameter kf_SK = 10
+parameter kb_SK = 1
+parameter kp_SK = 20
+
+
+# REACTION CLASS: CatalyticReaction
+# ---------------------------------
+K                    + AR0                  <-> AR0_Ki00                        ; fb00=kf_RK; bb00=kb_RK         # (R!01) Kd = kb_RK/kf_RK
+AR0_Ki00                                     -> K + AR1                         ; kp00=kp_RK                     # (R!02)
+K                    + AS0                  <-> AS0_Ki00                        ; fb01=kf_SK; bb01=kb_SK         # (R!03) Kd = kb_SK/kf_SK
+AS0_Ki00                                     -> K + AS1                         ; kp01=kp_SK                     # (R!04)
+
+# REACTION CLASS: BindingReaction
+# -------------------------------
+
+# REACTION CLASS: AllostericReaction
+# ----------------------------------
+AR0                                         <-> AS0                             ; fu00=kf_RS; bu00=kb_RS         # (R!00) Keq = kf_RS / kb_RS
+AR1                                         <-> AS1                             ; fu01=kf_RS * Gamma_T ^ Phi_T; bu01=kb_RS * (Gamma_T ^ (Phi_T - 1)) # (R!06) Keq = (kf_RS * Gamma_T ^ Phi_T) / (kb_RS * (Gamma_T ^ (Phi_T - 1)))
+AR0_Ki00                                    <-> AS0_Ki00                        ; fu02=kf_RS * (((kf_SK / kb_SK) / (kf_RK / kb_RK)) ^ Phi_T); bu02=kb_RS * (((kf_SK / kb_SK) / (kf_RK / kb_RK)) ^ (Phi_T - 1)) # (R!05) Keq = (kf_RS * (((kf_SK / kb_SK) / (kf_RK / kb_RK)) ^ Phi_T)) / (kb_RS * (((kf_SK / kb_SK) / (kf_RK / kb_RK)) ^ (Phi_T - 1)))
+
+
+# INITIAL CONCENTRATIONS (compiled from MODEL section)
+# ----------------------------------------------------
+INIT:
+AR0 = 1
+K = 0
+
+
+# COMPILED PROBES (from Probe objects)
+# ------------------------------------
+PROBE:
+probe AK_DIMER = "AR0_Ki00 + AS0_Ki00"
+probe A = "AR0 + AS0 + AR1 + AS1"
+probe K
+probe AR0
+
+
+# CONFIG (from CONFIG section)
+# ----------------------------
+CONFIG:
+t_final = 2000.0

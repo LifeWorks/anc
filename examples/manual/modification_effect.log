@@ -1,0 +1,81 @@
+##############################################################################
+# Allosteric Network Compiler (ANC)
+# Copyright (C) 2005-2010 Julien Ollivier
+# Author:       Julien F. Ollivier
+# Version:      1.00
+# Release Date: 2010/9/19
+# This program comes with ABSOLUTELY NO WARRANTY.
+# This is free software, and you are welcome to redistribute it
+# under certain conditions. See file LICENSE.TXT for details.
+##############################################################################
+
+MODEL 	= examples/manual/modification_effect.mod
+OUT 	= examples/manual/modification_effect.eqn
+OUTDIR 	= examples/manual/modification_effect
+
+Start time: Sun Sep 19 14:12:03 EDT 2010
+CLEANING UP
+CREATING OUTPUT DIRECTORY
+READING MODEL examples/manual/modification_effect.mod
+REPORTING COMPILE PARAMETERS
+max_external_iterations = -1
+max_internal_iterations = -1
+max_species = -1
+max_complex_size = -1
+max_csite_bound_to_msite_number = -1
+kf_1st_order_rate_cutoff = 0
+kf_2nd_order_rate_cutoff = 0
+kb_rate_cutoff = 0
+kp_rate_cutoff = 0
+default_steric_factor = UNDEF
+report = all
+export_graphviz = primary,canonical,network,collapse_states,collapse_complexes
+compact_names = 1
+protein_separator = _
+IMPORTING COMPLEXES
+COMPILING RULES
+Compiling rule BR!00 of class CanBindRule
+T CanBind K
+Compiling rule BR!01 of class CanBindRule
+T CanBind K
+INSTANTIATING COMPLEXES
+INITIALIZING INSTANCES
+COMPILING REACTION NETWORK
+ReactionNetwork::compile_network: starting...
+ReactionNetwork::compile_network: STARTING INTERNAL iteration=1 total_species=2
+ReactionNetwork::compile_network: STARTING EXTERNAL iteration=1 total_species=3
+ReactionNetwork::compile_network: DONE EXTERNAL iteration=1 total_species=7
+ReactionNetwork::compile_network: STARTING INTERNAL iteration=2 total_species=7
+ReactionNetwork::compile_network: STARTING EXTERNAL iteration=2 total_species=7
+ReactionNetwork::compile_external_reactions: processing species 5 of 7
+ReactionNetwork::compile_network: DONE EXTERNAL iteration=2 total_species=7
+ReactionNetwork::compile_network: STARTING FINAL-INTERNAL total_species=7
+ReactionNetwork::compile_network: DONE FINAL-INTERNAL total_species=7
+ReactionNetwork::compile_network: Done computing species in 2 iterations
+COMPILING ICs and STIMULI
+Init Ic!00 comprises 1 objects:
+	AR0
+Init Ic!01 comprises 1 objects:
+	K
+COMPILING PROBES
+Probe AK_DIMER comprises 2 objects:
+	AR0_Ki00
+	AS0_Ki00
+Probe A comprises 4 objects:
+	AR0
+	AS0
+	AR1
+	AS1
+Probe Prb!00 comprises 1 objects:
+	K
+Probe Prb!01 comprises 1 objects:
+	AR0
+EXPORTING NETWORK
+Facile->export(): generating Facile equation file
+REPORTING SPECIES STRUCTURE IN: examples/manual/modification_effect/modification_effect.structures.rpt
+REPORTING SPECIES IN: examples/manual/modification_effect/modification_effect.species.rpt
+EXPORTING NETWORK TO GRAPHVIZ
+EXPORTING SPECIES TO GRAPHVIZ (primary form)
+EXPORTING SPECIES TO GRAPHVIZ (canonical form)
+Start time: Sun Sep 19 14:12:03 EDT 2010
+End time:   Sun Sep 19 14:12:04 EDT 2010

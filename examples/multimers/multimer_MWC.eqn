@@ -1,0 +1,105 @@
+# Facile model created by Allosteric Network Compiler (ANC)
+# ANC version 1.01 released 2011/08/26
+# Thu Aug 25 00:24:13 EDT 2011
+
+
+
+# PARAMETERS
+# ----------
+parameter K_TR = 0.0001
+parameter k_TR = 1
+parameter k_RT = k_TR/K_TR
+parameter Phi_TR = 0.5
+parameter K_T = 0.1
+parameter kf_T = 1
+parameter kb_T = kf_T/K_T
+parameter K_R = 10
+parameter kf_R = 10
+parameter kb_R = kf_R/K_R
+
+
+# REACTION CLASS: BindingReaction
+# -------------------------------
+HR                   + L                    <-> HR_Li00                         ; fb00=kf_R; bb00=kb_R           # (R!05) Kd = kb_R/kf_R
+HR                   + L                     -> HR_Li00                         ; fb00=kf_R                      # (R!07) Kd = UNDEFINED
+HR                   + L                     -> HR_Li00                         ; fb00=kf_R                      # (R!06) Kd = UNDEFINED
+HR                   + L                     -> HR_Li00                         ; fb00=kf_R                      # (R!08) Kd = UNDEFINED
+HT                   + L                    <-> HT_Li00                         ; fb01=kf_T; bb01=kb_T           # (R!01) Kd = kb_T/kf_T
+HT                   + L                     -> HT_Li00                         ; fb01=kf_T                      # (R!03) Kd = UNDEFINED
+HT                   + L                     -> HT_Li00                         ; fb01=kf_T                      # (R!02) Kd = UNDEFINED
+HT                   + L                     -> HT_Li00                         ; fb01=kf_T                      # (R!04) Kd = UNDEFINED
+L                    + HR_Li00              <-> HR_L_Li00                       ; fb00=kf_R; bb00=kb_R           # (R!13) Kd = kb_R/kf_R
+L                    + HR_Li00               -> HR_L_Li00                       ; fb00=kf_R                      # (R!14) Kd = UNDEFINED
+L                    + HR_Li00               -> HR_L_Li00                       ; fb00=kf_R                      # (R!15) Kd = UNDEFINED
+L                    + HR_Li00              <-  HR_L_Li00                       ; bb00=kb_R                      # (R!18) Kd = UNDEFINED
+L                    + HT_Li00              <-> HT_L_Li00                       ; fb01=kf_T; bb01=kb_T           # (R!10) Kd = kb_T/kf_T
+L                    + HT_Li00               -> HT_L_Li00                       ; fb01=kf_T                      # (R!11) Kd = UNDEFINED
+L                    + HT_Li00               -> HT_L_Li00                       ; fb01=kf_T                      # (R!12) Kd = UNDEFINED
+L                    + HT_Li00              <-  HT_L_Li00                       ; bb01=kb_T                      # (R!16) Kd = UNDEFINED
+L                    + HR_L_Li00            <-> HR_L_L_Li00                     ; fb00=kf_R; bb00=kb_R           # (R!21) Kd = kb_R/kf_R
+L                    + HR_L_Li00             -> HR_L_L_Li00                     ; fb00=kf_R                      # (R!22) Kd = UNDEFINED
+L                    + HR_L_Li00            <-  HR_L_L_Li00                     ; bb00=kb_R                      # (R!26) Kd = UNDEFINED
+L                    + HR_L_Li00            <-  HR_L_L_Li00                     ; bb00=kb_R                      # (R!27) Kd = UNDEFINED
+L                    + HT_L_Li00            <-> HT_L_L_Li00                     ; fb01=kf_T; bb01=kb_T           # (R!19) Kd = kb_T/kf_T
+L                    + HT_L_Li00             -> HT_L_L_Li00                     ; fb01=kf_T                      # (R!20) Kd = UNDEFINED
+L                    + HT_L_Li00            <-  HT_L_L_Li00                     ; bb01=kb_T                      # (R!23) Kd = UNDEFINED
+L                    + HT_L_Li00            <-  HT_L_L_Li00                     ; bb01=kb_T                      # (R!24) Kd = UNDEFINED
+L                    + HR_L_L_Li00          <-> HR_L_L_L_Li00                   ; fb00=kf_R; bb00=kb_R           # (R!29) Kd = kb_R/kf_R
+L                    + HR_L_L_Li00          <-  HR_L_L_L_Li00                   ; bb00=kb_R                      # (R!34) Kd = UNDEFINED
+L                    + HR_L_L_Li00          <-  HR_L_L_L_Li00                   ; bb00=kb_R                      # (R!35) Kd = UNDEFINED
+L                    + HR_L_L_Li00          <-  HR_L_L_L_Li00                   ; bb00=kb_R                      # (R!36) Kd = UNDEFINED
+L                    + HT_L_L_Li00          <-> HT_L_L_L_Li00                   ; fb01=kf_T; bb01=kb_T           # (R!28) Kd = kb_T/kf_T
+L                    + HT_L_L_Li00          <-  HT_L_L_L_Li00                   ; bb01=kb_T                      # (R!30) Kd = UNDEFINED
+L                    + HT_L_L_Li00          <-  HT_L_L_L_Li00                   ; bb01=kb_T                      # (R!31) Kd = UNDEFINED
+L                    + HT_L_L_Li00          <-  HT_L_L_L_Li00                   ; bb01=kb_T                      # (R!32) Kd = UNDEFINED
+
+# REACTION CLASS: AllostericReaction
+# ----------------------------------
+HT                                          <-> HR                              ; fu00=k_TR; bu00=k_RT           # (R!00) Keq = k_TR / k_RT
+HT_Li00                                     <-> HR_Li00                         ; fu01=k_TR * (((kf_R / kb_R) / (kf_T / kb_T)) ^ Phi_TR); bu01=k_RT * (((kf_R / kb_R) / (kf_T / kb_T)) ^ (Phi_TR - 1)) # (R!09) Keq = (k_TR * (((kf_R / kb_R) / (kf_T / kb_T)) ^ Phi_TR)) / (k_RT * (((kf_R / kb_R) / (kf_T / kb_T)) ^ (Phi_TR - 1)))
+HT_L_Li00                                   <-> HR_L_Li00                       ; fu02=k_TR * ((((kf_R / kb_R) / (kf_T / kb_T)) ^ Phi_TR) * (((kf_R / kb_R) / (kf_T / kb_T)) ^ Phi_TR)); bu02=k_RT * ((((kf_R / kb_R) / (kf_T / kb_T)) ^ (Phi_TR - 1)) * (((kf_R / kb_R) / (kf_T / kb_T)) ^ (Phi_TR - 1))) # (R!17) Keq = (k_TR * ((((kf_R / kb_R) / (kf_T / kb_T)) ^ Phi_TR) * (((kf_R / kb_R) / (kf_T / kb_T)) ^ Phi_TR))) / (k_RT * ((((kf_R / kb_R) / (kf_T / kb_T)) ^ (Phi_TR - 1)) * (((kf_R / kb_R) / (kf_T / kb_T)) ^ (Phi_TR - 1))))
+HT_L_L_Li00                                 <-> HR_L_L_Li00                     ; fu03=k_TR * (((((kf_R / kb_R) / (kf_T / kb_T)) ^ Phi_TR) * (((kf_R / kb_R) / (kf_T / kb_T)) ^ Phi_TR)) * (((kf_R / kb_R) / (kf_T / kb_T)) ^ Phi_TR)); bu03=k_RT * (((((kf_R / kb_R) / (kf_T / kb_T)) ^ (Phi_TR - 1)) * (((kf_R / kb_R) / (kf_T / kb_T)) ^ (Phi_TR - 1))) * (((kf_R / kb_R) / (kf_T / kb_T)) ^ (Phi_TR - 1))) # (R!25) Keq = (k_TR * (((((kf_R / kb_R) / (kf_T / kb_T)) ^ Phi_TR) * (((kf_R / kb_R) / (kf_T / kb_T)) ^ Phi_TR)) * (((kf_R / kb_R) / (kf_T / kb_T)) ^ Phi_TR))) / (k_RT * (((((kf_R / kb_R) / (kf_T / kb_T)) ^ (Phi_TR - 1)) * (((kf_R / kb_R) / (kf_T / kb_T)) ^ (Phi_TR - 1))) * (((kf_R / kb_R) / (kf_T / kb_T)) ^ (Phi_TR - 1))))
+HT_L_L_L_Li00                               <-> HR_L_L_L_Li00                   ; fu04=k_TR * ((((((kf_R / kb_R) / (kf_T / kb_T)) ^ Phi_TR) * (((kf_R / kb_R) / (kf_T / kb_T)) ^ Phi_TR)) * (((kf_R / kb_R) / (kf_T / kb_T)) ^ Phi_TR)) * (((kf_R / kb_R) / (kf_T / kb_T)) ^ Phi_TR)); bu04=k_RT * ((((((kf_R / kb_R) / (kf_T / kb_T)) ^ (Phi_TR - 1)) * (((kf_R / kb_R) / (kf_T / kb_T)) ^ (Phi_TR - 1))) * (((kf_R / kb_R) / (kf_T / kb_T)) ^ (Phi_TR - 1))) * (((kf_R / kb_R) / (kf_T / kb_T)) ^ (Phi_TR - 1))) # (R!33) Keq = (k_TR * ((((((kf_R / kb_R) / (kf_T / kb_T)) ^ Phi_TR) * (((kf_R / kb_R) / (kf_T / kb_T)) ^ Phi_TR)) * (((kf_R / kb_R) / (kf_T / kb_T)) ^ Phi_TR)) * (((kf_R / kb_R) / (kf_T / kb_T)) ^ Phi_TR))) / (k_RT * ((((((kf_R / kb_R) / (kf_T / kb_T)) ^ (Phi_TR - 1)) * (((kf_R / kb_R) / (kf_T / kb_T)) ^ (Phi_TR - 1))) * (((kf_R / kb_R) / (kf_T / kb_T)) ^ (Phi_TR - 1))) * (((kf_R / kb_R) / (kf_T / kb_T)) ^ (Phi_TR - 1))))
+
+
+# INITIAL CONCENTRATIONS (compiled from MODEL section)
+# ----------------------------------------------------
+INIT:
+L = 0
+HT = 1
+
+
+# STIMULI (from Stimulus objects)
+# ------------------------------------
+EQN:
+null -> L; k_source_Stm00_L="(0.01*1000 +(event_flags(1) && ~event_flags(80))*0.00258925411794167*1000+(event_flags(2) && ~event_flags(79))*0.00325967780666946*1000+(event_flags(3) && ~event_flags(78))*0.00410369122507766*1000+(event_flags(4) && ~event_flags(77))*0.00516624116540701*1000+(event_flags(5) && ~event_flags(76))*0.006503912286588*1000+(event_flags(6) && ~event_flags(75))*0.00818794045366594*1000+(event_flags(7) && ~event_flags(74))*0.0103080063073775*1000+(event_flags(8) && ~event_flags(73))*0.0129770110852921*1000+(event_flags(9) && ~event_flags(72))*0.0163370890244088*1000+(event_flags(10) && ~event_flags(71))*0.0205671765275719*1000+(event_flags(11) && ~event_flags(70))*0.0258925411794168*1000+(event_flags(12) && ~event_flags(69))*0.0325967780666946*1000+(event_flags(13) && ~event_flags(68))*0.0410369122507767*1000+(event_flags(14) && ~event_flags(67))*0.0516624116540701*1000+(event_flags(15) && ~event_flags(66))*0.06503912286588*1000+(event_flags(16) && ~event_flags(65))*0.0818794045366594*1000+(event_flags(17) && ~event_flags(64))*0.103080063073775*1000+(event_flags(18) && ~event_flags(63))*0.129770110852921*1000+(event_flags(19) && ~event_flags(62))*0.163370890244088*1000+(event_flags(20) && ~event_flags(61))*0.205671765275719*1000+(event_flags(21) && ~event_flags(60))*0.258925411794168*1000+(event_flags(22) && ~event_flags(59))*0.325967780666947*1000+(event_flags(23) && ~event_flags(58))*0.410369122507767*1000+(event_flags(24) && ~event_flags(57))*0.516624116540702*1000+(event_flags(25) && ~event_flags(56))*0.6503912286588*1000+(event_flags(26) && ~event_flags(55))*0.818794045366595*1000+(event_flags(27) && ~event_flags(54))*1.03080063073775*1000+(event_flags(28) && ~event_flags(53))*1.29770110852921*1000+(event_flags(29) && ~event_flags(52))*1.63370890244089*1000+(event_flags(30) && ~event_flags(51))*2.05671765275719*1000+(event_flags(31) && ~event_flags(50))*2.58925411794168*1000+(event_flags(32) && ~event_flags(49))*3.25967780666947*1000+(event_flags(33) && ~event_flags(48))*4.10369122507767*1000+(event_flags(34) && ~event_flags(47))*5.16624116540702*1000+(event_flags(35) && ~event_flags(46))*6.50391228658801*1000+(event_flags(36) && ~event_flags(45))*8.18794045366595*1000+(event_flags(37) && ~event_flags(44))*10.3080063073775*1000+(event_flags(38) && ~event_flags(43))*12.9770110852921*1000+(event_flags(39) && ~event_flags(42))*16.3370890244089*1000+(event_flags(40) && ~event_flags(41))*20.5671765275719*1000)"
+L -> null; k_sink_Stm00_L=1000
+
+CONFIG:
+ode_event_times = ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ 
+t_final = 10000
+
+
+# COMPILED PROBES (from Probe objects)
+# ------------------------------------
+PROBE:
+probe p_H_R = "HR + HR_Li00 + HR_L_Li00 + HR_L_L_Li00 + HR_L_L_L_Li00"
+probe p_H_T = "HT + HT_Li00 + HT_L_Li00 + HT_L_L_Li00 + HT_L_L_L_Li00"
+probe p_L0 = "HT + HR"
+probe p_L1 = "HT_Li00 + HR_Li00"
+probe p_L2 = "HT_L_Li00 + HR_L_Li00"
+probe p_L3 = "HT_L_L_Li00 + HR_L_L_Li00"
+probe p_L4 = "HT_L_L_L_Li00 + HR_L_L_L_Li00"
+probe L
+
+
+# CONFIG (from CONFIG section)
+# ----------------------------
+CONFIG:
+t_final = 10000
+t_vector = [0:1:tf]
+matlab_ode_solver = ode15s
+matlab_odeset_options = odeset('InitialStep', 1e-15, 'AbsTol', 1e-48, 'RelTol', 1e-5)
+SS_timescale = 100
+SS_RelTol = 1e-3
+SS_AbsTol = 1e-6

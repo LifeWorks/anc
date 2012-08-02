@@ -1,0 +1,82 @@
+# Facile model created by Allosteric Network Compiler (ANC)
+# ANC version 1.01 released 2011/08/26
+# Sat Aug 27 17:48:56 EDT 2011
+
+
+
+# PARAMETERS
+# ----------
+parameter kf_RT = 0.1
+parameter kb_RT = 100
+parameter Phi_X = 0.5
+parameter Phi_Y = 0.5
+parameter kf_RX = 1
+parameter kb_RX = 10
+parameter kf_TX = 10
+parameter kb_TX = 1
+parameter kf_RY = 0.01
+parameter kb_RY = 1
+parameter kf_TY = 1
+parameter kb_TY = 0.01
+
+
+# REACTION CLASS: BindingReaction
+# -------------------------------
+AR                   + X                    <-> AR_Xi00                         ; fb00=kf_RX; bb00=kb_RX         # (R!01) Kd = kb_RX/kf_RX
+AR                   + Y                    <-> AR_Yi00                         ; fb01=kf_RY; bb01=kb_RY         # (R!03) Kd = kb_RY/kf_RY
+AT                   + X                    <-> AT_Xi00                         ; fb02=kf_TX; bb02=kb_TX         # (R!02) Kd = kb_TX/kf_TX
+AT                   + Y                    <-> AT_Yi00                         ; fb03=kf_TY; bb03=kb_TY         # (R!04) Kd = kb_TY/kf_TY
+X                    + AR_Yi00              <-> AR_X_Yi00                       ; fb00=kf_RX; bb00=kb_RX         # (R!07) Kd = kb_RX/kf_RX
+X                    + AT_Yi00              <-> AT_X_Yi00                       ; fb02=kf_TX; bb02=kb_TX         # (R!08) Kd = kb_TX/kf_TX
+Y                    + AR_Xi00              <-> AR_X_Yi00                       ; fb01=kf_RY; bb01=kb_RY         # (R!09) Kd = kb_RY/kf_RY
+Y                    + AT_Xi00              <-> AT_X_Yi00                       ; fb03=kf_TY; bb03=kb_TY         # (R!10) Kd = kb_TY/kf_TY
+
+# REACTION CLASS: AllostericReaction
+# ----------------------------------
+AR                                          <-> AT                              ; fu00=kf_RT; bu00=kb_RT         # (R!00) Keq = kf_RT / kb_RT
+AR_Xi00                                     <-> AT_Xi00                         ; fu01=kf_RT * (((kf_TX / kb_TX) / (kf_RX / kb_RX)) ^ Phi_X); bu01=kb_RT * (((kf_TX / kb_TX) / (kf_RX / kb_RX)) ^ (Phi_X - 1)) # (R!05) Keq = (kf_RT * (((kf_TX / kb_TX) / (kf_RX / kb_RX)) ^ Phi_X)) / (kb_RT * (((kf_TX / kb_TX) / (kf_RX / kb_RX)) ^ (Phi_X - 1)))
+AR_Yi00                                     <-> AT_Yi00                         ; fu02=kf_RT * (((kf_TY / kb_TY) / (kf_RY / kb_RY)) ^ Phi_Y); bu02=kb_RT * (((kf_TY / kb_TY) / (kf_RY / kb_RY)) ^ (Phi_Y - 1)) # (R!06) Keq = (kf_RT * (((kf_TY / kb_TY) / (kf_RY / kb_RY)) ^ Phi_Y)) / (kb_RT * (((kf_TY / kb_TY) / (kf_RY / kb_RY)) ^ (Phi_Y - 1)))
+AR_X_Yi00                                   <-> AT_X_Yi00                       ; fu03=kf_RT * ((((kf_TX / kb_TX) / (kf_RX / kb_RX)) ^ Phi_X) * (((kf_TY / kb_TY) / (kf_RY / kb_RY)) ^ Phi_Y)); bu03=kb_RT * ((((kf_TX / kb_TX) / (kf_RX / kb_RX)) ^ (Phi_X - 1)) * (((kf_TY / kb_TY) / (kf_RY / kb_RY)) ^ (Phi_Y - 1))) # (R!11) Keq = (kf_RT * ((((kf_TX / kb_TX) / (kf_RX / kb_RX)) ^ Phi_X) * (((kf_TY / kb_TY) / (kf_RY / kb_RY)) ^ Phi_Y))) / (kb_RT * ((((kf_TX / kb_TX) / (kf_RX / kb_RX)) ^ (Phi_X - 1)) * (((kf_TY / kb_TY) / (kf_RY / kb_RY)) ^ (Phi_Y - 1))))
+
+
+# INITIAL CONCENTRATIONS (compiled from MODEL section)
+# ----------------------------------------------------
+INIT:
+AT = 1
+X = 0
+Y = 1
+
+
+# STIMULI (from Stimulus objects)
+# ------------------------------------
+EQN:
+null -> X; k_source_Stm00_X="(0.001*1000 +(event_flags(1) && ~event_flags(24))*0.00216227766016838*1000+(event_flags(2) && ~event_flags(23))*0.00683772233983162*1000+(event_flags(3) && ~event_flags(22))*0.0216227766016838*1000+(event_flags(4) && ~event_flags(21))*0.0683772233983162*1000+(event_flags(5) && ~event_flags(20))*0.216227766016838*1000+(event_flags(6) && ~event_flags(19))*0.683772233983162*1000+(event_flags(7) && ~event_flags(18))*2.16227766016838*1000+(event_flags(8) && ~event_flags(17))*6.83772233983161*1000+(event_flags(9) && ~event_flags(16))*21.6227766016838*1000+(event_flags(10) && ~event_flags(15))*68.3772233983161*1000+(event_flags(11) && ~event_flags(14))*216.227766016838*1000+(event_flags(12) && ~event_flags(13))*683.772233983161*1000)"
+X -> null; k_sink_Stm00_X=1000
+
+CONFIG:
+ode_event_times = ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ 
+t_final = 10000
+
+
+# COMPILED PROBES (from Probe objects)
+# ------------------------------------
+PROBE:
+probe TRIMER = "AR_X_Yi00 + AT_X_Yi00"
+probe AX_DIMER = "AR_Xi00 + AT_Xi00"
+probe AY_DIMER = "AR_Yi00 + AT_Yi00"
+probe A = "AR + AT"
+probe RESPONSE = "AR_Yi00 + AT_Yi00 + AR_X_Yi00 + AT_X_Yi00"
+probe X
+probe Y
+
+
+# CONFIG (from CONFIG section)
+# ----------------------------
+CONFIG:
+t_final = 10000
+t_vector = [0:1:tf]
+matlab_ode_solver = ode15s
+matlab_odeset_options = odeset('InitialStep', 1e-15, 'AbsTol', 1e-48, 'RelTol', 1e-5)
+SS_timescale = 100
+SS_RelTol = 1e-3
+SS_AbsTol = 1e-6

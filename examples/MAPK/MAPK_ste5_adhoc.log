@@ -1,0 +1,1348 @@
+##############################################################################
+# Allosteric Network Compiler (ANC)
+# Copyright (C) 2005-2010 Julien Ollivier
+# Author:       Julien F. Ollivier
+# Version:      1.00
+# Release Date: 2010/9/19
+# This program comes with ABSOLUTELY NO WARRANTY.
+# This is free software, and you are welcome to redistribute it
+# under certain conditions. See file LICENSE.TXT for details.
+##############################################################################
+
+MODEL 	= examples/MAPK/MAPK_ste5_adhoc.mod
+OUT 	= examples/MAPK/MAPK_ste5_adhoc.eqn
+OUTDIR 	= examples/MAPK/MAPK_ste5_adhoc
+
+Start time: Sun Sep 19 08:57:31 EDT 2010
+CLEANING UP
+CREATING OUTPUT DIRECTORY
+READING MODEL examples/MAPK/MAPK_ste5_adhoc.mod
+REPORTING COMPILE PARAMETERS
+max_external_iterations = -1
+max_internal_iterations = -1
+max_species = -1
+max_complex_size = -1
+max_csite_bound_to_msite_number = -1
+kf_1st_order_rate_cutoff = 0
+kf_2nd_order_rate_cutoff = 0
+kb_rate_cutoff = 0
+kp_rate_cutoff = 0
+default_steric_factor = UNDEF
+report = all
+export_graphviz = primary,canonical,network,collapse_states,collapse_complexes
+compact_names = 1
+protein_separator = _
+IMPORTING COMPLEXES
+COMPILING RULES
+Compiling rule BR!00 of class CanBindRule
+S1n CanBind S1
+Compiling rule BR!01 of class CanBindRule
+S2n CanBind S2
+Compiling rule BR!02 of class CanBindRule
+S3n CanBind S3
+Compiling rule BR!03 of class CanBindRule
+KNX CanBind M1
+Compiling rule BR!04 of class CanBindRule
+KN1 CanBind M2a
+Compiling rule BR!05 of class CanBindRule
+KN1 CanBind M2b
+Compiling rule BR!06 of class CanBindRule
+KN2 CanBind M3a
+Compiling rule BR!07 of class CanBindRule
+KN2 CanBind M3b
+Compiling rule BR!08 of class CanBindRule
+MY CanBind KN3
+Compiling rule BR!09 of class CanBindRule
+M1 CanBind P1
+Compiling rule BR!10 of class CanBindRule
+M2a CanBind P2
+Compiling rule BR!11 of class CanBindRule
+M2b CanBind P2
+Compiling rule BR!12 of class CanBindRule
+M3a CanBind P3
+Compiling rule BR!13 of class CanBindRule
+M3b CanBind P3
+Compiling rule BR!14 of class CanBindRule
+MY CanBind PY
+INSTANTIATING COMPLEXES
+INITIALIZING INSTANCES
+COMPILING REACTION NETWORK
+ReactionNetwork::compile_network: starting...
+ReactionNetwork::compile_network: STARTING INTERNAL iteration=1 total_species=10
+ReactionNetwork::compile_network: STARTING EXTERNAL iteration=1 total_species=10
+ReactionNetwork::compile_external_reactions: processing species 5 of 10
+ReactionNetwork::compile_network: DONE EXTERNAL iteration=1 total_species=15
+ReactionNetwork::compile_network: STARTING INTERNAL iteration=2 total_species=15
+ReactionNetwork::compile_network: STARTING EXTERNAL iteration=2 total_species=15
+ReactionNetwork::compile_external_reactions: total_species=20
+ReactionNetwork::compile_external_reactions: processing species 5 of 15
+ReactionNetwork::compile_external_reactions: processing species 10 of 15
+ReactionNetwork::compile_network: DONE EXTERNAL iteration=2 total_species=31
+ReactionNetwork::compile_network: STARTING INTERNAL iteration=3 total_species=31
+ReactionNetwork::compile_internal_reactions: total_species=40
+ReactionNetwork::compile_network: STARTING EXTERNAL iteration=3 total_species=48
+ReactionNetwork::compile_external_reactions: total_species=60
+ReactionNetwork::compile_external_reactions: total_species=80
+ReactionNetwork::compile_external_reactions: processing species 5 of 48
+ReactionNetwork::compile_external_reactions: processing species 10 of 48
+ReactionNetwork::compile_external_reactions: total_species=100
+ReactionNetwork::compile_external_reactions: processing species 15 of 48
+ReactionNetwork::compile_external_reactions: processing species 20 of 48
+ReactionNetwork::compile_external_reactions: processing species 25 of 48
+ReactionNetwork::compile_external_reactions: processing species 30 of 48
+ReactionNetwork::compile_external_reactions: processing species 35 of 48
+ReactionNetwork::compile_external_reactions: processing species 40 of 48
+ReactionNetwork::compile_external_reactions: processing species 45 of 48
+ReactionNetwork::compile_network: DONE EXTERNAL iteration=3 total_species=117
+ReactionNetwork::compile_network: STARTING INTERNAL iteration=4 total_species=117
+ReactionNetwork::compile_internal_reactions: total_species=120
+ReactionNetwork::compile_internal_reactions: processing species 20 of 69
+ReactionNetwork::compile_internal_reactions: processing species 40 of 69
+ReactionNetwork::compile_internal_reactions: processing species 60 of 69
+ReactionNetwork::compile_internal_reactions: total_species=140
+ReactionNetwork::compile_network: STARTING EXTERNAL iteration=4 total_species=158
+ReactionNetwork::compile_external_reactions: total_species=160
+ReactionNetwork::compile_external_reactions: total_species=180
+ReactionNetwork::compile_external_reactions: total_species=200
+ReactionNetwork::compile_external_reactions: total_species=220
+ReactionNetwork::compile_external_reactions: processing species 5 of 158
+ReactionNetwork::compile_external_reactions: total_species=240
+ReactionNetwork::compile_external_reactions: total_species=260
+ReactionNetwork::compile_external_reactions: total_species=280
+ReactionNetwork::compile_external_reactions: total_species=300
+ReactionNetwork::compile_external_reactions: processing species 10 of 158
+ReactionNetwork::compile_external_reactions: processing species 15 of 158
+ReactionNetwork::compile_external_reactions: processing species 20 of 158
+ReactionNetwork::compile_external_reactions: processing species 25 of 158
+ReactionNetwork::compile_external_reactions: total_species=320
+ReactionNetwork::compile_external_reactions: processing species 30 of 158
+ReactionNetwork::compile_external_reactions: processing species 35 of 158
+ReactionNetwork::compile_external_reactions: processing species 40 of 158
+ReactionNetwork::compile_external_reactions: total_species=340
+ReactionNetwork::compile_external_reactions: processing species 45 of 158
+ReactionNetwork::compile_external_reactions: processing species 50 of 158
+ReactionNetwork::compile_external_reactions: processing species 55 of 158
+ReactionNetwork::compile_external_reactions: processing species 60 of 158
+ReactionNetwork::compile_external_reactions: processing species 65 of 158
+ReactionNetwork::compile_external_reactions: processing species 70 of 158
+ReactionNetwork::compile_external_reactions: processing species 75 of 158
+ReactionNetwork::compile_external_reactions: total_species=360
+ReactionNetwork::compile_external_reactions: processing species 80 of 158
+ReactionNetwork::compile_external_reactions: processing species 85 of 158
+ReactionNetwork::compile_external_reactions: processing species 90 of 158
+ReactionNetwork::compile_external_reactions: processing species 95 of 158
+ReactionNetwork::compile_external_reactions: processing species 100 of 158
+ReactionNetwork::compile_external_reactions: processing species 105 of 158
+ReactionNetwork::compile_external_reactions: processing species 110 of 158
+ReactionNetwork::compile_external_reactions: processing species 115 of 158
+ReactionNetwork::compile_external_reactions: processing species 120 of 158
+ReactionNetwork::compile_external_reactions: processing species 125 of 158
+ReactionNetwork::compile_external_reactions: processing species 130 of 158
+ReactionNetwork::compile_external_reactions: processing species 135 of 158
+ReactionNetwork::compile_external_reactions: processing species 140 of 158
+ReactionNetwork::compile_external_reactions: processing species 145 of 158
+ReactionNetwork::compile_external_reactions: processing species 150 of 158
+ReactionNetwork::compile_external_reactions: processing species 155 of 158
+ReactionNetwork::compile_network: DONE EXTERNAL iteration=4 total_species=373
+ReactionNetwork::compile_network: STARTING INTERNAL iteration=5 total_species=373
+ReactionNetwork::compile_internal_reactions: processing species 20 of 215
+ReactionNetwork::compile_internal_reactions: processing species 40 of 215
+ReactionNetwork::compile_internal_reactions: processing species 60 of 215
+ReactionNetwork::compile_internal_reactions: processing species 80 of 215
+ReactionNetwork::compile_internal_reactions: processing species 100 of 215
+ReactionNetwork::compile_internal_reactions: processing species 120 of 215
+ReactionNetwork::compile_internal_reactions: processing species 140 of 215
+ReactionNetwork::compile_internal_reactions: processing species 160 of 215
+ReactionNetwork::compile_internal_reactions: processing species 180 of 215
+ReactionNetwork::compile_internal_reactions: processing species 200 of 215
+ReactionNetwork::compile_network: STARTING EXTERNAL iteration=5 total_species=373
+ReactionNetwork::compile_external_reactions: total_species=380
+ReactionNetwork::compile_external_reactions: total_species=400
+ReactionNetwork::compile_external_reactions: total_species=420
+ReactionNetwork::compile_external_reactions: total_species=440
+ReactionNetwork::compile_external_reactions: total_species=460
+ReactionNetwork::compile_external_reactions: processing species 5 of 373
+ReactionNetwork::compile_external_reactions: total_species=480
+ReactionNetwork::compile_external_reactions: total_species=500
+ReactionNetwork::compile_external_reactions: total_species=520
+ReactionNetwork::compile_external_reactions: total_species=540
+ReactionNetwork::compile_external_reactions: total_species=560
+ReactionNetwork::compile_external_reactions: total_species=580
+ReactionNetwork::compile_external_reactions: total_species=600
+ReactionNetwork::compile_external_reactions: processing species 10 of 373
+ReactionNetwork::compile_external_reactions: processing species 15 of 373
+ReactionNetwork::compile_external_reactions: processing species 20 of 373
+ReactionNetwork::compile_external_reactions: processing species 25 of 373
+ReactionNetwork::compile_external_reactions: processing species 30 of 373
+ReactionNetwork::compile_external_reactions: processing species 35 of 373
+ReactionNetwork::compile_external_reactions: processing species 40 of 373
+ReactionNetwork::compile_external_reactions: processing species 45 of 373
+ReactionNetwork::compile_external_reactions: processing species 50 of 373
+ReactionNetwork::compile_external_reactions: processing species 55 of 373
+ReactionNetwork::compile_external_reactions: processing species 60 of 373
+ReactionNetwork::compile_external_reactions: processing species 65 of 373
+ReactionNetwork::compile_external_reactions: processing species 70 of 373
+ReactionNetwork::compile_external_reactions: processing species 75 of 373
+ReactionNetwork::compile_external_reactions: processing species 80 of 373
+ReactionNetwork::compile_external_reactions: processing species 85 of 373
+ReactionNetwork::compile_external_reactions: processing species 90 of 373
+ReactionNetwork::compile_external_reactions: processing species 95 of 373
+ReactionNetwork::compile_external_reactions: processing species 100 of 373
+ReactionNetwork::compile_external_reactions: processing species 105 of 373
+ReactionNetwork::compile_external_reactions: processing species 110 of 373
+ReactionNetwork::compile_external_reactions: processing species 115 of 373
+ReactionNetwork::compile_external_reactions: processing species 120 of 373
+ReactionNetwork::compile_external_reactions: processing species 125 of 373
+ReactionNetwork::compile_external_reactions: processing species 130 of 373
+ReactionNetwork::compile_external_reactions: processing species 135 of 373
+ReactionNetwork::compile_external_reactions: processing species 140 of 373
+ReactionNetwork::compile_external_reactions: processing species 145 of 373
+ReactionNetwork::compile_external_reactions: processing species 150 of 373
+ReactionNetwork::compile_external_reactions: processing species 155 of 373
+ReactionNetwork::compile_external_reactions: processing species 160 of 373
+ReactionNetwork::compile_external_reactions: processing species 165 of 373
+ReactionNetwork::compile_external_reactions: processing species 170 of 373
+ReactionNetwork::compile_external_reactions: processing species 175 of 373
+ReactionNetwork::compile_external_reactions: processing species 180 of 373
+ReactionNetwork::compile_external_reactions: processing species 185 of 373
+ReactionNetwork::compile_external_reactions: processing species 190 of 373
+ReactionNetwork::compile_external_reactions: processing species 195 of 373
+ReactionNetwork::compile_external_reactions: processing species 200 of 373
+ReactionNetwork::compile_external_reactions: processing species 205 of 373
+ReactionNetwork::compile_external_reactions: processing species 210 of 373
+ReactionNetwork::compile_external_reactions: processing species 215 of 373
+ReactionNetwork::compile_external_reactions: processing species 220 of 373
+ReactionNetwork::compile_external_reactions: processing species 225 of 373
+ReactionNetwork::compile_external_reactions: processing species 230 of 373
+ReactionNetwork::compile_external_reactions: processing species 235 of 373
+ReactionNetwork::compile_external_reactions: processing species 240 of 373
+ReactionNetwork::compile_external_reactions: processing species 245 of 373
+ReactionNetwork::compile_external_reactions: processing species 250 of 373
+ReactionNetwork::compile_external_reactions: processing species 255 of 373
+ReactionNetwork::compile_external_reactions: processing species 260 of 373
+ReactionNetwork::compile_external_reactions: processing species 265 of 373
+ReactionNetwork::compile_external_reactions: processing species 270 of 373
+ReactionNetwork::compile_external_reactions: processing species 275 of 373
+ReactionNetwork::compile_external_reactions: processing species 280 of 373
+ReactionNetwork::compile_external_reactions: processing species 285 of 373
+ReactionNetwork::compile_external_reactions: processing species 290 of 373
+ReactionNetwork::compile_external_reactions: processing species 295 of 373
+ReactionNetwork::compile_external_reactions: processing species 300 of 373
+ReactionNetwork::compile_external_reactions: processing species 305 of 373
+ReactionNetwork::compile_external_reactions: processing species 310 of 373
+ReactionNetwork::compile_external_reactions: processing species 315 of 373
+ReactionNetwork::compile_external_reactions: processing species 320 of 373
+ReactionNetwork::compile_external_reactions: processing species 325 of 373
+ReactionNetwork::compile_external_reactions: processing species 330 of 373
+ReactionNetwork::compile_external_reactions: processing species 335 of 373
+ReactionNetwork::compile_external_reactions: processing species 340 of 373
+ReactionNetwork::compile_external_reactions: processing species 345 of 373
+ReactionNetwork::compile_external_reactions: processing species 350 of 373
+ReactionNetwork::compile_external_reactions: processing species 355 of 373
+ReactionNetwork::compile_external_reactions: processing species 360 of 373
+ReactionNetwork::compile_external_reactions: processing species 365 of 373
+ReactionNetwork::compile_external_reactions: processing species 370 of 373
+ReactionNetwork::compile_network: DONE EXTERNAL iteration=5 total_species=617
+ReactionNetwork::compile_network: STARTING INTERNAL iteration=6 total_species=617
+ReactionNetwork::compile_internal_reactions: processing species 20 of 244
+ReactionNetwork::compile_internal_reactions: processing species 40 of 244
+ReactionNetwork::compile_internal_reactions: processing species 60 of 244
+ReactionNetwork::compile_internal_reactions: processing species 80 of 244
+ReactionNetwork::compile_internal_reactions: processing species 100 of 244
+ReactionNetwork::compile_internal_reactions: processing species 120 of 244
+ReactionNetwork::compile_internal_reactions: processing species 140 of 244
+ReactionNetwork::compile_internal_reactions: processing species 160 of 244
+ReactionNetwork::compile_internal_reactions: processing species 180 of 244
+ReactionNetwork::compile_internal_reactions: processing species 200 of 244
+ReactionNetwork::compile_internal_reactions: processing species 220 of 244
+ReactionNetwork::compile_internal_reactions: processing species 240 of 244
+ReactionNetwork::compile_network: STARTING EXTERNAL iteration=6 total_species=617
+ReactionNetwork::compile_external_reactions: total_species=620
+ReactionNetwork::compile_external_reactions: total_species=640
+ReactionNetwork::compile_external_reactions: processing species 5 of 617
+ReactionNetwork::compile_external_reactions: total_species=660
+ReactionNetwork::compile_external_reactions: processing species 10 of 617
+ReactionNetwork::compile_external_reactions: processing species 15 of 617
+ReactionNetwork::compile_external_reactions: processing species 20 of 617
+ReactionNetwork::compile_external_reactions: processing species 25 of 617
+ReactionNetwork::compile_external_reactions: processing species 30 of 617
+ReactionNetwork::compile_external_reactions: processing species 35 of 617
+ReactionNetwork::compile_external_reactions: processing species 40 of 617
+ReactionNetwork::compile_external_reactions: processing species 45 of 617
+ReactionNetwork::compile_external_reactions: processing species 50 of 617
+ReactionNetwork::compile_external_reactions: processing species 55 of 617
+ReactionNetwork::compile_external_reactions: processing species 60 of 617
+ReactionNetwork::compile_external_reactions: processing species 65 of 617
+ReactionNetwork::compile_external_reactions: processing species 70 of 617
+ReactionNetwork::compile_external_reactions: processing species 75 of 617
+ReactionNetwork::compile_external_reactions: processing species 80 of 617
+ReactionNetwork::compile_external_reactions: processing species 85 of 617
+ReactionNetwork::compile_external_reactions: processing species 90 of 617
+ReactionNetwork::compile_external_reactions: processing species 95 of 617
+ReactionNetwork::compile_external_reactions: processing species 100 of 617
+ReactionNetwork::compile_external_reactions: processing species 105 of 617
+ReactionNetwork::compile_external_reactions: processing species 110 of 617
+ReactionNetwork::compile_external_reactions: processing species 115 of 617
+ReactionNetwork::compile_external_reactions: processing species 120 of 617
+ReactionNetwork::compile_external_reactions: processing species 125 of 617
+ReactionNetwork::compile_external_reactions: processing species 130 of 617
+ReactionNetwork::compile_external_reactions: processing species 135 of 617
+ReactionNetwork::compile_external_reactions: processing species 140 of 617
+ReactionNetwork::compile_external_reactions: processing species 145 of 617
+ReactionNetwork::compile_external_reactions: processing species 150 of 617
+ReactionNetwork::compile_external_reactions: processing species 155 of 617
+ReactionNetwork::compile_external_reactions: processing species 160 of 617
+ReactionNetwork::compile_external_reactions: processing species 165 of 617
+ReactionNetwork::compile_external_reactions: processing species 170 of 617
+ReactionNetwork::compile_external_reactions: processing species 175 of 617
+ReactionNetwork::compile_external_reactions: processing species 180 of 617
+ReactionNetwork::compile_external_reactions: processing species 185 of 617
+ReactionNetwork::compile_external_reactions: processing species 190 of 617
+ReactionNetwork::compile_external_reactions: processing species 195 of 617
+ReactionNetwork::compile_external_reactions: processing species 200 of 617
+ReactionNetwork::compile_external_reactions: processing species 205 of 617
+ReactionNetwork::compile_external_reactions: processing species 210 of 617
+ReactionNetwork::compile_external_reactions: processing species 215 of 617
+ReactionNetwork::compile_external_reactions: processing species 220 of 617
+ReactionNetwork::compile_external_reactions: processing species 225 of 617
+ReactionNetwork::compile_external_reactions: processing species 230 of 617
+ReactionNetwork::compile_external_reactions: processing species 235 of 617
+ReactionNetwork::compile_external_reactions: processing species 240 of 617
+ReactionNetwork::compile_external_reactions: processing species 245 of 617
+ReactionNetwork::compile_external_reactions: processing species 250 of 617
+ReactionNetwork::compile_external_reactions: processing species 255 of 617
+ReactionNetwork::compile_external_reactions: processing species 260 of 617
+ReactionNetwork::compile_external_reactions: processing species 265 of 617
+ReactionNetwork::compile_external_reactions: processing species 270 of 617
+ReactionNetwork::compile_external_reactions: processing species 275 of 617
+ReactionNetwork::compile_external_reactions: processing species 280 of 617
+ReactionNetwork::compile_external_reactions: processing species 285 of 617
+ReactionNetwork::compile_external_reactions: processing species 290 of 617
+ReactionNetwork::compile_external_reactions: processing species 295 of 617
+ReactionNetwork::compile_external_reactions: processing species 300 of 617
+ReactionNetwork::compile_external_reactions: processing species 305 of 617
+ReactionNetwork::compile_external_reactions: processing species 310 of 617
+ReactionNetwork::compile_external_reactions: processing species 315 of 617
+ReactionNetwork::compile_external_reactions: processing species 320 of 617
+ReactionNetwork::compile_external_reactions: processing species 325 of 617
+ReactionNetwork::compile_external_reactions: processing species 330 of 617
+ReactionNetwork::compile_external_reactions: processing species 335 of 617
+ReactionNetwork::compile_external_reactions: processing species 340 of 617
+ReactionNetwork::compile_external_reactions: processing species 345 of 617
+ReactionNetwork::compile_external_reactions: processing species 350 of 617
+ReactionNetwork::compile_external_reactions: processing species 355 of 617
+ReactionNetwork::compile_external_reactions: processing species 360 of 617
+ReactionNetwork::compile_external_reactions: processing species 365 of 617
+ReactionNetwork::compile_external_reactions: processing species 370 of 617
+ReactionNetwork::compile_external_reactions: processing species 375 of 617
+ReactionNetwork::compile_external_reactions: processing species 380 of 617
+ReactionNetwork::compile_external_reactions: processing species 385 of 617
+ReactionNetwork::compile_external_reactions: processing species 390 of 617
+ReactionNetwork::compile_external_reactions: processing species 395 of 617
+ReactionNetwork::compile_external_reactions: processing species 400 of 617
+ReactionNetwork::compile_external_reactions: processing species 405 of 617
+ReactionNetwork::compile_external_reactions: processing species 410 of 617
+ReactionNetwork::compile_external_reactions: processing species 415 of 617
+ReactionNetwork::compile_external_reactions: processing species 420 of 617
+ReactionNetwork::compile_external_reactions: processing species 425 of 617
+ReactionNetwork::compile_external_reactions: processing species 430 of 617
+ReactionNetwork::compile_external_reactions: processing species 435 of 617
+ReactionNetwork::compile_external_reactions: processing species 440 of 617
+ReactionNetwork::compile_external_reactions: processing species 445 of 617
+ReactionNetwork::compile_external_reactions: processing species 450 of 617
+ReactionNetwork::compile_external_reactions: processing species 455 of 617
+ReactionNetwork::compile_external_reactions: processing species 460 of 617
+ReactionNetwork::compile_external_reactions: processing species 465 of 617
+ReactionNetwork::compile_external_reactions: processing species 470 of 617
+ReactionNetwork::compile_external_reactions: processing species 475 of 617
+ReactionNetwork::compile_external_reactions: processing species 480 of 617
+ReactionNetwork::compile_external_reactions: processing species 485 of 617
+ReactionNetwork::compile_external_reactions: processing species 490 of 617
+ReactionNetwork::compile_external_reactions: processing species 495 of 617
+ReactionNetwork::compile_external_reactions: processing species 500 of 617
+ReactionNetwork::compile_external_reactions: processing species 505 of 617
+ReactionNetwork::compile_external_reactions: processing species 510 of 617
+ReactionNetwork::compile_external_reactions: processing species 515 of 617
+ReactionNetwork::compile_external_reactions: processing species 520 of 617
+ReactionNetwork::compile_external_reactions: processing species 525 of 617
+ReactionNetwork::compile_external_reactions: processing species 530 of 617
+ReactionNetwork::compile_external_reactions: processing species 535 of 617
+ReactionNetwork::compile_external_reactions: processing species 540 of 617
+ReactionNetwork::compile_external_reactions: processing species 545 of 617
+ReactionNetwork::compile_external_reactions: processing species 550 of 617
+ReactionNetwork::compile_external_reactions: processing species 555 of 617
+ReactionNetwork::compile_external_reactions: processing species 560 of 617
+ReactionNetwork::compile_external_reactions: processing species 565 of 617
+ReactionNetwork::compile_external_reactions: processing species 570 of 617
+ReactionNetwork::compile_external_reactions: processing species 575 of 617
+ReactionNetwork::compile_external_reactions: processing species 580 of 617
+ReactionNetwork::compile_external_reactions: processing species 585 of 617
+ReactionNetwork::compile_external_reactions: processing species 590 of 617
+ReactionNetwork::compile_external_reactions: processing species 595 of 617
+ReactionNetwork::compile_external_reactions: processing species 600 of 617
+ReactionNetwork::compile_external_reactions: processing species 605 of 617
+ReactionNetwork::compile_external_reactions: processing species 610 of 617
+ReactionNetwork::compile_external_reactions: processing species 615 of 617
+ReactionNetwork::compile_network: DONE EXTERNAL iteration=6 total_species=667
+ReactionNetwork::compile_network: STARTING INTERNAL iteration=7 total_species=667
+ReactionNetwork::compile_internal_reactions: processing species 20 of 50
+ReactionNetwork::compile_internal_reactions: processing species 40 of 50
+ReactionNetwork::compile_network: STARTING EXTERNAL iteration=7 total_species=667
+ReactionNetwork::compile_external_reactions: processing species 5 of 667
+ReactionNetwork::compile_external_reactions: processing species 10 of 667
+ReactionNetwork::compile_external_reactions: processing species 15 of 667
+ReactionNetwork::compile_external_reactions: processing species 20 of 667
+ReactionNetwork::compile_external_reactions: processing species 25 of 667
+ReactionNetwork::compile_external_reactions: processing species 30 of 667
+ReactionNetwork::compile_external_reactions: processing species 35 of 667
+ReactionNetwork::compile_external_reactions: processing species 40 of 667
+ReactionNetwork::compile_external_reactions: processing species 45 of 667
+ReactionNetwork::compile_external_reactions: processing species 50 of 667
+ReactionNetwork::compile_external_reactions: processing species 55 of 667
+ReactionNetwork::compile_external_reactions: processing species 60 of 667
+ReactionNetwork::compile_external_reactions: processing species 65 of 667
+ReactionNetwork::compile_external_reactions: processing species 70 of 667
+ReactionNetwork::compile_external_reactions: processing species 75 of 667
+ReactionNetwork::compile_external_reactions: processing species 80 of 667
+ReactionNetwork::compile_external_reactions: processing species 85 of 667
+ReactionNetwork::compile_external_reactions: processing species 90 of 667
+ReactionNetwork::compile_external_reactions: processing species 95 of 667
+ReactionNetwork::compile_external_reactions: processing species 100 of 667
+ReactionNetwork::compile_external_reactions: processing species 105 of 667
+ReactionNetwork::compile_external_reactions: processing species 110 of 667
+ReactionNetwork::compile_external_reactions: processing species 115 of 667
+ReactionNetwork::compile_external_reactions: processing species 120 of 667
+ReactionNetwork::compile_external_reactions: processing species 125 of 667
+ReactionNetwork::compile_external_reactions: processing species 130 of 667
+ReactionNetwork::compile_external_reactions: processing species 135 of 667
+ReactionNetwork::compile_external_reactions: processing species 140 of 667
+ReactionNetwork::compile_external_reactions: processing species 145 of 667
+ReactionNetwork::compile_external_reactions: processing species 150 of 667
+ReactionNetwork::compile_external_reactions: processing species 155 of 667
+ReactionNetwork::compile_external_reactions: processing species 160 of 667
+ReactionNetwork::compile_external_reactions: processing species 165 of 667
+ReactionNetwork::compile_external_reactions: processing species 170 of 667
+ReactionNetwork::compile_external_reactions: processing species 175 of 667
+ReactionNetwork::compile_external_reactions: processing species 180 of 667
+ReactionNetwork::compile_external_reactions: processing species 185 of 667
+ReactionNetwork::compile_external_reactions: processing species 190 of 667
+ReactionNetwork::compile_external_reactions: processing species 195 of 667
+ReactionNetwork::compile_external_reactions: processing species 200 of 667
+ReactionNetwork::compile_external_reactions: processing species 205 of 667
+ReactionNetwork::compile_external_reactions: processing species 210 of 667
+ReactionNetwork::compile_external_reactions: processing species 215 of 667
+ReactionNetwork::compile_external_reactions: processing species 220 of 667
+ReactionNetwork::compile_external_reactions: processing species 225 of 667
+ReactionNetwork::compile_external_reactions: processing species 230 of 667
+ReactionNetwork::compile_external_reactions: processing species 235 of 667
+ReactionNetwork::compile_external_reactions: processing species 240 of 667
+ReactionNetwork::compile_external_reactions: processing species 245 of 667
+ReactionNetwork::compile_external_reactions: processing species 250 of 667
+ReactionNetwork::compile_external_reactions: processing species 255 of 667
+ReactionNetwork::compile_external_reactions: processing species 260 of 667
+ReactionNetwork::compile_external_reactions: processing species 265 of 667
+ReactionNetwork::compile_external_reactions: processing species 270 of 667
+ReactionNetwork::compile_external_reactions: processing species 275 of 667
+ReactionNetwork::compile_external_reactions: processing species 280 of 667
+ReactionNetwork::compile_external_reactions: processing species 285 of 667
+ReactionNetwork::compile_external_reactions: processing species 290 of 667
+ReactionNetwork::compile_external_reactions: processing species 295 of 667
+ReactionNetwork::compile_external_reactions: processing species 300 of 667
+ReactionNetwork::compile_external_reactions: processing species 305 of 667
+ReactionNetwork::compile_external_reactions: processing species 310 of 667
+ReactionNetwork::compile_external_reactions: processing species 315 of 667
+ReactionNetwork::compile_external_reactions: processing species 320 of 667
+ReactionNetwork::compile_external_reactions: processing species 325 of 667
+ReactionNetwork::compile_external_reactions: processing species 330 of 667
+ReactionNetwork::compile_external_reactions: processing species 335 of 667
+ReactionNetwork::compile_external_reactions: processing species 340 of 667
+ReactionNetwork::compile_external_reactions: processing species 345 of 667
+ReactionNetwork::compile_external_reactions: processing species 350 of 667
+ReactionNetwork::compile_external_reactions: processing species 355 of 667
+ReactionNetwork::compile_external_reactions: processing species 360 of 667
+ReactionNetwork::compile_external_reactions: processing species 365 of 667
+ReactionNetwork::compile_external_reactions: processing species 370 of 667
+ReactionNetwork::compile_external_reactions: processing species 375 of 667
+ReactionNetwork::compile_external_reactions: processing species 380 of 667
+ReactionNetwork::compile_external_reactions: processing species 385 of 667
+ReactionNetwork::compile_external_reactions: processing species 390 of 667
+ReactionNetwork::compile_external_reactions: processing species 395 of 667
+ReactionNetwork::compile_external_reactions: processing species 400 of 667
+ReactionNetwork::compile_external_reactions: processing species 405 of 667
+ReactionNetwork::compile_external_reactions: processing species 410 of 667
+ReactionNetwork::compile_external_reactions: processing species 415 of 667
+ReactionNetwork::compile_external_reactions: processing species 420 of 667
+ReactionNetwork::compile_external_reactions: processing species 425 of 667
+ReactionNetwork::compile_external_reactions: processing species 430 of 667
+ReactionNetwork::compile_external_reactions: processing species 435 of 667
+ReactionNetwork::compile_external_reactions: processing species 440 of 667
+ReactionNetwork::compile_external_reactions: processing species 445 of 667
+ReactionNetwork::compile_external_reactions: processing species 450 of 667
+ReactionNetwork::compile_external_reactions: processing species 455 of 667
+ReactionNetwork::compile_external_reactions: processing species 460 of 667
+ReactionNetwork::compile_external_reactions: processing species 465 of 667
+ReactionNetwork::compile_external_reactions: processing species 470 of 667
+ReactionNetwork::compile_external_reactions: processing species 475 of 667
+ReactionNetwork::compile_external_reactions: processing species 480 of 667
+ReactionNetwork::compile_external_reactions: processing species 485 of 667
+ReactionNetwork::compile_external_reactions: processing species 490 of 667
+ReactionNetwork::compile_external_reactions: processing species 495 of 667
+ReactionNetwork::compile_external_reactions: processing species 500 of 667
+ReactionNetwork::compile_external_reactions: processing species 505 of 667
+ReactionNetwork::compile_external_reactions: processing species 510 of 667
+ReactionNetwork::compile_external_reactions: processing species 515 of 667
+ReactionNetwork::compile_external_reactions: processing species 520 of 667
+ReactionNetwork::compile_external_reactions: processing species 525 of 667
+ReactionNetwork::compile_external_reactions: processing species 530 of 667
+ReactionNetwork::compile_external_reactions: processing species 535 of 667
+ReactionNetwork::compile_external_reactions: processing species 540 of 667
+ReactionNetwork::compile_external_reactions: processing species 545 of 667
+ReactionNetwork::compile_external_reactions: processing species 550 of 667
+ReactionNetwork::compile_external_reactions: processing species 555 of 667
+ReactionNetwork::compile_external_reactions: processing species 560 of 667
+ReactionNetwork::compile_external_reactions: processing species 565 of 667
+ReactionNetwork::compile_external_reactions: processing species 570 of 667
+ReactionNetwork::compile_external_reactions: processing species 575 of 667
+ReactionNetwork::compile_external_reactions: processing species 580 of 667
+ReactionNetwork::compile_external_reactions: processing species 585 of 667
+ReactionNetwork::compile_external_reactions: processing species 590 of 667
+ReactionNetwork::compile_external_reactions: processing species 595 of 667
+ReactionNetwork::compile_external_reactions: processing species 600 of 667
+ReactionNetwork::compile_external_reactions: processing species 605 of 667
+ReactionNetwork::compile_external_reactions: processing species 610 of 667
+ReactionNetwork::compile_external_reactions: processing species 615 of 667
+ReactionNetwork::compile_external_reactions: processing species 620 of 667
+ReactionNetwork::compile_external_reactions: processing species 625 of 667
+ReactionNetwork::compile_external_reactions: processing species 630 of 667
+ReactionNetwork::compile_external_reactions: processing species 635 of 667
+ReactionNetwork::compile_external_reactions: processing species 640 of 667
+ReactionNetwork::compile_external_reactions: processing species 645 of 667
+ReactionNetwork::compile_external_reactions: processing species 650 of 667
+ReactionNetwork::compile_external_reactions: processing species 655 of 667
+ReactionNetwork::compile_external_reactions: processing species 660 of 667
+ReactionNetwork::compile_external_reactions: processing species 665 of 667
+ReactionNetwork::compile_network: DONE EXTERNAL iteration=7 total_species=667
+ReactionNetwork::compile_network: STARTING FINAL-INTERNAL total_species=667
+ReactionNetwork::compile_network: DONE FINAL-INTERNAL total_species=667
+ReactionNetwork::compile_network: Done computing species in 7 iterations
+COMPILING ICs and STIMULI
+Init Ic!00 comprises 1 objects:
+	X
+Init Ic!01 comprises 1 objects:
+	Y0
+Init Ic!02 comprises 1 objects:
+	SS
+Init Ic!03 comprises 1 objects:
+	KKK0
+Init Ic!04 comprises 1 objects:
+	KK00
+Init Ic!05 comprises 1 objects:
+	K00
+Init Ic!06 comprises 1 objects:
+	P1
+Init Ic!07 comprises 1 objects:
+	P2
+Init Ic!08 comprises 1 objects:
+	P3
+Init Ic!09 comprises 1 objects:
+	PY
+Stimulus Stm!00 comprises 1 objects:
+	X
+COMPILING PROBES
+Probe X comprises 1 objects:
+	X
+Probe Y0 comprises 1 objects:
+	Y0
+Probe Y1 comprises 1 objects:
+	Y1
+Probe p_KKK1 comprises 330 objects:
+	KKK1
+	KKK1_SSi00
+	KK00_KKK1i00
+	KK00_KKK1i01
+	KKK1_P1i00
+	KK00_KKK1_SSi00
+	K00_KKK1_SSi00
+	KK00_KKK1_SSi01
+	KK00_KKK1_SSi02
+	KK00_KKK1_SSi03
+	KK10_KKK1_SSi00
+	KK00_KKK1_SSi04
+	KK01_KKK1_SSi00
+	KK00_KKK1_SSi05
+	KK10_KKK1_SSi04
+	KK11_KKK1_SSi00
+	KK00_KKK1_SSi06
+	KK01_KKK1_SSi03
+	KK10_KKK1_SSi02
+	KK10_KKK1_SSi06
+	KK01_KKK1_SSi01
+	KK01_KKK1_SSi05
+	KK10_KKK1i01
+	KK01_KKK1i00
+	K00_KK00_KKK1_SSi00
+	K00_KK00_KKK1_SSi01
+	K00_KK00_KKK1_SSi02
+	K00_KK00_KKK1_SSi03
+	K00_KK00_KKK1_SSi04
+	K00_KK00_KKK1_SSi05
+	K00_KK10_KKK1_SSi00
+	K00_KK00_KKK1_SSi06
+	K00_KK01_KKK1_SSi00
+	K00_KK10_KKK1_SSi06
+	K00_KK11_KKK1_SSi00
+	K00_KK01_KKK1_SSi05
+	K00_KK10_KKK1_SSi04
+	K00_KK10_KKK1_SSi02
+	K00_KK01_KKK1_SSi03
+	K00_KK01_KKK1_SSi01
+	K00_KK11_KKK1_SSi07
+	K00_KK11_KKK1_SSi08
+	KKK1_P1_SSi00
+	KK00_KKK1_P1_SSi00
+	K00_KKK1_P1_SSi00
+	KK10_KKK1_P1_SSi00
+	KK01_KKK1_P1_SSi00
+	KK11_KKK1_P1_SSi00
+	KK10_KKK1_P2_SSi00
+	KK01_KKK1_P2_SSi01
+	KK11_KKK1_P2_SSi00
+	KK11_KKK1_P2_SSi01
+	K00_KK11_KKK1_SSi09
+	K10_KKK1_SSi00
+	K00_KK11_KKK1_SSi10
+	K01_KKK1_SSi00
+	K00_KK11_KKK1_SSi11
+	K10_KK11_KKK1_SSi00
+	K00_KK11_KKK1_SSi12
+	K01_KK11_KKK1_SSi00
+	K10_KK11_KKK1_SSi12
+	K11_KK11_KKK1_SSi00
+	K01_KK11_KKK1_SSi11
+	K10_KK11_KKK1_SSi10
+	K10_KK11_KKK1_SSi08
+	K11_KKK1_SSi00
+	K01_KK11_KKK1_SSi09
+	K01_KK11_KKK1_SSi07
+	K11_KK11_KKK1_SS_Y0i00
+	K11_KKK1_SS_Y0i00
+	K00_KK00_KKK1_P1_SSi00
+	K10_KK00_KKK1_SSi00
+	K01_KK00_KKK1_SSi00
+	K11_KK00_KKK1_SSi00
+	K10_KK00_KKK1_SSi01
+	K01_KK00_KKK1_SSi01
+	K11_KK00_KKK1_SSi01
+	K10_KK00_KKK1_SSi02
+	K01_KK00_KKK1_SSi02
+	K11_KK00_KKK1_SSi02
+	K00_KK10_KKK1_P1_SSi00
+	K00_KK01_KKK1_P1_SSi00
+	K00_KK11_KKK1_P1_SSi00
+	K00_KK10_KKK1_P2_SSi00
+	K00_KK01_KKK1_P2_SSi01
+	K00_KK11_KKK1_P2_SSi00
+	K00_KK11_KKK1_P2_SSi01
+	K00_KK11_KKK1_P1_SSi01
+	K00_KK11_KKK1_P1_SSi02
+	KK10_KKK1_P1_P2_SSi00
+	KK01_KKK1_P1_P2_SSi01
+	KK11_KKK1_P1_P2_SSi00
+	KK11_KKK1_P1_P2_SSi01
+	K00_KK11_KKK1_P1_SSi03
+	K10_KKK1_P1_SSi00
+	K00_KK11_KKK1_P1_SSi04
+	K01_KKK1_P1_SSi00
+	K00_KK11_KKK1_P1_SSi05
+	K10_KK11_KKK1_P1_SSi00
+	K00_KK11_KKK1_P1_SSi06
+	K01_KK11_KKK1_P1_SSi00
+	K10_KK11_KKK1_P1_SSi06
+	K11_KK11_KKK1_P1_SSi00
+	K01_KK11_KKK1_P1_SSi05
+	K10_KK11_KKK1_P1_SSi04
+	K10_KK11_KKK1_P1_SSi02
+	K11_KKK1_P1_SSi00
+	K01_KK11_KKK1_P1_SSi03
+	K01_KK11_KKK1_P1_SSi01
+	K10_KK11_KKK1_P2_SSi00
+	K10_KK01_KKK1_SSi00
+	K10_KK11_KKK1_P2_SSi01
+	K10_KK10_KKK1_SSi00
+	K01_KK11_KKK1_P2_SSi00
+	K01_KK01_KKK1_SSi00
+	K01_KK11_KKK1_P2_SSi01
+	K01_KK10_KKK1_SSi00
+	K11_KK11_KKK1_P2_SSi00
+	K11_KK01_KKK1_SSi00
+	K11_KK11_KKK1_P2_SSi01
+	K11_KK10_KKK1_SSi00
+	K10_KKK1_P3_SSi00
+	K01_KKK1_P3_SSi01
+	K10_KK11_KKK1_P3_SSi00
+	K01_KK11_KKK1_P3_SSi01
+	K11_KK11_KKK1_P3_SSi00
+	K11_KK11_KKK1_P3_SSi01
+	K11_KKK1_P3_SSi00
+	K11_KKK1_P3_SSi01
+	K10_KK10_KKK1_SSi02
+	K01_KK10_KKK1_SSi02
+	K11_KK10_KKK1_SSi02
+	K10_KK01_KKK1_SSi01
+	K01_KK01_KKK1_SSi01
+	K11_KK01_KKK1_SSi01
+	K10_KK00_KKK1_SSi03
+	K01_KK00_KKK1_SSi03
+	K11_KK00_KKK1_SSi03
+	K10_KK00_KKK1_SSi04
+	K01_KK00_KKK1_SSi04
+	K11_KK00_KKK1_SSi04
+	K10_KK00_KKK1_SSi05
+	K01_KK00_KKK1_SSi05
+	K11_KK00_KKK1_SSi05
+	K10_KK00_KKK1_SSi06
+	K01_KK00_KKK1_SSi06
+	K11_KK00_KKK1_SSi06
+	K10_KK10_KKK1_SSi06
+	K01_KK10_KKK1_SSi06
+	K11_KK10_KKK1_SSi06
+	K10_KK01_KKK1_SSi05
+	K01_KK01_KKK1_SSi05
+	K11_KK01_KKK1_SSi05
+	K10_KK10_KKK1_SSi04
+	K01_KK10_KKK1_SSi04
+	K11_KK10_KKK1_SSi04
+	K10_KK01_KKK1_SSi03
+	K01_KK01_KKK1_SSi03
+	K11_KK01_KKK1_SSi03
+	K10_KK00_KKK1_P1_SSi00
+	K10_KK10_KKK1_P1_SSi00
+	K10_KK01_KKK1_P1_SSi00
+	K10_KK10_KKK1_P2_SSi00
+	K10_KK01_KKK1_P2_SSi01
+	K01_KK00_KKK1_P1_SSi00
+	K01_KK10_KKK1_P1_SSi00
+	K01_KK01_KKK1_P1_SSi00
+	K01_KK10_KKK1_P2_SSi00
+	K01_KK01_KKK1_P2_SSi01
+	K11_KK00_KKK1_P1_SSi00
+	K11_KK10_KKK1_P1_SSi00
+	K11_KK01_KKK1_P1_SSi00
+	K11_KK10_KKK1_P2_SSi00
+	K11_KK01_KKK1_P2_SSi01
+	K11_KK00_KKK1_SS_Y0i00
+	K11_KK00_KKK1_SS_Y0i01
+	K11_KK00_KKK1_SS_Y0i02
+	K11_KK11_KKK1_P1_SS_Y0i00
+	K11_KKK1_P1_SS_Y0i00
+	K11_KK11_KKK1_P2_SS_Y0i00
+	K11_KK01_KKK1_SS_Y0i00
+	K11_KK11_KKK1_P2_SS_Y0i01
+	K11_KK10_KKK1_SS_Y0i00
+	K11_KK10_KKK1_SS_Y0i02
+	K11_KK01_KKK1_SS_Y0i01
+	K11_KK00_KKK1_SS_Y0i03
+	K11_KK00_KKK1_SS_Y0i04
+	K11_KK00_KKK1_SS_Y0i05
+	K11_KK00_KKK1_SS_Y0i06
+	K11_KK10_KKK1_SS_Y0i06
+	K11_KK01_KKK1_SS_Y0i05
+	K11_KK10_KKK1_SS_Y0i04
+	K11_KK01_KKK1_SS_Y0i03
+	K11_KK00_KKK1_P1_SS_Y0i00
+	K11_KK10_KKK1_P1_SS_Y0i00
+	K11_KK01_KKK1_P1_SS_Y0i00
+	K11_KK10_KKK1_P2_SS_Y0i00
+	K11_KK01_KKK1_P2_SS_Y0i01
+	K10_KK00_KKK1_P3_SSi00
+	K01_KK00_KKK1_P3_SSi01
+	K11_KK00_KKK1_P3_SSi00
+	K11_KK00_KKK1_P3_SSi01
+	K10_KK00_KKK1_P3_SSi02
+	K01_KK00_KKK1_P3_SSi03
+	K11_KK00_KKK1_P3_SSi02
+	K11_KK00_KKK1_P3_SSi03
+	K10_KK00_KKK1_P3_SSi04
+	K01_KK00_KKK1_P3_SSi05
+	K11_KK00_KKK1_P3_SSi04
+	K11_KK00_KKK1_P3_SSi05
+	K00_KK10_KKK1_P1_P2_SSi00
+	K00_KK01_KKK1_P1_P2_SSi01
+	K00_KK11_KKK1_P1_P2_SSi00
+	K00_KK11_KKK1_P1_P2_SSi01
+	K10_KK11_KKK1_P1_P2_SSi00
+	K10_KK11_KKK1_P1_P2_SSi01
+	K01_KK11_KKK1_P1_P2_SSi00
+	K01_KK11_KKK1_P1_P2_SSi01
+	K11_KK11_KKK1_P1_P2_SSi00
+	K11_KK11_KKK1_P1_P2_SSi01
+	K10_KKK1_P1_P3_SSi00
+	K01_KKK1_P1_P3_SSi01
+	K10_KK11_KKK1_P1_P3_SSi00
+	K01_KK11_KKK1_P1_P3_SSi01
+	K11_KK11_KKK1_P1_P3_SSi00
+	K11_KK11_KKK1_P1_P3_SSi01
+	K11_KKK1_P1_P3_SSi00
+	K11_KKK1_P1_P3_SSi01
+	K10_KK10_KKK1_P1_P2_SSi00
+	K10_KK01_KKK1_P1_P2_SSi01
+	K01_KK10_KKK1_P1_P2_SSi00
+	K01_KK01_KKK1_P1_P2_SSi01
+	K11_KK10_KKK1_P1_P2_SSi00
+	K11_KK01_KKK1_P1_P2_SSi01
+	K10_KK11_KKK1_P2_P3_SSi00
+	K10_KK01_KKK1_P3_SSi00
+	K10_KK11_KKK1_P2_P3_SSi01
+	K10_KK10_KKK1_P3_SSi00
+	K01_KK11_KKK1_P2_P3_SSi02
+	K01_KK01_KKK1_P3_SSi01
+	K01_KK11_KKK1_P2_P3_SSi03
+	K01_KK10_KKK1_P3_SSi01
+	K11_KK11_KKK1_P2_P3_SSi00
+	K11_KK01_KKK1_P3_SSi00
+	K11_KK11_KKK1_P2_P3_SSi01
+	K11_KK10_KKK1_P3_SSi00
+	K11_KK11_KKK1_P2_P3_SSi02
+	K11_KK01_KKK1_P3_SSi01
+	K11_KK11_KKK1_P2_P3_SSi03
+	K11_KK10_KKK1_P3_SSi01
+	K10_KK10_KKK1_P3_SSi04
+	K01_KK10_KKK1_P3_SSi05
+	K11_KK10_KKK1_P3_SSi04
+	K11_KK10_KKK1_P3_SSi05
+	K10_KK01_KKK1_P3_SSi02
+	K01_KK01_KKK1_P3_SSi03
+	K11_KK01_KKK1_P3_SSi02
+	K11_KK01_KKK1_P3_SSi03
+	K10_KK00_KKK1_P3_SSi06
+	K01_KK00_KKK1_P3_SSi07
+	K11_KK00_KKK1_P3_SSi06
+	K11_KK00_KKK1_P3_SSi07
+	K10_KK00_KKK1_P3_SSi08
+	K01_KK00_KKK1_P3_SSi09
+	K11_KK00_KKK1_P3_SSi08
+	K11_KK00_KKK1_P3_SSi09
+	K10_KK00_KKK1_P3_SSi10
+	K01_KK00_KKK1_P3_SSi11
+	K11_KK00_KKK1_P3_SSi10
+	K11_KK00_KKK1_P3_SSi11
+	K10_KK00_KKK1_P3_SSi12
+	K01_KK00_KKK1_P3_SSi13
+	K11_KK00_KKK1_P3_SSi12
+	K11_KK00_KKK1_P3_SSi13
+	K10_KK10_KKK1_P3_SSi12
+	K01_KK10_KKK1_P3_SSi13
+	K11_KK10_KKK1_P3_SSi12
+	K11_KK10_KKK1_P3_SSi13
+	K10_KK01_KKK1_P3_SSi10
+	K01_KK01_KKK1_P3_SSi11
+	K11_KK01_KKK1_P3_SSi10
+	K11_KK01_KKK1_P3_SSi11
+	K10_KK10_KKK1_P3_SSi08
+	K01_KK10_KKK1_P3_SSi09
+	K11_KK10_KKK1_P3_SSi08
+	K11_KK10_KKK1_P3_SSi09
+	K10_KK01_KKK1_P3_SSi06
+	K01_KK01_KKK1_P3_SSi07
+	K11_KK01_KKK1_P3_SSi06
+	K11_KK01_KKK1_P3_SSi07
+	K10_KK00_KKK1_P1_P3_SSi00
+	K10_KK10_KKK1_P1_P3_SSi00
+	K10_KK01_KKK1_P1_P3_SSi00
+	K10_KK10_KKK1_P2_P3_SSi00
+	K10_KK01_KKK1_P2_P3_SSi01
+	K01_KK00_KKK1_P1_P3_SSi01
+	K01_KK10_KKK1_P1_P3_SSi01
+	K01_KK01_KKK1_P1_P3_SSi01
+	K01_KK10_KKK1_P2_P3_SSi02
+	K01_KK01_KKK1_P2_P3_SSi03
+	K11_KK00_KKK1_P1_P3_SSi00
+	K11_KK00_KKK1_P1_P3_SSi01
+	K11_KK10_KKK1_P1_P3_SSi00
+	K11_KK10_KKK1_P1_P3_SSi01
+	K11_KK01_KKK1_P1_P3_SSi00
+	K11_KK01_KKK1_P1_P3_SSi01
+	K11_KK10_KKK1_P2_P3_SSi00
+	K11_KK10_KKK1_P2_P3_SSi02
+	K11_KK01_KKK1_P2_P3_SSi01
+	K11_KK01_KKK1_P2_P3_SSi03
+	K11_KK11_KKK1_P1_P2_SS_Y0i00
+	K11_KK11_KKK1_P1_P2_SS_Y0i01
+	K11_KK10_KKK1_P1_P2_SS_Y0i00
+	K11_KK01_KKK1_P1_P2_SS_Y0i01
+	K10_KK11_KKK1_P1_P2_P3_SSi00
+	K10_KK11_KKK1_P1_P2_P3_SSi01
+	K01_KK11_KKK1_P1_P2_P3_SSi02
+	K01_KK11_KKK1_P1_P2_P3_SSi03
+	K11_KK11_KKK1_P1_P2_P3_SSi00
+	K11_KK11_KKK1_P1_P2_P3_SSi01
+	K11_KK11_KKK1_P1_P2_P3_SSi02
+	K11_KK11_KKK1_P1_P2_P3_SSi03
+	K10_KK10_KKK1_P1_P2_P3_SSi00
+	K10_KK01_KKK1_P1_P2_P3_SSi01
+	K01_KK10_KKK1_P1_P2_P3_SSi02
+	K01_KK01_KKK1_P1_P2_P3_SSi03
+	K11_KK10_KKK1_P1_P2_P3_SSi00
+	K11_KK10_KKK1_P1_P2_P3_SSi02
+	K11_KK01_KKK1_P1_P2_P3_SSi01
+	K11_KK01_KKK1_P1_P2_P3_SSi03
+Probe p_KK11 comprises 217 objects:
+	KK11_KKK1_SSi00
+	KK11_SSi00
+	KK11
+	KK11_KKK0_SSi00
+	K00_KK11_KKK1_SSi00
+	K00_KK11_SSi00
+	K00_KK11_KKK1_SSi07
+	K00_KK11_SSi01
+	K00_KK11i00
+	K00_KK11_KKK1_SSi08
+	K00_KK11_SSi02
+	K00_KK11i01
+	KK11_KKK1_P1_SSi00
+	KK11_KKK1_P2_SSi00
+	KK11_KKK1_P2_SSi01
+	KK11_P2_SSi00
+	KK11_P2_SSi01
+	KK11_P2i00
+	KK11_P2i01
+	K00_KK11_SSi03
+	K00_KK11_SSi04
+	KK11_KKK0_SS_Xi00
+	K00_KK11_KKK0_SSi09
+	K00_KK11_KKK0_SSi10
+	K00_KK11_KKK0_SSi00
+	K00_KK11_KKK1_SSi09
+	K00_KK11_KKK1_SSi10
+	K00_KK11_KKK1_SSi11
+	K10_KK11_KKK1_SSi00
+	K00_KK11_KKK1_SSi12
+	K01_KK11_KKK1_SSi00
+	K00_KK11_SSi05
+	K10_KK11_SSi00
+	K00_KK11_SSi06
+	K01_KK11_SSi00
+	K00_KK11_KKK0_SSi11
+	K00_KK11_KKK0_SSi12
+	K10_KK11_KKK0_SSi00
+	K01_KK11_KKK0_SSi00
+	K10_KK11_KKK1_SSi12
+	K11_KK11_KKK1_SSi00
+	K01_KK11_KKK1_SSi11
+	K10_KK11_SSi06
+	K11_KK11_SSi00
+	K01_KK11_SSi05
+	K00_KK11_KKK0_SSi07
+	K00_KK11_KKK0_SSi08
+	K10_KK11_KKK0_SSi12
+	K11_KK11_KKK0_SSi00
+	K01_KK11_KKK0_SSi11
+	K10_KK11_KKK1_SSi10
+	K10_KK11_KKK1_SSi08
+	K01_KK11_KKK1_SSi09
+	K01_KK11_KKK1_SSi07
+	K10_KK11_SSi04
+	K10_KK11_SSi02
+	K01_KK11_SSi03
+	K01_KK11_SSi01
+	K10_KK11_KKK0_SSi10
+	K10_KK11_KKK0_SSi08
+	K01_KK11_KKK0_SSi09
+	K01_KK11_KKK0_SSi07
+	K10_KK11i01
+	K01_KK11i00
+	K00_KK11_KKK0_SS_Xi01
+	K00_KK11_KKK0_SS_Xi02
+	K00_KK11_KKK0_SS_Xi00
+	K00_KK11_KKK0_SS_Xi03
+	K00_KK11_KKK0_SS_Xi04
+	K10_KK11_KKK0_SS_Xi00
+	K01_KK11_KKK0_SS_Xi00
+	K00_KK11_KKK0_SS_Xi05
+	K00_KK11_KKK0_SS_Xi06
+	K10_KK11_KKK0_SS_Xi04
+	K11_KK11_KKK0_SS_Xi00
+	K01_KK11_KKK0_SS_Xi03
+	K10_KK11_KKK0_SS_Xi02
+	K10_KK11_KKK0_SS_Xi06
+	K01_KK11_KKK0_SS_Xi01
+	K01_KK11_KKK0_SS_Xi05
+	K11_KK11_KKK1_SS_Y0i00
+	K11_KK11_SS_Y0i00
+	K11_KK11_KKK0_SS_Y0i00
+	KK11_KKK0_P2_SSi00
+	KK11_KKK0_P2_SSi01
+	K00_KK11_KKK1_P1_SSi00
+	K00_KK11_KKK1_P2_SSi00
+	K00_KK11_KKK1_P2_SSi01
+	K00_KK11_P2_SSi00
+	K00_KK11_P2_SSi01
+	K00_KK11_KKK1_P1_SSi01
+	K00_KK11_KKK1_P1_SSi02
+	KK11_KKK1_P1_P2_SSi00
+	KK11_KKK1_P1_P2_SSi01
+	K00_KK11_KKK1_P1_SSi03
+	K00_KK11_KKK1_P1_SSi04
+	K00_KK11_KKK1_P1_SSi05
+	K10_KK11_KKK1_P1_SSi00
+	K00_KK11_KKK1_P1_SSi06
+	K01_KK11_KKK1_P1_SSi00
+	K10_KK11_KKK1_P1_SSi06
+	K11_KK11_KKK1_P1_SSi00
+	K01_KK11_KKK1_P1_SSi05
+	K10_KK11_KKK1_P1_SSi04
+	K10_KK11_KKK1_P1_SSi02
+	K01_KK11_KKK1_P1_SSi03
+	K01_KK11_KKK1_P1_SSi01
+	KK11_KKK0_P2_SS_Xi00
+	KK11_KKK0_P2_SS_Xi01
+	K00_KK11_KKK0_P2_SSi00
+	K00_KK11_KKK0_P2_SSi01
+	K10_KK11_KKK1_P2_SSi00
+	K10_KK11_KKK1_P2_SSi01
+	K01_KK11_KKK1_P2_SSi00
+	K01_KK11_KKK1_P2_SSi01
+	K10_KK11_P2_SSi00
+	K10_KK11_P2_SSi01
+	K01_KK11_P2_SSi00
+	K01_KK11_P2_SSi01
+	K10_KK11_KKK0_P2_SSi00
+	K10_KK11_KKK0_P2_SSi01
+	K01_KK11_KKK0_P2_SSi00
+	K01_KK11_KKK0_P2_SSi01
+	K11_KK11_KKK1_P2_SSi00
+	K11_KK11_KKK1_P2_SSi01
+	K11_KK11_P2_SSi00
+	K11_KK11_P2_SSi01
+	K11_KK11_KKK0_P2_SSi00
+	K11_KK11_KKK0_P2_SSi01
+	K10_KK11_KKK1_P3_SSi00
+	K01_KK11_KKK1_P3_SSi01
+	K10_KK11_P3_SSi00
+	K01_KK11_P3_SSi01
+	K10_KK11_KKK0_P3_SSi00
+	K01_KK11_KKK0_P3_SSi01
+	K11_KK11_KKK1_P3_SSi00
+	K11_KK11_KKK1_P3_SSi01
+	K11_KK11_P3_SSi00
+	K11_KK11_P3_SSi01
+	K11_KK11_KKK0_P3_SSi00
+	K11_KK11_KKK0_P3_SSi01
+	K11_KK11_KKK0_SS_X_Y0i00
+	K00_KK11_KKK0_P2_SS_Xi00
+	K00_KK11_KKK0_P2_SS_Xi01
+	K10_KK11_KKK0_P2_SS_Xi00
+	K10_KK11_KKK0_P2_SS_Xi01
+	K01_KK11_KKK0_P2_SS_Xi00
+	K01_KK11_KKK0_P2_SS_Xi01
+	K11_KK11_KKK0_P2_SS_Xi00
+	K11_KK11_KKK0_P2_SS_Xi01
+	K10_KK11_KKK0_P3_SS_Xi00
+	K01_KK11_KKK0_P3_SS_Xi01
+	K11_KK11_KKK0_P3_SS_Xi00
+	K11_KK11_KKK0_P3_SS_Xi01
+	K11_KK11_KKK1_P1_SS_Y0i00
+	K11_KK11_KKK1_P2_SS_Y0i00
+	K11_KK11_KKK1_P2_SS_Y0i01
+	K11_KK11_P2_SS_Y0i00
+	K11_KK11_P2_SS_Y0i01
+	K11_KK11_KKK0_P2_SS_Y0i00
+	K11_KK11_KKK0_P2_SS_Y0i01
+	K00_KK11_KKK1_P1_P2_SSi00
+	K00_KK11_KKK1_P1_P2_SSi01
+	K10_KK11_KKK1_P1_P2_SSi00
+	K10_KK11_KKK1_P1_P2_SSi01
+	K01_KK11_KKK1_P1_P2_SSi00
+	K01_KK11_KKK1_P1_P2_SSi01
+	K11_KK11_KKK1_P1_P2_SSi00
+	K11_KK11_KKK1_P1_P2_SSi01
+	K10_KK11_KKK1_P1_P3_SSi00
+	K01_KK11_KKK1_P1_P3_SSi01
+	K11_KK11_KKK1_P1_P3_SSi00
+	K11_KK11_KKK1_P1_P3_SSi01
+	K10_KK11_KKK1_P2_P3_SSi00
+	K10_KK11_KKK1_P2_P3_SSi01
+	K01_KK11_KKK1_P2_P3_SSi02
+	K01_KK11_KKK1_P2_P3_SSi03
+	K10_KK11_P2_P3_SSi00
+	K10_KK11_P2_P3_SSi01
+	K01_KK11_P2_P3_SSi02
+	K01_KK11_P2_P3_SSi03
+	K10_KK11_KKK0_P2_P3_SSi00
+	K10_KK11_KKK0_P2_P3_SSi01
+	K01_KK11_KKK0_P2_P3_SSi02
+	K01_KK11_KKK0_P2_P3_SSi03
+	K11_KK11_KKK1_P2_P3_SSi00
+	K11_KK11_KKK1_P2_P3_SSi01
+	K11_KK11_KKK1_P2_P3_SSi02
+	K11_KK11_KKK1_P2_P3_SSi03
+	K11_KK11_P2_P3_SSi00
+	K11_KK11_P2_P3_SSi01
+	K11_KK11_P2_P3_SSi02
+	K11_KK11_P2_P3_SSi03
+	K11_KK11_KKK0_P2_P3_SSi00
+	K11_KK11_KKK0_P2_P3_SSi01
+	K11_KK11_KKK0_P2_P3_SSi02
+	K11_KK11_KKK0_P2_P3_SSi03
+	K11_KK11_KKK0_P2_SS_X_Y0i00
+	K11_KK11_KKK0_P2_SS_X_Y0i01
+	K10_KK11_KKK0_P2_P3_SS_Xi00
+	K10_KK11_KKK0_P2_P3_SS_Xi01
+	K01_KK11_KKK0_P2_P3_SS_Xi02
+	K01_KK11_KKK0_P2_P3_SS_Xi03
+	K11_KK11_KKK0_P2_P3_SS_Xi00
+	K11_KK11_KKK0_P2_P3_SS_Xi01
+	K11_KK11_KKK0_P2_P3_SS_Xi02
+	K11_KK11_KKK0_P2_P3_SS_Xi03
+	K11_KK11_KKK1_P1_P2_SS_Y0i00
+	K11_KK11_KKK1_P1_P2_SS_Y0i01
+	K10_KK11_KKK1_P1_P2_P3_SSi00
+	K10_KK11_KKK1_P1_P2_P3_SSi01
+	K01_KK11_KKK1_P1_P2_P3_SSi02
+	K01_KK11_KKK1_P1_P2_P3_SSi03
+	K11_KK11_KKK1_P1_P2_P3_SSi00
+	K11_KK11_KKK1_P1_P2_P3_SSi01
+	K11_KK11_KKK1_P1_P2_P3_SSi02
+	K11_KK11_KKK1_P1_P2_P3_SSi03
+Probe p_K11 comprises 232 objects:
+	K11_KK11_KKK1_SSi00
+	K11_KK11_SSi00
+	K11_KK11_KKK0_SSi00
+	K11_KKK1_SSi00
+	K11
+	K11_SSi00
+	K11_KKK0_SSi00
+	K11_KK11_KKK0_SS_Xi00
+	K11_KKK0_SS_Xi00
+	K11_KK11_KKK1_SS_Y0i00
+	K11_KK11_SS_Y0i00
+	K11_KK11_KKK0_SS_Y0i00
+	K11_KKK1_SS_Y0i00
+	K11_Y0i00
+	K11_SS_Y0i00
+	K11_KKK0_SS_Y0i00
+	K11_KK00_KKK1_SSi00
+	K11_KK00_SSi00
+	K11_KK00_KKK0_SSi00
+	K11_KK00_KKK1_SSi01
+	K11_KK00_KKK1_SSi02
+	K11_KK11_KKK1_P1_SSi00
+	K11_KKK1_P1_SSi00
+	K11_KK11_KKK1_P2_SSi00
+	K11_KK01_KKK1_SSi00
+	K11_KK11_KKK1_P2_SSi01
+	K11_KK10_KKK1_SSi00
+	K11_KK11_P2_SSi00
+	K11_KK01_SSi00
+	K11_KK11_P2_SSi01
+	K11_KK10_SSi00
+	K11_KK11_KKK0_P2_SSi00
+	K11_KK01_KKK0_SSi00
+	K11_KK11_KKK0_P2_SSi01
+	K11_KK10_KKK0_SSi00
+	K11_KK11_KKK1_P3_SSi00
+	K11_KK11_KKK1_P3_SSi01
+	K11_KK11_P3_SSi00
+	K11_KK11_P3_SSi01
+	K11_KK11_KKK0_P3_SSi00
+	K11_KK11_KKK0_P3_SSi01
+	K11_KKK1_P3_SSi00
+	K11_KKK1_P3_SSi01
+	K11_P3i00
+	K11_P3i01
+	K11_P3_SSi00
+	K11_P3_SSi01
+	K11_KKK0_P3_SSi00
+	K11_KKK0_P3_SSi01
+	K11_KK10_KKK1_SSi02
+	K11_KK01_KKK1_SSi01
+	K11_KK00_KKK1_SSi03
+	K11_KK00_KKK1_SSi04
+	K11_KK00_KKK1_SSi05
+	K11_KK00_KKK1_SSi06
+	K11_KK10_KKK1_SSi06
+	K11_KK01_KKK1_SSi05
+	K11_KK10_KKK1_SSi04
+	K11_KK01_KKK1_SSi03
+	K11_KK00_KKK0_SS_Xi00
+	K11_KK00_KKK1_P1_SSi00
+	K11_KK10_KKK1_P1_SSi00
+	K11_KK01_KKK1_P1_SSi00
+	K11_KK10_P2_SSi00
+	K11_KK01_P2_SSi01
+	K11_KK10_KKK1_P2_SSi00
+	K11_KK01_KKK1_P2_SSi01
+	K11_KK10_KKK0_SS_Xi00
+	K11_KK01_KKK0_SS_Xi00
+	K11_KK11_KKK0_SS_X_Y0i00
+	K11_KKK0_SS_X_Y0i00
+	K11_KK11_KKK0_P2_SS_Xi00
+	K11_KK11_KKK0_P2_SS_Xi01
+	K11_KK11_KKK0_P3_SS_Xi00
+	K11_KK11_KKK0_P3_SS_Xi01
+	K11_KKK0_P3_SS_Xi00
+	K11_KKK0_P3_SS_Xi01
+	K11_KK00_KKK1_SS_Y0i00
+	K11_KK00_SS_Y0i00
+	K11_KK00_KKK0_SS_Y0i00
+	K11_KK00_KKK1_SS_Y0i01
+	K11_KK00_KKK1_SS_Y0i02
+	K11_KK11_KKK1_P1_SS_Y0i00
+	K11_KKK1_P1_SS_Y0i00
+	K11_KK11_KKK1_P2_SS_Y0i00
+	K11_KK01_KKK1_SS_Y0i00
+	K11_KK11_KKK1_P2_SS_Y0i01
+	K11_KK10_KKK1_SS_Y0i00
+	K11_KK11_P2_SS_Y0i00
+	K11_KK01_SS_Y0i00
+	K11_KK11_P2_SS_Y0i01
+	K11_KK10_SS_Y0i00
+	K11_KK11_KKK0_P2_SS_Y0i00
+	K11_KK01_KKK0_SS_Y0i00
+	K11_KK11_KKK0_P2_SS_Y0i01
+	K11_KK10_KKK0_SS_Y0i00
+	K11_KK10_KKK1_SS_Y0i02
+	K11_KK01_KKK1_SS_Y0i01
+	K11_KK00_KKK1_SS_Y0i03
+	K11_KK00_KKK1_SS_Y0i04
+	K11_KK00_KKK1_SS_Y0i05
+	K11_KK00_KKK1_SS_Y0i06
+	K11_KK10_KKK1_SS_Y0i06
+	K11_KK01_KKK1_SS_Y0i05
+	K11_KK10_KKK1_SS_Y0i04
+	K11_KK01_KKK1_SS_Y0i03
+	K11_KK00_KKK0_SS_X_Y0i00
+	K11_KK00_KKK1_P1_SS_Y0i00
+	K11_KK10_KKK1_P1_SS_Y0i00
+	K11_KK01_KKK1_P1_SS_Y0i00
+	K11_KK10_P2_SS_Y0i00
+	K11_KK01_P2_SS_Y0i01
+	K11_KK10_KKK1_P2_SS_Y0i00
+	K11_KK01_KKK1_P2_SS_Y0i01
+	K11_KK10_KKK0_SS_X_Y0i00
+	K11_KK01_KKK0_SS_X_Y0i00
+	K11_KK10_KKK0_P2_SSi00
+	K11_KK01_KKK0_P2_SSi01
+	K11_KK00_KKK1_P3_SSi00
+	K11_KK00_KKK1_P3_SSi01
+	K11_KK00_P3_SSi00
+	K11_KK00_P3_SSi01
+	K11_KK00_KKK0_P3_SSi00
+	K11_KK00_KKK0_P3_SSi01
+	K11_KK00_KKK1_P3_SSi02
+	K11_KK00_KKK1_P3_SSi03
+	K11_KK00_KKK1_P3_SSi04
+	K11_KK00_KKK1_P3_SSi05
+	K11_KK11_KKK1_P1_P2_SSi00
+	K11_KK11_KKK1_P1_P2_SSi01
+	K11_KK11_KKK1_P1_P3_SSi00
+	K11_KK11_KKK1_P1_P3_SSi01
+	K11_KKK1_P1_P3_SSi00
+	K11_KKK1_P1_P3_SSi01
+	K11_KK10_KKK1_P1_P2_SSi00
+	K11_KK01_KKK1_P1_P2_SSi01
+	K11_KK11_KKK1_P2_P3_SSi00
+	K11_KK01_KKK1_P3_SSi00
+	K11_KK11_KKK1_P2_P3_SSi01
+	K11_KK10_KKK1_P3_SSi00
+	K11_KK11_KKK1_P2_P3_SSi02
+	K11_KK01_KKK1_P3_SSi01
+	K11_KK11_KKK1_P2_P3_SSi03
+	K11_KK10_KKK1_P3_SSi01
+	K11_KK11_P2_P3_SSi00
+	K11_KK01_P3_SSi00
+	K11_KK11_P2_P3_SSi01
+	K11_KK10_P3_SSi00
+	K11_KK11_P2_P3_SSi02
+	K11_KK01_P3_SSi01
+	K11_KK11_P2_P3_SSi03
+	K11_KK10_P3_SSi01
+	K11_KK11_KKK0_P2_P3_SSi00
+	K11_KK01_KKK0_P3_SSi00
+	K11_KK11_KKK0_P2_P3_SSi01
+	K11_KK10_KKK0_P3_SSi00
+	K11_KK11_KKK0_P2_P3_SSi02
+	K11_KK01_KKK0_P3_SSi01
+	K11_KK11_KKK0_P2_P3_SSi03
+	K11_KK10_KKK0_P3_SSi01
+	K11_KK10_KKK0_P2_SS_Xi00
+	K11_KK01_KKK0_P2_SS_Xi01
+	K11_KK10_KKK1_P3_SSi04
+	K11_KK10_KKK1_P3_SSi05
+	K11_KK01_KKK1_P3_SSi02
+	K11_KK01_KKK1_P3_SSi03
+	K11_KK00_KKK1_P3_SSi06
+	K11_KK00_KKK1_P3_SSi07
+	K11_KK00_KKK1_P3_SSi08
+	K11_KK00_KKK1_P3_SSi09
+	K11_KK00_KKK1_P3_SSi10
+	K11_KK00_KKK1_P3_SSi11
+	K11_KK00_KKK1_P3_SSi12
+	K11_KK00_KKK1_P3_SSi13
+	K11_KK10_KKK1_P3_SSi12
+	K11_KK10_KKK1_P3_SSi13
+	K11_KK01_KKK1_P3_SSi10
+	K11_KK01_KKK1_P3_SSi11
+	K11_KK10_KKK1_P3_SSi08
+	K11_KK10_KKK1_P3_SSi09
+	K11_KK01_KKK1_P3_SSi06
+	K11_KK01_KKK1_P3_SSi07
+	K11_KK00_KKK0_P3_SS_Xi00
+	K11_KK00_KKK0_P3_SS_Xi01
+	K11_KK00_KKK1_P1_P3_SSi00
+	K11_KK00_KKK1_P1_P3_SSi01
+	K11_KK10_KKK1_P1_P3_SSi00
+	K11_KK10_KKK1_P1_P3_SSi01
+	K11_KK01_KKK1_P1_P3_SSi00
+	K11_KK01_KKK1_P1_P3_SSi01
+	K11_KK10_P2_P3_SSi00
+	K11_KK10_P2_P3_SSi02
+	K11_KK01_P2_P3_SSi01
+	K11_KK01_P2_P3_SSi03
+	K11_KK10_KKK1_P2_P3_SSi00
+	K11_KK10_KKK1_P2_P3_SSi02
+	K11_KK01_KKK1_P2_P3_SSi01
+	K11_KK01_KKK1_P2_P3_SSi03
+	K11_KK10_KKK0_P3_SS_Xi00
+	K11_KK10_KKK0_P3_SS_Xi01
+	K11_KK01_KKK0_P3_SS_Xi00
+	K11_KK01_KKK0_P3_SS_Xi01
+	K11_KK11_KKK0_P2_SS_X_Y0i00
+	K11_KK11_KKK0_P2_SS_X_Y0i01
+	K11_KK11_KKK0_P2_P3_SS_Xi00
+	K11_KK11_KKK0_P2_P3_SS_Xi01
+	K11_KK11_KKK0_P2_P3_SS_Xi02
+	K11_KK11_KKK0_P2_P3_SS_Xi03
+	K11_KK10_KKK0_P2_SS_Y0i00
+	K11_KK01_KKK0_P2_SS_Y0i01
+	K11_KK11_KKK1_P1_P2_SS_Y0i00
+	K11_KK11_KKK1_P1_P2_SS_Y0i01
+	K11_KK10_KKK1_P1_P2_SS_Y0i00
+	K11_KK01_KKK1_P1_P2_SS_Y0i01
+	K11_KK10_KKK0_P2_SS_X_Y0i00
+	K11_KK01_KKK0_P2_SS_X_Y0i01
+	K11_KK10_KKK0_P2_P3_SSi00
+	K11_KK10_KKK0_P2_P3_SSi02
+	K11_KK01_KKK0_P2_P3_SSi01
+	K11_KK01_KKK0_P2_P3_SSi03
+	K11_KK11_KKK1_P1_P2_P3_SSi00
+	K11_KK11_KKK1_P1_P2_P3_SSi01
+	K11_KK11_KKK1_P1_P2_P3_SSi02
+	K11_KK11_KKK1_P1_P2_P3_SSi03
+	K11_KK10_KKK1_P1_P2_P3_SSi00
+	K11_KK10_KKK1_P1_P2_P3_SSi02
+	K11_KK01_KKK1_P1_P2_P3_SSi01
+	K11_KK01_KKK1_P1_P2_P3_SSi03
+	K11_KK10_KKK0_P2_P3_SS_Xi00
+	K11_KK10_KKK0_P2_P3_SS_Xi02
+	K11_KK01_KKK0_P2_P3_SS_Xi01
+	K11_KK01_KKK0_P2_P3_SS_Xi03
+EXPORTING NETWORK
+Facile->export(): generating Facile equation file
+REPORTING SPECIES STRUCTURE IN: examples/MAPK/MAPK_ste5_adhoc/MAPK_ste5_adhoc.structures.rpt
+REPORTING SPECIES IN: examples/MAPK/MAPK_ste5_adhoc/MAPK_ste5_adhoc.species.rpt
+EXPORTING NETWORK TO GRAPHVIZ
+EXPORTING SPECIES TO GRAPHVIZ (primary form)
+EXPORTING SPECIES TO GRAPHVIZ (canonical form)
+Start time: Sun Sep 19 08:57:31 EDT 2010
+End time:   Sun Sep 19 10:25:30 EDT 2010

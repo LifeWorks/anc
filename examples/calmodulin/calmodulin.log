@@ -1,0 +1,374 @@
+##############################################################################
+# Allosteric Network Compiler (ANC)
+# Copyright (C) 2005-2011 Julien Ollivier
+# Author:       Julien F. Ollivier
+# Version:      1.01
+# Release Date: 2011/08/26
+# This program comes with ABSOLUTELY NO WARRANTY.
+# This is free software, and you are welcome to redistribute it
+# under certain conditions. See file LICENSE.TXT for details.
+##############################################################################
+
+MODEL 	= examples/calmodulin/calmodulin.mod
+OUT 	= examples/calmodulin/calmodulin.eqn
+OUTDIR 	= examples/calmodulin/calmodulin
+
+Start time: Sat Aug 27 19:18:26 EDT 2011
+CLEANING UP
+CREATING OUTPUT DIRECTORY
+READING MODEL examples/calmodulin/calmodulin.mod
+REPORTING COMPILE PARAMETERS
+max_external_iterations = -1
+max_internal_iterations = -1
+max_species = -1
+max_complex_size = -1
+max_csite_bound_to_msite_number = -1
+kf_1st_order_rate_cutoff = 0
+kf_2nd_order_rate_cutoff = 0
+kb_rate_cutoff = 0
+kp_rate_cutoff = 0
+default_steric_factor = UNDEF
+report = all
+export_graphviz = primary,canonical,network,collapse_states,collapse_complexes
+compact_names = 1
+protein_separator = _
+IMPORTING COMPLEXES
+COMPILING RULES
+Compiling rule BR!00 of class CanBindRule
+A CanBind Ca
+Compiling rule BR!01 of class CanBindRule
+A CanBind Ca
+Compiling rule BR!02 of class CanBindRule
+B CanBind Ca
+Compiling rule BR!03 of class CanBindRule
+B CanBind Ca
+Compiling rule BR!04 of class CanBindRule
+C CanBind Ca
+Compiling rule BR!05 of class CanBindRule
+C CanBind Ca
+Compiling rule BR!06 of class CanBindRule
+D CanBind Ca
+Compiling rule BR!07 of class CanBindRule
+D CanBind Ca
+Compiling rule BR!08 of class CanBindRule
+T CanBind CaMKII
+Compiling rule BR!09 of class CanBindRule
+T CanBind PP2B
+Compiling rule BR!10 of class CanBindRule
+T CanBind CaMKII
+Compiling rule BR!11 of class CanBindRule
+T CanBind PP2B
+INSTANTIATING COMPLEXES
+INITIALIZING INSTANCES
+COMPILING REACTION NETWORK
+ReactionNetwork::compile_network: starting...
+ReactionNetwork::compile_network: STARTING INTERNAL iteration=1 total_species=4
+ReactionNetwork::compile_network: STARTING EXTERNAL iteration=1 total_species=5
+ReactionNetwork::compile_network: DONE EXTERNAL iteration=1 total_species=15
+ReactionNetwork::compile_network: STARTING INTERNAL iteration=2 total_species=15
+ReactionNetwork::compile_network: STARTING EXTERNAL iteration=2 total_species=17
+ReactionNetwork::compile_external_reactions: total_species=20
+ReactionNetwork::compile_external_reactions: total_species=40
+ReactionNetwork::compile_external_reactions: processing species 5 of 17
+ReactionNetwork::compile_external_reactions: processing species 10 of 17
+ReactionNetwork::compile_external_reactions: processing species 15 of 17
+ReactionNetwork::compile_network: DONE EXTERNAL iteration=2 total_species=45
+ReactionNetwork::compile_network: STARTING INTERNAL iteration=3 total_species=45
+ReactionNetwork::compile_internal_reactions: processing species 20 of 28
+ReactionNetwork::compile_network: STARTING EXTERNAL iteration=3 total_species=45
+ReactionNetwork::compile_external_reactions: total_species=60
+ReactionNetwork::compile_external_reactions: processing species 5 of 45
+ReactionNetwork::compile_external_reactions: processing species 10 of 45
+ReactionNetwork::compile_external_reactions: processing species 15 of 45
+ReactionNetwork::compile_external_reactions: processing species 20 of 45
+ReactionNetwork::compile_external_reactions: processing species 25 of 45
+ReactionNetwork::compile_external_reactions: processing species 30 of 45
+ReactionNetwork::compile_external_reactions: processing species 35 of 45
+ReactionNetwork::compile_external_reactions: processing species 40 of 45
+ReactionNetwork::compile_network: DONE EXTERNAL iteration=3 total_species=77
+ReactionNetwork::compile_network: STARTING INTERNAL iteration=4 total_species=77
+ReactionNetwork::compile_internal_reactions: processing species 20 of 32
+ReactionNetwork::compile_network: STARTING EXTERNAL iteration=4 total_species=77
+ReactionNetwork::compile_external_reactions: total_species=80
+ReactionNetwork::compile_external_reactions: processing species 5 of 77
+ReactionNetwork::compile_external_reactions: processing species 10 of 77
+ReactionNetwork::compile_external_reactions: processing species 15 of 77
+ReactionNetwork::compile_external_reactions: processing species 20 of 77
+ReactionNetwork::compile_external_reactions: processing species 25 of 77
+ReactionNetwork::compile_external_reactions: processing species 30 of 77
+ReactionNetwork::compile_external_reactions: processing species 35 of 77
+ReactionNetwork::compile_external_reactions: processing species 40 of 77
+ReactionNetwork::compile_external_reactions: processing species 45 of 77
+ReactionNetwork::compile_external_reactions: processing species 50 of 77
+ReactionNetwork::compile_external_reactions: processing species 55 of 77
+ReactionNetwork::compile_external_reactions: processing species 60 of 77
+ReactionNetwork::compile_external_reactions: processing species 65 of 77
+ReactionNetwork::compile_external_reactions: processing species 70 of 77
+ReactionNetwork::compile_external_reactions: processing species 75 of 77
+ReactionNetwork::compile_network: DONE EXTERNAL iteration=4 total_species=95
+ReactionNetwork::compile_network: STARTING INTERNAL iteration=5 total_species=95
+ReactionNetwork::compile_network: STARTING EXTERNAL iteration=5 total_species=95
+ReactionNetwork::compile_external_reactions: processing species 5 of 95
+ReactionNetwork::compile_external_reactions: processing species 10 of 95
+ReactionNetwork::compile_external_reactions: processing species 15 of 95
+ReactionNetwork::compile_external_reactions: processing species 20 of 95
+ReactionNetwork::compile_external_reactions: processing species 25 of 95
+ReactionNetwork::compile_external_reactions: processing species 30 of 95
+ReactionNetwork::compile_external_reactions: processing species 35 of 95
+ReactionNetwork::compile_external_reactions: processing species 40 of 95
+ReactionNetwork::compile_external_reactions: processing species 45 of 95
+ReactionNetwork::compile_external_reactions: processing species 50 of 95
+ReactionNetwork::compile_external_reactions: processing species 55 of 95
+ReactionNetwork::compile_external_reactions: processing species 60 of 95
+ReactionNetwork::compile_external_reactions: processing species 65 of 95
+ReactionNetwork::compile_external_reactions: processing species 70 of 95
+ReactionNetwork::compile_external_reactions: processing species 75 of 95
+ReactionNetwork::compile_external_reactions: processing species 80 of 95
+ReactionNetwork::compile_external_reactions: processing species 85 of 95
+ReactionNetwork::compile_external_reactions: processing species 90 of 95
+ReactionNetwork::compile_network: DONE EXTERNAL iteration=5 total_species=99
+ReactionNetwork::compile_network: STARTING INTERNAL iteration=6 total_species=99
+ReactionNetwork::compile_network: STARTING EXTERNAL iteration=6 total_species=99
+ReactionNetwork::compile_external_reactions: processing species 5 of 99
+ReactionNetwork::compile_external_reactions: processing species 10 of 99
+ReactionNetwork::compile_external_reactions: processing species 15 of 99
+ReactionNetwork::compile_external_reactions: processing species 20 of 99
+ReactionNetwork::compile_external_reactions: processing species 25 of 99
+ReactionNetwork::compile_external_reactions: processing species 30 of 99
+ReactionNetwork::compile_external_reactions: processing species 35 of 99
+ReactionNetwork::compile_external_reactions: processing species 40 of 99
+ReactionNetwork::compile_external_reactions: processing species 45 of 99
+ReactionNetwork::compile_external_reactions: processing species 50 of 99
+ReactionNetwork::compile_external_reactions: processing species 55 of 99
+ReactionNetwork::compile_external_reactions: processing species 60 of 99
+ReactionNetwork::compile_external_reactions: processing species 65 of 99
+ReactionNetwork::compile_external_reactions: processing species 70 of 99
+ReactionNetwork::compile_external_reactions: processing species 75 of 99
+ReactionNetwork::compile_external_reactions: processing species 80 of 99
+ReactionNetwork::compile_external_reactions: processing species 85 of 99
+ReactionNetwork::compile_external_reactions: processing species 90 of 99
+ReactionNetwork::compile_external_reactions: processing species 95 of 99
+ReactionNetwork::compile_network: DONE EXTERNAL iteration=6 total_species=99
+ReactionNetwork::compile_network: STARTING FINAL-INTERNAL total_species=99
+ReactionNetwork::compile_network: DONE FINAL-INTERNAL total_species=99
+ReactionNetwork::compile_network: Done computing species in 6 iterations
+COMPILING ICs and STIMULI
+Init Ic!00 comprises 1 objects:
+	CaMKII
+Init Ic!01 comprises 1 objects:
+	CAMT
+Init Ic!02 comprises 1 objects:
+	Ca
+Stimulus Stm!00 comprises 1 objects:
+	Ca
+COMPILING PROBES
+Probe Prb!00 comprises 1 objects:
+	Ca
+Probe p_CAMR comprises 48 objects:
+	CAMR
+	CAMR_Cai00
+	CAMR_Cai01
+	CAMR_Cai02
+	CAMR_Cai03
+	CAMR_CaMKIIi00
+	CAMR_PP2Bi00
+	CAMR_Ca_Cai00
+	CAMR_Ca_Cai01
+	CAMR_Ca_Cai02
+	CAMR_Ca_Cai03
+	CAMR_Ca_Cai04
+	CAMR_Ca_Cai05
+	CAMR_Ca_CaMKIIi00
+	CAMR_Ca_CaMKIIi01
+	CAMR_Ca_CaMKIIi02
+	CAMR_Ca_CaMKIIi03
+	CAMR_Ca_PP2Bi00
+	CAMR_Ca_PP2Bi01
+	CAMR_Ca_PP2Bi02
+	CAMR_Ca_PP2Bi03
+	CAMR_Ca_Ca_Cai00
+	CAMR_Ca_Ca_Cai01
+	CAMR_Ca_Ca_Cai02
+	CAMR_Ca_Ca_Cai03
+	CAMR_Ca_Ca_CaMKIIi00
+	CAMR_Ca_Ca_CaMKIIi01
+	CAMR_Ca_Ca_CaMKIIi02
+	CAMR_Ca_Ca_CaMKIIi03
+	CAMR_Ca_Ca_CaMKIIi04
+	CAMR_Ca_Ca_CaMKIIi05
+	CAMR_Ca_Ca_PP2Bi00
+	CAMR_Ca_Ca_PP2Bi01
+	CAMR_Ca_Ca_PP2Bi02
+	CAMR_Ca_Ca_PP2Bi03
+	CAMR_Ca_Ca_PP2Bi04
+	CAMR_Ca_Ca_PP2Bi05
+	CAMR_Ca_Ca_Ca_Cai00
+	CAMR_Ca_Ca_Ca_CaMKIIi00
+	CAMR_Ca_Ca_Ca_CaMKIIi01
+	CAMR_Ca_Ca_Ca_CaMKIIi02
+	CAMR_Ca_Ca_Ca_CaMKIIi03
+	CAMR_Ca_Ca_Ca_PP2Bi00
+	CAMR_Ca_Ca_Ca_PP2Bi01
+	CAMR_Ca_Ca_Ca_PP2Bi02
+	CAMR_Ca_Ca_Ca_PP2Bi03
+	CAMR_Ca_Ca_Ca_Ca_CaMKIIi00
+	CAMR_Ca_Ca_Ca_Ca_PP2Bi00
+Probe p_CAMT comprises 48 objects:
+	CAMT
+	CAMT_Cai00
+	CAMT_Cai01
+	CAMT_Cai02
+	CAMT_Cai03
+	CAMT_CaMKIIi00
+	CAMT_PP2Bi00
+	CAMT_Ca_Cai00
+	CAMT_Ca_Cai01
+	CAMT_Ca_Cai02
+	CAMT_Ca_Cai03
+	CAMT_Ca_Cai04
+	CAMT_Ca_Cai05
+	CAMT_Ca_CaMKIIi00
+	CAMT_Ca_CaMKIIi01
+	CAMT_Ca_CaMKIIi02
+	CAMT_Ca_CaMKIIi03
+	CAMT_Ca_PP2Bi00
+	CAMT_Ca_PP2Bi01
+	CAMT_Ca_PP2Bi02
+	CAMT_Ca_PP2Bi03
+	CAMT_Ca_Ca_Cai00
+	CAMT_Ca_Ca_Cai01
+	CAMT_Ca_Ca_Cai02
+	CAMT_Ca_Ca_Cai03
+	CAMT_Ca_Ca_CaMKIIi00
+	CAMT_Ca_Ca_CaMKIIi01
+	CAMT_Ca_Ca_CaMKIIi02
+	CAMT_Ca_Ca_CaMKIIi03
+	CAMT_Ca_Ca_CaMKIIi04
+	CAMT_Ca_Ca_CaMKIIi05
+	CAMT_Ca_Ca_PP2Bi00
+	CAMT_Ca_Ca_PP2Bi01
+	CAMT_Ca_Ca_PP2Bi02
+	CAMT_Ca_Ca_PP2Bi03
+	CAMT_Ca_Ca_PP2Bi04
+	CAMT_Ca_Ca_PP2Bi05
+	CAMT_Ca_Ca_Ca_Cai00
+	CAMT_Ca_Ca_Ca_CaMKIIi00
+	CAMT_Ca_Ca_Ca_CaMKIIi01
+	CAMT_Ca_Ca_Ca_CaMKIIi02
+	CAMT_Ca_Ca_Ca_CaMKIIi03
+	CAMT_Ca_Ca_Ca_PP2Bi00
+	CAMT_Ca_Ca_Ca_PP2Bi01
+	CAMT_Ca_Ca_Ca_PP2Bi02
+	CAMT_Ca_Ca_Ca_PP2Bi03
+	CAMT_Ca_Ca_Ca_Ca_CaMKIIi00
+	CAMT_Ca_Ca_Ca_Ca_PP2Bi00
+Probe p_CAM0 comprises 6 objects:
+	CAMT
+	CAMR
+	CAMR_CaMKIIi00
+	CAMR_PP2Bi00
+	CAMT_CaMKIIi00
+	CAMT_PP2Bi00
+Probe p_CAM1 comprises 24 objects:
+	CAMT_Cai00
+	CAMT_Cai01
+	CAMT_Cai02
+	CAMT_Cai03
+	CAMR_Cai00
+	CAMR_Cai01
+	CAMR_Cai02
+	CAMR_Cai03
+	CAMR_Ca_CaMKIIi00
+	CAMR_Ca_CaMKIIi01
+	CAMR_Ca_CaMKIIi02
+	CAMR_Ca_CaMKIIi03
+	CAMR_Ca_PP2Bi00
+	CAMR_Ca_PP2Bi01
+	CAMR_Ca_PP2Bi02
+	CAMR_Ca_PP2Bi03
+	CAMT_Ca_CaMKIIi00
+	CAMT_Ca_CaMKIIi01
+	CAMT_Ca_CaMKIIi02
+	CAMT_Ca_CaMKIIi03
+	CAMT_Ca_PP2Bi00
+	CAMT_Ca_PP2Bi01
+	CAMT_Ca_PP2Bi02
+	CAMT_Ca_PP2Bi03
+Probe p_CAM2 comprises 36 objects:
+	CAMT_Ca_Cai00
+	CAMT_Ca_Cai01
+	CAMT_Ca_Cai02
+	CAMT_Ca_Cai03
+	CAMT_Ca_Cai04
+	CAMT_Ca_Cai05
+	CAMR_Ca_Cai00
+	CAMR_Ca_Cai01
+	CAMR_Ca_Cai02
+	CAMR_Ca_Cai03
+	CAMR_Ca_Cai04
+	CAMR_Ca_Cai05
+	CAMR_Ca_Ca_CaMKIIi00
+	CAMR_Ca_Ca_CaMKIIi01
+	CAMR_Ca_Ca_CaMKIIi02
+	CAMR_Ca_Ca_CaMKIIi03
+	CAMR_Ca_Ca_CaMKIIi04
+	CAMR_Ca_Ca_CaMKIIi05
+	CAMR_Ca_Ca_PP2Bi00
+	CAMR_Ca_Ca_PP2Bi01
+	CAMR_Ca_Ca_PP2Bi02
+	CAMR_Ca_Ca_PP2Bi03
+	CAMR_Ca_Ca_PP2Bi04
+	CAMR_Ca_Ca_PP2Bi05
+	CAMT_Ca_Ca_CaMKIIi00
+	CAMT_Ca_Ca_CaMKIIi01
+	CAMT_Ca_Ca_CaMKIIi02
+	CAMT_Ca_Ca_CaMKIIi03
+	CAMT_Ca_Ca_CaMKIIi04
+	CAMT_Ca_Ca_CaMKIIi05
+	CAMT_Ca_Ca_PP2Bi00
+	CAMT_Ca_Ca_PP2Bi01
+	CAMT_Ca_Ca_PP2Bi02
+	CAMT_Ca_Ca_PP2Bi03
+	CAMT_Ca_Ca_PP2Bi04
+	CAMT_Ca_Ca_PP2Bi05
+Probe p_CAM3 comprises 24 objects:
+	CAMT_Ca_Ca_Cai00
+	CAMT_Ca_Ca_Cai01
+	CAMT_Ca_Ca_Cai02
+	CAMT_Ca_Ca_Cai03
+	CAMR_Ca_Ca_Cai00
+	CAMR_Ca_Ca_Cai01
+	CAMR_Ca_Ca_Cai02
+	CAMR_Ca_Ca_Cai03
+	CAMR_Ca_Ca_Ca_CaMKIIi00
+	CAMR_Ca_Ca_Ca_CaMKIIi01
+	CAMR_Ca_Ca_Ca_CaMKIIi02
+	CAMR_Ca_Ca_Ca_CaMKIIi03
+	CAMR_Ca_Ca_Ca_PP2Bi00
+	CAMR_Ca_Ca_Ca_PP2Bi01
+	CAMR_Ca_Ca_Ca_PP2Bi02
+	CAMR_Ca_Ca_Ca_PP2Bi03
+	CAMT_Ca_Ca_Ca_CaMKIIi00
+	CAMT_Ca_Ca_Ca_CaMKIIi01
+	CAMT_Ca_Ca_Ca_CaMKIIi02
+	CAMT_Ca_Ca_Ca_CaMKIIi03
+	CAMT_Ca_Ca_Ca_PP2Bi00
+	CAMT_Ca_Ca_Ca_PP2Bi01
+	CAMT_Ca_Ca_Ca_PP2Bi02
+	CAMT_Ca_Ca_Ca_PP2Bi03
+Probe p_CAM4 comprises 6 objects:
+	CAMT_Ca_Ca_Ca_Cai00
+	CAMR_Ca_Ca_Ca_Cai00
+	CAMR_Ca_Ca_Ca_Ca_CaMKIIi00
+	CAMR_Ca_Ca_Ca_Ca_PP2Bi00
+	CAMT_Ca_Ca_Ca_Ca_CaMKIIi00
+	CAMT_Ca_Ca_Ca_Ca_PP2Bi00
+EXPORTING NETWORK
+Facile->export(): generating Facile equation file
+REPORTING SPECIES STRUCTURE IN: examples/calmodulin/calmodulin/calmodulin.structures.rpt
+REPORTING SPECIES IN: examples/calmodulin/calmodulin/calmodulin.species.rpt
+EXPORTING NETWORK TO GRAPHVIZ
+EXPORTING SPECIES TO GRAPHVIZ (primary form)
+EXPORTING SPECIES TO GRAPHVIZ (canonical form)
+Start time: Sat Aug 27 19:18:26 EDT 2011
+End time:   Sat Aug 27 19:20:26 EDT 2011

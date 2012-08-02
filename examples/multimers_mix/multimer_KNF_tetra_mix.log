@@ -1,0 +1,420 @@
+##############################################################################
+# Allosteric Network Compiler (ANC)
+# Copyright (C) 2005-2011 Julien Ollivier
+# Author:       Julien F. Ollivier
+# Version:      1.01
+# Release Date: 2011/08/26
+# This program comes with ABSOLUTELY NO WARRANTY.
+# This is free software, and you are welcome to redistribute it
+# under certain conditions. See file LICENSE.TXT for details.
+##############################################################################
+
+MODEL 	= examples/multimers_mix/multimer_KNF_tetra_mix.mod
+OUT 	= examples/multimers_mix/multimer_KNF_tetra_mix.eqn
+OUTDIR 	= examples/multimers_mix/multimer_KNF_tetra_mix
+
+Start time: Sat Aug 27 18:55:39 EDT 2011
+CLEANING UP
+CREATING OUTPUT DIRECTORY
+READING MODEL examples/multimers_mix/multimer_KNF_tetra_mix.mod
+REPORTING COMPILE PARAMETERS
+max_external_iterations = -1
+max_internal_iterations = -1
+max_species = -1
+max_complex_size = -1
+max_csite_bound_to_msite_number = -1
+kf_1st_order_rate_cutoff = 0
+kf_2nd_order_rate_cutoff = 0
+kb_rate_cutoff = 0
+kp_rate_cutoff = 0
+default_steric_factor = UNDEF
+report = all
+export_graphviz = primary,canonical,network,collapse_states,collapse_complexes
+compact_names = 1
+protein_separator = _
+IMPORTING COMPLEXES
+COMPILING RULES
+Compiling rule BR!00 of class CanBindRule
+LB CanBind L1
+Compiling rule BR!01 of class CanBindRule
+LB CanBind L1
+Compiling rule BR!02 of class CanBindRule
+LB CanBind L2
+Compiling rule BR!03 of class CanBindRule
+LB CanBind L2
+INSTANTIATING COMPLEXES
+INITIALIZING INSTANCES
+COMPILING REACTION NETWORK
+ReactionNetwork::compile_network: starting...
+ReactionNetwork::compile_network: STARTING INTERNAL iteration=1 total_species=3
+ReactionNetwork::compile_network: STARTING EXTERNAL iteration=1 total_species=7
+ReactionNetwork::compile_external_reactions: total_species=20
+ReactionNetwork::compile_external_reactions: processing species 5 of 7
+ReactionNetwork::compile_network: DONE EXTERNAL iteration=1 total_species=23
+ReactionNetwork::compile_network: STARTING INTERNAL iteration=2 total_species=23
+ReactionNetwork::compile_network: STARTING EXTERNAL iteration=2 total_species=23
+ReactionNetwork::compile_external_reactions: total_species=40
+ReactionNetwork::compile_external_reactions: processing species 5 of 23
+ReactionNetwork::compile_external_reactions: processing species 10 of 23
+ReactionNetwork::compile_external_reactions: processing species 15 of 23
+ReactionNetwork::compile_external_reactions: processing species 20 of 23
+ReactionNetwork::compile_network: DONE EXTERNAL iteration=2 total_species=53
+ReactionNetwork::compile_network: STARTING INTERNAL iteration=3 total_species=53
+ReactionNetwork::compile_internal_reactions: processing species 20 of 30
+ReactionNetwork::compile_network: STARTING EXTERNAL iteration=3 total_species=53
+ReactionNetwork::compile_external_reactions: total_species=60
+ReactionNetwork::compile_external_reactions: total_species=80
+ReactionNetwork::compile_external_reactions: processing species 5 of 53
+ReactionNetwork::compile_external_reactions: processing species 10 of 53
+ReactionNetwork::compile_external_reactions: processing species 15 of 53
+ReactionNetwork::compile_external_reactions: processing species 20 of 53
+ReactionNetwork::compile_external_reactions: processing species 25 of 53
+ReactionNetwork::compile_external_reactions: processing species 30 of 53
+ReactionNetwork::compile_external_reactions: processing species 35 of 53
+ReactionNetwork::compile_external_reactions: processing species 40 of 53
+ReactionNetwork::compile_external_reactions: processing species 45 of 53
+ReactionNetwork::compile_external_reactions: processing species 50 of 53
+ReactionNetwork::compile_network: DONE EXTERNAL iteration=3 total_species=93
+ReactionNetwork::compile_network: STARTING INTERNAL iteration=4 total_species=93
+ReactionNetwork::compile_internal_reactions: processing species 20 of 40
+ReactionNetwork::compile_network: STARTING EXTERNAL iteration=4 total_species=93
+ReactionNetwork::compile_external_reactions: total_species=100
+ReactionNetwork::compile_external_reactions: total_species=120
+ReactionNetwork::compile_external_reactions: processing species 5 of 93
+ReactionNetwork::compile_external_reactions: processing species 10 of 93
+ReactionNetwork::compile_external_reactions: processing species 15 of 93
+ReactionNetwork::compile_external_reactions: processing species 20 of 93
+ReactionNetwork::compile_external_reactions: processing species 25 of 93
+ReactionNetwork::compile_external_reactions: processing species 30 of 93
+ReactionNetwork::compile_external_reactions: processing species 35 of 93
+ReactionNetwork::compile_external_reactions: processing species 40 of 93
+ReactionNetwork::compile_external_reactions: processing species 45 of 93
+ReactionNetwork::compile_external_reactions: processing species 50 of 93
+ReactionNetwork::compile_external_reactions: processing species 55 of 93
+ReactionNetwork::compile_external_reactions: processing species 60 of 93
+ReactionNetwork::compile_external_reactions: processing species 65 of 93
+ReactionNetwork::compile_external_reactions: processing species 70 of 93
+ReactionNetwork::compile_external_reactions: processing species 75 of 93
+ReactionNetwork::compile_external_reactions: processing species 80 of 93
+ReactionNetwork::compile_external_reactions: processing species 85 of 93
+ReactionNetwork::compile_external_reactions: processing species 90 of 93
+ReactionNetwork::compile_network: DONE EXTERNAL iteration=4 total_species=128
+ReactionNetwork::compile_network: STARTING INTERNAL iteration=5 total_species=128
+ReactionNetwork::compile_internal_reactions: processing species 20 of 35
+ReactionNetwork::compile_network: STARTING EXTERNAL iteration=5 total_species=128
+ReactionNetwork::compile_external_reactions: processing species 5 of 128
+ReactionNetwork::compile_external_reactions: processing species 10 of 128
+ReactionNetwork::compile_external_reactions: processing species 15 of 128
+ReactionNetwork::compile_external_reactions: processing species 20 of 128
+ReactionNetwork::compile_external_reactions: processing species 25 of 128
+ReactionNetwork::compile_external_reactions: processing species 30 of 128
+ReactionNetwork::compile_external_reactions: processing species 35 of 128
+ReactionNetwork::compile_external_reactions: processing species 40 of 128
+ReactionNetwork::compile_external_reactions: processing species 45 of 128
+ReactionNetwork::compile_external_reactions: processing species 50 of 128
+ReactionNetwork::compile_external_reactions: processing species 55 of 128
+ReactionNetwork::compile_external_reactions: processing species 60 of 128
+ReactionNetwork::compile_external_reactions: processing species 65 of 128
+ReactionNetwork::compile_external_reactions: processing species 70 of 128
+ReactionNetwork::compile_external_reactions: processing species 75 of 128
+ReactionNetwork::compile_external_reactions: processing species 80 of 128
+ReactionNetwork::compile_external_reactions: processing species 85 of 128
+ReactionNetwork::compile_external_reactions: processing species 90 of 128
+ReactionNetwork::compile_external_reactions: processing species 95 of 128
+ReactionNetwork::compile_external_reactions: processing species 100 of 128
+ReactionNetwork::compile_external_reactions: processing species 105 of 128
+ReactionNetwork::compile_external_reactions: processing species 110 of 128
+ReactionNetwork::compile_external_reactions: processing species 115 of 128
+ReactionNetwork::compile_external_reactions: processing species 120 of 128
+ReactionNetwork::compile_external_reactions: processing species 125 of 128
+ReactionNetwork::compile_network: DONE EXTERNAL iteration=5 total_species=128
+ReactionNetwork::compile_network: STARTING FINAL-INTERNAL total_species=128
+ReactionNetwork::compile_network: DONE FINAL-INTERNAL total_species=128
+ReactionNetwork::compile_network: Done computing species in 5 iterations
+COMPILING ICs and STIMULI
+Init Ic!00 comprises 1 objects:
+	HTTTT
+Init Ic!01 comprises 1 objects:
+	L1
+Init Ic!02 comprises 1 objects:
+	L2
+Stimulus Stm!00 comprises 1 objects:
+	L1
+Stimulus Stm!01 comprises 1 objects:
+	L2
+COMPILING PROBES
+Probe p_R0 comprises 15 objects:
+	HTTTT
+	HTTTT_L1i00
+	HTTTT_L2i00
+	HTTTT_L1_L1i00
+	HTTTT_L1_L2i00
+	HTTTT_L2_L2i00
+	HTTTT_L1_L1_L1i00
+	HTTTT_L1_L1_L2i00
+	HTTTT_L1_L2_L2i00
+	HTTTT_L2_L2_L2i00
+	HTTTT_L1_L1_L1_L1i00
+	HTTTT_L1_L1_L1_L2i00
+	HTTTT_L1_L1_L2_L2i00
+	HTTTT_L1_L2_L2_L2i00
+	HTTTT_L2_L2_L2_L2i00
+Probe p_R1 comprises 30 objects:
+	HRTTT
+	HRTTT_L1i00
+	HTRTT_L1i00
+	HRTTT_L2i00
+	HTRTT_L2i00
+	HRTTT_L1_L1i00
+	HTTRT_L1_L1i00
+	HRTTT_L1_L2i00
+	HTRTT_L1_L2i00
+	HTTRT_L1_L2i00
+	HRTTT_L2_L2i00
+	HTTRT_L2_L2i00
+	HRTTT_L1_L1_L1i00
+	HTTTR_L1_L1_L1i00
+	HRTTT_L1_L1_L2i00
+	HTRTT_L1_L1_L2i00
+	HTTTR_L1_L1_L2i00
+	HRTTT_L1_L2_L2i00
+	HTTRT_L1_L2_L2i00
+	HTTTR_L1_L2_L2i00
+	HRTTT_L2_L2_L2i00
+	HTTTR_L2_L2_L2i00
+	HRTTT_L1_L1_L1_L1i00
+	HRTTT_L1_L1_L1_L2i00
+	HTRTT_L1_L1_L1_L2i00
+	HRTTT_L1_L1_L2_L2i00
+	HTTRT_L1_L1_L2_L2i00
+	HRTTT_L1_L2_L2_L2i00
+	HTTTR_L1_L2_L2_L2i00
+	HRTTT_L2_L2_L2_L2i00
+Probe p_R2 comprises 36 objects:
+	HRRTT
+	HRRTT_L1i00
+	HTRRT_L1i00
+	HRRTT_L2i00
+	HTRRT_L2i00
+	HRRTT_L1_L1i00
+	HRTRT_L1_L1i00
+	HTTRR_L1_L1i00
+	HRRTT_L1_L2i00
+	HRTRT_L1_L2i00
+	HTRRT_L1_L2i00
+	HTTRR_L1_L2i00
+	HRRTT_L2_L2i00
+	HRTRT_L2_L2i00
+	HTTRR_L2_L2i00
+	HRRTT_L1_L1_L1i00
+	HRTTR_L1_L1_L1i00
+	HRRTT_L1_L1_L2i00
+	HRTTR_L1_L1_L2i00
+	HTRRT_L1_L1_L2i00
+	HTRTR_L1_L1_L2i00
+	HRRTT_L1_L2_L2i00
+	HRTRT_L1_L2_L2i00
+	HRTTR_L1_L2_L2i00
+	HTTRR_L1_L2_L2i00
+	HRRTT_L2_L2_L2i00
+	HRTTR_L2_L2_L2i00
+	HRRTT_L1_L1_L1_L1i00
+	HRRTT_L1_L1_L1_L2i00
+	HTRRT_L1_L1_L1_L2i00
+	HRRTT_L1_L1_L2_L2i00
+	HRTRT_L1_L1_L2_L2i00
+	HTTRR_L1_L1_L2_L2i00
+	HRRTT_L1_L2_L2_L2i00
+	HRTTR_L1_L2_L2_L2i00
+	HRRTT_L2_L2_L2_L2i00
+Probe p_R3 comprises 30 objects:
+	HRRRT
+	HRRRT_L1i00
+	HTRRR_L1i00
+	HRRRT_L2i00
+	HTRRR_L2i00
+	HRRRT_L1_L1i00
+	HRTRR_L1_L1i00
+	HRRRT_L1_L2i00
+	HRTRR_L1_L2i00
+	HTRRR_L1_L2i00
+	HRRRT_L2_L2i00
+	HRTRR_L2_L2i00
+	HRRRT_L1_L1_L1i00
+	HRRTR_L1_L1_L1i00
+	HRRRT_L1_L1_L2i00
+	HRRTR_L1_L1_L2i00
+	HTRRR_L1_L1_L2i00
+	HRRRT_L1_L2_L2i00
+	HRRTR_L1_L2_L2i00
+	HRTRR_L1_L2_L2i00
+	HRRRT_L2_L2_L2i00
+	HRRTR_L2_L2_L2i00
+	HRRRT_L1_L1_L1_L1i00
+	HRRRT_L1_L1_L1_L2i00
+	HTRRR_L1_L1_L1_L2i00
+	HRRRT_L1_L1_L2_L2i00
+	HRTRR_L1_L1_L2_L2i00
+	HRRRT_L1_L2_L2_L2i00
+	HRRTR_L1_L2_L2_L2i00
+	HRRRT_L2_L2_L2_L2i00
+Probe p_R4 comprises 15 objects:
+	HRRRR
+	HRRRR_L1i00
+	HRRRR_L2i00
+	HRRRR_L1_L1i00
+	HRRRR_L1_L2i00
+	HRRRR_L2_L2i00
+	HRRRR_L1_L1_L1i00
+	HRRRR_L1_L1_L2i00
+	HRRRR_L1_L2_L2i00
+	HRRRR_L2_L2_L2i00
+	HRRRR_L1_L1_L1_L1i00
+	HRRRR_L1_L1_L1_L2i00
+	HRRRR_L1_L1_L2_L2i00
+	HRRRR_L1_L2_L2_L2i00
+	HRRRR_L2_L2_L2_L2i00
+Probe p_L1x0 comprises 35 objects:
+	HTTTT
+	HRTTT
+	HRRTT
+	HRRRT
+	HRRRR
+	HTTTT_L2i00
+	HRTTT_L2i00
+	HTRTT_L2i00
+	HRRTT_L2i00
+	HTRRT_L2i00
+	HRRRT_L2i00
+	HTRRR_L2i00
+	HRRRR_L2i00
+	HTTTT_L2_L2i00
+	HRTTT_L2_L2i00
+	HTTRT_L2_L2i00
+	HRRTT_L2_L2i00
+	HRTRT_L2_L2i00
+	HTTRR_L2_L2i00
+	HRRRT_L2_L2i00
+	HRTRR_L2_L2i00
+	HRRRR_L2_L2i00
+	HTTTT_L2_L2_L2i00
+	HRTTT_L2_L2_L2i00
+	HTTTR_L2_L2_L2i00
+	HRRTT_L2_L2_L2i00
+	HRTTR_L2_L2_L2i00
+	HRRRT_L2_L2_L2i00
+	HRRTR_L2_L2_L2i00
+	HRRRR_L2_L2_L2i00
+	HTTTT_L2_L2_L2_L2i00
+	HRTTT_L2_L2_L2_L2i00
+	HRRTT_L2_L2_L2_L2i00
+	HRRRT_L2_L2_L2_L2i00
+	HRRRR_L2_L2_L2_L2i00
+Probe p_L1x1 comprises 40 objects:
+	HTTTT_L1i00
+	HRTTT_L1i00
+	HTRTT_L1i00
+	HRRTT_L1i00
+	HTRRT_L1i00
+	HRRRT_L1i00
+	HTRRR_L1i00
+	HRRRR_L1i00
+	HTTTT_L1_L2i00
+	HRTTT_L1_L2i00
+	HTRTT_L1_L2i00
+	HTTRT_L1_L2i00
+	HRRTT_L1_L2i00
+	HRTRT_L1_L2i00
+	HTRRT_L1_L2i00
+	HTTRR_L1_L2i00
+	HRRRT_L1_L2i00
+	HRTRR_L1_L2i00
+	HTRRR_L1_L2i00
+	HRRRR_L1_L2i00
+	HTTTT_L1_L2_L2i00
+	HRTTT_L1_L2_L2i00
+	HTTRT_L1_L2_L2i00
+	HTTTR_L1_L2_L2i00
+	HRRTT_L1_L2_L2i00
+	HRTRT_L1_L2_L2i00
+	HRTTR_L1_L2_L2i00
+	HTTRR_L1_L2_L2i00
+	HRRRT_L1_L2_L2i00
+	HRRTR_L1_L2_L2i00
+	HRTRR_L1_L2_L2i00
+	HRRRR_L1_L2_L2i00
+	HTTTT_L1_L2_L2_L2i00
+	HRTTT_L1_L2_L2_L2i00
+	HTTTR_L1_L2_L2_L2i00
+	HRRTT_L1_L2_L2_L2i00
+	HRTTR_L1_L2_L2_L2i00
+	HRRRT_L1_L2_L2_L2i00
+	HRRTR_L1_L2_L2_L2i00
+	HRRRR_L1_L2_L2_L2i00
+Probe p_L1x2 comprises 30 objects:
+	HTTTT_L1_L1i00
+	HRTTT_L1_L1i00
+	HTTRT_L1_L1i00
+	HRRTT_L1_L1i00
+	HRTRT_L1_L1i00
+	HTTRR_L1_L1i00
+	HRRRT_L1_L1i00
+	HRTRR_L1_L1i00
+	HRRRR_L1_L1i00
+	HTTTT_L1_L1_L2i00
+	HRTTT_L1_L1_L2i00
+	HTRTT_L1_L1_L2i00
+	HTTTR_L1_L1_L2i00
+	HRRTT_L1_L1_L2i00
+	HRTTR_L1_L1_L2i00
+	HTRRT_L1_L1_L2i00
+	HTRTR_L1_L1_L2i00
+	HRRRT_L1_L1_L2i00
+	HRRTR_L1_L1_L2i00
+	HTRRR_L1_L1_L2i00
+	HRRRR_L1_L1_L2i00
+	HTTTT_L1_L1_L2_L2i00
+	HRTTT_L1_L1_L2_L2i00
+	HTTRT_L1_L1_L2_L2i00
+	HRRTT_L1_L1_L2_L2i00
+	HRTRT_L1_L1_L2_L2i00
+	HTTRR_L1_L1_L2_L2i00
+	HRRRT_L1_L1_L2_L2i00
+	HRTRR_L1_L1_L2_L2i00
+	HRRRR_L1_L1_L2_L2i00
+Probe p_L1x3 comprises 16 objects:
+	HTTTT_L1_L1_L1i00
+	HRTTT_L1_L1_L1i00
+	HTTTR_L1_L1_L1i00
+	HRRTT_L1_L1_L1i00
+	HRTTR_L1_L1_L1i00
+	HRRRT_L1_L1_L1i00
+	HRRTR_L1_L1_L1i00
+	HRRRR_L1_L1_L1i00
+	HTTTT_L1_L1_L1_L2i00
+	HRTTT_L1_L1_L1_L2i00
+	HTRTT_L1_L1_L1_L2i00
+	HRRTT_L1_L1_L1_L2i00
+	HTRRT_L1_L1_L1_L2i00
+	HRRRT_L1_L1_L1_L2i00
+	HTRRR_L1_L1_L1_L2i00
+	HRRRR_L1_L1_L1_L2i00
+Probe p_L1x4 comprises 5 objects:
+	HTTTT_L1_L1_L1_L1i00
+	HRTTT_L1_L1_L1_L1i00
+	HRRTT_L1_L1_L1_L1i00
+	HRRRT_L1_L1_L1_L1i00
+	HRRRR_L1_L1_L1_L1i00
+Probe Prb!00 comprises 1 objects:
+	L1
+Probe Prb!01 comprises 1 objects:
+	L2
+EXPORTING NETWORK
+Facile->export(): generating Facile equation file
+REPORTING SPECIES STRUCTURE IN: examples/multimers_mix/multimer_KNF_tetra_mix/multimer_KNF_tetra_mix.structures.rpt
+REPORTING SPECIES IN: examples/multimers_mix/multimer_KNF_tetra_mix/multimer_KNF_tetra_mix.species.rpt
+EXPORTING NETWORK TO GRAPHVIZ
+EXPORTING SPECIES TO GRAPHVIZ (primary form)
+EXPORTING SPECIES TO GRAPHVIZ (canonical form)
+Start time: Sat Aug 27 18:55:39 EDT 2011
+End time:   Sat Aug 27 18:59:15 EDT 2011

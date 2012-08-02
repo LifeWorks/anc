@@ -1,0 +1,112 @@
+##############################################################################
+# Allosteric Network Compiler (ANC)
+# Copyright (C) 2005-2010 Julien Ollivier
+# Author:       Julien F. Ollivier
+# Version:      1.01
+# Release Date: 2011/08/26
+# This program comes with ABSOLUTELY NO WARRANTY.
+# This is free software, and you are welcome to redistribute it
+# under certain conditions. See file LICENSE.TXT for details.
+##############################################################################
+
+MODEL 	= examples/multimers/multimer_MWC.mod
+OUT 	= examples/multimers/multimer_MWC.eqn
+OUTDIR 	= examples/multimers/multimer_MWC
+
+Start time: Thu Aug 25 00:24:13 EDT 2011
+CLEANING UP
+CREATING OUTPUT DIRECTORY
+READING MODEL examples/multimers/multimer_MWC.mod
+REPORTING COMPILE PARAMETERS
+max_external_iterations = -1
+max_internal_iterations = -1
+max_species = -1
+max_complex_size = -1
+max_csite_bound_to_msite_number = -1
+kf_1st_order_rate_cutoff = 0
+kf_2nd_order_rate_cutoff = 0
+kb_rate_cutoff = 0
+kp_rate_cutoff = 0
+default_steric_factor = UNDEF
+report = all
+export_graphviz = primary,canonical,network,collapse_states,collapse_complexes
+compact_names = 1
+protein_separator = _
+IMPORTING COMPLEXES
+COMPILING RULES
+Compiling rule BR!00 of class CanBindRule
+LB CanBind L
+Compiling rule BR!01 of class CanBindRule
+LB CanBind L
+INSTANTIATING COMPLEXES
+INITIALIZING INSTANCES
+COMPILING REACTION NETWORK
+ReactionNetwork::compile_network: starting...
+ReactionNetwork::compile_network: STARTING INTERNAL iteration=1 total_species=2
+ReactionNetwork::compile_network: STARTING EXTERNAL iteration=1 total_species=3
+ReactionNetwork::compile_network: DONE EXTERNAL iteration=1 total_species=5
+ReactionNetwork::compile_network: STARTING INTERNAL iteration=2 total_species=5
+ReactionNetwork::compile_network: STARTING EXTERNAL iteration=2 total_species=5
+ReactionNetwork::compile_network: DONE EXTERNAL iteration=2 total_species=7
+ReactionNetwork::compile_network: STARTING INTERNAL iteration=3 total_species=7
+ReactionNetwork::compile_network: STARTING EXTERNAL iteration=3 total_species=7
+ReactionNetwork::compile_external_reactions: processing species 5 of 7
+ReactionNetwork::compile_network: DONE EXTERNAL iteration=3 total_species=9
+ReactionNetwork::compile_network: STARTING INTERNAL iteration=4 total_species=9
+ReactionNetwork::compile_network: STARTING EXTERNAL iteration=4 total_species=9
+ReactionNetwork::compile_external_reactions: processing species 5 of 9
+ReactionNetwork::compile_network: DONE EXTERNAL iteration=4 total_species=11
+ReactionNetwork::compile_network: STARTING INTERNAL iteration=5 total_species=11
+ReactionNetwork::compile_network: STARTING EXTERNAL iteration=5 total_species=11
+ReactionNetwork::compile_external_reactions: processing species 5 of 11
+ReactionNetwork::compile_external_reactions: processing species 10 of 11
+ReactionNetwork::compile_network: DONE EXTERNAL iteration=5 total_species=11
+ReactionNetwork::compile_network: STARTING FINAL-INTERNAL total_species=11
+ReactionNetwork::compile_network: DONE FINAL-INTERNAL total_species=11
+ReactionNetwork::compile_network: Done computing species in 5 iterations
+COMPILING ICs and STIMULI
+Init Ic!00 comprises 1 objects:
+	L
+Init Ic!01 comprises 1 objects:
+	HT
+Stimulus Stm!00 comprises 1 objects:
+	L
+COMPILING PROBES
+Probe p_H_R comprises 5 objects:
+	HR
+	HR_Li00
+	HR_L_Li00
+	HR_L_L_Li00
+	HR_L_L_L_Li00
+Probe p_H_T comprises 5 objects:
+	HT
+	HT_Li00
+	HT_L_Li00
+	HT_L_L_Li00
+	HT_L_L_L_Li00
+Probe p_L0 comprises 2 objects:
+	HT
+	HR
+Probe p_L1 comprises 2 objects:
+	HT_Li00
+	HR_Li00
+Probe p_L2 comprises 2 objects:
+	HT_L_Li00
+	HR_L_Li00
+Probe p_L3 comprises 2 objects:
+	HT_L_L_Li00
+	HR_L_L_Li00
+Probe p_L4 comprises 2 objects:
+	HT_L_L_L_Li00
+	HR_L_L_L_Li00
+Probe Prb!00 comprises 1 objects:
+	L
+EXPORTING NETWORK
+Facile->export(): generating Facile equation file
+REPORTING SPECIES STRUCTURE IN: examples/multimers/multimer_MWC/multimer_MWC.structures.rpt
+REPORTING SPECIES IN: examples/multimers/multimer_MWC/multimer_MWC.species.rpt
+EXPORTING NETWORK TO GRAPHVIZ
+EXPORTING SPECIES TO GRAPHVIZ (primary form)
+EXPORTING SPECIES TO GRAPHVIZ (canonical form)
+Start time: Thu Aug 25 00:24:13 EDT 2011
+End time:   Thu Aug 25 00:24:17 EDT 2011

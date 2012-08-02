@@ -1,0 +1,136 @@
+##############################################################################
+# Allosteric Network Compiler (ANC)
+# Copyright (C) 2005-2010 Julien Ollivier
+# Author:       Julien F. Ollivier
+# Version:      1.00
+# Release Date: 2010/9/19
+# This program comes with ABSOLUTELY NO WARRANTY.
+# This is free software, and you are welcome to redistribute it
+# under certain conditions. See file LICENSE.TXT for details.
+##############################################################################
+
+MODEL 	= examples/manual/combined_effect.mod
+OUT 	= examples/manual/combined_effect.eqn
+OUTDIR 	= examples/manual/combined_effect
+
+Start time: Sun Sep 19 14:12:41 EDT 2010
+CLEANING UP
+CREATING OUTPUT DIRECTORY
+READING MODEL examples/manual/combined_effect.mod
+REPORTING COMPILE PARAMETERS
+max_external_iterations = -1
+max_internal_iterations = -1
+max_species = -1
+max_complex_size = -1
+max_csite_bound_to_msite_number = -1
+kf_1st_order_rate_cutoff = 0
+kf_2nd_order_rate_cutoff = 0
+kb_rate_cutoff = 0
+kp_rate_cutoff = 0
+default_steric_factor = UNDEF
+report = all
+export_graphviz = primary,canonical,network,collapse_states,collapse_complexes
+compact_names = 1
+protein_separator = _
+IMPORTING COMPLEXES
+COMPILING RULES
+Compiling rule BR!00 of class CanBindRule
+AX CanBind X
+Compiling rule BR!01 of class CanBindRule
+AX CanBind X
+Compiling rule BR!02 of class CanBindRule
+T CanBind K
+Compiling rule BR!03 of class CanBindRule
+T CanBind K
+INSTANTIATING COMPLEXES
+INITIALIZING INSTANCES
+COMPILING REACTION NETWORK
+ReactionNetwork::compile_network: starting...
+ReactionNetwork::compile_network: STARTING INTERNAL iteration=1 total_species=3
+ReactionNetwork::compile_network: STARTING EXTERNAL iteration=1 total_species=6
+ReactionNetwork::compile_external_reactions: processing species 5 of 6
+ReactionNetwork::compile_network: DONE EXTERNAL iteration=1 total_species=18
+ReactionNetwork::compile_network: STARTING INTERNAL iteration=2 total_species=18
+ReactionNetwork::compile_network: STARTING EXTERNAL iteration=2 total_species=18
+ReactionNetwork::compile_external_reactions: total_species=20
+ReactionNetwork::compile_external_reactions: processing species 5 of 18
+ReactionNetwork::compile_external_reactions: processing species 10 of 18
+ReactionNetwork::compile_external_reactions: processing species 15 of 18
+ReactionNetwork::compile_network: DONE EXTERNAL iteration=2 total_species=26
+ReactionNetwork::compile_network: STARTING INTERNAL iteration=3 total_species=26
+ReactionNetwork::compile_network: STARTING EXTERNAL iteration=3 total_species=26
+ReactionNetwork::compile_external_reactions: processing species 5 of 26
+ReactionNetwork::compile_external_reactions: processing species 10 of 26
+ReactionNetwork::compile_external_reactions: processing species 15 of 26
+ReactionNetwork::compile_external_reactions: processing species 20 of 26
+ReactionNetwork::compile_external_reactions: processing species 25 of 26
+ReactionNetwork::compile_network: DONE EXTERNAL iteration=3 total_species=26
+ReactionNetwork::compile_network: STARTING FINAL-INTERNAL total_species=26
+ReactionNetwork::compile_network: DONE FINAL-INTERNAL total_species=26
+ReactionNetwork::compile_network: Done computing species in 3 iterations
+COMPILING ICs and STIMULI
+Init Ic!00 comprises 1 objects:
+	HR0R
+Init Ic!01 comprises 1 objects:
+	X
+Init Ic!02 comprises 1 objects:
+	K
+COMPILING PROBES
+Probe R0 comprises 28 objects:
+	X
+	K
+	HS0S
+	HR0R_Xi00
+	HR0R_Ki00
+	HS0R_Xi00
+	HR0S_Xi00
+	HS0S_Xi00
+	HS0S_Xi00
+	HS0R_Ki00
+	HR0S_Ki00
+	HS0S_Ki00
+	HS0S_Ki00
+	HS1S
+	HR0R_K_Xi00
+	HR0R_K_Xi00
+	HR1R_Xi00
+	HS0R_K_Xi00
+	HS0R_K_Xi00
+	HS1R_Xi00
+	HR0S_K_Xi00
+	HR0S_K_Xi00
+	HR1S_Xi00
+	HS0S_K_Xi00
+	HS0S_K_Xi00
+	HS0S_K_Xi00
+	HS1S_Xi00
+	HS1S_Xi00
+Probe R1 comprises 12 objects:
+	HS0R
+	HR0S
+	HS0R_Xi00
+	HR0S_Xi00
+	HS0R_Ki00
+	HS1R
+	HR0S_Ki00
+	HR1S
+	HS0R_K_Xi00
+	HS1R_Xi00
+	HR0S_K_Xi00
+	HR1S_Xi00
+Probe R2 comprises 6 objects:
+	HR0R
+	HR0R_Xi00
+	HR0R_Ki00
+	HR1R
+	HR0R_K_Xi00
+	HR1R_Xi00
+EXPORTING NETWORK
+Facile->export(): generating Facile equation file
+REPORTING SPECIES STRUCTURE IN: examples/manual/combined_effect/combined_effect.structures.rpt
+REPORTING SPECIES IN: examples/manual/combined_effect/combined_effect.species.rpt
+EXPORTING NETWORK TO GRAPHVIZ
+EXPORTING SPECIES TO GRAPHVIZ (primary form)
+EXPORTING SPECIES TO GRAPHVIZ (canonical form)
+Start time: Sun Sep 19 14:12:41 EDT 2010
+End time:   Sun Sep 19 14:12:49 EDT 2010

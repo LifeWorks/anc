@@ -1,0 +1,384 @@
+# Facile model created by Allosteric Network Compiler (ANC)
+# ANC version 1.01 released 2011/08/26
+# Sat Aug 27 19:18:53 EDT 2011
+
+
+
+# PARAMETERS
+# ----------
+parameter K_RA = 8.32e-06
+parameter K_RB = 1.66e-08
+parameter K_RC = 1.74e-05
+parameter K_RD = 1.45e-08
+parameter c = 0.00396
+parameter K_TA = K_RA/c
+parameter K_TB = K_RB/c
+parameter K_TC = K_RC/c
+parameter K_TD = K_RD/c
+parameter kon = 1000000
+parameter koff_RA = K_RA * kon
+parameter koff_RB = K_RB * kon
+parameter koff_RC = K_RC * kon
+parameter koff_RD = K_RD * kon
+parameter koff_TA = K_TA * kon
+parameter koff_TB = K_TB * kon
+parameter koff_TC = K_TC * kon
+parameter koff_TD = K_TD * kon
+parameter L = 20670
+parameter k_RT = 1000000
+parameter k_TR = k_RT/L
+parameter kon_CaMKII = 3200000
+parameter koff_CaMKII = 0.343
+parameter kon_PP2B = 46000000
+parameter koff_PP2B = 0.0013
+
+
+# REACTION CLASS: BindingReaction
+# -------------------------------
+CAMR                 + Ca                   <-> CAMR_Cai00                      ; fb00=kon; bb00=koff_RA         # (R!05) Kd = koff_RA/kon
+CAMR                 + Ca                   <-> CAMR_Cai01                      ; fb00=kon; bb01=koff_RB         # (R!06) Kd = koff_RB/kon
+CAMR                 + Ca                   <-> CAMR_Cai02                      ; fb00=kon; bb02=koff_RC         # (R!07) Kd = koff_RC/kon
+CAMR                 + Ca                   <-> CAMR_Cai03                      ; fb00=kon; bb03=koff_RD         # (R!08) Kd = koff_RD/kon
+CAMR                 + CaMKII               <-> CAMR_CaMKIIi00                  ; fb01=kon_CaMKII; bb04=koff_CaMKII # (R!09) Kd = koff_CaMKII/kon_CaMKII
+CAMR                 + PP2B                 <-> CAMR_PP2Bi00                    ; fb02=kon_PP2B; bb05=koff_PP2B  # (R!10) Kd = koff_PP2B/kon_PP2B
+CAMT                 + Ca                   <-> CAMT_Cai00                      ; fb00=kon; bb06=koff_TA         # (R!01) Kd = koff_TA/kon
+CAMT                 + Ca                   <-> CAMT_Cai01                      ; fb00=kon; bb07=koff_TB         # (R!02) Kd = koff_TB/kon
+CAMT                 + Ca                   <-> CAMT_Cai02                      ; fb00=kon; bb08=koff_TC         # (R!03) Kd = koff_TC/kon
+CAMT                 + Ca                   <-> CAMT_Cai03                      ; fb00=kon; bb09=koff_TD         # (R!04) Kd = koff_TD/kon
+CAMT                 + CaMKII               <-  CAMT_CaMKIIi00                  ; bb10=1                         # (R!17) Kd = UNDEFINED (release reaction)
+CAMT                 + PP2B                 <-  CAMT_PP2Bi00                    ; bb10=1                         # (R!18) Kd = UNDEFINED (release reaction)
+Ca                   + CAMR_CaMKIIi00       <-> CAMR_Ca_CaMKIIi00               ; fb00=kon; bb00=koff_RA         # (R!43) Kd = koff_RA/kon
+Ca                   + CAMR_CaMKIIi00       <-> CAMR_Ca_CaMKIIi01               ; fb00=kon; bb01=koff_RB         # (R!44) Kd = koff_RB/kon
+Ca                   + CAMR_CaMKIIi00       <-> CAMR_Ca_CaMKIIi02               ; fb00=kon; bb02=koff_RC         # (R!45) Kd = koff_RC/kon
+Ca                   + CAMR_CaMKIIi00       <-> CAMR_Ca_CaMKIIi03               ; fb00=kon; bb03=koff_RD         # (R!46) Kd = koff_RD/kon
+Ca                   + CAMR_Cai00           <-> CAMR_Ca_Cai00                   ; fb00=kon; bb01=koff_RB         # (R!31) Kd = koff_RB/kon
+Ca                   + CAMR_Cai00           <-> CAMR_Ca_Cai01                   ; fb00=kon; bb02=koff_RC         # (R!32) Kd = koff_RC/kon
+Ca                   + CAMR_Cai00           <-> CAMR_Ca_Cai02                   ; fb00=kon; bb03=koff_RD         # (R!33) Kd = koff_RD/kon
+Ca                   + CAMR_Cai01           <-> CAMR_Ca_Cai00                   ; fb00=kon; bb00=koff_RA         # (R!34) Kd = koff_RA/kon
+Ca                   + CAMR_Cai01           <-> CAMR_Ca_Cai03                   ; fb00=kon; bb02=koff_RC         # (R!35) Kd = koff_RC/kon
+Ca                   + CAMR_Cai01           <-> CAMR_Ca_Cai04                   ; fb00=kon; bb03=koff_RD         # (R!36) Kd = koff_RD/kon
+Ca                   + CAMR_Cai02           <-> CAMR_Ca_Cai01                   ; fb00=kon; bb00=koff_RA         # (R!37) Kd = koff_RA/kon
+Ca                   + CAMR_Cai02           <-> CAMR_Ca_Cai03                   ; fb00=kon; bb01=koff_RB         # (R!38) Kd = koff_RB/kon
+Ca                   + CAMR_Cai02           <-> CAMR_Ca_Cai05                   ; fb00=kon; bb03=koff_RD         # (R!39) Kd = koff_RD/kon
+Ca                   + CAMR_Cai03           <-> CAMR_Ca_Cai02                   ; fb00=kon; bb00=koff_RA         # (R!40) Kd = koff_RA/kon
+Ca                   + CAMR_Cai03           <-> CAMR_Ca_Cai04                   ; fb00=kon; bb01=koff_RB         # (R!41) Kd = koff_RB/kon
+Ca                   + CAMR_Cai03           <-> CAMR_Ca_Cai05                   ; fb00=kon; bb02=koff_RC         # (R!42) Kd = koff_RC/kon
+Ca                   + CAMR_PP2Bi00         <-> CAMR_Ca_PP2Bi00                 ; fb00=kon; bb00=koff_RA         # (R!47) Kd = koff_RA/kon
+Ca                   + CAMR_PP2Bi00         <-> CAMR_Ca_PP2Bi01                 ; fb00=kon; bb01=koff_RB         # (R!48) Kd = koff_RB/kon
+Ca                   + CAMR_PP2Bi00         <-> CAMR_Ca_PP2Bi02                 ; fb00=kon; bb02=koff_RC         # (R!49) Kd = koff_RC/kon
+Ca                   + CAMR_PP2Bi00         <-> CAMR_Ca_PP2Bi03                 ; fb00=kon; bb03=koff_RD         # (R!50) Kd = koff_RD/kon
+Ca                   + CAMT_CaMKIIi00       <-> CAMT_Ca_CaMKIIi00               ; fb00=kon; bb06=koff_TA         # (R!51) Kd = koff_TA/kon
+Ca                   + CAMT_CaMKIIi00       <-> CAMT_Ca_CaMKIIi01               ; fb00=kon; bb07=koff_TB         # (R!52) Kd = koff_TB/kon
+Ca                   + CAMT_CaMKIIi00       <-> CAMT_Ca_CaMKIIi02               ; fb00=kon; bb08=koff_TC         # (R!53) Kd = koff_TC/kon
+Ca                   + CAMT_CaMKIIi00       <-> CAMT_Ca_CaMKIIi03               ; fb00=kon; bb09=koff_TD         # (R!54) Kd = koff_TD/kon
+Ca                   + CAMT_Cai00           <-> CAMT_Ca_Cai00                   ; fb00=kon; bb07=koff_TB         # (R!19) Kd = koff_TB/kon
+Ca                   + CAMT_Cai00           <-> CAMT_Ca_Cai01                   ; fb00=kon; bb08=koff_TC         # (R!20) Kd = koff_TC/kon
+Ca                   + CAMT_Cai00           <-> CAMT_Ca_Cai02                   ; fb00=kon; bb09=koff_TD         # (R!21) Kd = koff_TD/kon
+Ca                   + CAMT_Cai01           <-> CAMT_Ca_Cai00                   ; fb00=kon; bb06=koff_TA         # (R!22) Kd = koff_TA/kon
+Ca                   + CAMT_Cai01           <-> CAMT_Ca_Cai03                   ; fb00=kon; bb08=koff_TC         # (R!23) Kd = koff_TC/kon
+Ca                   + CAMT_Cai01           <-> CAMT_Ca_Cai04                   ; fb00=kon; bb09=koff_TD         # (R!24) Kd = koff_TD/kon
+Ca                   + CAMT_Cai02           <-> CAMT_Ca_Cai01                   ; fb00=kon; bb06=koff_TA         # (R!25) Kd = koff_TA/kon
+Ca                   + CAMT_Cai02           <-> CAMT_Ca_Cai03                   ; fb00=kon; bb07=koff_TB         # (R!26) Kd = koff_TB/kon
+Ca                   + CAMT_Cai02           <-> CAMT_Ca_Cai05                   ; fb00=kon; bb09=koff_TD         # (R!27) Kd = koff_TD/kon
+Ca                   + CAMT_Cai03           <-> CAMT_Ca_Cai02                   ; fb00=kon; bb06=koff_TA         # (R!28) Kd = koff_TA/kon
+Ca                   + CAMT_Cai03           <-> CAMT_Ca_Cai04                   ; fb00=kon; bb07=koff_TB         # (R!29) Kd = koff_TB/kon
+Ca                   + CAMT_Cai03           <-> CAMT_Ca_Cai05                   ; fb00=kon; bb08=koff_TC         # (R!30) Kd = koff_TC/kon
+Ca                   + CAMT_PP2Bi00         <-> CAMT_Ca_PP2Bi00                 ; fb00=kon; bb06=koff_TA         # (R!55) Kd = koff_TA/kon
+Ca                   + CAMT_PP2Bi00         <-> CAMT_Ca_PP2Bi01                 ; fb00=kon; bb07=koff_TB         # (R!56) Kd = koff_TB/kon
+Ca                   + CAMT_PP2Bi00         <-> CAMT_Ca_PP2Bi02                 ; fb00=kon; bb08=koff_TC         # (R!57) Kd = koff_TC/kon
+Ca                   + CAMT_PP2Bi00         <-> CAMT_Ca_PP2Bi03                 ; fb00=kon; bb09=koff_TD         # (R!58) Kd = koff_TD/kon
+CaMKII               + CAMR_Cai00           <-> CAMR_Ca_CaMKIIi00               ; fb01=kon_CaMKII; bb04=koff_CaMKII # (R!59) Kd = koff_CaMKII/kon_CaMKII
+CaMKII               + CAMR_Cai01           <-> CAMR_Ca_CaMKIIi01               ; fb01=kon_CaMKII; bb04=koff_CaMKII # (R!60) Kd = koff_CaMKII/kon_CaMKII
+CaMKII               + CAMR_Cai02           <-> CAMR_Ca_CaMKIIi02               ; fb01=kon_CaMKII; bb04=koff_CaMKII # (R!61) Kd = koff_CaMKII/kon_CaMKII
+CaMKII               + CAMR_Cai03           <-> CAMR_Ca_CaMKIIi03               ; fb01=kon_CaMKII; bb04=koff_CaMKII # (R!62) Kd = koff_CaMKII/kon_CaMKII
+CaMKII               + CAMT_Cai00           <-  CAMT_Ca_CaMKIIi00               ; bb10=1                         # (R!81) Kd = UNDEFINED (release reaction)
+CaMKII               + CAMT_Cai01           <-  CAMT_Ca_CaMKIIi01               ; bb10=1                         # (R!82) Kd = UNDEFINED (release reaction)
+CaMKII               + CAMT_Cai02           <-  CAMT_Ca_CaMKIIi02               ; bb10=1                         # (R!83) Kd = UNDEFINED (release reaction)
+CaMKII               + CAMT_Cai03           <-  CAMT_Ca_CaMKIIi03               ; bb10=1                         # (R!84) Kd = UNDEFINED (release reaction)
+PP2B                 + CAMR_Cai00           <-> CAMR_Ca_PP2Bi00                 ; fb02=kon_PP2B; bb05=koff_PP2B  # (R!63) Kd = koff_PP2B/kon_PP2B
+PP2B                 + CAMR_Cai01           <-> CAMR_Ca_PP2Bi01                 ; fb02=kon_PP2B; bb05=koff_PP2B  # (R!64) Kd = koff_PP2B/kon_PP2B
+PP2B                 + CAMR_Cai02           <-> CAMR_Ca_PP2Bi02                 ; fb02=kon_PP2B; bb05=koff_PP2B  # (R!65) Kd = koff_PP2B/kon_PP2B
+PP2B                 + CAMR_Cai03           <-> CAMR_Ca_PP2Bi03                 ; fb02=kon_PP2B; bb05=koff_PP2B  # (R!66) Kd = koff_PP2B/kon_PP2B
+PP2B                 + CAMT_Cai00           <-  CAMT_Ca_PP2Bi00                 ; bb10=1                         # (R!85) Kd = UNDEFINED (release reaction)
+PP2B                 + CAMT_Cai01           <-  CAMT_Ca_PP2Bi01                 ; bb10=1                         # (R!86) Kd = UNDEFINED (release reaction)
+PP2B                 + CAMT_Cai02           <-  CAMT_Ca_PP2Bi02                 ; bb10=1                         # (R!87) Kd = UNDEFINED (release reaction)
+PP2B                 + CAMT_Cai03           <-  CAMT_Ca_PP2Bi03                 ; bb10=1                         # (R!88) Kd = UNDEFINED (release reaction)
+Ca                   + CAMR_Ca_CaMKIIi00    <-> CAMR_Ca_Ca_CaMKIIi00            ; fb00=kon; bb01=koff_RB         # (R!113) Kd = koff_RB/kon
+Ca                   + CAMR_Ca_CaMKIIi00    <-> CAMR_Ca_Ca_CaMKIIi01            ; fb00=kon; bb02=koff_RC         # (R!114) Kd = koff_RC/kon
+Ca                   + CAMR_Ca_CaMKIIi00    <-> CAMR_Ca_Ca_CaMKIIi02            ; fb00=kon; bb03=koff_RD         # (R!115) Kd = koff_RD/kon
+Ca                   + CAMR_Ca_CaMKIIi01    <-> CAMR_Ca_Ca_CaMKIIi00            ; fb00=kon; bb00=koff_RA         # (R!116) Kd = koff_RA/kon
+Ca                   + CAMR_Ca_CaMKIIi01    <-> CAMR_Ca_Ca_CaMKIIi03            ; fb00=kon; bb02=koff_RC         # (R!117) Kd = koff_RC/kon
+Ca                   + CAMR_Ca_CaMKIIi01    <-> CAMR_Ca_Ca_CaMKIIi04            ; fb00=kon; bb03=koff_RD         # (R!118) Kd = koff_RD/kon
+Ca                   + CAMR_Ca_CaMKIIi02    <-> CAMR_Ca_Ca_CaMKIIi01            ; fb00=kon; bb00=koff_RA         # (R!119) Kd = koff_RA/kon
+Ca                   + CAMR_Ca_CaMKIIi02    <-> CAMR_Ca_Ca_CaMKIIi03            ; fb00=kon; bb01=koff_RB         # (R!120) Kd = koff_RB/kon
+Ca                   + CAMR_Ca_CaMKIIi02    <-> CAMR_Ca_Ca_CaMKIIi05            ; fb00=kon; bb03=koff_RD         # (R!121) Kd = koff_RD/kon
+Ca                   + CAMR_Ca_CaMKIIi03    <-> CAMR_Ca_Ca_CaMKIIi02            ; fb00=kon; bb00=koff_RA         # (R!122) Kd = koff_RA/kon
+Ca                   + CAMR_Ca_CaMKIIi03    <-> CAMR_Ca_Ca_CaMKIIi04            ; fb00=kon; bb01=koff_RB         # (R!123) Kd = koff_RB/kon
+Ca                   + CAMR_Ca_CaMKIIi03    <-> CAMR_Ca_Ca_CaMKIIi05            ; fb00=kon; bb02=koff_RC         # (R!124) Kd = koff_RC/kon
+Ca                   + CAMR_Ca_Cai00        <-> CAMR_Ca_Ca_Cai00                ; fb00=kon; bb02=koff_RC         # (R!101) Kd = koff_RC/kon
+Ca                   + CAMR_Ca_Cai00        <-> CAMR_Ca_Ca_Cai01                ; fb00=kon; bb03=koff_RD         # (R!102) Kd = koff_RD/kon
+Ca                   + CAMR_Ca_Cai01        <-> CAMR_Ca_Ca_Cai00                ; fb00=kon; bb01=koff_RB         # (R!103) Kd = koff_RB/kon
+Ca                   + CAMR_Ca_Cai01        <-> CAMR_Ca_Ca_Cai02                ; fb00=kon; bb03=koff_RD         # (R!104) Kd = koff_RD/kon
+Ca                   + CAMR_Ca_Cai02        <-> CAMR_Ca_Ca_Cai01                ; fb00=kon; bb01=koff_RB         # (R!105) Kd = koff_RB/kon
+Ca                   + CAMR_Ca_Cai02        <-> CAMR_Ca_Ca_Cai02                ; fb00=kon; bb02=koff_RC         # (R!106) Kd = koff_RC/kon
+Ca                   + CAMR_Ca_Cai03        <-> CAMR_Ca_Ca_Cai00                ; fb00=kon; bb00=koff_RA         # (R!107) Kd = koff_RA/kon
+Ca                   + CAMR_Ca_Cai03        <-> CAMR_Ca_Ca_Cai03                ; fb00=kon; bb03=koff_RD         # (R!108) Kd = koff_RD/kon
+Ca                   + CAMR_Ca_Cai04        <-> CAMR_Ca_Ca_Cai01                ; fb00=kon; bb00=koff_RA         # (R!109) Kd = koff_RA/kon
+Ca                   + CAMR_Ca_Cai04        <-> CAMR_Ca_Ca_Cai03                ; fb00=kon; bb02=koff_RC         # (R!110) Kd = koff_RC/kon
+Ca                   + CAMR_Ca_Cai05        <-> CAMR_Ca_Ca_Cai02                ; fb00=kon; bb00=koff_RA         # (R!111) Kd = koff_RA/kon
+Ca                   + CAMR_Ca_Cai05        <-> CAMR_Ca_Ca_Cai03                ; fb00=kon; bb01=koff_RB         # (R!112) Kd = koff_RB/kon
+Ca                   + CAMR_Ca_PP2Bi00      <-> CAMR_Ca_Ca_PP2Bi00              ; fb00=kon; bb01=koff_RB         # (R!125) Kd = koff_RB/kon
+Ca                   + CAMR_Ca_PP2Bi00      <-> CAMR_Ca_Ca_PP2Bi01              ; fb00=kon; bb02=koff_RC         # (R!126) Kd = koff_RC/kon
+Ca                   + CAMR_Ca_PP2Bi00      <-> CAMR_Ca_Ca_PP2Bi02              ; fb00=kon; bb03=koff_RD         # (R!127) Kd = koff_RD/kon
+Ca                   + CAMR_Ca_PP2Bi01      <-> CAMR_Ca_Ca_PP2Bi00              ; fb00=kon; bb00=koff_RA         # (R!128) Kd = koff_RA/kon
+Ca                   + CAMR_Ca_PP2Bi01      <-> CAMR_Ca_Ca_PP2Bi03              ; fb00=kon; bb02=koff_RC         # (R!129) Kd = koff_RC/kon
+Ca                   + CAMR_Ca_PP2Bi01      <-> CAMR_Ca_Ca_PP2Bi04              ; fb00=kon; bb03=koff_RD         # (R!130) Kd = koff_RD/kon
+Ca                   + CAMR_Ca_PP2Bi02      <-> CAMR_Ca_Ca_PP2Bi01              ; fb00=kon; bb00=koff_RA         # (R!131) Kd = koff_RA/kon
+Ca                   + CAMR_Ca_PP2Bi02      <-> CAMR_Ca_Ca_PP2Bi03              ; fb00=kon; bb01=koff_RB         # (R!132) Kd = koff_RB/kon
+Ca                   + CAMR_Ca_PP2Bi02      <-> CAMR_Ca_Ca_PP2Bi05              ; fb00=kon; bb03=koff_RD         # (R!133) Kd = koff_RD/kon
+Ca                   + CAMR_Ca_PP2Bi03      <-> CAMR_Ca_Ca_PP2Bi02              ; fb00=kon; bb00=koff_RA         # (R!134) Kd = koff_RA/kon
+Ca                   + CAMR_Ca_PP2Bi03      <-> CAMR_Ca_Ca_PP2Bi04              ; fb00=kon; bb01=koff_RB         # (R!135) Kd = koff_RB/kon
+Ca                   + CAMR_Ca_PP2Bi03      <-> CAMR_Ca_Ca_PP2Bi05              ; fb00=kon; bb02=koff_RC         # (R!136) Kd = koff_RC/kon
+Ca                   + CAMT_Ca_CaMKIIi00    <-> CAMT_Ca_Ca_CaMKIIi00            ; fb00=kon; bb07=koff_TB         # (R!137) Kd = koff_TB/kon
+Ca                   + CAMT_Ca_CaMKIIi00    <-> CAMT_Ca_Ca_CaMKIIi01            ; fb00=kon; bb08=koff_TC         # (R!138) Kd = koff_TC/kon
+Ca                   + CAMT_Ca_CaMKIIi00    <-> CAMT_Ca_Ca_CaMKIIi02            ; fb00=kon; bb09=koff_TD         # (R!139) Kd = koff_TD/kon
+Ca                   + CAMT_Ca_CaMKIIi01    <-> CAMT_Ca_Ca_CaMKIIi00            ; fb00=kon; bb06=koff_TA         # (R!140) Kd = koff_TA/kon
+Ca                   + CAMT_Ca_CaMKIIi01    <-> CAMT_Ca_Ca_CaMKIIi03            ; fb00=kon; bb08=koff_TC         # (R!141) Kd = koff_TC/kon
+Ca                   + CAMT_Ca_CaMKIIi01    <-> CAMT_Ca_Ca_CaMKIIi04            ; fb00=kon; bb09=koff_TD         # (R!142) Kd = koff_TD/kon
+Ca                   + CAMT_Ca_CaMKIIi02    <-> CAMT_Ca_Ca_CaMKIIi01            ; fb00=kon; bb06=koff_TA         # (R!143) Kd = koff_TA/kon
+Ca                   + CAMT_Ca_CaMKIIi02    <-> CAMT_Ca_Ca_CaMKIIi03            ; fb00=kon; bb07=koff_TB         # (R!144) Kd = koff_TB/kon
+Ca                   + CAMT_Ca_CaMKIIi02    <-> CAMT_Ca_Ca_CaMKIIi05            ; fb00=kon; bb09=koff_TD         # (R!145) Kd = koff_TD/kon
+Ca                   + CAMT_Ca_CaMKIIi03    <-> CAMT_Ca_Ca_CaMKIIi02            ; fb00=kon; bb06=koff_TA         # (R!146) Kd = koff_TA/kon
+Ca                   + CAMT_Ca_CaMKIIi03    <-> CAMT_Ca_Ca_CaMKIIi04            ; fb00=kon; bb07=koff_TB         # (R!147) Kd = koff_TB/kon
+Ca                   + CAMT_Ca_CaMKIIi03    <-> CAMT_Ca_Ca_CaMKIIi05            ; fb00=kon; bb08=koff_TC         # (R!148) Kd = koff_TC/kon
+Ca                   + CAMT_Ca_Cai00        <-> CAMT_Ca_Ca_Cai00                ; fb00=kon; bb08=koff_TC         # (R!89) Kd = koff_TC/kon
+Ca                   + CAMT_Ca_Cai00        <-> CAMT_Ca_Ca_Cai01                ; fb00=kon; bb09=koff_TD         # (R!90) Kd = koff_TD/kon
+Ca                   + CAMT_Ca_Cai01        <-> CAMT_Ca_Ca_Cai00                ; fb00=kon; bb07=koff_TB         # (R!91) Kd = koff_TB/kon
+Ca                   + CAMT_Ca_Cai01        <-> CAMT_Ca_Ca_Cai02                ; fb00=kon; bb09=koff_TD         # (R!92) Kd = koff_TD/kon
+Ca                   + CAMT_Ca_Cai02        <-> CAMT_Ca_Ca_Cai01                ; fb00=kon; bb07=koff_TB         # (R!93) Kd = koff_TB/kon
+Ca                   + CAMT_Ca_Cai02        <-> CAMT_Ca_Ca_Cai02                ; fb00=kon; bb08=koff_TC         # (R!94) Kd = koff_TC/kon
+Ca                   + CAMT_Ca_Cai03        <-> CAMT_Ca_Ca_Cai00                ; fb00=kon; bb06=koff_TA         # (R!95) Kd = koff_TA/kon
+Ca                   + CAMT_Ca_Cai03        <-> CAMT_Ca_Ca_Cai03                ; fb00=kon; bb09=koff_TD         # (R!96) Kd = koff_TD/kon
+Ca                   + CAMT_Ca_Cai04        <-> CAMT_Ca_Ca_Cai01                ; fb00=kon; bb06=koff_TA         # (R!97) Kd = koff_TA/kon
+Ca                   + CAMT_Ca_Cai04        <-> CAMT_Ca_Ca_Cai03                ; fb00=kon; bb08=koff_TC         # (R!98) Kd = koff_TC/kon
+Ca                   + CAMT_Ca_Cai05        <-> CAMT_Ca_Ca_Cai02                ; fb00=kon; bb06=koff_TA         # (R!99) Kd = koff_TA/kon
+Ca                   + CAMT_Ca_Cai05        <-> CAMT_Ca_Ca_Cai03                ; fb00=kon; bb07=koff_TB         # (R!100) Kd = koff_TB/kon
+Ca                   + CAMT_Ca_PP2Bi00      <-> CAMT_Ca_Ca_PP2Bi00              ; fb00=kon; bb07=koff_TB         # (R!149) Kd = koff_TB/kon
+Ca                   + CAMT_Ca_PP2Bi00      <-> CAMT_Ca_Ca_PP2Bi01              ; fb00=kon; bb08=koff_TC         # (R!150) Kd = koff_TC/kon
+Ca                   + CAMT_Ca_PP2Bi00      <-> CAMT_Ca_Ca_PP2Bi02              ; fb00=kon; bb09=koff_TD         # (R!151) Kd = koff_TD/kon
+Ca                   + CAMT_Ca_PP2Bi01      <-> CAMT_Ca_Ca_PP2Bi00              ; fb00=kon; bb06=koff_TA         # (R!152) Kd = koff_TA/kon
+Ca                   + CAMT_Ca_PP2Bi01      <-> CAMT_Ca_Ca_PP2Bi03              ; fb00=kon; bb08=koff_TC         # (R!153) Kd = koff_TC/kon
+Ca                   + CAMT_Ca_PP2Bi01      <-> CAMT_Ca_Ca_PP2Bi04              ; fb00=kon; bb09=koff_TD         # (R!154) Kd = koff_TD/kon
+Ca                   + CAMT_Ca_PP2Bi02      <-> CAMT_Ca_Ca_PP2Bi01              ; fb00=kon; bb06=koff_TA         # (R!155) Kd = koff_TA/kon
+Ca                   + CAMT_Ca_PP2Bi02      <-> CAMT_Ca_Ca_PP2Bi03              ; fb00=kon; bb07=koff_TB         # (R!156) Kd = koff_TB/kon
+Ca                   + CAMT_Ca_PP2Bi02      <-> CAMT_Ca_Ca_PP2Bi05              ; fb00=kon; bb09=koff_TD         # (R!157) Kd = koff_TD/kon
+Ca                   + CAMT_Ca_PP2Bi03      <-> CAMT_Ca_Ca_PP2Bi02              ; fb00=kon; bb06=koff_TA         # (R!158) Kd = koff_TA/kon
+Ca                   + CAMT_Ca_PP2Bi03      <-> CAMT_Ca_Ca_PP2Bi04              ; fb00=kon; bb07=koff_TB         # (R!159) Kd = koff_TB/kon
+Ca                   + CAMT_Ca_PP2Bi03      <-> CAMT_Ca_Ca_PP2Bi05              ; fb00=kon; bb08=koff_TC         # (R!160) Kd = koff_TC/kon
+CaMKII               + CAMR_Ca_Cai00        <-> CAMR_Ca_Ca_CaMKIIi00            ; fb01=kon_CaMKII; bb04=koff_CaMKII # (R!161) Kd = koff_CaMKII/kon_CaMKII
+CaMKII               + CAMR_Ca_Cai01        <-> CAMR_Ca_Ca_CaMKIIi01            ; fb01=kon_CaMKII; bb04=koff_CaMKII # (R!162) Kd = koff_CaMKII/kon_CaMKII
+CaMKII               + CAMR_Ca_Cai02        <-> CAMR_Ca_Ca_CaMKIIi02            ; fb01=kon_CaMKII; bb04=koff_CaMKII # (R!163) Kd = koff_CaMKII/kon_CaMKII
+CaMKII               + CAMR_Ca_Cai03        <-> CAMR_Ca_Ca_CaMKIIi03            ; fb01=kon_CaMKII; bb04=koff_CaMKII # (R!164) Kd = koff_CaMKII/kon_CaMKII
+CaMKII               + CAMR_Ca_Cai04        <-> CAMR_Ca_Ca_CaMKIIi04            ; fb01=kon_CaMKII; bb04=koff_CaMKII # (R!165) Kd = koff_CaMKII/kon_CaMKII
+CaMKII               + CAMR_Ca_Cai05        <-> CAMR_Ca_Ca_CaMKIIi05            ; fb01=kon_CaMKII; bb04=koff_CaMKII # (R!166) Kd = koff_CaMKII/kon_CaMKII
+CaMKII               + CAMT_Ca_Cai00        <-  CAMT_Ca_Ca_CaMKIIi00            ; bb10=1                         # (R!189) Kd = UNDEFINED (release reaction)
+CaMKII               + CAMT_Ca_Cai01        <-  CAMT_Ca_Ca_CaMKIIi01            ; bb10=1                         # (R!190) Kd = UNDEFINED (release reaction)
+CaMKII               + CAMT_Ca_Cai02        <-  CAMT_Ca_Ca_CaMKIIi02            ; bb10=1                         # (R!191) Kd = UNDEFINED (release reaction)
+CaMKII               + CAMT_Ca_Cai03        <-  CAMT_Ca_Ca_CaMKIIi03            ; bb10=1                         # (R!192) Kd = UNDEFINED (release reaction)
+CaMKII               + CAMT_Ca_Cai04        <-  CAMT_Ca_Ca_CaMKIIi04            ; bb10=1                         # (R!193) Kd = UNDEFINED (release reaction)
+CaMKII               + CAMT_Ca_Cai05        <-  CAMT_Ca_Ca_CaMKIIi05            ; bb10=1                         # (R!194) Kd = UNDEFINED (release reaction)
+PP2B                 + CAMR_Ca_Cai00        <-> CAMR_Ca_Ca_PP2Bi00              ; fb02=kon_PP2B; bb05=koff_PP2B  # (R!167) Kd = koff_PP2B/kon_PP2B
+PP2B                 + CAMR_Ca_Cai01        <-> CAMR_Ca_Ca_PP2Bi01              ; fb02=kon_PP2B; bb05=koff_PP2B  # (R!168) Kd = koff_PP2B/kon_PP2B
+PP2B                 + CAMR_Ca_Cai02        <-> CAMR_Ca_Ca_PP2Bi02              ; fb02=kon_PP2B; bb05=koff_PP2B  # (R!169) Kd = koff_PP2B/kon_PP2B
+PP2B                 + CAMR_Ca_Cai03        <-> CAMR_Ca_Ca_PP2Bi03              ; fb02=kon_PP2B; bb05=koff_PP2B  # (R!170) Kd = koff_PP2B/kon_PP2B
+PP2B                 + CAMR_Ca_Cai04        <-> CAMR_Ca_Ca_PP2Bi04              ; fb02=kon_PP2B; bb05=koff_PP2B  # (R!171) Kd = koff_PP2B/kon_PP2B
+PP2B                 + CAMR_Ca_Cai05        <-> CAMR_Ca_Ca_PP2Bi05              ; fb02=kon_PP2B; bb05=koff_PP2B  # (R!172) Kd = koff_PP2B/kon_PP2B
+PP2B                 + CAMT_Ca_Cai00        <-  CAMT_Ca_Ca_PP2Bi00              ; bb10=1                         # (R!195) Kd = UNDEFINED (release reaction)
+PP2B                 + CAMT_Ca_Cai01        <-  CAMT_Ca_Ca_PP2Bi01              ; bb10=1                         # (R!196) Kd = UNDEFINED (release reaction)
+PP2B                 + CAMT_Ca_Cai02        <-  CAMT_Ca_Ca_PP2Bi02              ; bb10=1                         # (R!197) Kd = UNDEFINED (release reaction)
+PP2B                 + CAMT_Ca_Cai03        <-  CAMT_Ca_Ca_PP2Bi03              ; bb10=1                         # (R!198) Kd = UNDEFINED (release reaction)
+PP2B                 + CAMT_Ca_Cai04        <-  CAMT_Ca_Ca_PP2Bi04              ; bb10=1                         # (R!199) Kd = UNDEFINED (release reaction)
+PP2B                 + CAMT_Ca_Cai05        <-  CAMT_Ca_Ca_PP2Bi05              ; bb10=1                         # (R!200) Kd = UNDEFINED (release reaction)
+Ca                   + CAMR_Ca_Ca_CaMKIIi00 <-> CAMR_Ca_Ca_Ca_CaMKIIi00         ; fb00=kon; bb02=koff_RC         # (R!209) Kd = koff_RC/kon
+Ca                   + CAMR_Ca_Ca_CaMKIIi00 <-> CAMR_Ca_Ca_Ca_CaMKIIi01         ; fb00=kon; bb03=koff_RD         # (R!210) Kd = koff_RD/kon
+Ca                   + CAMR_Ca_Ca_CaMKIIi01 <-> CAMR_Ca_Ca_Ca_CaMKIIi00         ; fb00=kon; bb01=koff_RB         # (R!211) Kd = koff_RB/kon
+Ca                   + CAMR_Ca_Ca_CaMKIIi01 <-> CAMR_Ca_Ca_Ca_CaMKIIi02         ; fb00=kon; bb03=koff_RD         # (R!212) Kd = koff_RD/kon
+Ca                   + CAMR_Ca_Ca_CaMKIIi02 <-> CAMR_Ca_Ca_Ca_CaMKIIi01         ; fb00=kon; bb01=koff_RB         # (R!213) Kd = koff_RB/kon
+Ca                   + CAMR_Ca_Ca_CaMKIIi02 <-> CAMR_Ca_Ca_Ca_CaMKIIi02         ; fb00=kon; bb02=koff_RC         # (R!214) Kd = koff_RC/kon
+Ca                   + CAMR_Ca_Ca_CaMKIIi03 <-> CAMR_Ca_Ca_Ca_CaMKIIi00         ; fb00=kon; bb00=koff_RA         # (R!215) Kd = koff_RA/kon
+Ca                   + CAMR_Ca_Ca_CaMKIIi03 <-> CAMR_Ca_Ca_Ca_CaMKIIi03         ; fb00=kon; bb03=koff_RD         # (R!216) Kd = koff_RD/kon
+Ca                   + CAMR_Ca_Ca_CaMKIIi04 <-> CAMR_Ca_Ca_Ca_CaMKIIi01         ; fb00=kon; bb00=koff_RA         # (R!217) Kd = koff_RA/kon
+Ca                   + CAMR_Ca_Ca_CaMKIIi04 <-> CAMR_Ca_Ca_Ca_CaMKIIi03         ; fb00=kon; bb02=koff_RC         # (R!218) Kd = koff_RC/kon
+Ca                   + CAMR_Ca_Ca_CaMKIIi05 <-> CAMR_Ca_Ca_Ca_CaMKIIi02         ; fb00=kon; bb00=koff_RA         # (R!219) Kd = koff_RA/kon
+Ca                   + CAMR_Ca_Ca_CaMKIIi05 <-> CAMR_Ca_Ca_Ca_CaMKIIi03         ; fb00=kon; bb01=koff_RB         # (R!220) Kd = koff_RB/kon
+Ca                   + CAMR_Ca_Ca_Cai00     <-> CAMR_Ca_Ca_Ca_Cai00             ; fb00=kon; bb03=koff_RD         # (R!205) Kd = koff_RD/kon
+Ca                   + CAMR_Ca_Ca_Cai01     <-> CAMR_Ca_Ca_Ca_Cai00             ; fb00=kon; bb02=koff_RC         # (R!206) Kd = koff_RC/kon
+Ca                   + CAMR_Ca_Ca_Cai02     <-> CAMR_Ca_Ca_Ca_Cai00             ; fb00=kon; bb01=koff_RB         # (R!207) Kd = koff_RB/kon
+Ca                   + CAMR_Ca_Ca_Cai03     <-> CAMR_Ca_Ca_Ca_Cai00             ; fb00=kon; bb00=koff_RA         # (R!208) Kd = koff_RA/kon
+Ca                   + CAMR_Ca_Ca_PP2Bi00   <-> CAMR_Ca_Ca_Ca_PP2Bi00           ; fb00=kon; bb02=koff_RC         # (R!221) Kd = koff_RC/kon
+Ca                   + CAMR_Ca_Ca_PP2Bi00   <-> CAMR_Ca_Ca_Ca_PP2Bi01           ; fb00=kon; bb03=koff_RD         # (R!222) Kd = koff_RD/kon
+Ca                   + CAMR_Ca_Ca_PP2Bi01   <-> CAMR_Ca_Ca_Ca_PP2Bi00           ; fb00=kon; bb01=koff_RB         # (R!223) Kd = koff_RB/kon
+Ca                   + CAMR_Ca_Ca_PP2Bi01   <-> CAMR_Ca_Ca_Ca_PP2Bi02           ; fb00=kon; bb03=koff_RD         # (R!224) Kd = koff_RD/kon
+Ca                   + CAMR_Ca_Ca_PP2Bi02   <-> CAMR_Ca_Ca_Ca_PP2Bi01           ; fb00=kon; bb01=koff_RB         # (R!225) Kd = koff_RB/kon
+Ca                   + CAMR_Ca_Ca_PP2Bi02   <-> CAMR_Ca_Ca_Ca_PP2Bi02           ; fb00=kon; bb02=koff_RC         # (R!226) Kd = koff_RC/kon
+Ca                   + CAMR_Ca_Ca_PP2Bi03   <-> CAMR_Ca_Ca_Ca_PP2Bi00           ; fb00=kon; bb00=koff_RA         # (R!227) Kd = koff_RA/kon
+Ca                   + CAMR_Ca_Ca_PP2Bi03   <-> CAMR_Ca_Ca_Ca_PP2Bi03           ; fb00=kon; bb03=koff_RD         # (R!228) Kd = koff_RD/kon
+Ca                   + CAMR_Ca_Ca_PP2Bi04   <-> CAMR_Ca_Ca_Ca_PP2Bi01           ; fb00=kon; bb00=koff_RA         # (R!229) Kd = koff_RA/kon
+Ca                   + CAMR_Ca_Ca_PP2Bi04   <-> CAMR_Ca_Ca_Ca_PP2Bi03           ; fb00=kon; bb02=koff_RC         # (R!230) Kd = koff_RC/kon
+Ca                   + CAMR_Ca_Ca_PP2Bi05   <-> CAMR_Ca_Ca_Ca_PP2Bi02           ; fb00=kon; bb00=koff_RA         # (R!231) Kd = koff_RA/kon
+Ca                   + CAMR_Ca_Ca_PP2Bi05   <-> CAMR_Ca_Ca_Ca_PP2Bi03           ; fb00=kon; bb01=koff_RB         # (R!232) Kd = koff_RB/kon
+Ca                   + CAMT_Ca_Ca_CaMKIIi00 <-> CAMT_Ca_Ca_Ca_CaMKIIi00         ; fb00=kon; bb08=koff_TC         # (R!233) Kd = koff_TC/kon
+Ca                   + CAMT_Ca_Ca_CaMKIIi00 <-> CAMT_Ca_Ca_Ca_CaMKIIi01         ; fb00=kon; bb09=koff_TD         # (R!234) Kd = koff_TD/kon
+Ca                   + CAMT_Ca_Ca_CaMKIIi01 <-> CAMT_Ca_Ca_Ca_CaMKIIi00         ; fb00=kon; bb07=koff_TB         # (R!235) Kd = koff_TB/kon
+Ca                   + CAMT_Ca_Ca_CaMKIIi01 <-> CAMT_Ca_Ca_Ca_CaMKIIi02         ; fb00=kon; bb09=koff_TD         # (R!236) Kd = koff_TD/kon
+Ca                   + CAMT_Ca_Ca_CaMKIIi02 <-> CAMT_Ca_Ca_Ca_CaMKIIi01         ; fb00=kon; bb07=koff_TB         # (R!237) Kd = koff_TB/kon
+Ca                   + CAMT_Ca_Ca_CaMKIIi02 <-> CAMT_Ca_Ca_Ca_CaMKIIi02         ; fb00=kon; bb08=koff_TC         # (R!238) Kd = koff_TC/kon
+Ca                   + CAMT_Ca_Ca_CaMKIIi03 <-> CAMT_Ca_Ca_Ca_CaMKIIi00         ; fb00=kon; bb06=koff_TA         # (R!239) Kd = koff_TA/kon
+Ca                   + CAMT_Ca_Ca_CaMKIIi03 <-> CAMT_Ca_Ca_Ca_CaMKIIi03         ; fb00=kon; bb09=koff_TD         # (R!240) Kd = koff_TD/kon
+Ca                   + CAMT_Ca_Ca_CaMKIIi04 <-> CAMT_Ca_Ca_Ca_CaMKIIi01         ; fb00=kon; bb06=koff_TA         # (R!241) Kd = koff_TA/kon
+Ca                   + CAMT_Ca_Ca_CaMKIIi04 <-> CAMT_Ca_Ca_Ca_CaMKIIi03         ; fb00=kon; bb08=koff_TC         # (R!242) Kd = koff_TC/kon
+Ca                   + CAMT_Ca_Ca_CaMKIIi05 <-> CAMT_Ca_Ca_Ca_CaMKIIi02         ; fb00=kon; bb06=koff_TA         # (R!243) Kd = koff_TA/kon
+Ca                   + CAMT_Ca_Ca_CaMKIIi05 <-> CAMT_Ca_Ca_Ca_CaMKIIi03         ; fb00=kon; bb07=koff_TB         # (R!244) Kd = koff_TB/kon
+Ca                   + CAMT_Ca_Ca_Cai00     <-> CAMT_Ca_Ca_Ca_Cai00             ; fb00=kon; bb09=koff_TD         # (R!201) Kd = koff_TD/kon
+Ca                   + CAMT_Ca_Ca_Cai01     <-> CAMT_Ca_Ca_Ca_Cai00             ; fb00=kon; bb08=koff_TC         # (R!202) Kd = koff_TC/kon
+Ca                   + CAMT_Ca_Ca_Cai02     <-> CAMT_Ca_Ca_Ca_Cai00             ; fb00=kon; bb07=koff_TB         # (R!203) Kd = koff_TB/kon
+Ca                   + CAMT_Ca_Ca_Cai03     <-> CAMT_Ca_Ca_Ca_Cai00             ; fb00=kon; bb06=koff_TA         # (R!204) Kd = koff_TA/kon
+Ca                   + CAMT_Ca_Ca_PP2Bi00   <-> CAMT_Ca_Ca_Ca_PP2Bi00           ; fb00=kon; bb08=koff_TC         # (R!245) Kd = koff_TC/kon
+Ca                   + CAMT_Ca_Ca_PP2Bi00   <-> CAMT_Ca_Ca_Ca_PP2Bi01           ; fb00=kon; bb09=koff_TD         # (R!246) Kd = koff_TD/kon
+Ca                   + CAMT_Ca_Ca_PP2Bi01   <-> CAMT_Ca_Ca_Ca_PP2Bi00           ; fb00=kon; bb07=koff_TB         # (R!247) Kd = koff_TB/kon
+Ca                   + CAMT_Ca_Ca_PP2Bi01   <-> CAMT_Ca_Ca_Ca_PP2Bi02           ; fb00=kon; bb09=koff_TD         # (R!248) Kd = koff_TD/kon
+Ca                   + CAMT_Ca_Ca_PP2Bi02   <-> CAMT_Ca_Ca_Ca_PP2Bi01           ; fb00=kon; bb07=koff_TB         # (R!249) Kd = koff_TB/kon
+Ca                   + CAMT_Ca_Ca_PP2Bi02   <-> CAMT_Ca_Ca_Ca_PP2Bi02           ; fb00=kon; bb08=koff_TC         # (R!250) Kd = koff_TC/kon
+Ca                   + CAMT_Ca_Ca_PP2Bi03   <-> CAMT_Ca_Ca_Ca_PP2Bi00           ; fb00=kon; bb06=koff_TA         # (R!251) Kd = koff_TA/kon
+Ca                   + CAMT_Ca_Ca_PP2Bi03   <-> CAMT_Ca_Ca_Ca_PP2Bi03           ; fb00=kon; bb09=koff_TD         # (R!252) Kd = koff_TD/kon
+Ca                   + CAMT_Ca_Ca_PP2Bi04   <-> CAMT_Ca_Ca_Ca_PP2Bi01           ; fb00=kon; bb06=koff_TA         # (R!253) Kd = koff_TA/kon
+Ca                   + CAMT_Ca_Ca_PP2Bi04   <-> CAMT_Ca_Ca_Ca_PP2Bi03           ; fb00=kon; bb08=koff_TC         # (R!254) Kd = koff_TC/kon
+Ca                   + CAMT_Ca_Ca_PP2Bi05   <-> CAMT_Ca_Ca_Ca_PP2Bi02           ; fb00=kon; bb06=koff_TA         # (R!255) Kd = koff_TA/kon
+Ca                   + CAMT_Ca_Ca_PP2Bi05   <-> CAMT_Ca_Ca_Ca_PP2Bi03           ; fb00=kon; bb07=koff_TB         # (R!256) Kd = koff_TB/kon
+CaMKII               + CAMR_Ca_Ca_Cai00     <-> CAMR_Ca_Ca_Ca_CaMKIIi00         ; fb01=kon_CaMKII; bb04=koff_CaMKII # (R!257) Kd = koff_CaMKII/kon_CaMKII
+CaMKII               + CAMR_Ca_Ca_Cai01     <-> CAMR_Ca_Ca_Ca_CaMKIIi01         ; fb01=kon_CaMKII; bb04=koff_CaMKII # (R!258) Kd = koff_CaMKII/kon_CaMKII
+CaMKII               + CAMR_Ca_Ca_Cai02     <-> CAMR_Ca_Ca_Ca_CaMKIIi02         ; fb01=kon_CaMKII; bb04=koff_CaMKII # (R!259) Kd = koff_CaMKII/kon_CaMKII
+CaMKII               + CAMR_Ca_Ca_Cai03     <-> CAMR_Ca_Ca_Ca_CaMKIIi03         ; fb01=kon_CaMKII; bb04=koff_CaMKII # (R!260) Kd = koff_CaMKII/kon_CaMKII
+CaMKII               + CAMT_Ca_Ca_Cai00     <-  CAMT_Ca_Ca_Ca_CaMKIIi00         ; bb10=1                         # (R!274) Kd = UNDEFINED (release reaction)
+CaMKII               + CAMT_Ca_Ca_Cai01     <-  CAMT_Ca_Ca_Ca_CaMKIIi01         ; bb10=1                         # (R!275) Kd = UNDEFINED (release reaction)
+CaMKII               + CAMT_Ca_Ca_Cai02     <-  CAMT_Ca_Ca_Ca_CaMKIIi02         ; bb10=1                         # (R!276) Kd = UNDEFINED (release reaction)
+CaMKII               + CAMT_Ca_Ca_Cai03     <-  CAMT_Ca_Ca_Ca_CaMKIIi03         ; bb10=1                         # (R!277) Kd = UNDEFINED (release reaction)
+PP2B                 + CAMR_Ca_Ca_Cai00     <-> CAMR_Ca_Ca_Ca_PP2Bi00           ; fb02=kon_PP2B; bb05=koff_PP2B  # (R!261) Kd = koff_PP2B/kon_PP2B
+PP2B                 + CAMR_Ca_Ca_Cai01     <-> CAMR_Ca_Ca_Ca_PP2Bi01           ; fb02=kon_PP2B; bb05=koff_PP2B  # (R!262) Kd = koff_PP2B/kon_PP2B
+PP2B                 + CAMR_Ca_Ca_Cai02     <-> CAMR_Ca_Ca_Ca_PP2Bi02           ; fb02=kon_PP2B; bb05=koff_PP2B  # (R!263) Kd = koff_PP2B/kon_PP2B
+PP2B                 + CAMR_Ca_Ca_Cai03     <-> CAMR_Ca_Ca_Ca_PP2Bi03           ; fb02=kon_PP2B; bb05=koff_PP2B  # (R!264) Kd = koff_PP2B/kon_PP2B
+PP2B                 + CAMT_Ca_Ca_Cai00     <-  CAMT_Ca_Ca_Ca_PP2Bi00           ; bb10=1                         # (R!278) Kd = UNDEFINED (release reaction)
+PP2B                 + CAMT_Ca_Ca_Cai01     <-  CAMT_Ca_Ca_Ca_PP2Bi01           ; bb10=1                         # (R!279) Kd = UNDEFINED (release reaction)
+PP2B                 + CAMT_Ca_Ca_Cai02     <-  CAMT_Ca_Ca_Ca_PP2Bi02           ; bb10=1                         # (R!280) Kd = UNDEFINED (release reaction)
+PP2B                 + CAMT_Ca_Ca_Cai03     <-  CAMT_Ca_Ca_Ca_PP2Bi03           ; bb10=1                         # (R!281) Kd = UNDEFINED (release reaction)
+Ca                   + CAMR_Ca_Ca_Ca_CaMKIIi00 <-> CAMR_Ca_Ca_Ca_Ca_CaMKIIi00      ; fb00=kon; bb03=koff_RD         # (R!282) Kd = koff_RD/kon
+Ca                   + CAMR_Ca_Ca_Ca_CaMKIIi01 <-> CAMR_Ca_Ca_Ca_Ca_CaMKIIi00      ; fb00=kon; bb02=koff_RC         # (R!283) Kd = koff_RC/kon
+Ca                   + CAMR_Ca_Ca_Ca_CaMKIIi02 <-> CAMR_Ca_Ca_Ca_Ca_CaMKIIi00      ; fb00=kon; bb01=koff_RB         # (R!284) Kd = koff_RB/kon
+Ca                   + CAMR_Ca_Ca_Ca_CaMKIIi03 <-> CAMR_Ca_Ca_Ca_Ca_CaMKIIi00      ; fb00=kon; bb00=koff_RA         # (R!285) Kd = koff_RA/kon
+Ca                   + CAMR_Ca_Ca_Ca_PP2Bi00 <-> CAMR_Ca_Ca_Ca_Ca_PP2Bi00        ; fb00=kon; bb03=koff_RD         # (R!286) Kd = koff_RD/kon
+Ca                   + CAMR_Ca_Ca_Ca_PP2Bi01 <-> CAMR_Ca_Ca_Ca_Ca_PP2Bi00        ; fb00=kon; bb02=koff_RC         # (R!287) Kd = koff_RC/kon
+Ca                   + CAMR_Ca_Ca_Ca_PP2Bi02 <-> CAMR_Ca_Ca_Ca_Ca_PP2Bi00        ; fb00=kon; bb01=koff_RB         # (R!288) Kd = koff_RB/kon
+Ca                   + CAMR_Ca_Ca_Ca_PP2Bi03 <-> CAMR_Ca_Ca_Ca_Ca_PP2Bi00        ; fb00=kon; bb00=koff_RA         # (R!289) Kd = koff_RA/kon
+Ca                   + CAMT_Ca_Ca_Ca_CaMKIIi00 <-> CAMT_Ca_Ca_Ca_Ca_CaMKIIi00      ; fb00=kon; bb09=koff_TD         # (R!290) Kd = koff_TD/kon
+Ca                   + CAMT_Ca_Ca_Ca_CaMKIIi01 <-> CAMT_Ca_Ca_Ca_Ca_CaMKIIi00      ; fb00=kon; bb08=koff_TC         # (R!291) Kd = koff_TC/kon
+Ca                   + CAMT_Ca_Ca_Ca_CaMKIIi02 <-> CAMT_Ca_Ca_Ca_Ca_CaMKIIi00      ; fb00=kon; bb07=koff_TB         # (R!292) Kd = koff_TB/kon
+Ca                   + CAMT_Ca_Ca_Ca_CaMKIIi03 <-> CAMT_Ca_Ca_Ca_Ca_CaMKIIi00      ; fb00=kon; bb06=koff_TA         # (R!293) Kd = koff_TA/kon
+Ca                   + CAMT_Ca_Ca_Ca_PP2Bi00 <-> CAMT_Ca_Ca_Ca_Ca_PP2Bi00        ; fb00=kon; bb09=koff_TD         # (R!294) Kd = koff_TD/kon
+Ca                   + CAMT_Ca_Ca_Ca_PP2Bi01 <-> CAMT_Ca_Ca_Ca_Ca_PP2Bi00        ; fb00=kon; bb08=koff_TC         # (R!295) Kd = koff_TC/kon
+Ca                   + CAMT_Ca_Ca_Ca_PP2Bi02 <-> CAMT_Ca_Ca_Ca_Ca_PP2Bi00        ; fb00=kon; bb07=koff_TB         # (R!296) Kd = koff_TB/kon
+Ca                   + CAMT_Ca_Ca_Ca_PP2Bi03 <-> CAMT_Ca_Ca_Ca_Ca_PP2Bi00        ; fb00=kon; bb06=koff_TA         # (R!297) Kd = koff_TA/kon
+CaMKII               + CAMR_Ca_Ca_Ca_Cai00  <-> CAMR_Ca_Ca_Ca_Ca_CaMKIIi00      ; fb01=kon_CaMKII; bb04=koff_CaMKII # (R!298) Kd = koff_CaMKII/kon_CaMKII
+CaMKII               + CAMT_Ca_Ca_Ca_Cai00  <-  CAMT_Ca_Ca_Ca_Ca_CaMKIIi00      ; bb10=1                         # (R!302) Kd = UNDEFINED (release reaction)
+PP2B                 + CAMR_Ca_Ca_Ca_Cai00  <-> CAMR_Ca_Ca_Ca_Ca_PP2Bi00        ; fb02=kon_PP2B; bb05=koff_PP2B  # (R!299) Kd = koff_PP2B/kon_PP2B
+PP2B                 + CAMT_Ca_Ca_Ca_Cai00  <-  CAMT_Ca_Ca_Ca_Ca_PP2Bi00        ; bb10=1                         # (R!303) Kd = UNDEFINED (release reaction)
+
+# REACTION CLASS: AllostericReaction
+# ----------------------------------
+CAMT                                        <-> CAMR                            ; fu00=k_TR; bu00=k_RT           # (R!00) Keq = k_TR / k_RT
+CAMR_CaMKIIi00                              <-> CAMT_CaMKIIi00                  ; fu01=0; bu01=k_TR              # (R!15) Keq = 0
+CAMR_PP2Bi00                                <-> CAMT_PP2Bi00                    ; fu01=0; bu01=k_TR              # (R!16) Keq = 0
+CAMT_Cai00                                  <-> CAMR_Cai00                      ; fu02=k_TR * (((kon / koff_RA) / (kon / koff_TA)) ^ 0.5); bu02=k_RT * (((kon / koff_RA) / (kon / koff_TA)) ^ -0.5) # (R!11) Keq = (k_TR * (((kon / koff_RA) / (kon / koff_TA)) ^ 0.5)) / (k_RT * (((kon / koff_RA) / (kon / koff_TA)) ^ -0.5))
+CAMT_Cai01                                  <-> CAMR_Cai01                      ; fu03=k_TR * (((kon / koff_RB) / (kon / koff_TB)) ^ 0.5); bu03=k_RT * (((kon / koff_RB) / (kon / koff_TB)) ^ -0.5) # (R!12) Keq = (k_TR * (((kon / koff_RB) / (kon / koff_TB)) ^ 0.5)) / (k_RT * (((kon / koff_RB) / (kon / koff_TB)) ^ -0.5))
+CAMT_Cai02                                  <-> CAMR_Cai02                      ; fu04=k_TR * (((kon / koff_RC) / (kon / koff_TC)) ^ 0.5); bu04=k_RT * (((kon / koff_RC) / (kon / koff_TC)) ^ -0.5) # (R!13) Keq = (k_TR * (((kon / koff_RC) / (kon / koff_TC)) ^ 0.5)) / (k_RT * (((kon / koff_RC) / (kon / koff_TC)) ^ -0.5))
+CAMT_Cai03                                  <-> CAMR_Cai03                      ; fu05=k_TR * (((kon / koff_RD) / (kon / koff_TD)) ^ 0.5); bu05=k_RT * (((kon / koff_RD) / (kon / koff_TD)) ^ -0.5) # (R!14) Keq = (k_TR * (((kon / koff_RD) / (kon / koff_TD)) ^ 0.5)) / (k_RT * (((kon / koff_RD) / (kon / koff_TD)) ^ -0.5))
+CAMR_Ca_CaMKIIi00                           <-> CAMT_Ca_CaMKIIi00               ; fu01=0; bu06=k_TR * (((kon / koff_RA) / (kon / koff_TA)) ^ 0.5) # (R!73) Keq = 0
+CAMR_Ca_CaMKIIi01                           <-> CAMT_Ca_CaMKIIi01               ; fu01=0; bu07=k_TR * (((kon / koff_RB) / (kon / koff_TB)) ^ 0.5) # (R!74) Keq = 0
+CAMR_Ca_CaMKIIi02                           <-> CAMT_Ca_CaMKIIi02               ; fu01=0; bu08=k_TR * (((kon / koff_RC) / (kon / koff_TC)) ^ 0.5) # (R!75) Keq = 0
+CAMR_Ca_CaMKIIi03                           <-> CAMT_Ca_CaMKIIi03               ; fu01=0; bu09=k_TR * (((kon / koff_RD) / (kon / koff_TD)) ^ 0.5) # (R!76) Keq = 0
+CAMR_Ca_PP2Bi00                             <-> CAMT_Ca_PP2Bi00                 ; fu01=0; bu06=k_TR * (((kon / koff_RA) / (kon / koff_TA)) ^ 0.5) # (R!77) Keq = 0
+CAMR_Ca_PP2Bi01                             <-> CAMT_Ca_PP2Bi01                 ; fu01=0; bu07=k_TR * (((kon / koff_RB) / (kon / koff_TB)) ^ 0.5) # (R!78) Keq = 0
+CAMR_Ca_PP2Bi02                             <-> CAMT_Ca_PP2Bi02                 ; fu01=0; bu08=k_TR * (((kon / koff_RC) / (kon / koff_TC)) ^ 0.5) # (R!79) Keq = 0
+CAMR_Ca_PP2Bi03                             <-> CAMT_Ca_PP2Bi03                 ; fu01=0; bu09=k_TR * (((kon / koff_RD) / (kon / koff_TD)) ^ 0.5) # (R!80) Keq = 0
+CAMT_Ca_Cai00                               <-> CAMR_Ca_Cai00                   ; fu06=k_TR * ((((kon / koff_RA) / (kon / koff_TA)) ^ 0.5) * (((kon / koff_RB) / (kon / koff_TB)) ^ 0.5)); bu10=k_RT * ((((kon / koff_RA) / (kon / koff_TA)) ^ -0.5) * (((kon / koff_RB) / (kon / koff_TB)) ^ -0.5)) # (R!67) Keq = (k_TR * ((((kon / koff_RA) / (kon / koff_TA)) ^ 0.5) * (((kon / koff_RB) / (kon / koff_TB)) ^ 0.5))) / (k_RT * ((((kon / koff_RA) / (kon / koff_TA)) ^ -0.5) * (((kon / koff_RB) / (kon / koff_TB)) ^ -0.5)))
+CAMT_Ca_Cai01                               <-> CAMR_Ca_Cai01                   ; fu07=k_TR * ((((kon / koff_RA) / (kon / koff_TA)) ^ 0.5) * (((kon / koff_RC) / (kon / koff_TC)) ^ 0.5)); bu11=k_RT * ((((kon / koff_RA) / (kon / koff_TA)) ^ -0.5) * (((kon / koff_RC) / (kon / koff_TC)) ^ -0.5)) # (R!68) Keq = (k_TR * ((((kon / koff_RA) / (kon / koff_TA)) ^ 0.5) * (((kon / koff_RC) / (kon / koff_TC)) ^ 0.5))) / (k_RT * ((((kon / koff_RA) / (kon / koff_TA)) ^ -0.5) * (((kon / koff_RC) / (kon / koff_TC)) ^ -0.5)))
+CAMT_Ca_Cai02                               <-> CAMR_Ca_Cai02                   ; fu08=k_TR * ((((kon / koff_RA) / (kon / koff_TA)) ^ 0.5) * (((kon / koff_RD) / (kon / koff_TD)) ^ 0.5)); bu12=k_RT * ((((kon / koff_RA) / (kon / koff_TA)) ^ -0.5) * (((kon / koff_RD) / (kon / koff_TD)) ^ -0.5)) # (R!69) Keq = (k_TR * ((((kon / koff_RA) / (kon / koff_TA)) ^ 0.5) * (((kon / koff_RD) / (kon / koff_TD)) ^ 0.5))) / (k_RT * ((((kon / koff_RA) / (kon / koff_TA)) ^ -0.5) * (((kon / koff_RD) / (kon / koff_TD)) ^ -0.5)))
+CAMT_Ca_Cai03                               <-> CAMR_Ca_Cai03                   ; fu09=k_TR * ((((kon / koff_RB) / (kon / koff_TB)) ^ 0.5) * (((kon / koff_RC) / (kon / koff_TC)) ^ 0.5)); bu13=k_RT * ((((kon / koff_RB) / (kon / koff_TB)) ^ -0.5) * (((kon / koff_RC) / (kon / koff_TC)) ^ -0.5)) # (R!70) Keq = (k_TR * ((((kon / koff_RB) / (kon / koff_TB)) ^ 0.5) * (((kon / koff_RC) / (kon / koff_TC)) ^ 0.5))) / (k_RT * ((((kon / koff_RB) / (kon / koff_TB)) ^ -0.5) * (((kon / koff_RC) / (kon / koff_TC)) ^ -0.5)))
+CAMT_Ca_Cai04                               <-> CAMR_Ca_Cai04                   ; fu10=k_TR * ((((kon / koff_RB) / (kon / koff_TB)) ^ 0.5) * (((kon / koff_RD) / (kon / koff_TD)) ^ 0.5)); bu14=k_RT * ((((kon / koff_RB) / (kon / koff_TB)) ^ -0.5) * (((kon / koff_RD) / (kon / koff_TD)) ^ -0.5)) # (R!71) Keq = (k_TR * ((((kon / koff_RB) / (kon / koff_TB)) ^ 0.5) * (((kon / koff_RD) / (kon / koff_TD)) ^ 0.5))) / (k_RT * ((((kon / koff_RB) / (kon / koff_TB)) ^ -0.5) * (((kon / koff_RD) / (kon / koff_TD)) ^ -0.5)))
+CAMT_Ca_Cai05                               <-> CAMR_Ca_Cai05                   ; fu11=k_TR * ((((kon / koff_RC) / (kon / koff_TC)) ^ 0.5) * (((kon / koff_RD) / (kon / koff_TD)) ^ 0.5)); bu15=k_RT * ((((kon / koff_RC) / (kon / koff_TC)) ^ -0.5) * (((kon / koff_RD) / (kon / koff_TD)) ^ -0.5)) # (R!72) Keq = (k_TR * ((((kon / koff_RC) / (kon / koff_TC)) ^ 0.5) * (((kon / koff_RD) / (kon / koff_TD)) ^ 0.5))) / (k_RT * ((((kon / koff_RC) / (kon / koff_TC)) ^ -0.5) * (((kon / koff_RD) / (kon / koff_TD)) ^ -0.5)))
+CAMR_Ca_Ca_CaMKIIi00                        <-> CAMT_Ca_Ca_CaMKIIi00            ; fu01=0; bu16=k_TR * ((((kon / koff_RA) / (kon / koff_TA)) ^ 0.5) * (((kon / koff_RB) / (kon / koff_TB)) ^ 0.5)) # (R!177) Keq = 0
+CAMR_Ca_Ca_CaMKIIi01                        <-> CAMT_Ca_Ca_CaMKIIi01            ; fu01=0; bu17=k_TR * ((((kon / koff_RA) / (kon / koff_TA)) ^ 0.5) * (((kon / koff_RC) / (kon / koff_TC)) ^ 0.5)) # (R!178) Keq = 0
+CAMR_Ca_Ca_CaMKIIi02                        <-> CAMT_Ca_Ca_CaMKIIi02            ; fu01=0; bu18=k_TR * ((((kon / koff_RA) / (kon / koff_TA)) ^ 0.5) * (((kon / koff_RD) / (kon / koff_TD)) ^ 0.5)) # (R!179) Keq = 0
+CAMR_Ca_Ca_CaMKIIi03                        <-> CAMT_Ca_Ca_CaMKIIi03            ; fu01=0; bu19=k_TR * ((((kon / koff_RB) / (kon / koff_TB)) ^ 0.5) * (((kon / koff_RC) / (kon / koff_TC)) ^ 0.5)) # (R!180) Keq = 0
+CAMR_Ca_Ca_CaMKIIi04                        <-> CAMT_Ca_Ca_CaMKIIi04            ; fu01=0; bu20=k_TR * ((((kon / koff_RB) / (kon / koff_TB)) ^ 0.5) * (((kon / koff_RD) / (kon / koff_TD)) ^ 0.5)) # (R!181) Keq = 0
+CAMR_Ca_Ca_CaMKIIi05                        <-> CAMT_Ca_Ca_CaMKIIi05            ; fu01=0; bu21=k_TR * ((((kon / koff_RC) / (kon / koff_TC)) ^ 0.5) * (((kon / koff_RD) / (kon / koff_TD)) ^ 0.5)) # (R!182) Keq = 0
+CAMR_Ca_Ca_PP2Bi00                          <-> CAMT_Ca_Ca_PP2Bi00              ; fu01=0; bu16=k_TR * ((((kon / koff_RA) / (kon / koff_TA)) ^ 0.5) * (((kon / koff_RB) / (kon / koff_TB)) ^ 0.5)) # (R!183) Keq = 0
+CAMR_Ca_Ca_PP2Bi01                          <-> CAMT_Ca_Ca_PP2Bi01              ; fu01=0; bu17=k_TR * ((((kon / koff_RA) / (kon / koff_TA)) ^ 0.5) * (((kon / koff_RC) / (kon / koff_TC)) ^ 0.5)) # (R!184) Keq = 0
+CAMR_Ca_Ca_PP2Bi02                          <-> CAMT_Ca_Ca_PP2Bi02              ; fu01=0; bu18=k_TR * ((((kon / koff_RA) / (kon / koff_TA)) ^ 0.5) * (((kon / koff_RD) / (kon / koff_TD)) ^ 0.5)) # (R!185) Keq = 0
+CAMR_Ca_Ca_PP2Bi03                          <-> CAMT_Ca_Ca_PP2Bi03              ; fu01=0; bu19=k_TR * ((((kon / koff_RB) / (kon / koff_TB)) ^ 0.5) * (((kon / koff_RC) / (kon / koff_TC)) ^ 0.5)) # (R!186) Keq = 0
+CAMR_Ca_Ca_PP2Bi04                          <-> CAMT_Ca_Ca_PP2Bi04              ; fu01=0; bu20=k_TR * ((((kon / koff_RB) / (kon / koff_TB)) ^ 0.5) * (((kon / koff_RD) / (kon / koff_TD)) ^ 0.5)) # (R!187) Keq = 0
+CAMR_Ca_Ca_PP2Bi05                          <-> CAMT_Ca_Ca_PP2Bi05              ; fu01=0; bu21=k_TR * ((((kon / koff_RC) / (kon / koff_TC)) ^ 0.5) * (((kon / koff_RD) / (kon / koff_TD)) ^ 0.5)) # (R!188) Keq = 0
+CAMT_Ca_Ca_Cai00                            <-> CAMR_Ca_Ca_Cai00                ; fu12=k_TR * (((((kon / koff_RA) / (kon / koff_TA)) ^ 0.5) * (((kon / koff_RB) / (kon / koff_TB)) ^ 0.5)) * (((kon / koff_RC) / (kon / koff_TC)) ^ 0.5)); bu22=k_RT * (((((kon / koff_RA) / (kon / koff_TA)) ^ -0.5) * (((kon / koff_RB) / (kon / koff_TB)) ^ -0.5)) * (((kon / koff_RC) / (kon / koff_TC)) ^ -0.5)) # (R!173) Keq = (k_TR * (((((kon / koff_RA) / (kon / koff_TA)) ^ 0.5) * (((kon / koff_RB) / (kon / koff_TB)) ^ 0.5)) * (((kon / koff_RC) / (kon / koff_TC)) ^ 0.5))) / (k_RT * (((((kon / koff_RA) / (kon / koff_TA)) ^ -0.5) * (((kon / koff_RB) / (kon / koff_TB)) ^ -0.5)) * (((kon / koff_RC) / (kon / koff_TC)) ^ -0.5)))
+CAMT_Ca_Ca_Cai01                            <-> CAMR_Ca_Ca_Cai01                ; fu13=k_TR * (((((kon / koff_RA) / (kon / koff_TA)) ^ 0.5) * (((kon / koff_RB) / (kon / koff_TB)) ^ 0.5)) * (((kon / koff_RD) / (kon / koff_TD)) ^ 0.5)); bu23=k_RT * (((((kon / koff_RA) / (kon / koff_TA)) ^ -0.5) * (((kon / koff_RB) / (kon / koff_TB)) ^ -0.5)) * (((kon / koff_RD) / (kon / koff_TD)) ^ -0.5)) # (R!174) Keq = (k_TR * (((((kon / koff_RA) / (kon / koff_TA)) ^ 0.5) * (((kon / koff_RB) / (kon / koff_TB)) ^ 0.5)) * (((kon / koff_RD) / (kon / koff_TD)) ^ 0.5))) / (k_RT * (((((kon / koff_RA) / (kon / koff_TA)) ^ -0.5) * (((kon / koff_RB) / (kon / koff_TB)) ^ -0.5)) * (((kon / koff_RD) / (kon / koff_TD)) ^ -0.5)))
+CAMT_Ca_Ca_Cai02                            <-> CAMR_Ca_Ca_Cai02                ; fu14=k_TR * (((((kon / koff_RA) / (kon / koff_TA)) ^ 0.5) * (((kon / koff_RC) / (kon / koff_TC)) ^ 0.5)) * (((kon / koff_RD) / (kon / koff_TD)) ^ 0.5)); bu24=k_RT * (((((kon / koff_RA) / (kon / koff_TA)) ^ -0.5) * (((kon / koff_RC) / (kon / koff_TC)) ^ -0.5)) * (((kon / koff_RD) / (kon / koff_TD)) ^ -0.5)) # (R!175) Keq = (k_TR * (((((kon / koff_RA) / (kon / koff_TA)) ^ 0.5) * (((kon / koff_RC) / (kon / koff_TC)) ^ 0.5)) * (((kon / koff_RD) / (kon / koff_TD)) ^ 0.5))) / (k_RT * (((((kon / koff_RA) / (kon / koff_TA)) ^ -0.5) * (((kon / koff_RC) / (kon / koff_TC)) ^ -0.5)) * (((kon / koff_RD) / (kon / koff_TD)) ^ -0.5)))
+CAMT_Ca_Ca_Cai03                            <-> CAMR_Ca_Ca_Cai03                ; fu15=k_TR * (((((kon / koff_RB) / (kon / koff_TB)) ^ 0.5) * (((kon / koff_RC) / (kon / koff_TC)) ^ 0.5)) * (((kon / koff_RD) / (kon / koff_TD)) ^ 0.5)); bu25=k_RT * (((((kon / koff_RB) / (kon / koff_TB)) ^ -0.5) * (((kon / koff_RC) / (kon / koff_TC)) ^ -0.5)) * (((kon / koff_RD) / (kon / koff_TD)) ^ -0.5)) # (R!176) Keq = (k_TR * (((((kon / koff_RB) / (kon / koff_TB)) ^ 0.5) * (((kon / koff_RC) / (kon / koff_TC)) ^ 0.5)) * (((kon / koff_RD) / (kon / koff_TD)) ^ 0.5))) / (k_RT * (((((kon / koff_RB) / (kon / koff_TB)) ^ -0.5) * (((kon / koff_RC) / (kon / koff_TC)) ^ -0.5)) * (((kon / koff_RD) / (kon / koff_TD)) ^ -0.5)))
+CAMR_Ca_Ca_Ca_CaMKIIi00                     <-> CAMT_Ca_Ca_Ca_CaMKIIi00         ; fu01=0; bu26=k_TR * (((((kon / koff_RA) / (kon / koff_TA)) ^ 0.5) * (((kon / koff_RB) / (kon / koff_TB)) ^ 0.5)) * (((kon / koff_RC) / (kon / koff_TC)) ^ 0.5)) # (R!266) Keq = 0
+CAMR_Ca_Ca_Ca_CaMKIIi01                     <-> CAMT_Ca_Ca_Ca_CaMKIIi01         ; fu01=0; bu27=k_TR * (((((kon / koff_RA) / (kon / koff_TA)) ^ 0.5) * (((kon / koff_RB) / (kon / koff_TB)) ^ 0.5)) * (((kon / koff_RD) / (kon / koff_TD)) ^ 0.5)) # (R!267) Keq = 0
+CAMR_Ca_Ca_Ca_CaMKIIi02                     <-> CAMT_Ca_Ca_Ca_CaMKIIi02         ; fu01=0; bu28=k_TR * (((((kon / koff_RA) / (kon / koff_TA)) ^ 0.5) * (((kon / koff_RC) / (kon / koff_TC)) ^ 0.5)) * (((kon / koff_RD) / (kon / koff_TD)) ^ 0.5)) # (R!268) Keq = 0
+CAMR_Ca_Ca_Ca_CaMKIIi03                     <-> CAMT_Ca_Ca_Ca_CaMKIIi03         ; fu01=0; bu29=k_TR * (((((kon / koff_RB) / (kon / koff_TB)) ^ 0.5) * (((kon / koff_RC) / (kon / koff_TC)) ^ 0.5)) * (((kon / koff_RD) / (kon / koff_TD)) ^ 0.5)) # (R!269) Keq = 0
+CAMR_Ca_Ca_Ca_PP2Bi00                       <-> CAMT_Ca_Ca_Ca_PP2Bi00           ; fu01=0; bu26=k_TR * (((((kon / koff_RA) / (kon / koff_TA)) ^ 0.5) * (((kon / koff_RB) / (kon / koff_TB)) ^ 0.5)) * (((kon / koff_RC) / (kon / koff_TC)) ^ 0.5)) # (R!270) Keq = 0
+CAMR_Ca_Ca_Ca_PP2Bi01                       <-> CAMT_Ca_Ca_Ca_PP2Bi01           ; fu01=0; bu27=k_TR * (((((kon / koff_RA) / (kon / koff_TA)) ^ 0.5) * (((kon / koff_RB) / (kon / koff_TB)) ^ 0.5)) * (((kon / koff_RD) / (kon / koff_TD)) ^ 0.5)) # (R!271) Keq = 0
+CAMR_Ca_Ca_Ca_PP2Bi02                       <-> CAMT_Ca_Ca_Ca_PP2Bi02           ; fu01=0; bu28=k_TR * (((((kon / koff_RA) / (kon / koff_TA)) ^ 0.5) * (((kon / koff_RC) / (kon / koff_TC)) ^ 0.5)) * (((kon / koff_RD) / (kon / koff_TD)) ^ 0.5)) # (R!272) Keq = 0
+CAMR_Ca_Ca_Ca_PP2Bi03                       <-> CAMT_Ca_Ca_Ca_PP2Bi03           ; fu01=0; bu29=k_TR * (((((kon / koff_RB) / (kon / koff_TB)) ^ 0.5) * (((kon / koff_RC) / (kon / koff_TC)) ^ 0.5)) * (((kon / koff_RD) / (kon / koff_TD)) ^ 0.5)) # (R!273) Keq = 0
+CAMT_Ca_Ca_Ca_Cai00                         <-> CAMR_Ca_Ca_Ca_Cai00             ; fu16=k_TR * ((((((kon / koff_RA) / (kon / koff_TA)) ^ 0.5) * (((kon / koff_RB) / (kon / koff_TB)) ^ 0.5)) * (((kon / koff_RC) / (kon / koff_TC)) ^ 0.5)) * (((kon / koff_RD) / (kon / koff_TD)) ^ 0.5)); bu30=k_RT * ((((((kon / koff_RA) / (kon / koff_TA)) ^ -0.5) * (((kon / koff_RB) / (kon / koff_TB)) ^ -0.5)) * (((kon / koff_RC) / (kon / koff_TC)) ^ -0.5)) * (((kon / koff_RD) / (kon / koff_TD)) ^ -0.5)) # (R!265) Keq = (k_TR * ((((((kon / koff_RA) / (kon / koff_TA)) ^ 0.5) * (((kon / koff_RB) / (kon / koff_TB)) ^ 0.5)) * (((kon / koff_RC) / (kon / koff_TC)) ^ 0.5)) * (((kon / koff_RD) / (kon / koff_TD)) ^ 0.5))) / (k_RT * ((((((kon / koff_RA) / (kon / koff_TA)) ^ -0.5) * (((kon / koff_RB) / (kon / koff_TB)) ^ -0.5)) * (((kon / koff_RC) / (kon / koff_TC)) ^ -0.5)) * (((kon / koff_RD) / (kon / koff_TD)) ^ -0.5)))
+CAMR_Ca_Ca_Ca_Ca_CaMKIIi00                  <-> CAMT_Ca_Ca_Ca_Ca_CaMKIIi00      ; fu01=0; bu31=k_TR * ((((((kon / koff_RA) / (kon / koff_TA)) ^ 0.5) * (((kon / koff_RB) / (kon / koff_TB)) ^ 0.5)) * (((kon / koff_RC) / (kon / koff_TC)) ^ 0.5)) * (((kon / koff_RD) / (kon / koff_TD)) ^ 0.5)) # (R!300) Keq = 0
+CAMR_Ca_Ca_Ca_Ca_PP2Bi00                    <-> CAMT_Ca_Ca_Ca_Ca_PP2Bi00        ; fu01=0; bu31=k_TR * ((((((kon / koff_RA) / (kon / koff_TA)) ^ 0.5) * (((kon / koff_RB) / (kon / koff_TB)) ^ 0.5)) * (((kon / koff_RC) / (kon / koff_TC)) ^ 0.5)) * (((kon / koff_RD) / (kon / koff_TD)) ^ 0.5)) # (R!301) Keq = 0
+
+
+# INITIAL CONCENTRATIONS (compiled from MODEL section)
+# ----------------------------------------------------
+INIT:
+CaMKII = 7e-05
+CAMT = 2e-07
+Ca = 0
+
+
+# STIMULI (from Stimulus objects)
+# ------------------------------------
+EQN:
+null -> Ca; k_source_Stm00_Ca=(t>=500 && t<(500+1000))*0.001*(t-500)/1000*1000
+Ca -> null; k_sink_Stm00_Ca=(t>=500 && t<(500+1000))*1000
+
+CONFIG:
+ode_event_times = 500 1500 
+t_final = 2000
+
+
+# COMPILED PROBES (from Probe objects)
+# ------------------------------------
+PROBE:
+probe Ca
+probe p_CAMR = "CAMR + CAMR_Cai00 + CAMR_Cai01 + CAMR_Cai02 + CAMR_Cai03 + CAMR_CaMKIIi00 + CAMR_PP2Bi00 + CAMR_Ca_Cai00 + CAMR_Ca_Cai01 + CAMR_Ca_Cai02 + CAMR_Ca_Cai03 + CAMR_Ca_Cai04 + CAMR_Ca_Cai05 + CAMR_Ca_CaMKIIi00 + CAMR_Ca_CaMKIIi01 + CAMR_Ca_CaMKIIi02 + CAMR_Ca_CaMKIIi03 + CAMR_Ca_PP2Bi00 + CAMR_Ca_PP2Bi01 + CAMR_Ca_PP2Bi02 + CAMR_Ca_PP2Bi03 + CAMR_Ca_Ca_Cai00 + CAMR_Ca_Ca_Cai01 + CAMR_Ca_Ca_Cai02 + CAMR_Ca_Ca_Cai03 + CAMR_Ca_Ca_CaMKIIi00 + CAMR_Ca_Ca_CaMKIIi01 + CAMR_Ca_Ca_CaMKIIi02 + CAMR_Ca_Ca_CaMKIIi03 + CAMR_Ca_Ca_CaMKIIi04 + CAMR_Ca_Ca_CaMKIIi05 + CAMR_Ca_Ca_PP2Bi00 + CAMR_Ca_Ca_PP2Bi01 + CAMR_Ca_Ca_PP2Bi02 + CAMR_Ca_Ca_PP2Bi03 + CAMR_Ca_Ca_PP2Bi04 + CAMR_Ca_Ca_PP2Bi05 + CAMR_Ca_Ca_Ca_Cai00 + CAMR_Ca_Ca_Ca_CaMKIIi00 + CAMR_Ca_Ca_Ca_CaMKIIi01 + CAMR_Ca_Ca_Ca_CaMKIIi02 + CAMR_Ca_Ca_Ca_CaMKIIi03 + CAMR_Ca_Ca_Ca_PP2Bi00 + CAMR_Ca_Ca_Ca_PP2Bi01 + CAMR_Ca_Ca_Ca_PP2Bi02 + CAMR_Ca_Ca_Ca_PP2Bi03 + CAMR_Ca_Ca_Ca_Ca_CaMKIIi00 + CAMR_Ca_Ca_Ca_Ca_PP2Bi00"
+probe p_CAMT = "CAMT + CAMT_Cai00 + CAMT_Cai01 + CAMT_Cai02 + CAMT_Cai03 + CAMT_CaMKIIi00 + CAMT_PP2Bi00 + CAMT_Ca_Cai00 + CAMT_Ca_Cai01 + CAMT_Ca_Cai02 + CAMT_Ca_Cai03 + CAMT_Ca_Cai04 + CAMT_Ca_Cai05 + CAMT_Ca_CaMKIIi00 + CAMT_Ca_CaMKIIi01 + CAMT_Ca_CaMKIIi02 + CAMT_Ca_CaMKIIi03 + CAMT_Ca_PP2Bi00 + CAMT_Ca_PP2Bi01 + CAMT_Ca_PP2Bi02 + CAMT_Ca_PP2Bi03 + CAMT_Ca_Ca_Cai00 + CAMT_Ca_Ca_Cai01 + CAMT_Ca_Ca_Cai02 + CAMT_Ca_Ca_Cai03 + CAMT_Ca_Ca_CaMKIIi00 + CAMT_Ca_Ca_CaMKIIi01 + CAMT_Ca_Ca_CaMKIIi02 + CAMT_Ca_Ca_CaMKIIi03 + CAMT_Ca_Ca_CaMKIIi04 + CAMT_Ca_Ca_CaMKIIi05 + CAMT_Ca_Ca_PP2Bi00 + CAMT_Ca_Ca_PP2Bi01 + CAMT_Ca_Ca_PP2Bi02 + CAMT_Ca_Ca_PP2Bi03 + CAMT_Ca_Ca_PP2Bi04 + CAMT_Ca_Ca_PP2Bi05 + CAMT_Ca_Ca_Ca_Cai00 + CAMT_Ca_Ca_Ca_CaMKIIi00 + CAMT_Ca_Ca_Ca_CaMKIIi01 + CAMT_Ca_Ca_Ca_CaMKIIi02 + CAMT_Ca_Ca_Ca_CaMKIIi03 + CAMT_Ca_Ca_Ca_PP2Bi00 + CAMT_Ca_Ca_Ca_PP2Bi01 + CAMT_Ca_Ca_Ca_PP2Bi02 + CAMT_Ca_Ca_Ca_PP2Bi03 + CAMT_Ca_Ca_Ca_Ca_CaMKIIi00 + CAMT_Ca_Ca_Ca_Ca_PP2Bi00"
+probe p_CAM0 = "CAMT + CAMR + CAMR_CaMKIIi00 + CAMR_PP2Bi00 + CAMT_CaMKIIi00 + CAMT_PP2Bi00"
+probe p_CAM1 = "CAMT_Cai00 + CAMT_Cai01 + CAMT_Cai02 + CAMT_Cai03 + CAMR_Cai00 + CAMR_Cai01 + CAMR_Cai02 + CAMR_Cai03 + CAMR_Ca_CaMKIIi00 + CAMR_Ca_CaMKIIi01 + CAMR_Ca_CaMKIIi02 + CAMR_Ca_CaMKIIi03 + CAMR_Ca_PP2Bi00 + CAMR_Ca_PP2Bi01 + CAMR_Ca_PP2Bi02 + CAMR_Ca_PP2Bi03 + CAMT_Ca_CaMKIIi00 + CAMT_Ca_CaMKIIi01 + CAMT_Ca_CaMKIIi02 + CAMT_Ca_CaMKIIi03 + CAMT_Ca_PP2Bi00 + CAMT_Ca_PP2Bi01 + CAMT_Ca_PP2Bi02 + CAMT_Ca_PP2Bi03"
+probe p_CAM2 = "CAMT_Ca_Cai00 + CAMT_Ca_Cai01 + CAMT_Ca_Cai02 + CAMT_Ca_Cai03 + CAMT_Ca_Cai04 + CAMT_Ca_Cai05 + CAMR_Ca_Cai00 + CAMR_Ca_Cai01 + CAMR_Ca_Cai02 + CAMR_Ca_Cai03 + CAMR_Ca_Cai04 + CAMR_Ca_Cai05 + CAMR_Ca_Ca_CaMKIIi00 + CAMR_Ca_Ca_CaMKIIi01 + CAMR_Ca_Ca_CaMKIIi02 + CAMR_Ca_Ca_CaMKIIi03 + CAMR_Ca_Ca_CaMKIIi04 + CAMR_Ca_Ca_CaMKIIi05 + CAMR_Ca_Ca_PP2Bi00 + CAMR_Ca_Ca_PP2Bi01 + CAMR_Ca_Ca_PP2Bi02 + CAMR_Ca_Ca_PP2Bi03 + CAMR_Ca_Ca_PP2Bi04 + CAMR_Ca_Ca_PP2Bi05 + CAMT_Ca_Ca_CaMKIIi00 + CAMT_Ca_Ca_CaMKIIi01 + CAMT_Ca_Ca_CaMKIIi02 + CAMT_Ca_Ca_CaMKIIi03 + CAMT_Ca_Ca_CaMKIIi04 + CAMT_Ca_Ca_CaMKIIi05 + CAMT_Ca_Ca_PP2Bi00 + CAMT_Ca_Ca_PP2Bi01 + CAMT_Ca_Ca_PP2Bi02 + CAMT_Ca_Ca_PP2Bi03 + CAMT_Ca_Ca_PP2Bi04 + CAMT_Ca_Ca_PP2Bi05"
+probe p_CAM3 = "CAMT_Ca_Ca_Cai00 + CAMT_Ca_Ca_Cai01 + CAMT_Ca_Ca_Cai02 + CAMT_Ca_Ca_Cai03 + CAMR_Ca_Ca_Cai00 + CAMR_Ca_Ca_Cai01 + CAMR_Ca_Ca_Cai02 + CAMR_Ca_Ca_Cai03 + CAMR_Ca_Ca_Ca_CaMKIIi00 + CAMR_Ca_Ca_Ca_CaMKIIi01 + CAMR_Ca_Ca_Ca_CaMKIIi02 + CAMR_Ca_Ca_Ca_CaMKIIi03 + CAMR_Ca_Ca_Ca_PP2Bi00 + CAMR_Ca_Ca_Ca_PP2Bi01 + CAMR_Ca_Ca_Ca_PP2Bi02 + CAMR_Ca_Ca_Ca_PP2Bi03 + CAMT_Ca_Ca_Ca_CaMKIIi00 + CAMT_Ca_Ca_Ca_CaMKIIi01 + CAMT_Ca_Ca_Ca_CaMKIIi02 + CAMT_Ca_Ca_Ca_CaMKIIi03 + CAMT_Ca_Ca_Ca_PP2Bi00 + CAMT_Ca_Ca_Ca_PP2Bi01 + CAMT_Ca_Ca_Ca_PP2Bi02 + CAMT_Ca_Ca_Ca_PP2Bi03"
+probe p_CAM4 = "CAMT_Ca_Ca_Ca_Cai00 + CAMR_Ca_Ca_Ca_Cai00 + CAMR_Ca_Ca_Ca_Ca_CaMKIIi00 + CAMR_Ca_Ca_Ca_Ca_PP2Bi00 + CAMT_Ca_Ca_Ca_Ca_CaMKIIi00 + CAMT_Ca_Ca_Ca_Ca_PP2Bi00"
+
+
+# CONFIG (from CONFIG section)
+# ----------------------------
+CONFIG:
+t_vector = [0:0.1:tf]
+matlab_odeset_options = odeset('AbsTol', 1e-15, 'RelTol', 1e-3)
+t_final = 2000

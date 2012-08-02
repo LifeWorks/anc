@@ -1,0 +1,105 @@
+##############################################################################
+# Allosteric Network Compiler (ANC)
+# Copyright (C) 2005-2010 Julien Ollivier
+# Author:       Julien F. Ollivier
+# Version:      1.01
+# Release Date: 2011/08/26
+# This program comes with ABSOLUTELY NO WARRANTY.
+# This is free software, and you are welcome to redistribute it
+# under certain conditions. See file LICENSE.TXT for details.
+##############################################################################
+
+MODEL 	= examples/Rdimer/Rdimer_mwc.mod
+OUT 	= examples/Rdimer/Rdimer_mwc.eqn
+OUTDIR 	= examples/Rdimer/Rdimer_mwc
+
+Start time: Sat Aug 27 17:50:52 EDT 2011
+CLEANING UP
+CREATING OUTPUT DIRECTORY
+READING MODEL examples/Rdimer/Rdimer_mwc.mod
+REPORTING COMPILE PARAMETERS
+max_external_iterations = -1
+max_internal_iterations = -1
+max_species = -1
+max_complex_size = -1
+max_csite_bound_to_msite_number = -1
+kf_1st_order_rate_cutoff = 0
+kf_2nd_order_rate_cutoff = 0
+kb_rate_cutoff = 0
+kp_rate_cutoff = 0
+default_steric_factor = UNDEF
+report = all
+export_graphviz = primary,canonical,network,collapse_states,collapse_complexes
+compact_names = 1
+protein_separator = _
+IMPORTING COMPLEXES
+COMPILING RULES
+Compiling rule BR!00 of class CanBindRule
+LB CanBind L
+Compiling rule BR!01 of class CanBindRule
+LB CanBind L
+Compiling rule BR!02 of class CanBindRule
+D CanBind D
+Compiling rule BR!03 of class CanBindRule
+D CanBind D
+Compiling rule BR!04 of class CanBindRule
+D CanBind D
+INSTANTIATING COMPLEXES
+INITIALIZING INSTANCES
+COMPILING REACTION NETWORK
+ReactionNetwork::compile_network: starting...
+ReactionNetwork::compile_network: STARTING INTERNAL iteration=1 total_species=2
+ReactionNetwork::compile_network: STARTING EXTERNAL iteration=1 total_species=3
+ReactionNetwork::compile_network: DONE EXTERNAL iteration=1 total_species=8
+ReactionNetwork::compile_network: STARTING INTERNAL iteration=2 total_species=8
+ReactionNetwork::compile_network: STARTING EXTERNAL iteration=2 total_species=8
+ReactionNetwork::compile_external_reactions: processing species 5 of 8
+ReactionNetwork::compile_network: DONE EXTERNAL iteration=2 total_species=15
+ReactionNetwork::compile_network: STARTING INTERNAL iteration=3 total_species=15
+ReactionNetwork::compile_network: STARTING EXTERNAL iteration=3 total_species=15
+ReactionNetwork::compile_external_reactions: processing species 5 of 15
+ReactionNetwork::compile_external_reactions: processing species 10 of 15
+ReactionNetwork::compile_network: DONE EXTERNAL iteration=3 total_species=15
+ReactionNetwork::compile_network: STARTING FINAL-INTERNAL total_species=15
+ReactionNetwork::compile_network: DONE FINAL-INTERNAL total_species=15
+ReactionNetwork::compile_network: Done computing species in 3 iterations
+COMPILING ICs and STIMULI
+Init Ic!00 comprises 1 objects:
+	RI
+Stimulus Stm!00 comprises 1 objects:
+	L
+COMPILING PROBES
+Probe MONOMER_L0 comprises 2 objects:
+	RI
+	RA
+Probe MONOMER_L1 comprises 2 objects:
+	L_RIi00
+	L_RAi00
+Probe DIMER_L0 comprises 3 objects:
+	RI_RIi00
+	RI_RAi00
+	RA_RAi00
+Probe DIMER_L1 comprises 4 objects:
+	L_RI_RIi00
+	L_RI_RAi00
+	L_RA_RIi00
+	L_RA_RAi00
+Probe DIMER_L2 comprises 3 objects:
+	L_L_RI_RIi00
+	L_L_RI_RAi00
+	L_L_RA_RAi00
+Probe DIMER_ACTIVE comprises 3 objects:
+	RA_RAi00
+	L_RA_RAi00
+	L_L_RA_RAi00
+Probe Prb!00 comprises 1 objects:
+	L
+EXPORTING NETWORK
+Facile->export(): generating Facile equation file
+REPORTING SPECIES STRUCTURE IN: examples/Rdimer/Rdimer_mwc/Rdimer_mwc.structures.rpt
+REPORTING SPECIES IN: examples/Rdimer/Rdimer_mwc/Rdimer_mwc.species.rpt
+EXPORTING NETWORK TO GRAPHVIZ
+EXPORTING SPECIES TO GRAPHVIZ (primary form)
+EXPORTING SPECIES TO GRAPHVIZ (canonical form)
+Start time: Sat Aug 27 17:50:52 EDT 2011
+End time:   Sat Aug 27 17:51:03 EDT 2011

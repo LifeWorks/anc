@@ -1,0 +1,129 @@
+# Facile model created by Allosteric Network Compiler (ANC)
+# ANC version 1.01 released 2011/08/26
+# Thu Aug 25 23:44:20 EDT 2011
+
+
+
+# PARAMETERS
+# ----------
+parameter KactL = 1
+parameter k_st = 10
+parameter k_ts = k_st/KactL
+parameter KactG = 0.05
+parameter k_ia = 1
+parameter k_ai = k_ia/KactG
+parameter Gamma = 1
+parameter Phi = 0.5
+parameter Ka = 10
+parameter kf_is = 1
+parameter kb_is = kf_is/Ka
+parameter alpha_t = 0.1
+parameter kf_it = 1
+parameter kb_it = kf_it/alpha_t/Ka
+parameter alpha_a = 10
+parameter kf_as = 1
+parameter kb_as = kf_as/alpha_a/Ka
+parameter alpha_at = 1
+parameter kf_at = 100
+parameter kb_at = kf_at/alpha_at/Ka
+parameter Kg = 10
+parameter kfg_is = 1
+parameter kbg_is = kfg_is/Kg
+parameter beta_t = 0.1
+parameter kfg_it = 1
+parameter kbg_it = kfg_it/beta_t/Kg
+parameter beta_a = 10
+parameter kfg_as = 1
+parameter kbg_as = kfg_as/beta_a/Kg
+parameter beta_at = 1
+parameter kfg_at = 1
+parameter kbg_at = kfg_at/beta_at/Kg
+
+
+# REACTION CLASS: BindingReaction
+# -------------------------------
+G                    + Ras                  <-> G_Rasi00                        ; fb00=kfg_as; bb00=kbg_as       # (R!09) Kd = kbg_as/kfg_as
+G                    + Rat                  <-> G_Rati00                        ; fb01=kfg_at; bb01=kbg_at       # (R!11) Kd = kbg_at/kfg_at
+G                    + Ris                  <-> G_Risi00                        ; fb02=kfg_is; bb02=kbg_is       # (R!04) Kd = kbg_is/kfg_is
+G                    + Rit                  <-> G_Riti00                        ; fb03=kfg_it; bb03=kbg_it       # (R!10) Kd = kbg_it/kfg_it
+L                    + Ras                  <-> L_Rasi00                        ; fb04=kf_as; bb04=kb_as         # (R!06) Kd = kb_as/kf_as
+L                    + Rat                  <-> L_Rati00                        ; fb05=kf_at; bb05=kb_at         # (R!08) Kd = kb_at/kf_at
+L                    + Ris                  <-> L_Risi00                        ; fb06=kf_is; bb06=kb_is         # (R!05) Kd = kb_is/kf_is
+L                    + Rit                  <-> L_Riti00                        ; fb07=kf_it; bb07=kb_it         # (R!07) Kd = kb_it/kf_it
+G                    + L_Rasi00             <-> G_L_Rasi00                      ; fb00=kfg_as; bb00=kbg_as       # (R!25) Kd = kbg_as/kfg_as
+G                    + L_Rati00             <-> G_L_Rati00                      ; fb01=kfg_at; bb01=kbg_at       # (R!27) Kd = kbg_at/kfg_at
+G                    + L_Risi00             <-> G_L_Risi00                      ; fb02=kfg_is; bb02=kbg_is       # (R!24) Kd = kbg_is/kfg_is
+G                    + L_Riti00             <-> G_L_Riti00                      ; fb03=kfg_it; bb03=kbg_it       # (R!26) Kd = kbg_it/kfg_it
+L                    + G_Rasi00             <-> G_L_Rasi00                      ; fb04=kf_as; bb04=kb_as         # (R!21) Kd = kb_as/kf_as
+L                    + G_Rati00             <-> G_L_Rati00                      ; fb05=kf_at; bb05=kb_at         # (R!23) Kd = kb_at/kf_at
+L                    + G_Risi00             <-> G_L_Risi00                      ; fb06=kf_is; bb06=kb_is         # (R!20) Kd = kb_is/kf_is
+L                    + G_Riti00             <-> G_L_Riti00                      ; fb07=kf_it; bb07=kb_it         # (R!22) Kd = kb_it/kf_it
+
+# REACTION CLASS: AllostericReaction
+# ----------------------------------
+Ras                                         <-> Rat                             ; fu00=k_st * Gamma ^ Phi; bu00=k_ts * (Gamma ^ (Phi - 1)) # (R!02) Keq = (k_st * Gamma ^ Phi) / (k_ts * (Gamma ^ (Phi - 1)))
+Ris                                         <-> Ras                             ; fu01=k_ia; bu01=k_ai           # (R!00) Keq = k_ia / k_ai
+Ris                                         <-> Rit                             ; fu02=k_st; bu02=k_ts           # (R!01) Keq = k_st / k_ts
+Rit                                         <-> Rat                             ; fu03=k_ia * Gamma ^ Phi; bu03=k_ai * (Gamma ^ (Phi - 1)) # (R!03) Keq = (k_ia * Gamma ^ Phi) / (k_ai * (Gamma ^ (Phi - 1)))
+G_Rasi00                                    <-> G_Rati00                        ; fu04=k_st * (Gamma ^ Phi * (((kfg_at / kbg_at) / (kfg_as / kbg_as)) ^ Phi)); bu04=k_ts * ((Gamma ^ (Phi - 1)) * (((kfg_at / kbg_at) / (kfg_as / kbg_as)) ^ (Phi - 1))) # (R!18) Keq = (k_st * (Gamma ^ Phi * (((kfg_at / kbg_at) / (kfg_as / kbg_as)) ^ Phi))) / (k_ts * ((Gamma ^ (Phi - 1)) * (((kfg_at / kbg_at) / (kfg_as / kbg_as)) ^ (Phi - 1))))
+G_Risi00                                    <-> G_Rasi00                        ; fu05=k_ia * (((kfg_as / kbg_as) / (kfg_is / kbg_is)) ^ Phi); bu05=k_ai * (((kfg_as / kbg_as) / (kfg_is / kbg_is)) ^ (Phi - 1)) # (R!12) Keq = (k_ia * (((kfg_as / kbg_as) / (kfg_is / kbg_is)) ^ Phi)) / (k_ai * (((kfg_as / kbg_as) / (kfg_is / kbg_is)) ^ (Phi - 1)))
+G_Risi00                                    <-> G_Riti00                        ; fu06=k_st * (((kfg_it / kbg_it) / (kfg_is / kbg_is)) ^ Phi); bu06=k_ts * (((kfg_it / kbg_it) / (kfg_is / kbg_is)) ^ (Phi - 1)) # (R!13) Keq = (k_st * (((kfg_it / kbg_it) / (kfg_is / kbg_is)) ^ Phi)) / (k_ts * (((kfg_it / kbg_it) / (kfg_is / kbg_is)) ^ (Phi - 1)))
+G_Riti00                                    <-> G_Rati00                        ; fu07=k_ia * ((((kfg_at / kbg_at) / (kfg_it / kbg_it)) ^ Phi) * Gamma ^ Phi); bu07=k_ai * ((((kfg_at / kbg_at) / (kfg_it / kbg_it)) ^ (Phi - 1)) * (Gamma ^ (Phi - 1))) # (R!19) Keq = (k_ia * ((((kfg_at / kbg_at) / (kfg_it / kbg_it)) ^ Phi) * Gamma ^ Phi)) / (k_ai * ((((kfg_at / kbg_at) / (kfg_it / kbg_it)) ^ (Phi - 1)) * (Gamma ^ (Phi - 1))))
+L_Rasi00                                    <-> L_Rati00                        ; fu08=k_st * (Gamma ^ Phi * (((kf_at / kb_at) / (kf_as / kb_as)) ^ Phi)); bu08=k_ts * ((Gamma ^ (Phi - 1)) * (((kf_at / kb_at) / (kf_as / kb_as)) ^ (Phi - 1))) # (R!16) Keq = (k_st * (Gamma ^ Phi * (((kf_at / kb_at) / (kf_as / kb_as)) ^ Phi))) / (k_ts * ((Gamma ^ (Phi - 1)) * (((kf_at / kb_at) / (kf_as / kb_as)) ^ (Phi - 1))))
+L_Risi00                                    <-> L_Rasi00                        ; fu09=k_ia * (((kf_as / kb_as) / (kf_is / kb_is)) ^ Phi); bu09=k_ai * (((kf_as / kb_as) / (kf_is / kb_is)) ^ (Phi - 1)) # (R!14) Keq = (k_ia * (((kf_as / kb_as) / (kf_is / kb_is)) ^ Phi)) / (k_ai * (((kf_as / kb_as) / (kf_is / kb_is)) ^ (Phi - 1)))
+L_Risi00                                    <-> L_Riti00                        ; fu10=k_st * (((kf_it / kb_it) / (kf_is / kb_is)) ^ Phi); bu10=k_ts * (((kf_it / kb_it) / (kf_is / kb_is)) ^ (Phi - 1)) # (R!15) Keq = (k_st * (((kf_it / kb_it) / (kf_is / kb_is)) ^ Phi)) / (k_ts * (((kf_it / kb_it) / (kf_is / kb_is)) ^ (Phi - 1)))
+L_Riti00                                    <-> L_Rati00                        ; fu11=k_ia * (Gamma ^ Phi * (((kf_at / kb_at) / (kf_it / kb_it)) ^ Phi)); bu11=k_ai * ((Gamma ^ (Phi - 1)) * (((kf_at / kb_at) / (kf_it / kb_it)) ^ (Phi - 1))) # (R!17) Keq = (k_ia * (Gamma ^ Phi * (((kf_at / kb_at) / (kf_it / kb_it)) ^ Phi))) / (k_ai * ((Gamma ^ (Phi - 1)) * (((kf_at / kb_at) / (kf_it / kb_it)) ^ (Phi - 1))))
+G_L_Rasi00                                  <-> G_L_Rati00                      ; fu12=k_st * ((Gamma ^ Phi * (((kfg_at / kbg_at) / (kfg_as / kbg_as)) ^ Phi)) * (((kf_at / kb_at) / (kf_as / kb_as)) ^ Phi)); bu12=k_ts * (((Gamma ^ (Phi - 1)) * (((kfg_at / kbg_at) / (kfg_as / kbg_as)) ^ (Phi - 1))) * (((kf_at / kb_at) / (kf_as / kb_as)) ^ (Phi - 1))) # (R!30) Keq = (k_st * ((Gamma ^ Phi * (((kfg_at / kbg_at) / (kfg_as / kbg_as)) ^ Phi)) * (((kf_at / kb_at) / (kf_as / kb_as)) ^ Phi))) / (k_ts * (((Gamma ^ (Phi - 1)) * (((kfg_at / kbg_at) / (kfg_as / kbg_as)) ^ (Phi - 1))) * (((kf_at / kb_at) / (kf_as / kb_as)) ^ (Phi - 1))))
+G_L_Risi00                                  <-> G_L_Rasi00                      ; fu13=k_ia * ((((kfg_as / kbg_as) / (kfg_is / kbg_is)) ^ Phi) * (((kf_as / kb_as) / (kf_is / kb_is)) ^ Phi)); bu13=k_ai * ((((kfg_as / kbg_as) / (kfg_is / kbg_is)) ^ (Phi - 1)) * (((kf_as / kb_as) / (kf_is / kb_is)) ^ (Phi - 1))) # (R!28) Keq = (k_ia * ((((kfg_as / kbg_as) / (kfg_is / kbg_is)) ^ Phi) * (((kf_as / kb_as) / (kf_is / kb_is)) ^ Phi))) / (k_ai * ((((kfg_as / kbg_as) / (kfg_is / kbg_is)) ^ (Phi - 1)) * (((kf_as / kb_as) / (kf_is / kb_is)) ^ (Phi - 1))))
+G_L_Risi00                                  <-> G_L_Riti00                      ; fu14=k_st * ((((kfg_it / kbg_it) / (kfg_is / kbg_is)) ^ Phi) * (((kf_it / kb_it) / (kf_is / kb_is)) ^ Phi)); bu14=k_ts * ((((kfg_it / kbg_it) / (kfg_is / kbg_is)) ^ (Phi - 1)) * (((kf_it / kb_it) / (kf_is / kb_is)) ^ (Phi - 1))) # (R!29) Keq = (k_st * ((((kfg_it / kbg_it) / (kfg_is / kbg_is)) ^ Phi) * (((kf_it / kb_it) / (kf_is / kb_is)) ^ Phi))) / (k_ts * ((((kfg_it / kbg_it) / (kfg_is / kbg_is)) ^ (Phi - 1)) * (((kf_it / kb_it) / (kf_is / kb_is)) ^ (Phi - 1))))
+G_L_Riti00                                  <-> G_L_Rati00                      ; fu15=k_ia * (((((kfg_at / kbg_at) / (kfg_it / kbg_it)) ^ Phi) * Gamma ^ Phi) * (((kf_at / kb_at) / (kf_it / kb_it)) ^ Phi)); bu15=k_ai * (((((kfg_at / kbg_at) / (kfg_it / kbg_it)) ^ (Phi - 1)) * (Gamma ^ (Phi - 1))) * (((kf_at / kb_at) / (kf_it / kb_it)) ^ (Phi - 1))) # (R!31) Keq = (k_ia * (((((kfg_at / kbg_at) / (kfg_it / kbg_it)) ^ Phi) * Gamma ^ Phi) * (((kf_at / kb_at) / (kf_it / kb_it)) ^ Phi))) / (k_ai * (((((kfg_at / kbg_at) / (kfg_it / kbg_it)) ^ (Phi - 1)) * (Gamma ^ (Phi - 1))) * (((kf_at / kb_at) / (kf_it / kb_it)) ^ (Phi - 1))))
+
+
+# INITIAL CONCENTRATIONS (compiled from MODEL section)
+# ----------------------------------------------------
+INIT:
+Ris = 1
+L = 0
+G = 1
+
+
+# STIMULI (from Stimulus objects)
+# ------------------------------------
+EQN:
+null -> L; k_source_Stm00_L="(0.0001*1000 +(event_flags(1) && ~event_flags(40))*9.9526231496888e-05*1000+(event_flags(2) && ~event_flags(39))*0.000198580939056609*1000+(event_flags(3) && ~event_flags(38))*0.000396221064170784*1000+(event_flags(4) && ~event_flags(37))*0.000790564957736832*1000+(event_flags(5) && ~event_flags(36))*0.00157738446770727*1000+(event_flags(6) && ~event_flags(35))*0.00314729578463356*1000+(event_flags(7) && ~event_flags(34))*0.00627968067313974*1000+(event_flags(8) && ~event_flags(33))*0.0125296101971541*1000+(event_flags(9) && ~event_flags(32))*0.0249998590476314*1000+(event_flags(10) && ~event_flags(31))*0.0498812766372728*1000+(event_flags(11) && ~event_flags(30))*0.099526231496888*1000+(event_flags(12) && ~event_flags(29))*0.198580939056609*1000+(event_flags(13) && ~event_flags(28))*0.396221064170785*1000+(event_flags(14) && ~event_flags(27))*0.790564957736833*1000+(event_flags(15) && ~event_flags(26))*1.57738446770727*1000+(event_flags(16) && ~event_flags(25))*3.14729578463356*1000+(event_flags(17) && ~event_flags(24))*6.27968067313975*1000+(event_flags(18) && ~event_flags(23))*12.5296101971541*1000+(event_flags(19) && ~event_flags(22))*24.9998590476315*1000+(event_flags(20) && ~event_flags(21))*49.8812766372728*1000)"
+L -> null; k_sink_Stm00_L=1000
+
+CONFIG:
+ode_event_times = ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ 
+t_final = 10000
+
+
+# COMPILED PROBES (from Probe objects)
+# ------------------------------------
+PROBE:
+probe p_Ris = "Ris + G_Risi00 + L_Risi00 + G_L_Risi00"
+probe p_Rit = "Rit + L_Riti00 + G_Riti00 + G_L_Riti00"
+probe p_Ras = "Ras + L_Rasi00 + G_Rasi00 + G_L_Rasi00"
+probe p_Rat = "Rat + L_Rati00 + G_Rati00 + G_L_Rati00"
+probe p_Rix = "Ris + Rit + G_Risi00 + L_Risi00 + L_Riti00 + G_Riti00 + G_L_Risi00 + G_L_Riti00"
+probe p_Rax = "Ras + Rat + L_Rasi00 + L_Rati00 + G_Rasi00 + G_Rati00 + G_L_Rasi00 + G_L_Rati00"
+probe L
+probe p_TOTAL_R = "Ris + Ras + Rit + Rat + G_Risi00 + L_Risi00 + L_Rasi00 + L_Riti00 + L_Rati00 + G_Rasi00 + G_Riti00 + G_Rati00 + G_L_Risi00 + G_L_Rasi00 + G_L_Riti00 + G_L_Rati00"
+probe p_FREE_R = "Ris + Ras + Rit + Rat"
+probe p_Lx_R = "L_Risi00 + L_Rasi00 + L_Riti00 + L_Rati00"
+probe p_R_G = "G_Risi00 + G_Rasi00 + G_Riti00 + G_Rati00"
+probe p_Lx_R_G = "G_L_Risi00 + G_L_Rasi00 + G_L_Riti00 + G_L_Rati00"
+probe p_Rax_G = "G_Rasi00 + G_Rati00 + G_L_Rasi00 + G_L_Rati00"
+probe p_Rix_G = "G_Risi00 + G_Riti00 + G_L_Risi00 + G_L_Riti00"
+
+
+# CONFIG (from CONFIG section)
+# ----------------------------
+CONFIG:
+t_final = 10000
+t_vector = [0:1:tf]
+matlab_ode_solver = ode15s
+matlab_odeset_options = odeset('InitialStep', 1e-15, 'AbsTol', 1e-48, 'RelTol', 1e-5)
+SS_timescale = 100
+SS_RelTol = 1e-3
+SS_AbsTol = 1e-6

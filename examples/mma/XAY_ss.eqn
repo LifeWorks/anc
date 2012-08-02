@@ -1,0 +1,75 @@
+# Facile model created by Allosteric Network Compiler (ANC)
+# ANC version 1.01 released 2011/08/26
+# Sat Aug 27 19:52:45 EDT 2011
+
+
+
+# PARAMETERS
+# ----------
+parameter K_RS = 0.001
+parameter kf_RS = 0.1
+parameter kb_RS = kf_RS/K_RS
+parameter Phi_AX = 0.5
+parameter Phi_AY = 0.5
+parameter alpha_X = 1
+parameter alpha_Y = 1
+parameter K_RX = 1
+parameter kf_RX = 1
+parameter kb_RX = kf_RX/K_RX
+parameter kf_SX = 1
+parameter kb_SX = kf_SX/alpha_X/K_RX
+parameter K_RY = 1
+parameter kf_RY = 1
+parameter kb_RY = kf_RY/K_RY
+parameter kf_SY = 1
+parameter kb_SY = kf_SY/alpha_Y/K_RY
+
+
+# REACTION CLASS: BindingReaction
+# -------------------------------
+AR                   + X                    <-> AR_Xi00                         ; fb00=kf_RX; bb00=kb_RX         # (R!01) Kd = kb_RX/kf_RX
+AR                   + Y                    <-> AR_Yi00                         ; fb01=kf_RY; bb01=kb_RY         # (R!03) Kd = kb_RY/kf_RY
+AS                   + X                    <-> AS_Xi00                         ; fb02=kf_SX; bb02=kb_SX         # (R!02) Kd = kb_SX/kf_SX
+AS                   + Y                    <-> AS_Yi00                         ; fb03=kf_SY; bb03=kb_SY         # (R!04) Kd = kb_SY/kf_SY
+X                    + AR_Yi00              <-> AR_X_Yi00                       ; fb00=kf_RX; bb00=kb_RX         # (R!07) Kd = kb_RX/kf_RX
+X                    + AS_Yi00              <-> AS_X_Yi00                       ; fb02=kf_SX; bb02=kb_SX         # (R!08) Kd = kb_SX/kf_SX
+Y                    + AR_Xi00              <-> AR_X_Yi00                       ; fb01=kf_RY; bb01=kb_RY         # (R!09) Kd = kb_RY/kf_RY
+Y                    + AS_Xi00              <-> AS_X_Yi00                       ; fb03=kf_SY; bb03=kb_SY         # (R!10) Kd = kb_SY/kf_SY
+
+# REACTION CLASS: AllostericReaction
+# ----------------------------------
+AR                                          <-> AS                              ; fu00=kf_RS; bu00=kb_RS         # (R!00) Keq = kf_RS / kb_RS
+AR_Xi00                                     <-> AS_Xi00                         ; fu01=kf_RS * (((kf_SX / kb_SX) / (kf_RX / kb_RX)) ^ Phi_AX); bu01=kb_RS * (((kf_SX / kb_SX) / (kf_RX / kb_RX)) ^ (Phi_AX - 1)) # (R!05) Keq = (kf_RS * (((kf_SX / kb_SX) / (kf_RX / kb_RX)) ^ Phi_AX)) / (kb_RS * (((kf_SX / kb_SX) / (kf_RX / kb_RX)) ^ (Phi_AX - 1)))
+AR_Yi00                                     <-> AS_Yi00                         ; fu02=kf_RS * (((kf_SY / kb_SY) / (kf_RY / kb_RY)) ^ Phi_AY); bu02=kb_RS * (((kf_SY / kb_SY) / (kf_RY / kb_RY)) ^ (Phi_AY - 1)) # (R!06) Keq = (kf_RS * (((kf_SY / kb_SY) / (kf_RY / kb_RY)) ^ Phi_AY)) / (kb_RS * (((kf_SY / kb_SY) / (kf_RY / kb_RY)) ^ (Phi_AY - 1)))
+AR_X_Yi00                                   <-> AS_X_Yi00                       ; fu03=kf_RS * ((((kf_SX / kb_SX) / (kf_RX / kb_RX)) ^ Phi_AX) * (((kf_SY / kb_SY) / (kf_RY / kb_RY)) ^ Phi_AY)); bu03=kb_RS * ((((kf_SX / kb_SX) / (kf_RX / kb_RX)) ^ (Phi_AX - 1)) * (((kf_SY / kb_SY) / (kf_RY / kb_RY)) ^ (Phi_AY - 1))) # (R!11) Keq = (kf_RS * ((((kf_SX / kb_SX) / (kf_RX / kb_RX)) ^ Phi_AX) * (((kf_SY / kb_SY) / (kf_RY / kb_RY)) ^ Phi_AY))) / (kb_RS * ((((kf_SX / kb_SX) / (kf_RX / kb_RX)) ^ (Phi_AX - 1)) * (((kf_SY / kb_SY) / (kf_RY / kb_RY)) ^ (Phi_AY - 1))))
+
+
+# INITIAL CONCENTRATIONS (compiled from MODEL section)
+# ----------------------------------------------------
+INIT:
+AR = 1
+X = 1
+Y = 1
+
+
+# COMPILED PROBES (from Probe objects)
+# ------------------------------------
+PROBE:
+probe TRIMER = "AR_X_Yi00 + AS_X_Yi00"
+probe AX_DIMER = "AR_Xi00 + AS_Xi00"
+probe AY_DIMER = "AR_Yi00 + AS_Yi00"
+probe A_FREE = "AR + AS"
+probe A_TOTAL = "AR + AS + AR_Xi00 + AS_Xi00 + AR_Yi00 + AS_Yi00 + AR_X_Yi00 + AS_X_Yi00"
+probe X_TOTAL = "X + AR_Xi00 + AS_Xi00 + AR_X_Yi00 + AS_X_Yi00"
+probe Y_TOTAL = "Y + AR_Yi00 + AS_Yi00 + AR_X_Yi00 + AS_X_Yi00"
+probe X
+probe Y
+
+
+# CONFIG (from CONFIG section)
+# ----------------------------
+CONFIG:
+t_final = 500000
+t_vector = [0:1:tf]
+ode_event_times = ~
+matlab_ode_solver = ode15s

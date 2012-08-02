@@ -1,0 +1,180 @@
+##############################################################################
+# Allosteric Network Compiler (ANC)
+# Copyright (C) 2005-2010 Julien Ollivier
+# Author:       Julien F. Ollivier
+# Version:      1.01
+# Release Date: 2011/08/26
+# This program comes with ABSOLUTELY NO WARRANTY.
+# This is free software, and you are welcome to redistribute it
+# under certain conditions. See file LICENSE.TXT for details.
+##############################################################################
+
+MODEL 	= examples/multimers/multimer_KNF_tetra.mod
+OUT 	= examples/multimers/multimer_KNF_tetra.eqn
+OUTDIR 	= examples/multimers/multimer_KNF_tetra
+
+Start time: Thu Aug 25 00:34:59 EDT 2011
+CLEANING UP
+CREATING OUTPUT DIRECTORY
+READING MODEL examples/multimers/multimer_KNF_tetra.mod
+REPORTING COMPILE PARAMETERS
+max_external_iterations = -1
+max_internal_iterations = -1
+max_species = -1
+max_complex_size = -1
+max_csite_bound_to_msite_number = -1
+kf_1st_order_rate_cutoff = 0
+kf_2nd_order_rate_cutoff = 0
+kb_rate_cutoff = 0
+kp_rate_cutoff = 0
+default_steric_factor = UNDEF
+report = all
+export_graphviz = primary,canonical,network,collapse_states,collapse_complexes
+compact_names = 1
+protein_separator = _
+IMPORTING COMPLEXES
+COMPILING RULES
+Compiling rule BR!00 of class CanBindRule
+LB CanBind L
+Compiling rule BR!01 of class CanBindRule
+LB CanBind L
+INSTANTIATING COMPLEXES
+INITIALIZING INSTANCES
+COMPILING REACTION NETWORK
+ReactionNetwork::compile_network: starting...
+ReactionNetwork::compile_network: STARTING INTERNAL iteration=1 total_species=2
+ReactionNetwork::compile_network: STARTING EXTERNAL iteration=1 total_species=6
+ReactionNetwork::compile_external_reactions: processing species 5 of 6
+ReactionNetwork::compile_network: DONE EXTERNAL iteration=1 total_species=14
+ReactionNetwork::compile_network: STARTING INTERNAL iteration=2 total_species=14
+ReactionNetwork::compile_network: STARTING EXTERNAL iteration=2 total_species=14
+ReactionNetwork::compile_external_reactions: total_species=20
+ReactionNetwork::compile_external_reactions: processing species 5 of 14
+ReactionNetwork::compile_external_reactions: processing species 10 of 14
+ReactionNetwork::compile_network: DONE EXTERNAL iteration=2 total_species=23
+ReactionNetwork::compile_network: STARTING INTERNAL iteration=3 total_species=23
+ReactionNetwork::compile_network: STARTING EXTERNAL iteration=3 total_species=23
+ReactionNetwork::compile_external_reactions: processing species 5 of 23
+ReactionNetwork::compile_external_reactions: processing species 10 of 23
+ReactionNetwork::compile_external_reactions: processing species 15 of 23
+ReactionNetwork::compile_external_reactions: processing species 20 of 23
+ReactionNetwork::compile_network: DONE EXTERNAL iteration=3 total_species=31
+ReactionNetwork::compile_network: STARTING INTERNAL iteration=4 total_species=31
+ReactionNetwork::compile_network: STARTING EXTERNAL iteration=4 total_species=31
+ReactionNetwork::compile_external_reactions: processing species 5 of 31
+ReactionNetwork::compile_external_reactions: processing species 10 of 31
+ReactionNetwork::compile_external_reactions: processing species 15 of 31
+ReactionNetwork::compile_external_reactions: processing species 20 of 31
+ReactionNetwork::compile_external_reactions: processing species 25 of 31
+ReactionNetwork::compile_external_reactions: processing species 30 of 31
+ReactionNetwork::compile_network: DONE EXTERNAL iteration=4 total_species=36
+ReactionNetwork::compile_network: STARTING INTERNAL iteration=5 total_species=36
+ReactionNetwork::compile_network: STARTING EXTERNAL iteration=5 total_species=36
+ReactionNetwork::compile_external_reactions: processing species 5 of 36
+ReactionNetwork::compile_external_reactions: processing species 10 of 36
+ReactionNetwork::compile_external_reactions: processing species 15 of 36
+ReactionNetwork::compile_external_reactions: processing species 20 of 36
+ReactionNetwork::compile_external_reactions: processing species 25 of 36
+ReactionNetwork::compile_external_reactions: processing species 30 of 36
+ReactionNetwork::compile_external_reactions: processing species 35 of 36
+ReactionNetwork::compile_network: DONE EXTERNAL iteration=5 total_species=36
+ReactionNetwork::compile_network: STARTING FINAL-INTERNAL total_species=36
+ReactionNetwork::compile_network: DONE FINAL-INTERNAL total_species=36
+ReactionNetwork::compile_network: Done computing species in 5 iterations
+COMPILING ICs and STIMULI
+Init Ic!00 comprises 1 objects:
+	HTTTT
+Stimulus Stm!00 comprises 1 objects:
+	L
+COMPILING PROBES
+Probe p_R0 comprises 5 objects:
+	HTTTT
+	HTTTT_Li00
+	HTTTT_L_Li00
+	HTTTT_L_L_Li00
+	HTTTT_L_L_L_Li00
+Probe p_R1 comprises 8 objects:
+	HRTTT
+	HRTTT_Li00
+	HTRTT_Li00
+	HRTTT_L_Li00
+	HTTRT_L_Li00
+	HRTTT_L_L_Li00
+	HTTTR_L_L_Li00
+	HRTTT_L_L_L_Li00
+Probe p_R2 comprises 9 objects:
+	HRRTT
+	HRRTT_Li00
+	HTRRT_Li00
+	HRRTT_L_Li00
+	HRTRT_L_Li00
+	HTTRR_L_Li00
+	HRRTT_L_L_Li00
+	HRTTR_L_L_Li00
+	HRRTT_L_L_L_Li00
+Probe p_R3 comprises 8 objects:
+	HRRRT
+	HRRRT_Li00
+	HTRRR_Li00
+	HRRRT_L_Li00
+	HRTRR_L_Li00
+	HRRRT_L_L_Li00
+	HRRTR_L_L_Li00
+	HRRRT_L_L_L_Li00
+Probe p_R4 comprises 5 objects:
+	HRRRR
+	HRRRR_Li00
+	HRRRR_L_Li00
+	HRRRR_L_L_Li00
+	HRRRR_L_L_L_Li00
+Probe Prb!00 comprises 1 objects:
+	L
+Probe p_L0 comprises 5 objects:
+	HTTTT
+	HRTTT
+	HRRTT
+	HRRRT
+	HRRRR
+Probe p_L1 comprises 8 objects:
+	HTTTT_Li00
+	HRTTT_Li00
+	HTRTT_Li00
+	HRRTT_Li00
+	HTRRT_Li00
+	HRRRT_Li00
+	HTRRR_Li00
+	HRRRR_Li00
+Probe p_L2 comprises 9 objects:
+	HTTTT_L_Li00
+	HRTTT_L_Li00
+	HTTRT_L_Li00
+	HRRTT_L_Li00
+	HRTRT_L_Li00
+	HTTRR_L_Li00
+	HRRRT_L_Li00
+	HRTRR_L_Li00
+	HRRRR_L_Li00
+Probe p_L3 comprises 8 objects:
+	HTTTT_L_L_Li00
+	HRTTT_L_L_Li00
+	HTTTR_L_L_Li00
+	HRRTT_L_L_Li00
+	HRTTR_L_L_Li00
+	HRRRT_L_L_Li00
+	HRRTR_L_L_Li00
+	HRRRR_L_L_Li00
+Probe p_L4 comprises 5 objects:
+	HTTTT_L_L_L_Li00
+	HRTTT_L_L_L_Li00
+	HRRTT_L_L_L_Li00
+	HRRRT_L_L_L_Li00
+	HRRRR_L_L_L_Li00
+EXPORTING NETWORK
+Facile->export(): generating Facile equation file
+REPORTING SPECIES STRUCTURE IN: examples/multimers/multimer_KNF_tetra/multimer_KNF_tetra.structures.rpt
+REPORTING SPECIES IN: examples/multimers/multimer_KNF_tetra/multimer_KNF_tetra.species.rpt
+EXPORTING NETWORK TO GRAPHVIZ
+EXPORTING SPECIES TO GRAPHVIZ (primary form)
+EXPORTING SPECIES TO GRAPHVIZ (canonical form)
+Start time: Thu Aug 25 00:34:59 EDT 2011
+End time:   Thu Aug 25 00:35:22 EDT 2011
